@@ -123,6 +123,12 @@ systemd.services.my-onedrive = {
     shell = pkgs.fish;
   };
 
+  home-manager = {
+	useGlobalPkgs = true;
+	useUserPackages = true;
+	users.riki = import ./home.nix;
+  };
+
   # Enable fish (shell)
   programs.fish.enable = true;
 
