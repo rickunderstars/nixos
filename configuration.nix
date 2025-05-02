@@ -4,23 +4,42 @@
 
 { config, pkgs, ... }:
 
-let # Inizio del blocco let
-  # Definizione di unstablePkgs (o altre variabili)
-  unstablePkgs = import <nixos-unstable> {
-    config = config.nixpkgs.config;
-  };
-in
-{
-  nixpkgs.overlays = [
-    (self: super: {
-      onedrive = unstablePkgs.onedrive;
-    })
+# Packages from nix-unstable channel
+ let unstable = import <nixos-unstable> {
+	config = config.nixpkgs.config;
+	};
+in {
+
+	nixpkgs.overlays = [
+		(self: super: {
+			onedrive = unstable.onedrive;
+		})
   ];
 
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+	  <home-manager/nixos>
     ];
+
+systemd.services.my-onedrive = {
+  description = "Custom OneDrive Service for Riki";
+
+  after = [ "network-online.target" ];
+  wants = [ "network-online.target" ];
+
+  serviceConfig = {
+    User = "riki";
+    Group = "users";
+    ExecStart = "${pkgs.onedrive}/bin/onedrive --monitor";
+    Restart = "on-failure";
+    RestartSec = "10s";
+    WorkingDirectory = "/home/riki";
+    Environment = "HOME=/home/riki";
+  };
+  wantedBy = [ "multi-user.target" ];
+};
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -173,12 +192,6 @@ in
 		dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
 		localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game transfers
 	};
-
-	# Enable onedrive
-	services.onedrive.enable = true;
-
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
