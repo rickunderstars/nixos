@@ -145,50 +145,9 @@ systemd.services.my-onedrive = {
 		fish
 		bat
 		btop
-		fastfetch
-		ookla-speedtest
 		broot
-		zip
-		unzip
-		oh-my-posh
-		graphviz
-		plantuml
 		onedrive
-		## programming languages ##
-		go
-		gcc
-		gnumake
-		gdb
-		cmake
-		gradle
-		openjdk
-		python3
-		rustc
-		cargo
 		## gui ##
-		ghostty
-		vscodium
-		google-chrome
-		telegram-desktop
-		whatsapp-for-linux
-		ente-auth
-		pcloud
-		anki
-		arduino
-		# cura
-		discord
-		godot_4
-		itch
-		meshlab
-		wings
-		mpv
-		spotify
-		obsidian
-		obs-studio
-		onlyoffice-desktopeditors
-		zathura
-		stremio
-		p7zip
 	];
 
 	# Install steam

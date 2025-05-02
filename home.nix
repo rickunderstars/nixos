@@ -5,7 +5,50 @@
 	home.homeDirectory = "/home/riki";
 
 	home.packages = with pkgs; [
-
+		## cli ##
+		fastfetch
+		ookla-speedtest
+		zip
+		unzip
+		oh-my-posh
+		graphviz
+		plantuml
+		## programming languages ##
+		go
+		gcc
+		gnumake
+		gdb
+		cmake
+		gradle
+		openjdk
+		python3
+		rustc
+		cargo
+		vscodium
+		ghostty
+		google-chrome
+		telegram-desktop
+		whatsapp-for-linux
+		ente-auth
+		pcloud
+		# cura
+		anki
+		arduino
+		discord
+		godot_4
+		itch
+		meshlab
+		wings
+		mpv
+		spotify
+		obsidian
+		obs-studio
+		onlyoffice-desktopeditors
+		zathura
+		stremio
+		p7zip
+		## other ##
+		nerdfonts
 	];
 
 	# Tool config model
