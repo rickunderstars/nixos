@@ -42,7 +42,6 @@
 		pcloud
 		gnome-logs
 		gnome-music
-		gnome-tweaks
 		gnomeExtensions.blur-my-shell
 		gnome-shell
 		gnome-extensions-cli
