@@ -119,9 +119,6 @@ systemd.services.my-onedrive = {
     isNormalUser = true;
     description = "riki";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
     shell = pkgs.fish;
   };
 

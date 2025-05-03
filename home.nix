@@ -24,6 +24,14 @@
 		python3
 		rustc
 		cargo
+		# pkg-config
+		# xorg.libX11
+		# xorg.libXcursor
+		# xorg.libXrandr
+		# xorg.libXinerama
+		# xorg.libXi
+		# wayland
+		# libGL
 		## gui ##
 		vscodium
 		ghostty
