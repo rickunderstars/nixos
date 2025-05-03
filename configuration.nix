@@ -22,6 +22,8 @@ in {
 	  <home-manager/nixos>
     ];
 
+	home-manager.backupFileExtension = "backup";
+
 systemd.services.my-onedrive = {
   description = "Custom OneDrive Service for Riki";
 
@@ -41,7 +43,7 @@ systemd.services.my-onedrive = {
 };
 
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest; # keyboard  fix (key repeat)
@@ -150,7 +152,7 @@ systemd.services.my-onedrive = {
 		## gui ##
 	];
 
-	# Install steam
+	# Steam
 	programs.steam = {
 		enable = true;
 		remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play

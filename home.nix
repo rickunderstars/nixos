@@ -6,13 +6,13 @@
 
 	home.packages = with pkgs; [
 		## cli ##
-		fastfetch
 		ookla-speedtest
 		zip
 		unzip
 		oh-my-posh
 		graphviz
 		plantuml
+		p7zip
 		## programming languages ##
 		go
 		gcc
@@ -24,6 +24,7 @@
 		python3
 		rustc
 		cargo
+		## gui ##
 		vscodium
 		ghostty
 		google-chrome
@@ -44,23 +45,55 @@
 		obsidian
 		obs-studio
 		onlyoffice-desktopeditors
-		zathura
+		qpdfview
 		stremio
-		p7zip
+		ark # p7zip frontend
 		## other ##
 		nerdfonts
 	];
 
-	# Tool config model
-#	home.xdg.configFile."<tool-name>/config.toml" = {
-#	source = ./dotfiles/config.toml;
-#	};
+	programs.fastfetch = {
+		enable = true;
 
-	# Scripts model
-#	home.file.".local/bin/<script-name>"
-#	source = ./scripts/<script-name>.sh;
-#	executable = true;
-#	};
+		settings = {
+			logo.source = "nixos-small";
+			display.separator = "~>	";
+			display.key.width = 22;
+			modules = [
+				"Title"
+				"Separator"
+				{ type = "os";					key = "💻 OS            "; }
+				{ type = "host";				key = "🏠 Host          "; }
+				{ type = "kernel";				key = "🐧 Kernel        "; }
+				{ type = "uptime";				key = "⏱️ Uptime        "; }
+				{ type = "bios";				key = "💾 Bios          "; }
+				{ type = "bootmgr";				key = "🚀 Bootmgr       "; }
+				"Separator"
+				{ type = "packages";			key = "📦 Packages      "; }
+				{ type = "shell";				key = "🐚 Shell         "; }
+				{ type = "display";				key = "🖼️ Display       "; }
+				{ type = "de";					key = "✨ DE            "; }
+				{ type = "theme";				key = "🎨 Theme         "; }
+				{ type = "wm";					key = "🔲 WM            "; }
+				{ type = "wmtheme";				key = "🎨 WM Theme      "; }
+				{ type = "lm";					key = "🔑 LM            "; }
+				{ type = "icons";				key = "👍 Icons         "; }
+				{ type = "font";				key = "✒️ Font          "; }
+				{ type = "cursor";				key = "👉 Cursor        "; }
+				{ type = "terminal";			key = ">_ Terminal      "; }
+				{ type = "terminalfont";		key = "✒️ Terminal Font "; }
+				"Separator"
+				{ type = "cpu";					key = "⚙️ CPU           "; }
+				{ type = "gpu";					key = "🎮 GPU           "; }
+				{ type = "memory";				key = "🐏 Memory        "; }
+				{ type = "swap";				key = "🔄 Swap          "; }
+				{ type = "disk";				key = "💾 Disk          "; }
+				{ type = "battery";				key = "🔋 Battery       "; }
+				"Break"
+				"Colors"
+			];
+		};
+	};
 
 	# Env variables
 	home.sessionVariables = {
@@ -94,6 +127,9 @@
 			home = ''
 			cd ~
 			'';
+			goodnight = ''
+			sudo shutdown now
+			'';
 		};
 
 		shellAbbrs = {
@@ -102,17 +138,51 @@
 		};
 	};
 
+	xdg.mimeApps = {
+		enable = true;
 
+		defaultApplications = {
+			"video/x-matroska" = [ "mpv.desktop" ];
+			"video/mp4"        = [ "mpv.desktop" ];
+			"text/plain"             = [ "codium.desktop" ];
+			"text/x-go"              = [ "codium.desktop" ];
+			"text/x-csrc"            = [ "codium.desktop" ];
+			"text/x-chdr"            = [ "codium.desktop" ];
+			"text/x-c++src"          = [ "codium.desktop" ];
+			"text/x-java-source"     = [ "codium.desktop" ];
+			"text/x-python"          = [ "codium.desktop" ];
+			"text/rust"              = [ "codium.desktop" ];
+			"text/html"              = [ "google-chrome.desktop" ];
+			"application/xhtml+xml"  = [ "google-chrome.desktop" ];
+			"x-scheme-handler/http"  = [ "google-chrome.desktop" ];
+			"x-scheme-handler/https" = [ "google-chrome.desktop" ];
+			"x-scheme-handler/about" = [ "google-chrome.desktop" ];
+			"x-scheme-handler/unknown" = [ "google-chrome.desktop" ];
+			"text/x-arduino"         = [ "arduino-arduinoide.desktop" ];
+			"application/zip"        = [ "ark.desktop" ];
+			"application/pdf"        = [ "qpdfview.desktop" ];
+			"model/stl"              = [ "meshlab.desktop" ];
+			"model/obj"              = [ "meshlab.desktop" ];
+			"x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
+			"x-scheme-handler/tonsite" = [ "org.telegram.desktop.desktop" ];
+		};
+
+		associations.added = {
+			"application/pdf" = [ "google-chrome.desktop" ];
+		};
+	};
+
+	# Tool config model
+#	home.xdg.configFile."<tool-name>/config.toml" = {
+#	source = ./dotfiles/config.toml;
+#	};
+
+	# Scripts model
+#	home.file.".local/bin/<script-name>"
+#	source = ./scripts/<script-name>.sh;
+#	executable = true;
+#	};
 
 
 	home.stateVersion = "24.11";
-#home-manager.users.riki = {
-#	home.stateVersion = "24.11";
-#	programs.onedrive = {
-#	enable = true;
-#	settings = {
-#	sync_dir = "~/OneDrive";
-#	};
-#};
-#};
 }
