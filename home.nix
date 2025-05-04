@@ -9,7 +9,6 @@
 		ookla-speedtest
 		zip
 		unzip
-		oh-my-posh
 		graphviz
 		plantuml
 		p7zip
@@ -24,17 +23,8 @@
 		python3
 		rustc
 		cargo
-		# pkg-config
-		# xorg.libX11
-		# xorg.libXcursor
-		# xorg.libXrandr
-		# xorg.libXinerama
-		# xorg.libXi
-		# wayland
-		# libGL
 		## gui ##
 		vscodium
-		ghostty
 		google-chrome
 		telegram-desktop
 		whatsapp-for-linux
@@ -65,54 +55,59 @@
 		nerdfonts
 	];
 
+	#fastfetch
 	programs.fastfetch = {
 		enable = true;
 
 		settings = {
-			logo.source = "nixos-small";
+			logo = {
+				source = "/etc/nixos/nix-snowflake-rainbow.png";
+				width = 40;
+			};
+			# logo.source = "nixos-small";
 			display.separator = "~>	";
 			display.key.width = 22;
 			modules = [
 				"Title"
 				"Separator"
-				{ type = "os";					key = "💻 OS            "; }
-				{ type = "host";				key = "🏠 Host          "; }
-				{ type = "kernel";				key = "🐧 Kernel        "; }
-				{ type = "uptime";				key = "⏱️ Uptime        "; }
-				{ type = "bios";				key = "💾 Bios          "; }
-				{ type = "bootmgr";				key = "🚀 Bootmgr       "; }
+				{ type = "os";					key = " os            "; }
+				{ type = "host";				key = " Host          "; }
+				{ type = "kernel";				key = "󰌽 Kernel        "; }
+				{ type = "uptime";				key = " Uptime        "; }
+				{ type = "bios";				key = " Bios          "; }
+				{ type = "bootmgr";				key = " Bootmgr       "; }
 				"Separator"
-				{ type = "packages";			key = "📦 Packages      "; }
-				{ type = "shell";				key = "🐚 Shell         "; }
-				{ type = "display";				key = "🖼️ Display       "; }
-				{ type = "de";					key = "✨ DE            "; }
-				{ type = "theme";				key = "🎨 Theme         "; }
-				{ type = "wm";					key = "🔲 WM            "; }
-				{ type = "wmtheme";				key = "🎨 WM Theme      "; }
-				{ type = "lm";					key = "🔑 LM            "; }
-				{ type = "icons";				key = "👍 Icons         "; }
-				{ type = "font";				key = "✒️ Font          "; }
-				{ type = "cursor";				key = "👉 Cursor        "; }
-				{ type = "terminal";			key = ">_ Terminal      "; }
-				{ type = "terminalfont";		key = "✒️ Terminal Font "; }
+				{ type = "packages";			key = " Packages      "; }
+				{ type = "shell";				key = " Dhell         "; }
+				{ type = "display";				key = "󰍹 Display       "; }
+				{ type = "de";					key = "󰧨 DE            "; }
+				{ type = "theme";				key = "󰏘 Theme         "; }
+				{ type = "wm";					key = " WM            "; }
+				{ type = "wmtheme";				key = " WM Theme      "; }
+				{ type = "lm";					key = " LM            "; }
+				{ type = "icons";				key = "󰬐 Icons         "; }
+				{ type = "font";				key = "󰴓 Font          "; }
+				{ type = "cursor";				key = "󰇀 Cursor        "; }
+				{ type = "terminal";			key = " Terminal      "; }
+				{ type = "terminalfont";		key = "󰴓 Terminal Font "; }
 				"Separator"
-				{ type = "cpu";					key = "⚙️ CPU           "; }
-				{ type = "gpu";					key = "🎮 GPU           "; }
-				{ type = "memory";				key = "🐏 Memory        "; }
-				{ type = "swap";				key = "🔄 Swap          "; }
-				{ type = "disk";				key = "💾 Disk          "; }
-				{ type = "battery";				key = "🔋 Battery       "; }
+				{ type = "cpu";					key = "󰻠 CPU           "; }
+				{ type = "gpu";					key = " GPU           "; }
+				{ type = "memory";				key = " Memory        "; }
+				{ type = "swap";				key = "󰯍 Swap          "; }
+				{ type = "disk";				key = "󰉉 Disk          "; }
+				{ type = "battery";				key = "󱊣 Battery       "; }
 				"Break"
 				"Colors"
 			];
 		};
 	};
 
-	# Env variables
+	# env variables
 	home.sessionVariables = {
 	};
 
-	# Fish
+	# fish
 	programs.fish = {
 		enable = true;
 		interactiveShellInit = ''
@@ -151,6 +146,41 @@
 		};
 	};
 
+	# oh-my-posh
+	programs.oh-my-posh = {
+		enable = true;
+		enableFishIntegration = true;
+		useTheme = "di4am0nd";
+	};
+
+	# ghostty
+	programs.ghostty = {
+		enable = true;
+		enableFishIntegration = true;
+		installBatSyntax = true;
+		settings = {
+			font-family = "CaskaydiaCove Nerd Font Mono";
+			theme = "catppuccin-mocha";
+			background-opacity = 0.9;
+			background-blur = true; #not working
+			mouse-hide-while-typing = true;
+			mouse-scroll-multiplier = 0.7;
+			maximize = true;
+			window-padding-x = 16;
+			window-padding-y = 16;
+			window-padding-balance = true;
+			window-decoration = "client";
+
+		};
+	};
+
+
+
+
+
+
+#################################################################
+	# mime apps
 	xdg.mimeApps = {
 		enable = true;
 
@@ -184,6 +214,8 @@
 			"application/pdf" = [ "google-chrome.desktop" ];
 		};
 	};
+
+
 
 	# Tool config model
 #	home.xdg.configFile."<tool-name>/config.toml" = {
