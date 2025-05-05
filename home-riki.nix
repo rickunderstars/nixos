@@ -13,6 +13,7 @@
 		./home-modules/oh-my-posh/oh-my-posh.nix
 		./home-modules/ghostty.nix
 		./home-modules/btop.nix
+		./home-modules/git.nix
 	];
 
 	# env variables

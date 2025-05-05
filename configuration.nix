@@ -77,6 +77,34 @@ in {
     LC_TELEPHONE = "it_IT.UTF-8";
   };
 
+	# disable gnome power profile management
+	services.power-profiles-daemon.enable = false;
+
+	# power profile management
+	services.tlp = {
+		enable = true;
+		settings = {
+
+			CPU_SCALING_GOVERNOR_ON_BAT = "schedutil"; # Permette scaling basato su carico
+			CPU_SCALING_GOVERNOR_ON_AC = "performance";
+
+			START_CHARGE_THRESH_BAT0 = 0;
+			STOP_CHARGE_THRESH_BAT0 = 1;
+
+			CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+			PLATFORM_PROFILE_ON_AC = "performance";
+			CPU_BOOST_ON_AC = "1";
+			PCIE_ASPM_ON_AC = "performance";
+			SATA_LINKPWR_ON_AC = "max_performance";
+
+			CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+			PLATFORM_PROFILE_ON_BAT = "balanced";
+			CPU_BOOST_ON_BAT = "0";
+			PCIE_ASPM_ON_BAT = "powersupersave";
+			SATA_LINKPWR_ON_BAT = "min_power";
+		};
+	};
+
 	services.xserver = {
 		# Enable the X11 windowing system
 		enable = true;
@@ -137,19 +165,21 @@ in {
   # Enable fish (shell)
   programs.fish.enable = true;
 
+  # Enable gamemode
+  programs.gamemode.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
-		## cli ##
 		wget
 		neovim
 		git
 		fish
 		onedrive
-		## gui ##
+		gamemode
 	];
 
 	# Steam

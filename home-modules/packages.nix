@@ -3,6 +3,7 @@
 {
 home.packages = with pkgs; [
 		## cli ##
+		gitflow
 		bat
 		broot
 		ookla-speedtest
@@ -13,6 +14,7 @@ home.packages = with pkgs; [
 		p7zip
 		cbonsai
 		pfetch
+		cmatrix
 		## programming languages ##
 		go
 		gcc

@@ -34,6 +34,21 @@
 			config = ''
 			cd /etc/nixos; codium .
 			'';
+			onedrive-status = ''
+			systemctl status my-onedrive.service
+			'';
+			onedrive-start = ''
+			sudo systemctl start my-onedrive.service
+			'';
+			onedrive-stop = ''
+			sudo systemctl stop my-onedrive.service
+			'';
+			onedrive-restart = ''
+			sudo systemctl restart my-onedrive.service
+			'';
+			onedrive-log = ''
+			journalctl -u my-onedrive.service -f
+			'';
 		};
 
 		shellAbbrs = {
