@@ -1,15 +1,17 @@
 { config, pkgs, lib, ... }:
 
+let
+	logo-src = /etc/nixos/home-modules/fastfetch/logo.png;
+	logo-options =
+	if	builtins.pathExists logo-src
+	then { source = logo-src; width = 30; }
+	else { source = "nixos-small"; };
+in
 {
 	programs.fastfetch = {
 		enable = true;
-
 		settings = {
-			logo = {
-				source = "/etc/nixos/home_modules/fastfetch/nix-snowflake-rainbow.png";
-				width = 30;
-			};
-			# logo.source = "nixos-small";
+			logo = logo-options;
 			display.separator = "~>	";
 			display.key.width = 22;
 			modules = [
