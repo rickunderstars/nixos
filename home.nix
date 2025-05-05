@@ -3,9 +3,12 @@
 {
 	home.username = "riki";
 	home.homeDirectory = "/home/riki";
+	
 
 	home.packages = with pkgs; [
 		## cli ##
+		bat
+		broot
 		ookla-speedtest
 		zip
 		unzip
@@ -174,6 +177,17 @@
 			window-padding-balance = true;
 			window-decoration = "client";
 
+		};
+	};
+
+	#btop
+	programs.btop = {
+		enable = true;
+		settings = {
+			theme_background = false;
+			rounded_corners = true;
+			graph_symbol = "braille";
+			update_ms = 500;
 		};
 	};
 

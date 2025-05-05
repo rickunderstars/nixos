@@ -148,9 +148,6 @@ in {
 		neovim
 		git
 		fish
-		bat
-		btop
-		broot
 		onedrive
 		## gui ##
 	];
