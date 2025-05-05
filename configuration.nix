@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 # Packages from nix-unstable channel
 let unstable = import <nixos-unstable> {
@@ -131,7 +131,7 @@ in {
   home-manager = {
 	useGlobalPkgs = true;
 	useUserPackages = true;
-	users.riki = import ./home.nix;
+	users.riki = import ./home-riki.nix;
   };
 
   # Enable fish (shell)
