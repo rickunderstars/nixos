@@ -12,6 +12,8 @@
 		graphviz
 		plantuml
 		p7zip
+		cbonsai
+		pfetch
 		## programming languages ##
 		go
 		gcc
@@ -62,7 +64,7 @@
 		settings = {
 			logo = {
 				source = "/etc/nixos/nix-snowflake-rainbow.png";
-				width = 40;
+				width = 30;
 			};
 			# logo.source = "nixos-small";
 			display.separator = "~>	";
@@ -160,6 +162,7 @@
 		installBatSyntax = true;
 		settings = {
 			font-family = "CaskaydiaCove Nerd Font Mono";
+			font-size = 12;
 			theme = "catppuccin-mocha";
 			background-opacity = 0.9;
 			background-blur = true; #not working
@@ -173,7 +176,6 @@
 
 		};
 	};
-
 
 
 
