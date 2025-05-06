@@ -9,7 +9,7 @@
 			font-family = "CaskaydiaCove Nerd Font Mono";
 			font-size = 12;
 			theme = "catppuccin-mocha";
-			background-opacity = 0.9;
+			background-opacity = 0.95;
 			background-blur = true; #not working
 			mouse-hide-while-typing = true;
 			mouse-scroll-multiplier = 0.7;
@@ -17,7 +17,7 @@
 			window-padding-x = 16;
 			window-padding-y = 16;
 			window-padding-balance = true;
-			window-decoration = "client";
+			window-decoration = "server";
 		};
 	};
 }

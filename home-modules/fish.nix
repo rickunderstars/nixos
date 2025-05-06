@@ -32,7 +32,7 @@
 			sudo shutdown now
 			'';
 			config = ''
-			cd /etc/nixos; codium .
+			cd /etc/nixos
 			'';
 			onedrive-status = ''
 			systemctl status my-onedrive.service

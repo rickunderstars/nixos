@@ -5,7 +5,6 @@ home.packages = with pkgs; [
 		## cli ##
 		gitflow
 		bat
-		broot
 		ookla-speedtest
 		zip
 		unzip
@@ -15,6 +14,8 @@ home.packages = with pkgs; [
 		cbonsai
 		pfetch
 		cmatrix
+		pipes
+		imv
 		## programming languages ##
 		go
 		gcc
@@ -24,6 +25,8 @@ home.packages = with pkgs; [
 		gradle
 		openjdk
 		python3
+		pipx
+		python312Packages.pip
 		rustc
 		cargo
 		## gui ##
@@ -33,6 +36,7 @@ home.packages = with pkgs; [
 		whatsapp-for-linux
 		ente-auth
 		pcloud
+		kitty
 		gnome-logs
 		gnome-music
 		gnomeExtensions.blur-my-shell

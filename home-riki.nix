@@ -14,6 +14,7 @@
 		./home-modules/ghostty.nix
 		./home-modules/btop.nix
 		./home-modules/git.nix
+		./home-modules/broot/broot.nix
 	];
 
 	# env variables
