@@ -15,6 +15,8 @@ home.packages = with pkgs; [
 		pfetch
 		cmatrix
 		pipes
+		cava
+		tty-clock
 		imv
 		## programming languages ##
 		go
