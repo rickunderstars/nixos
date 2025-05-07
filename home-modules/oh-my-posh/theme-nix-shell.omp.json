@@ -3,7 +3,7 @@
 	"version": 3,
 	"final_space": false,
 	"shell_integration": true,
-	"console_title_template": "{{ .PWD }}",
+	"console_title_template": "nix-shell in {{ .PWD }}",
 	"palette": {
 		"rosewater": "#F5E0DC",
 		"flamingo": "#F2CDCD",
@@ -57,7 +57,7 @@
 				{
 					"foreground": "p:maroon",
 					"style": "plain",
-					"template": "{{ .UserName }}@{{ .HostName }}",
+					"template": "{{ .UserName }}@{{ .HostName }} [nix-shell]",
 					"type": "session"
 				},
 				{

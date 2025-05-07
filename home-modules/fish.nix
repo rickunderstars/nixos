@@ -5,13 +5,17 @@
 		enable = true;
 		interactiveShellInit = ''
 			set -g fish_greeting
-			fastfetch
+			if command -q nix-your-shell
+				nix-your-shell fish | source
+			end
+			if not set -q IN_NIX_SHELL
+				fastfetch
+			end
 		'';
-
 		functions = {
 			ll = "ls -alh";
 			update = ''
-			echo "Starting NixOS e Home Manager Update..."
+			echo "Starting NixOS and Home Manager Update..."
 			sudo nix-channel --update && sudo nixos-rebuild switch && echo "Update completed!"
 			'';
 			br = ''
@@ -54,7 +58,8 @@
 		shellAbbrs = {
 			nrs = "sudo nixos-rebuild switch --show-trace";
 			cls = "clear";
-			ff = "fastfetch";
+			ff = "clear;fastfetch";
+			ns = "nix-your-shell";
 		};
 	};
 }

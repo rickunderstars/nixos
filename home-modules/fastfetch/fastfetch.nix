@@ -4,7 +4,11 @@ let
 	logo-src = /etc/nixos/home-modules/fastfetch/marcille-cry.jpg;
 	logo-options =
 	if	builtins.pathExists logo-src
-	then { source = logo-src; height = 20; }
+	then {
+	source = logo-src;
+	#height = 20;
+	width = 30;
+	}
 	else { source = "nixos-small"; };
 	custom-separator = {type = "custom"; key = ">-----------<+>-----------------------------------<";};
 in
@@ -16,13 +20,13 @@ in
 				padding = {
 				left = 0;
 				right = 3;
-				top = 1;
+				top = 0;
 				};
 			};
 			display.separator = "";
 			display.key.width = 17;
 			modules = [
-				"Break"
+				#"Break"
 				{
 					type = "title";
 					format = "  {user-name-colored}{at-symbol-colored}{host-name-colored}  ";

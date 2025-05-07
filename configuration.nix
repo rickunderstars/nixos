@@ -156,11 +156,11 @@ in {
 	shell = pkgs.fish;
 	};
 
-  home-manager = {
-	useGlobalPkgs = true;
-	useUserPackages = true;
-	users.riki = import ./home-riki.nix;
-  };
+	home-manager = {
+		useGlobalPkgs = true;
+		useUserPackages = true;
+		users.riki = import ./home-riki.nix;
+	};
 
   # Enable fish (shell)
   programs.fish.enable = true;
@@ -180,6 +180,7 @@ in {
 		fish
 		onedrive
 		gamemode
+		nix-your-shell
 	];
 
 	# Steam

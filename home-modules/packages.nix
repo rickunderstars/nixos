@@ -19,7 +19,6 @@ home.packages = with pkgs; [
 		tty-clock
 		imv
 		catppuccin
-
 		## programming languages ##
 		go
 		gcc
