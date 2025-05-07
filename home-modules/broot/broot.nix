@@ -5,7 +5,7 @@
 		enable = true;
 		settings = {
 			default_flags = "gs";
-			icons = "true";
+			icon_theme = "nerdfont";
 			skin = {
 				input = "rgb(205, 214, 244) none";
 				selected_line = "none rgb(88, 91, 112)";

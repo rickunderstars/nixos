@@ -15,6 +15,8 @@
 		./home-modules/btop/btop.nix
 		./home-modules/git.nix
 		./home-modules/broot/broot.nix
+		./home-modules/imv.nix
+		./home-modules/mpv.nix
 	];
 
 	# env variables

@@ -17,7 +17,6 @@ home.packages = with pkgs; [
 		pipes
 		cava
 		tty-clock
-		imv
 		catppuccin
 		## programming languages ##
 		go
@@ -54,7 +53,8 @@ home.packages = with pkgs; [
 		itch
 		meshlab
 		wings
-		mpv
+		mpvScripts.uosc
+		mpvScripts.thumbfast
 		spotify
 		obsidian
 		obs-studio
