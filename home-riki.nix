@@ -12,7 +12,7 @@
 		./home-modules/fish.nix
 		./home-modules/oh-my-posh/oh-my-posh.nix
 		./home-modules/ghostty.nix
-		./home-modules/btop.nix
+		./home-modules/btop/btop.nix
 		./home-modules/git.nix
 		./home-modules/broot/broot.nix
 	];

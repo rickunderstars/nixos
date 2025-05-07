@@ -1,23 +1,31 @@
 { config, pkgs, lib, ... }:
 
 let
-	logo-src = /etc/nixos/home-modules/fastfetch/logo.png;
+	logo-src = /etc/nixos/home-modules/fastfetch/marcille-cry.jpg;
 	logo-options =
 	if	builtins.pathExists logo-src
-	then { source = logo-src; width = 30; }
+	then { source = logo-src; height = 20; }
 	else { source = "nixos-small"; };
-	custom-separator = {type = "custom"; key = ">----------<+>-----------------------------<";};
+	custom-separator = {type = "custom"; key = ">-----------<+>-----------------------------------<";};
 in
 {
 	programs.fastfetch = {
 		enable = true;
 		settings = {
-			logo = logo-options;
+			logo = logo-options // {
+				padding = {
+				left = 0;
+				right = 3;
+				top = 1;
+				};
+			};
 			display.separator = "";
-			display.key.width = 16;
+			display.key.width = 17;
 			modules = [
+				"Break"
 				{
 					type = "title";
+					format = "  {user-name-colored}{at-symbol-colored}{host-name-colored}  ";
 				}
 				custom-separator
 				{
@@ -28,6 +36,7 @@ in
 				{
 					type = "host";
 					key = "  host  ";
+					format = "{vendor} {family}";
 					keyColor = "italic_green";
 				}
 				{
@@ -38,6 +47,7 @@ in
 				{
 					type = "bootmgr";
 					key = "  boot  ";
+					format = "{firmware-name}";
 					keyColor = "italic_green";
 				}
 				{
@@ -75,11 +85,13 @@ in
 				{
 					type = "cpu";
 					key = "  cpu  ";
+					format = "{name}";
 					keyColor = "italic_blue";
 				}
 				{
 					type = "gpu";
 					key = "  gpu  ";
+					format = "{name} ({type})";
 					keyColor = "italic_blue";
 				}
 				{
@@ -90,11 +102,13 @@ in
 				{
 					type = "disk";
 					key = "  ssd  ";
+					format = "{size-used} / {size-total} ({size-percentage})";
 					keyColor = "italic_blue";
 				}
 				{
 					type = "display";
 					key = "  display  ";
+					format = "{width}x{height} @ {refresh-rate}Hz ({type}) ";
 					keyColor = "italic_blue";
 				}
 				custom-separator

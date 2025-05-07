@@ -18,6 +18,8 @@ home.packages = with pkgs; [
 		cava
 		tty-clock
 		imv
+		catppuccin
+
 		## programming languages ##
 		go
 		gcc
@@ -44,6 +46,7 @@ home.packages = with pkgs; [
 		gnomeExtensions.blur-my-shell
 		gnome-shell
 		gnome-extensions-cli
+		catppuccin-gtk
 		# cura
 		anki
 		arduino
@@ -59,6 +62,7 @@ home.packages = with pkgs; [
 		onlyoffice-desktopeditors
 		qpdfview
 		stremio
+		catppuccinifier-gui
 		ark # p7zip frontend
 		## other ##
 		nerdfonts
