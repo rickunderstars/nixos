@@ -54,6 +54,7 @@
 		shellAbbrs = {
 			nrs = "sudo nixos-rebuild switch --show-trace";
 			cls = "clear";
+			ff = "fastfetch";
 		};
 	};
 }

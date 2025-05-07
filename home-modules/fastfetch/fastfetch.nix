@@ -6,121 +6,98 @@ let
 	if	builtins.pathExists logo-src
 	then { source = logo-src; width = 30; }
 	else { source = "nixos-small"; };
+	custom-separator = {type = "custom"; key = ">----------<+>-----------------------------<";};
 in
 {
 	programs.fastfetch = {
 		enable = true;
 		settings = {
 			logo = logo-options;
-			display.separator = "~>	";
-			display.key.width = 22;
+			display.separator = "";
+			display.key.width = 16;
 			modules = [
-				"Title"
-				"Separator"
+				{
+					type = "title";
+				}
+				custom-separator
 				{
 					type = "os";
-					key = " os            ";
+					key = "  os  ";
+					keyColor = "italic_green";
 				}
 				{
 					type = "host";
-					key = " Host          ";
+					key = "  host  ";
+					keyColor = "italic_green";
 				}
 				{
 					type = "kernel";
-					key = "󰌽 Kernel        ";
-				}
-				{
-					type = "uptime";
-					key = " Uptime        ";
-				}
-				{
-					type = "bios";
-					key = " Bios          ";
+					key = "  kernel  ";
+					keyColor = "italic_green";
 				}
 				{
 					type = "bootmgr";
-					key = " Bootmgr       ";
+					key = "  boot  ";
+					keyColor = "italic_green";
 				}
-				"Separator"
 				{
-					type = "packages";
-					key = " Packages      ";
+					type = "uptime";
+					key = "  uptime  ";
+					keyColor = "italic_green";
 				}
+				custom-separator
 				{
 					type = "shell";
-					key = " Shell         ";
-				}
-				{
-					type = "display";
-					key = "󰍹 Display       ";
-				}
-				{
-					type = "de";
-					key = "󰧨 DE            ";
-				}
-				{
-					type = "theme";
-					key = "󰏘 Theme         ";
-				}
-				{
-					type = "wm";
-					key = " WM            ";
-				}
-				{
-					type = "wmtheme";
-					key = " WM Theme      ";
-				}
-				{
-					type = "lm";
-					key = " LM            ";
-				}
-				{
-					type = "icons";
-					key = "󰬐 Icons         ";
-				}
-				{
-					type = "font";
-					key = "󰴓 Font          ";
-				}
-				{
-					type = "cursor";
-					key = "󰇀 Cursor        ";
+					key = "  shell  ";
+					keyColor = "italic_cyan";
 				}
 				{
 					type = "terminal";
-					key = " Terminal      ";
+					key = "  terminal  ";
+					keyColor = "italic_cyan";
 				}
 				{
-					type = "terminalfont";
-					key = "󰴓 Terminal Font ";
+					type = "packages";
+					key = "  pkgs  ";
+					keyColor = "italic_cyan";
 				}
-				"Separator"
+				{
+					type = "wm";
+					key = "  wm  ";
+					keyColor = "italic_cyan";
+				}
+				{
+					type = "lm";
+					key = "  login  ";
+					keyColor = "italic_cyan";
+				}
+				custom-separator
 				{
 					type = "cpu";
-					key = "󰻠 CPU           ";
+					key = "  cpu  ";
+					keyColor = "italic_blue";
 				}
 				{
 					type = "gpu";
-					key = " GPU           ";
+					key = "  gpu  ";
+					keyColor = "italic_blue";
 				}
 				{
 					type = "memory";
-					key = " Memory        ";
-				}
-				{
-					type = "swap";
-					key = "󰯍 Swap          ";
+					key = "  memory  ";
+					keyColor = "italic_blue";
 				}
 				{
 					type = "disk";
-					key = "󰉉 Disk          ";
+					key = "  ssd  ";
+					keyColor = "italic_blue";
 				}
 				{
-					type = "battery";
-					key = "󱊣 Battery       ";
+					type = "display";
+					key = "  display  ";
+					keyColor = "italic_blue";
 				}
-				"Break"
-				"Colors"
+				custom-separator
 			];
 		};
 	};
