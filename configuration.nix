@@ -2,48 +2,58 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 # Packages from nix-unstable channel
-let unstable = import <nixos-unstable> {
-	config = config.nixpkgs.config;
-};
-in {
+let
+  unstable = import <nixos-unstable> {
+    config = config.nixpkgs.config;
+  };
+in
+{
 
-	nixpkgs.overlays = [
-		(self: super: {
-			onedrive = unstable.onedrive;
-		})
-	];
+  nixpkgs.overlays = [
+    (self: super: {
+      onedrive = unstable.onedrive;
+    })
+  ];
 
-	imports = [ # Include the results of the hardware scan.
-		./hardware-configuration.nix
-		<home-manager/nixos>
-	];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    <home-manager/nixos>
+  ];
 
-	home-manager.backupFileExtension = "backup";
+  home-manager.backupFileExtension = "backup";
 
-	# For faster startup
-	systemd.services."NetworkManager-wait-online".enable = false;
+  # For faster startup
+  systemd.services."NetworkManager-wait-online".enable = false;
 
-	systemd.services.my-onedrive = {
-		description = "Custom OneDrive Service for Riki";
+  systemd.services.my-onedrive = {
+    description = "Custom OneDrive Service for Riki";
 
-		after = [ "network-online.target" "graphical.target" ];
-		wants = [ "network-online.target" ];
+    after = [
+      "network-online.target"
+      "graphical.target"
+    ];
+    wants = [ "network-online.target" ];
 
-		serviceConfig = {
-			User = "riki";
-			Group = "users";
-			ExecStart = "${pkgs.onedrive}/bin/onedrive --monitor";
-			Restart = "on-failure";
-			RestartSec = "10s";
-			WorkingDirectory = "/home/riki";
-			Environment = "HOME=/home/riki";
-		};
-		wantedBy = [ "multi-user.target" ];
-	};
-
+    serviceConfig = {
+      User = "riki";
+      Group = "users";
+      ExecStart = "${pkgs.onedrive}/bin/onedrive --monitor";
+      Restart = "on-failure";
+      RestartSec = "10s";
+      WorkingDirectory = "/home/riki";
+      Environment = "HOME=/home/riki";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -77,35 +87,35 @@ in {
     LC_TELEPHONE = "it_IT.UTF-8";
   };
 
-	# disable gnome power profile management
-	services.power-profiles-daemon.enable = false;
+  # disable gnome power profile management
+  services.power-profiles-daemon.enable = false;
 
-	# power profile management
-	services.tlp = {
-		enable = true;
-		settings = {
-			CPU_ENERGY_PERF_POLICY_ON_AC="performance";
-			CPU_ENERGY_PERF_POLICY_ON_BAT="balance_performance";
+  # power profile management
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_performance";
 
-			START_CHARGE_THRESH_BAT0=0;
-			STOP_CHARGE_THRESH_BAT0=0;
+      START_CHARGE_THRESH_BAT0 = 0;
+      STOP_CHARGE_THRESH_BAT0 = 0;
 
-			START_CHARGE_THRESH_BAT1=0;
-			STOP_CHARGE_THRESH_BAT1=0;
-		};
-	};
+      START_CHARGE_THRESH_BAT1 = 0;
+      STOP_CHARGE_THRESH_BAT1 = 0;
+    };
+  };
 
-	services.xserver = {
-		# Enable the X11 windowing system
-		enable = true;
+  services.xserver = {
+    # Enable the X11 windowing system
+    enable = true;
 
-		# AMD video drivers
-		videoDrivers = [ "amdgpu" ];
+    # AMD video drivers
+    videoDrivers = [ "amdgpu" ];
 
-		# Enable the GNOME Desktop Environment
-		displayManager.gdm.enable = true;
-		desktopManager.gnome.enable = true;
-	};
+    # Enable the GNOME Desktop Environment
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -139,18 +149,21 @@ in {
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-	users.users.riki = {
-		isNormalUser = true;
-		description = "riki";
-		extraGroups = [ "networkmanager" "wheel" ];
-	shell = pkgs.fish;
-	};
+  users.users.riki = {
+    isNormalUser = true;
+    description = "riki";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    shell = pkgs.fish;
+  };
 
-	home-manager = {
-		useGlobalPkgs = true;
-		useUserPackages = true;
-		users.riki = import ./home-riki.nix;
-	};
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.riki = import ./home-riki.nix;
+  };
 
   # Enable fish (shell)
   programs.fish.enable = true;
@@ -161,25 +174,25 @@ in {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-	# List packages installed in system profile. To search, run:
-	# $ nix search wget
-	environment.systemPackages = with pkgs; [
-		wget
-		neovim
-		git
-		fish
-		onedrive
-		gamemode
-		nix-your-shell
-	];
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    wget
+    neovim
+    git
+    fish
+    onedrive
+    gamemode
+    nix-your-shell
+  ];
 
-	# Steam
-	programs.steam = {
-		enable = true;
-		remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-		dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-		localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game transfers
-	};
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game transfers
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
