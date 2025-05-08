@@ -59,7 +59,6 @@
 			nrs = "sudo nixos-rebuild switch --show-trace";
 			cls = "clear";
 			ff = "clear;fastfetch";
-			ns = "nix-your-shell";
 		};
 	};
 }

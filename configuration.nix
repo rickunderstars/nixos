@@ -84,24 +84,14 @@ in {
 	services.tlp = {
 		enable = true;
 		settings = {
+			CPU_ENERGY_PERF_POLICY_ON_AC="performance";
+			CPU_ENERGY_PERF_POLICY_ON_BAT="balance_performance";
 
-			CPU_SCALING_GOVERNOR_ON_BAT = "schedutil"; # Permette scaling basato su carico
-			CPU_SCALING_GOVERNOR_ON_AC = "performance";
+			START_CHARGE_THRESH_BAT0=0;
+			STOP_CHARGE_THRESH_BAT0=0;
 
-			START_CHARGE_THRESH_BAT0 = 0;
-			STOP_CHARGE_THRESH_BAT0 = 1;
-
-			CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-			PLATFORM_PROFILE_ON_AC = "performance";
-			CPU_BOOST_ON_AC = "1";
-			PCIE_ASPM_ON_AC = "performance";
-			SATA_LINKPWR_ON_AC = "max_performance";
-
-			CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
-			PLATFORM_PROFILE_ON_BAT = "balanced";
-			CPU_BOOST_ON_BAT = "0";
-			PCIE_ASPM_ON_BAT = "powersupersave";
-			SATA_LINKPWR_ON_BAT = "min_power";
+			START_CHARGE_THRESH_BAT1=0;
+			STOP_CHARGE_THRESH_BAT1=0;
 		};
 	};
 
