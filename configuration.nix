@@ -17,6 +17,12 @@ let
 in
 {
 
+  # enable flakes
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   nixpkgs.overlays = [
     (self: super: {
       onedrive = unstable.onedrive;
