@@ -11,8 +11,7 @@ let
     if builtins.pathExists logo-src then
       {
         source = logo-src;
-        #height = 20;
-        width = 30;
+        height = 21;
       }
     else
       { source = "nixos-small"; };
