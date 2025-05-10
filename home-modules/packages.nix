@@ -7,7 +7,7 @@
 
 {
   home.packages = with pkgs; [
-    ## cli ##
+    ####### cli #######
     gitflow
     bat
     ookla-speedtest
@@ -24,7 +24,7 @@
     tty-clock
     catppuccin
     onedrive
-    ## programming languages ##
+    ####### programming languages #######
     nixfmt-rfc-style
     go
     gcc
@@ -38,7 +38,7 @@
     python312Packages.pip
     rustc
     cargo
-    ## gui ##
+    ####### gui #######
     vscodium
     google-chrome
     telegram-desktop
@@ -46,12 +46,7 @@
     ente-auth
     pcloud
     kitty
-    gnome-logs
-    gnome-music
-    gnomeExtensions.blur-my-shell
-    gnome-shell
-    gnome-extensions-cli
-    catppuccin-gtk
+    gparted
     # cura
     anki
     arduino
@@ -70,7 +65,14 @@
     stremio
     catppuccinifier-gui
     ark # p7zip frontend
-    ## other ##
+    ####### other #######
     nerdfonts
+    ####### gnome #######
+    gnome-logs
+    gnome-music
+    gnomeExtensions.blur-my-shell
+    gnome-shell
+    gnome-extensions-cli
+    catppuccin-gtk
   ];
 }
