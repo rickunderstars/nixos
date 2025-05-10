@@ -44,19 +44,19 @@
         			cd /etc/nixos
         			'';
       onedrive-status = ''
-        			systemctl status my-onedrive.service
+        			systemctl --user status onedrive.service
         			'';
       onedrive-start = ''
-        			sudo systemctl start my-onedrive.service
+        			systemctl --user start onedrive.service
         			'';
       onedrive-stop = ''
-        			sudo systemctl stop my-onedrive.service
+        			systemctl --user stop onedrive.service
         			'';
       onedrive-restart = ''
-        			sudo systemctl restart my-onedrive.service
+        			systemctl --user restart onedrive.service
         			'';
       onedrive-log = ''
-        			journalctl -u my-onedrive.service -f
+        			journalctl --user -u onedrive.service -f
         			'';
     };
 

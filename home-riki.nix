@@ -22,6 +22,7 @@
     ./home-modules/broot/broot.nix
     ./home-modules/imv.nix
     ./home-modules/mpv.nix
+    ./home-modules/onedrive.nix
   ];
 
   # env variables

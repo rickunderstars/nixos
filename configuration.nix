@@ -40,27 +40,6 @@ in
   # For faster startup
   systemd.services."NetworkManager-wait-online".enable = false;
 
-  systemd.services.my-onedrive = {
-    description = "Custom OneDrive Service for Riki";
-
-    after = [
-      "network-online.target"
-      "graphical.target"
-    ];
-    wants = [ "network-online.target" ];
-
-    serviceConfig = {
-      User = "riki";
-      Group = "users";
-      ExecStart = "${pkgs.onedrive}/bin/onedrive --monitor";
-      Restart = "on-failure";
-      RestartSec = "10s";
-      WorkingDirectory = "/home/riki";
-      Environment = "HOME=/home/riki";
-    };
-    wantedBy = [ "multi-user.target" ];
-  };
-
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -187,7 +166,6 @@ in
     neovim
     git
     fish
-    onedrive
     gamemode
     nix-your-shell
   ];

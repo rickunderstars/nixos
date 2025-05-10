@@ -23,6 +23,7 @@
     cava
     tty-clock
     catppuccin
+    onedrive
     ## programming languages ##
     nixfmt-rfc-style
     go
