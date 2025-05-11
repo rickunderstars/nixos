@@ -73,7 +73,7 @@ in
   };
 
   # disable gnome power profile management
-  services.power-profiles-daemon.enable = false;
+  services.power-profiles-daemon.enable = false; # to-remove
 
   # power profile management
   services.tlp = {
@@ -98,8 +98,14 @@ in
     videoDrivers = [ "amdgpu" ];
 
     # Enable the GNOME Desktop Environment
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true; # to-remove
+    desktopManager.gnome.enable = true; # to-remove
+
+    # Enable hyprland
+    # programs.hyprland.enable = true;
+    # environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    # wayland.windowManager.hyprland.systemd.enable = false;
+    # programs.hyprland.withUWSM = true;
   };
 
   # Configure keymap in X11

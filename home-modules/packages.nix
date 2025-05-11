@@ -7,6 +7,7 @@
 
 {
   home.packages = with pkgs; [
+
     ####### cli #######
     gitflow
     bat
@@ -24,6 +25,8 @@
     tty-clock
     catppuccin
     onedrive
+    nerdfonts
+
     ####### programming languages #######
     nixfmt-rfc-style
     go
@@ -38,6 +41,7 @@
     python312Packages.pip
     rustc
     cargo
+
     ####### gui #######
     vscodium
     google-chrome
@@ -50,7 +54,7 @@
     # cura
     anki
     arduino
-    discord
+    discord # to-remove
     godot_4
     itch
     meshlab
@@ -64,15 +68,46 @@
     qpdfview
     stremio
     catppuccinifier-gui
-    ark # p7zip frontend
-    ####### other #######
-    nerdfonts
+    ark
+
     ####### gnome #######
-    gnome-logs
-    gnome-music
-    gnomeExtensions.blur-my-shell
-    gnome-shell
-    gnome-extensions-cli
-    catppuccin-gtk
+    gnome-logs # to-remove
+    gnome-music # to-remove
+    gnomeExtensions.blur-my-shell # to-remove
+    gnome-shell # to-remove
+    gnome-extensions-cli # to-remove
+    catppuccin-gtk # to-remove
+
+    ####### hyprland #######
+    # aquamarine
+    # hyprlang
+    # hyprcursor
+    # hyprutils
+    # uwsm
+    # greetd.greetd
+    # greetd.regreet
+    # wireplumber
+    # dunst
+    # waybar
+    # hyprpaper
+    # xdg-desktop-portal-hyprland
+    # xwayland
+    # rofi-wayland
+    # webcord
+    # hyprpicker
+    # clipse
+    # nautilus
+    # nautilus-open-any-terminal
+    # hyprsome
+    # networkmanagerapplet
+    # udiskie
+    # hyprpolkitagent
+    # hypridle
+    # hyprlock
+    # hyprcursor
+    # hyprutils
+    # hyprwayland-scanner
+    # hyprland-monitor-attached
+    # hyprland-workspaces
   ];
 }
