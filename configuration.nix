@@ -57,69 +57,68 @@
     LC_TELEPHONE = "it_IT.UTF-8";
   };
 
-  # disable gnome power profile management
-  services.power-profiles-daemon.enable = false; # to-remove
+  services = {
+    # disable gnome power profile management
+    power-profiles-daemon.enable = false;
 
-  # power profile management
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_performance";
+    # power profile management
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_performance";
 
-      START_CHARGE_THRESH_BAT0 = 0;
-      STOP_CHARGE_THRESH_BAT0 = 0;
+        START_CHARGE_THRESH_BAT0 = 0;
+        STOP_CHARGE_THRESH_BAT0 = 0;
 
-      START_CHARGE_THRESH_BAT1 = 0;
-      STOP_CHARGE_THRESH_BAT1 = 0;
+        START_CHARGE_THRESH_BAT1 = 0;
+        STOP_CHARGE_THRESH_BAT1 = 0;
+      };
     };
-  };
 
-  services.xserver = {
-    # Enable the X11 windowing system
-    enable = true;
+    xserver = {
+      # Enable the X11 windowing system
+      enable = true;
 
-    # AMD video drivers
-    videoDrivers = [ "amdgpu" ];
+      # AMD video drivers
+      videoDrivers = [ "amdgpu" ];
 
-    # Enable the GNOME Desktop Environment
-    displayManager.gdm.enable = true; # to-remove
-    desktopManager.gnome.enable = true; # to-remove
+      # Enable the GNOME Desktop Environment
+      displayManager.gdm.enable = true; # to-remove
+      desktopManager.gnome.enable = true; # to-remove
+    };
 
-    # Enable hyprland
-    # programs.hyprland.enable = true;
-    # environment.sessionVariables.NIXOS_OZONE_WL = "1";
-    # wayland.windowManager.hyprland.systemd.enable = false;
-    # programs.hyprland.withUWSM = true;
-  };
+    # Configure keymap in X11
+    xserver.xkb = {
+      layout = "us";
+      variant = "intl";
+    };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "intl";
+    # Enable CUPS to print documents.
+    printing.enable = true;
+
+    # Enable sound with pipewire.
+    pulseaudio.enable = false;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
+
+      # use the example session manager (no others are packaged yet so this is enabled by default,
+      # no need to redefine it in your config for now)
+      #media-session.enable = true;
+    };
+
   };
 
   # Configure console keymap
   console.keyMap = "us-acentos";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -197,5 +196,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
