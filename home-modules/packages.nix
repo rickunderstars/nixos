@@ -5,6 +5,20 @@
   ...
 }:
 
+let
+  py-env = pkgs.python3.withPackages (
+    ps: with ps; [
+      jupyterlab
+      notebook
+      ipykernel
+      pandas
+      numpy
+      matplotlib
+      scikit-learn
+      requests
+    ]
+  );
+in
 {
   home.packages = with pkgs; [
 
@@ -36,9 +50,7 @@
     cmake
     gradle
     openjdk
-    python3
-    pipx
-    python312Packages.pip
+    py-env
     rustc
     cargo
 

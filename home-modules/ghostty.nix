@@ -14,7 +14,7 @@
       font-family = "CaskaydiaCove Nerd Font Mono";
       font-size = 12;
       theme = "catppuccin-mocha";
-      background-opacity = 0.95;
+      background-opacity = 1.0;
       background-blur = true; # not working
       mouse-hide-while-typing = true;
       mouse-scroll-multiplier = 0.7;
