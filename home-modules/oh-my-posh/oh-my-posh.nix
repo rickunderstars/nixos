@@ -1,13 +1,14 @@
 {
-  confing,
   pkgs,
   lib,
+  config,
+  inputs,
   ...
 }:
 
 let
-  my-theme = /etc/nixos/home-modules/oh-my-posh/theme.omp.json;
-  my-nix-shell-theme = /etc/nixos/home-modules/oh-my-posh/theme-nix-shell.omp.json;
+  my-theme = ./theme.omp.json;
+  my-nix-shell-theme = ./theme-nix-shell.omp.json;
   path-exists = builtins.pathExists my-theme;
   path-nix-shell-exists = builtins.pathExists my-nix-shell-theme;
 in
@@ -25,7 +26,7 @@ in
         }
       else
         {
-          theme = "di4am0nd";
+          useTheme = "di4am0nd";
         }
     );
 }

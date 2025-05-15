@@ -1,7 +1,8 @@
 {
-  config,
   pkgs,
   lib,
+  config,
+  inputs,
   ...
 }:
 
@@ -38,8 +39,7 @@ in
     cava
     tty-clock
     catppuccin
-    onedrive
-    nerdfonts
+    nerd-fonts.caskaydia-cove
 
     ####### programming languages #######
     nixfmt-rfc-style
@@ -66,7 +66,7 @@ in
     # cura
     anki
     arduino
-    discord # to-remove
+    discord
     godot_4
     itch
     meshlab
@@ -80,46 +80,14 @@ in
     qpdfview
     stremio
     catppuccinifier-gui
-    ark
+    libsForQt5.ark
 
     ####### gnome #######
-    gnome-logs # to-remove
-    gnome-music # to-remove
-    gnomeExtensions.blur-my-shell # to-remove
-    gnome-shell # to-remove
-    gnome-extensions-cli # to-remove
-    catppuccin-gtk # to-remove
-
-    ####### hyprland #######
-    # aquamarine
-    # hyprlang
-    # hyprcursor
-    # hyprutils
-    # uwsm
-    # greetd.greetd
-    # greetd.regreet
-    # wireplumber
-    # dunst
-    # waybar
-    # hyprpaper
-    # xdg-desktop-portal-hyprland
-    # xwayland
-    # rofi-wayland
-    # webcord
-    # hyprpicker
-    # clipse
-    # nautilus
-    # nautilus-open-any-terminal
-    # hyprsome
-    # networkmanagerapplet
-    # udiskie
-    # hyprpolkitagent
-    # hypridle
-    # hyprlock
-    # hyprcursor
-    # hyprutils
-    # hyprwayland-scanner
-    # hyprland-monitor-attached
-    # hyprland-workspaces
+    gnome-logs
+    gnome-music
+    gnomeExtensions.blur-my-shell
+    gnome-shell
+    gnome-extensions-cli
+    catppuccin-gtk
   ];
 }

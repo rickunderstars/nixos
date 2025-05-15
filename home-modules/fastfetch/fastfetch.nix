@@ -1,12 +1,13 @@
 {
-  config,
   pkgs,
   lib,
+  config,
+  inputs,
   ...
 }:
 
 let
-  logo-src = /etc/nixos/home-modules/fastfetch/marcille-cry.jpg;
+  logo-src = ./marcille-cry.jpg;
   logo-options =
     if builtins.pathExists logo-src then
       {

@@ -3,39 +3,24 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
-  config,
   pkgs,
   lib,
+  config,
+  inputs,
   ...
 }:
 
-# Packages from nix-unstable channel
-let
-  unstable = import <nixos-unstable> {
-    config = config.nixpkgs.config;
-  };
-in
 {
-
   # enable flakes
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  nixpkgs.overlays = [
-    (self: super: {
-      onedrive = unstable.onedrive;
-    })
-  ];
-
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    <home-manager/nixos>
   ];
-
-  home-manager.backupFileExtension = "backup";
 
   # For faster startup
   systemd.services."NetworkManager-wait-online".enable = false;
@@ -151,6 +136,7 @@ in
   };
 
   home-manager = {
+    backupFileExtension = "backup";
     useGlobalPkgs = true;
     useUserPackages = true;
     users.riki = import ./home-riki.nix;

@@ -1,7 +1,8 @@
 {
-  confing,
   pkgs,
   lib,
+  config,
+  inputs,
   ...
 }:
 
@@ -18,6 +19,6 @@
 
   };
   home.file.".config/btop/themes/catppuccin_mocha.theme" = {
-    source = /etc/nixos/home-modules/btop/catppuccin_mocha.theme;
+    source = ./catppuccin_mocha.theme;
   };
 }

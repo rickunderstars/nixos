@@ -1,10 +1,10 @@
 {
-  config,
   pkgs,
   lib,
+  config,
+  inputs,
   ...
 }:
-
 {
   programs.mpv = {
     enable = true;
