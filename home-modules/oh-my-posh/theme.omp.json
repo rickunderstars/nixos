@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-	"version": 3,
+	"version": 2,
 	"final_space": false,
 	"shell_integration": true,
 	"console_title_template": "{{ .PWD }}",
@@ -75,21 +75,19 @@
 					"type": "git",
 					"style": "plain",
 					"foreground": "p:git",
-					"template": "<#b4befe>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
-					"properties": {
-						"branch_icon": "\ue725 ",
-						"cherry_pick_icon": "\ue29b ",
-						"commit_icon": "\uf417 ",
-						"fetch_status": false,
-						"fetch_stash_count": false,
-						"fetch_upstream_icon": false,
-						"merge_icon": "\ue727 ",
-						"no_commits_icon": "\uf0c3 ",
-						"rebase_icon": "\ue728 ",
-						"revert_icon": "\uf0e2 ",
-						"tag_icon": "\uf412 ",
-						"enable_cache": false
-					}
+					"branch_icon": "\ue725 ",
+					"cherry_pick_icon": "\ue29b ",
+					"commit_icon": "\uf417 ",
+					"fetch_status": true,
+					"fetch_stash_count": false,
+					"fetch_upstream_icon": false,
+					"merge_icon": "\ue727 ",
+					"no_commits_icon": "\uf0c3 ",
+					"rebase_icon": "\ue728 ",
+					"revert_icon": "\uf0e2 ",
+					"tag_icon": "\uf412 ",
+					"enable_cache": true,
+					"template": "<#b4befe>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} "
 				},
 				{
 					"type": "docker",
@@ -154,12 +152,18 @@
 			"type": "rprompt",
 			"segments": [
 				{
+					"type": "text",
+					"style": "plain",
+					"foreground": "p:sapphire",
+					"template": "{{ if .Env.DEV_ENV_NAME }}[{{ .Env.DEV_ENV_NAME }}]{{ end }}"
+				},
+				{
 					"type": "time",
 					"alignment": "right",
 					"foreground": "p:time",
 					"style": "diamond",
 					"properties": {
-						"time_format": "15:04:05"
+						"time_format": "15:04:05 "
 					},
 					"trailing_diamond": " "
 				}

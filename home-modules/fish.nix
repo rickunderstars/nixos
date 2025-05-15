@@ -65,6 +65,10 @@
       nrs = "sudo nixos-rebuild switch --show-trace";
       cls = "clear";
       ff = "clear;fastfetch";
+
+      # shells
+      gopxl = "nix develop /etc/nixos#gopxlDev";
+      stat = "nix develop /etc/nixos#statDev";
     };
   };
 }

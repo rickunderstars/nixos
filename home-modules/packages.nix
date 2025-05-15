@@ -40,6 +40,7 @@ in
     tty-clock
     catppuccin
     nerd-fonts.caskaydia-cove
+    nix-your-shell
 
     ####### programming languages #######
     nixfmt-rfc-style

@@ -134,13 +134,6 @@
     shell = pkgs.fish;
   };
 
-  home-manager = {
-    backupFileExtension = "backup";
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.riki = import ./home-riki.nix;
-  };
-
   # Enable fish (shell)
   programs.fish.enable = true;
 
@@ -158,7 +151,7 @@
     git
     fish
     gamemode
-    nix-your-shell
+
   ];
 
   # Steam
