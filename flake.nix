@@ -1,5 +1,5 @@
 {
-  description = "tars system flake";
+  description = "system flake";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
@@ -24,7 +24,7 @@
           inherit inputs;
         };
         modules = [
-          ./configuration.nix
+          ./hosts/tars/configuration.nix
           home-manager.nixosModules.home-manager
           (
             { pkgs, ... }:
@@ -33,9 +33,8 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 backupFileExtension = "backup";
-
                 users.riki = {
-                  imports = [ ./home-riki.nix ];
+                  imports = [ ./users/riki/home.nix ];
                 };
               };
             }

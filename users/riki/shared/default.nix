@@ -6,43 +6,23 @@
   ...
 }:
 
-let
-  py-env = pkgs.python3.withPackages (
-    ps: with ps; [
-      jupyterlab
-      notebook
-      ipykernel
-      pandas
-      numpy
-      matplotlib
-      scikit-learn
-      requests
-    ]
-  );
-in
 {
   home.packages = with pkgs; [
 
     ####### cli #######
-    gitflow
     bat
     ookla-speedtest
     zip
     unzip
-    graphviz
-    plantuml
-    p7zip
     cbonsai
     pfetch
     cmatrix
     pipes
     cava
     tty-clock
-    catppuccin
-    nerd-fonts.caskaydia-cove
-    nix-your-shell
 
-    ####### programming languages #######
+    ####### programming #######
+    gitflow
     nixfmt-rfc-style
     go
     gcc
@@ -51,7 +31,7 @@ in
     cmake
     gradle
     openjdk
-    py-env
+    python3
     rustc
     cargo
 
@@ -90,5 +70,14 @@ in
     gnome-shell
     gnome-extensions-cli
     catppuccin-gtk
+
+    ####### other #######
+    catppuccin
+    nerd-fonts.caskaydia-cove
+    nix-your-shell
+    graphviz
+    plantuml
+    p7zip
+
   ];
 }

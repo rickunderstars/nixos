@@ -7,7 +7,7 @@
 }:
 
 let
-  logo-src = ./marcille-cry.jpg;
+  logo-src = ./logo.jpg;
   logo-options =
     if builtins.pathExists logo-src then
       {

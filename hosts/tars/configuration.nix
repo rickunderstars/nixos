@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
   pkgs,
   lib,
@@ -18,32 +14,32 @@
   ];
 
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
-  # For faster startup
+  # for faster startup
   systemd.services."NetworkManager-wait-online".enable = false;
 
-  # Bootloader
+  # bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest; # keyboard  fix (key repeat)
 
-  networking.hostName = "tars"; # Define your hostname.
+  # hostname
+  networking.hostName = "tars";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
+  # enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
+  # set time zone
   time.timeZone = "Europe/Rome";
 
-  # Select internationalisation properties.
+  # select internationalisation properties
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -61,7 +57,7 @@
     # disable gnome power profile management
     power-profiles-daemon.enable = false;
 
-    # power profile management
+    # enable tlp power profile management
     tlp = {
       enable = true;
       settings = {
@@ -77,27 +73,27 @@
     };
 
     xserver = {
-      # Enable the X11 windowing system
+      # enable the X11 windowing system
       enable = true;
 
-      # AMD video drivers
+      # amd video drivers
       videoDrivers = [ "amdgpu" ];
 
-      # Enable the GNOME Desktop Environment
-      displayManager.gdm.enable = true; # to-remove
-      desktopManager.gnome.enable = true; # to-remove
+      # enable the gnome desktop environment
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
     };
 
-    # Configure keymap in X11
+    # configure keymap in x11
     xserver.xkb = {
       layout = "us";
       variant = "intl";
     };
 
-    # Enable CUPS to print documents.
+    # enable cups to print documents
     printing.enable = true;
 
-    # Enable sound with pipewire.
+    # enable sound with pipewire
     pulseaudio.enable = false;
 
     pipewire = {
@@ -115,7 +111,7 @@
 
   };
 
-  # Configure console keymap
+  # configure console keymap
   console.keyMap = "us-acentos";
 
   security.rtkit.enable = true;
@@ -123,7 +119,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # user account
   users.users.riki = {
     isNormalUser = true;
     description = "riki";
@@ -134,17 +130,16 @@
     shell = pkgs.fish;
   };
 
-  # Enable fish (shell)
+  # enable fish
   programs.fish.enable = true;
 
-  # Enable gamemode
+  # enable gamemode
   programs.gamemode.enable = true;
 
-  # Allow unfree packages
+  # allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # system packages
   environment.systemPackages = with pkgs; [
     wget
     neovim
@@ -154,13 +149,13 @@
 
   ];
 
-  # Steam
+  # steam
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game transfers
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
