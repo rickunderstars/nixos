@@ -24,6 +24,7 @@
     ./shared/broot
     ./shared/imv
     ./shared/mpv
+    ./shared/cava
 
   ];
 

@@ -18,7 +18,6 @@
     pfetch
     cmatrix
     pipes
-    cava
     tty-clock
 
     ####### programming #######
