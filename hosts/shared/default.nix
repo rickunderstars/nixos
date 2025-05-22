@@ -7,18 +7,27 @@
 }:
 
 {
-  # enable flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  # for faster startup
-  systemd.services."NetworkManager-wait-online".enable = false;
+  nix = {
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
+      auto-optimise-store = true;
+      warn-dirty = false;
+    };
+  };
 
   # bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # for faster startup
+  systemd.services."NetworkManager-wait-online".enable = false;
 
   # enable networking
   networking.networkmanager.enable = true;
@@ -108,6 +117,18 @@
     git
     fish
     gamemode
+    gparted
+    gnome-shell
+
+    ####### theming #######
+    catppuccin-gtk
+    catppuccin
+    catppuccin-cursors.mochaDark
+    gnomeExtensions.blur-my-shell
+  ];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.caskaydia-cove
   ];
 
   # steam

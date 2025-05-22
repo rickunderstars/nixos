@@ -23,7 +23,6 @@
     plantuml
 
     ####### gui tools #######
-    gparted
     catppuccinifier-gui
     obs-studio
 
@@ -85,18 +84,7 @@
     obsidian
     onlyoffice-desktopeditors
     qpdfview
-
-    ####### theming #######
-    gnome-logs
-    gnome-music
-    gnomeExtensions.blur-my-shell
-    gnome-shell
-    gnome-extensions-cli
-    catppuccin-gtk
-    catppuccin
-    catppuccin-cursors.mochaDark
-    nerd-fonts.caskaydia-cove
-
+    zathura
   ];
 
   imports = [
