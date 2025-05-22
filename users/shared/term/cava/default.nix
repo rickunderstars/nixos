@@ -10,7 +10,6 @@
   programs.cava = {
     enable = true;
     settings = {
-      general.framerate = 120;
       color = {
         gradient = 1;
 

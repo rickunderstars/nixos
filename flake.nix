@@ -37,7 +37,10 @@
                 useUserPackages = true;
                 backupFileExtension = "backup";
                 users.riki = {
-                  imports = [ ./users/riki/home.nix ];
+                  imports = [
+                    ./users/riki/home.nix
+                    ./users/riki/tars/home.nix
+                  ];
                 };
               };
             }
