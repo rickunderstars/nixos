@@ -12,6 +12,11 @@
     ../shared
   ];
 
+  # boot.loader = {
+  #   grub.gfxmodeEfi = "2880x1800";
+  #   grub.fontSize = 70;
+  # };
+
   # keyboard  fix (key repeat)
   boot.kernelPackages = pkgs.linuxPackages_latest;
 

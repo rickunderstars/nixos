@@ -22,20 +22,26 @@
     };
   };
 
-  # bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = false;
+    efi.canTouchEfiVariables = true;
+    grub.enable = true;
+    grub.efiSupport = true;
+    grub.device = "nodev";
+    grub.useOSProber = true;
+    grub.theme = pkgs.catppuccin-grub.override {
+      flavor = "mocha";
+    };
+    # grub.font = "${pkgs.nerd-fonts.caskaydia-cove}/share/fonts/truetype/NerdFonts/CaskaydiaCove/CaskaydiaCoveNerdFontMono-BoldItalic.ttf";
+  };
 
   # for faster startup
   systemd.services."NetworkManager-wait-online".enable = false;
 
-  # enable networking
   networking.networkmanager.enable = true;
 
-  # set time zone
   time.timeZone = "Europe/Rome";
 
-  # select internationalisation properties
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -51,24 +57,19 @@
 
   services = {
     xserver = {
-      # enable the X11 windowing system
       enable = true;
 
-      # enable the gnome desktop environment
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
 
-      # configure keymap in x11
       xkb = {
         layout = "us";
         variant = "intl";
       };
     };
 
-    # enable cups to print documents
     printing.enable = true;
 
-    # enable sound with pipewire
     pulseaudio.enable = false;
 
     pipewire = {
@@ -85,12 +86,10 @@
     };
   };
 
-  # configure console keymap
   console.keyMap = "us-acentos";
 
   security.rtkit.enable = true;
 
-  # user account
   users.users.riki = {
     isNormalUser = true;
     description = "riki";
@@ -101,22 +100,19 @@
     shell = pkgs.fish;
   };
 
-  # enable fish
   programs.fish.enable = true;
 
-  # enable gamemode
   programs.gamemode.enable = true;
 
-  # allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # system packages
   environment.systemPackages = with pkgs; [
     wget
     neovim
     git
     fish
     gamemode
+    os-prober
     gparted
     gnome-shell
 
@@ -131,7 +127,6 @@
     nerd-fonts.caskaydia-cove
   ];
 
-  # steam
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
