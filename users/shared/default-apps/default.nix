@@ -54,17 +54,9 @@
       "x-scheme-handler/about" = [ "google-chrome.desktop" ];
       "x-scheme-handler/unknown" = [ "google-chrome.desktop" ];
       "text/x-arduino" = [ "arduino-arduinoide.desktop" ];
-      "application/zip" = [ "ark.desktop" ];
       "application/pdf" = [ "qpdfview.desktop" ];
       "model/stl" = [ "meshlab.desktop" ];
       "model/obj" = [ "meshlab.desktop" ];
-      "application/x-tar" = [ "ark.desktop" ];
-      "application/gzip" = [ "ark.desktop" ];
-      "application/x-bzip2" = [ "ark.desktop" ];
-      "application/x-xz" = [ "ark.desktop" ];
-      "application/x-7z-compressed" = [ "ark.desktop" ];
-      "application/vnd.rar" = [ "ark.desktop" ];
-
     };
 
     associations.added = {

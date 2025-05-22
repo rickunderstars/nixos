@@ -4,12 +4,15 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    my-dev-shells.url = "./dev-shells";
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
+      my-dev-shells,
       ...
     }@inputs:
     let
@@ -43,52 +46,7 @@
         ];
       };
 
-      devShells.${system} = {
+      devShells.${system} = my-dev-shells.devShells.${system};
 
-        # global gopxl shell
-        gopxlDev = pkgs.mkShell {
-          name = "gopxl-shell";
-          buildInputs = with pkgs; [
-            go
-            gopls
-            pkg-config
-            fish
-            xorg.libX11
-            xorg.libXcursor
-            xorg.libXrandr
-            xorg.libXinerama
-            xorg.libXi
-            xorg.libXxf86vm
-            wayland
-            libGL
-          ];
-          shellHook = ''
-            export DEV_ENV_NAME="gopxl-dev-env"
-          '';
-        };
-
-        # global python shell for statistics
-        statDev = pkgs.mkShell {
-          name = "py-stat-shell";
-          buildInputs = with pkgs; [
-            python3
-            python3Packages.pip
-            python3Packages.virtualenv
-            python3Packages.jupyter
-            python3Packages.numpy
-            python3Packages.pandas
-            python3Packages.matplotlib
-            python3Packages.graphviz
-            python3Packages.scipy
-            python3Packages.scikit-learn
-            # python3Packages.rogeriopradoj-paretochart
-            python3Packages.statsmodels
-            python3Packages.ipywidgets
-          ];
-          shellHook = ''
-            export DEV_ENV_NAME="stat-dev-env"
-          '';
-        };
-      };
     };
 }

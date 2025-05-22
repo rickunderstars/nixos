@@ -20,10 +20,6 @@
       		'';
     functions = {
       ll = "ls -alh";
-      update = ''
-        			echo "Starting NixOS and Home Manager Update..."
-        			sudo nix-channel --update && sudo nixos-rebuild switch && echo "Update completed!"
-        			'';
       br = ''
         			set -l cmd_file (mktemp)
         			if broot --outcmd $cmd_file $argv
@@ -42,7 +38,7 @@
         			sudo shutdown now
         			'';
       config = ''
-        			cd /etc/nixos
+        			cd ~/nixos-config
         			'';
       onedrive-status = ''
         			systemctl --user status onedrive.service
@@ -62,13 +58,13 @@
     };
 
     shellAbbrs = {
-      nrs = "sudo nixos-rebuild switch --show-trace";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#tars --show-trace";
       cls = "clear";
       ff = "clear;fastfetch";
 
       # shells
-      gopxl = "nix develop /etc/nixos#gopxlDev";
-      stat = "nix develop /etc/nixos#statDev";
+      gopxl = "nix develop ~/nixos-config#gopxlDev";
+      stat = "nix develop ~/nixos-config#statDev";
     };
   };
 }
