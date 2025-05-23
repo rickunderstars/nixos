@@ -57,6 +57,7 @@
     ####### games #######
     godot_4
     itch
+    heroic
 
     ####### 3d #######
     # cura

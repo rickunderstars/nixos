@@ -19,6 +19,7 @@
 
   # keyboard  fix (key repeat)
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
   # hostname
   networking.hostName = "tars";

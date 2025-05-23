@@ -112,6 +112,7 @@
     git
     fish
     gamemode
+    gamescope
     os-prober
     gparted
     gnome-shell
