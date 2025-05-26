@@ -45,7 +45,12 @@
     };
 
     # amd video drivers
-    xserver.videoDrivers = [ "amdgpu" ];
+    xserver = {
+      videoDrivers = [ "amdgpu" ];
+      deviceSection = ''
+        		Option "VariableRefresh" "false"
+        	  '';
+    };
 
   };
 
