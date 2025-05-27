@@ -16,6 +16,10 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.kernelModules = [ "amdgpu" ];
 
+  ### disable psr, could work or break everything
+  # boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
+  ###
+
   # hostname
   networking.hostName = "tars";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

@@ -7,6 +7,9 @@
 }:
 
 {
+
+  hardware.enableRedistributableFirmware = true;
+
   nix = {
     settings = {
       experimental-features = [
