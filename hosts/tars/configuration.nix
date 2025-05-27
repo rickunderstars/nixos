@@ -17,8 +17,7 @@
   boot.initrd.kernelModules = [ "amdgpu" ];
 
   ### disable psr, could work or break everything
-  # boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
-  ###
+  boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
 
   # hostname
   networking.hostName = "tars";
