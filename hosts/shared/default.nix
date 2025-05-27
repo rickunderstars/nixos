@@ -32,7 +32,6 @@
     grub.theme = pkgs.catppuccin-grub.override {
       flavor = "mocha";
     };
-    # grub.font = "${pkgs.nerd-fonts.caskaydia-cove}/share/fonts/truetype/NerdFonts/CaskaydiaCove/CaskaydiaCoveNerdFontMono-BoldItalic.ttf";
   };
 
   # for faster startup

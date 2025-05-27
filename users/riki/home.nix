@@ -21,6 +21,7 @@
     nix-your-shell
     graphviz
     plantuml
+    wl-clipboard
 
     ####### gui tools #######
     catppuccinifier-gui
