@@ -59,6 +59,7 @@
 
     shellAbbrs = {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#tars --show-trace";
+      nrsp = "sudo nixos-rebuild switch --flake ~/nixos-config#tars --show-trace -p";
       cls = "clear";
       ff = "clear;fastfetch";
 

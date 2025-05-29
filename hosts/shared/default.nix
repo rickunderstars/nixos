@@ -32,9 +32,6 @@
     grub.efiSupport = true;
     grub.device = "nodev";
     grub.useOSProber = true;
-    grub.theme = pkgs.catppuccin-grub.override {
-      flavor = "mocha";
-    };
   };
 
   # for faster startup

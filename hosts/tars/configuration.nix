@@ -11,10 +11,11 @@
     ./hardware-configuration.nix
     ../shared
   ];
-
   # keyboard  fix (key repeat)
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.kernelModules = [ "amdgpu" ];
+
+  boot.loader.grub.theme = ./grub-theme/catppuccin-mocha-grub-theme;
 
   ### disable psr, could work or break everything
   boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
