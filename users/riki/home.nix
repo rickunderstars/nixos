@@ -61,7 +61,8 @@
     heroic
 
     ####### 3d #######
-    # cura
+    prusa-slicer
+    openscad
     meshlab
     wings
 
