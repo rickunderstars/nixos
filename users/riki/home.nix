@@ -88,6 +88,9 @@
     onlyoffice-desktopeditors
     qpdfview
     zathura
+
+    ####### gnome #######
+    gnome-shell-extensions
   ];
 
   imports = [
