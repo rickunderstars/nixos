@@ -14,7 +14,6 @@
   home.packages = with pkgs; [
 
     ####### cli tools #######
-    bat
     ookla-speedtest
     zip
     unzip
@@ -22,6 +21,8 @@
     graphviz
     plantuml
     wl-clipboard
+    tldr
+    nix-output-monitor
 
     ####### gui tools #######
     catppuccinifier-gui
@@ -70,7 +71,6 @@
     google-chrome
 
     ####### login #######
-    bitwarden-desktop
     ente-auth
 
     ####### cloud #######
@@ -107,6 +107,7 @@
     ../shared/term/fish
     ../shared/term/ghostty
     ../shared/term/oh-my-posh
+    ../shared/term/bat
   ];
 
   # env variables

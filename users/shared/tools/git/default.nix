@@ -12,5 +12,16 @@
     userName = "riki";
     userEmail = "rickunderstars@gmail.com";
     extraConfig.init.defaultBranch = "main";
+    delta = {
+      enable = true;
+      options = {
+        features = "catppuccin-mocha";
+      };
+    };
+    includes = [
+      {
+        path = ./catppuccin.gitconfig;
+      }
+    ];
   };
 }
