@@ -9,11 +9,11 @@
 {
   programs.bat = {
     enable = true;
-    #config = {
-    #  theme = "MyTheme";
-    #};
-    #themes = {
-    # MyTheme = ./catppuccin-mocha.tmTheme;
-    #};
+    themes = {
+      catppuccin-mocha = builtins.readFile ./catppuccin-mocha.tmTheme;
+    };
+    config = {
+      theme = "catppuccin-mocha";
+    };
   };
 }

@@ -16,6 +16,7 @@
       enable = true;
       options = {
         features = "catppuccin-mocha";
+        side-by-side = true;
       };
     };
     includes = [
