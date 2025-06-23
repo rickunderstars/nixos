@@ -69,6 +69,7 @@
 
     ####### browsers #######
     google-chrome
+    firefox
 
     ####### login #######
     ente-auth
