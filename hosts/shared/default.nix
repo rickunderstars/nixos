@@ -28,10 +28,13 @@
   boot.loader = {
     systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;
-    grub.enable = true;
-    grub.efiSupport = true;
-    grub.device = "nodev";
-    grub.useOSProber = true;
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      useOSProber = true;
+      theme = ./grub-theme/catppuccin-mocha-grub-theme;
+    };
   };
 
   # for faster startup

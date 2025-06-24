@@ -9,7 +9,6 @@
 {
   home.username = "riki";
   home.homeDirectory = "/home/riki";
-  home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
 
