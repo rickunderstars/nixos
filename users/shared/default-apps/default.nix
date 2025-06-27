@@ -47,12 +47,12 @@
       "text/x-shellscript" = [ "codium.desktop" ];
       "text/css" = [ "codium.desktop" ];
       "application/javascript" = [ "codium.desktop" ];
-      "text/html" = [ "google-chrome.desktop" ];
-      "application/xhtml+xml" = [ "google-chrome.desktop" ];
-      "x-scheme-handler/http" = [ "google-chrome.desktop" ];
-      "x-scheme-handler/https" = [ "google-chrome.desktop" ];
-      "x-scheme-handler/about" = [ "google-chrome.desktop" ];
-      "x-scheme-handler/unknown" = [ "google-chrome.desktop" ];
+      "text/html" = [ "firefox.desktop" ];
+      "application/xhtml+xml" = [ "firefox.desktop" ];
+      "x-scheme-handler/http" = [ "firefox.desktop" ];
+      "x-scheme-handler/https" = [ "firefox.desktop" ];
+      "x-scheme-handler/about" = [ "firefox.desktop" ];
+      "x-scheme-handler/unknown" = [ "firefox.desktop" ];
       "text/x-arduino" = [ "arduino-arduinoide.desktop" ];
       "application/pdf" = [ "qpdfview.desktop" ];
       "model/stl" = [ "meshlab.desktop" ];
@@ -60,7 +60,7 @@
     };
 
     associations.added = {
-      "application/pdf" = [ "google-chrome.desktop" ];
+      "application/pdf" = [ "firefox.desktop" ];
     };
   };
 }

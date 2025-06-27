@@ -59,6 +59,7 @@
     godot_4
     itch
     heroic
+    retroarch
 
     ####### 3d #######
     prusa-slicer
