@@ -10,6 +10,8 @@
 
   hardware.enableRedistributableFirmware = true;
 
+  hardware.openrazer.enable = true;
+
   nix = {
     settings = {
       experimental-features = [
@@ -96,6 +98,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "openrazer"
     ];
     shell = pkgs.fish;
   };
@@ -116,6 +119,9 @@
     os-prober
     gparted
     gnome-shell
+    ntfs3g
+    openrazer-daemon
+    polychromatic
 
     ####### theming #######
     catppuccin-gtk

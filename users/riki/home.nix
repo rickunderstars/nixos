@@ -22,6 +22,8 @@
     wl-clipboard
     tldr
     nix-output-monitor
+    progress
+    rsync
 
     ####### gui tools #######
     catppuccinifier-gui

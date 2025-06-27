@@ -63,6 +63,7 @@
       try = "nix-shell -p";
       cls = "clear";
       ff = "clear;fastfetch";
+      here = "pwd | wl-copy; pwd";
 
       # shells
       gopxl = "nix develop ~/nixos-config#gopxlDev";
