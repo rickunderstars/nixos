@@ -62,6 +62,7 @@
     itch
     heroic
     retroarch
+    prismlauncher
 
     ####### 3d #######
     prusa-slicer
