@@ -17,7 +17,6 @@
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia"];
   hardware.nvidia.open = true;
-
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+  
+  system.stateVersion = "25.05";
 }

@@ -16,4 +16,6 @@
     ./term/cava
     ./term/fish
   ];
+
+    home.pointerCursor.size = 64;
 }
