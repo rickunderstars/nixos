@@ -17,5 +17,5 @@
     ./term/fish
   ];
 
-    home.pointerCursor.size = 64;
+  home.pointerCursor.size = 64;
 }
