@@ -18,5 +18,7 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
 
+  time.hardwareClockInLocalTime = true;
+
   system.stateVersion = "25.05";
 }
