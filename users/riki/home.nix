@@ -79,6 +79,7 @@
 
     ####### cloud #######
     pcloud
+    onedrive
 
     ####### media #######
     mpvScripts.uosc
