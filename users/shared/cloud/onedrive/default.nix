@@ -11,7 +11,8 @@
   programs.onedrive = {
     enable = true;
     settings = {
-      monitor_interval = "180";
+      monitor_interval = "5";
+      no_remote_delete = "false";
     };
   };
   systemd.user.services.onedrive = {
