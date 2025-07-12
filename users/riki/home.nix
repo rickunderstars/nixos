@@ -63,6 +63,7 @@
     heroic
     retroarch
     prismlauncher
+    protonup-qt
 
     ####### 3d #######
     prusa-slicer
