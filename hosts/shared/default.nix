@@ -122,6 +122,7 @@
     ntfs3g
     openrazer-daemon
     polychromatic
+    linuxKernel.packages.linux_zen.xone
 
     ####### theming #######
     catppuccin-gtk
@@ -141,6 +142,9 @@
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
   };
+
+  hardware.steam-hardware.enable = true;
+  hardware.xone.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
