@@ -35,7 +35,7 @@
         			cd ~
         			'';
       goodnight = ''
-        			sudo shutdown now
+        			shutdown now
         			'';
       config = ''
         			cd ~/nixos-config
