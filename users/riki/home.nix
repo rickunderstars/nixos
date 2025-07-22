@@ -56,6 +56,7 @@
     telegram-desktop
     whatsapp-for-linux
     discord
+    teams-for-linux
 
     ####### games #######
     godot_4
