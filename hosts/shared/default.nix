@@ -10,7 +10,13 @@
 
   hardware.enableRedistributableFirmware = true;
 
-  hardware.openrazer.enable = true;
+  hardware.openrazer = {
+    enable = true;
+    batteryNotifier = {
+      percentage = 15;
+      frequency = 3600;
+    };
+  };
 
   nix = {
     settings = {
