@@ -50,7 +50,8 @@
     python3
     rustc
     cargo
-    arduino
+    arduino-ide
+    arduino-language-server
 
     ####### communication #######
     telegram-desktop
