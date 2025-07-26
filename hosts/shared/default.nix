@@ -105,6 +105,8 @@
       "networkmanager"
       "wheel"
       "openrazer"
+      "dialout"
+      "uucp"
     ];
     shell = pkgs.fish;
   };
