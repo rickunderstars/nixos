@@ -20,5 +20,8 @@
 
   time.hardwareClockInLocalTime = true;
 
+  boot.kernelParams = [ "amd_pstate=disable" ];
+  services.power-profiles-daemon.enable = true;
+
   system.stateVersion = "25.05";
 }
