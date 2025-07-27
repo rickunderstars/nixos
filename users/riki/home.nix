@@ -24,6 +24,7 @@
     nix-output-monitor
     progress
     rsync
+    pulseaudio
 
     ####### gui tools #######
     catppuccinifier-gui
