@@ -16,6 +16,7 @@
     ./term/audio-switch
     ./term/cava
     ./term/fish
+    ./hyprland
   ];
 
 }

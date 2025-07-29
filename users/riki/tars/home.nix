@@ -15,6 +15,7 @@
   imports = [
     ./term/cava
     ./term/fish
+    ./hyprland
   ];
 
   home.pointerCursor.size = 64;

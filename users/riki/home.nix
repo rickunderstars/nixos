@@ -116,6 +116,7 @@
     ../shared/term/ghostty
     ../shared/term/oh-my-posh
     ../shared/term/bat
+    ../shared/hyprland
   ];
 
   # env variables
