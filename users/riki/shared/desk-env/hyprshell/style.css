@@ -1,0 +1,182 @@
+:root {
+	--rosewater: rgba(245, 224, 220, 1);
+	--flamingo: rgba(242, 205, 205, 1);
+	--pink: rgba(245, 194, 231, 1);
+	--mauve: rgba(203, 166, 247, 1);
+	--red: rgba(243, 139, 168, 1);
+	--maroon: rgba(235, 160, 172, 1);
+	--peach: rgba(250, 179, 135, 1);
+	--yellow: rgba(249, 226, 175, 1);
+	--green: rgba(166, 227, 161, 1);
+	--teal: rgba(148, 226, 213, 1);
+	--sky: rgba(137, 220, 235, 1);
+	--sapphire: rgba(116, 199, 236, 1);
+	--blue: rgba(137, 180, 250, 1);
+	--lavender: rgba(180, 190, 254, 1);
+	--text: rgba(205, 214, 244, 1);
+	--subtext1: rgba(186, 194, 222, 1);
+	--subtext0: rgba(166, 173, 200, 1);
+	--overlay2: rgba(147, 153, 178, 1);
+	--overlay1: rgba(127, 132, 156, 1);
+	--overlay0: rgba(108, 112, 134, 1);
+	--surface2: rgba(88, 91, 112, 1);
+	--surface1: rgba(69, 71, 90, 1);
+	--surface0: rgba(49, 50, 68, 1);
+	--base: rgba(30, 30, 46, 0.9);
+	--mantle: rgba(24, 24, 37, 1);
+	--crust: rgba(17, 17, 27, 1);
+
+	--border-radius: 10px;
+	--border-size: 2px;
+	--border-style: solid;
+
+	--border-color: var(--surface0);
+	--border-color-active: var(--mauve);
+
+	--bg-color: var(--base);
+	--bg-color-hover: var(--surface1);
+
+	--window-padding: 20px;
+	--font-size: 12px;
+}
+
+.window {
+	background-color: var(--base);
+	border-radius: var(--border-radius);
+	border: var(--border-size) var(--border-style) var(--border-color);
+	padding: var(--window-padding);
+	color: var(--text);
+	font-family: "CaskaydiaCove Nerd Font Mono";
+	font-size: var(--font-size);
+}
+
+.monitor {
+	/*
+	margin: 10px 0;
+	padding: 10px;
+	border-radius: calc(var(--border-radius) - 4px);
+	border: 1px solid var(--border-color);
+	*/
+}
+
+.workspace {
+	/*
+	padding: 8px;
+	border-bottom: 2px solid transparent;
+	transition: all 0.2s ease-in-out;
+	*/
+}
+.workspace:hover {
+	/*
+	border-bottom: 2px solid var(--border-color-active);
+	*/
+}
+
+.client {
+	/*
+	background-color: var(--bg-color-hover);
+	border-radius: 8px;
+	padding: 10px;
+	margin: 5px;
+	border-left: 3px solid var(--border-color);
+	transition: all 0.2s ease-in-out;
+	*/
+}
+
+.client-image {
+	/*
+	width: 42px;
+	height: 42px;
+	min-width: 42px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 6px;
+	margin-right: 15px;
+	*/
+}
+
+.launcher {
+	/*
+	margin-top: 40px;
+	*/
+}
+
+.launcher-input {
+	/*
+	width: 100%;
+	background-color: transparent;
+	color: var(--text);
+	border: none;
+	border-bottom: var(--border-size) var(--border-style) var(--border-color);
+	padding: 12px 5px;
+	font-size: 1.5rem;
+	outline: none;
+	transition: border-color 0.2s ease-in-out;
+	*/
+}
+
+.launcher-input:focus {
+	/*
+	border-bottom-color: var(--border-color-active);
+	*/
+}
+
+#launcher-results {
+	/*
+	margin-top: 15px;
+	max-height: 40vh;
+	overflow-y: auto;
+	*/
+}
+
+.launcher-item {
+	/*
+	padding: 10px 15px;
+	margin: 4px 0;
+	border-radius: 8px;
+	border: var(--border-size) solid transparent;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	*/
+}
+
+.launcher-item:hover,
+.launcher-item:focus {
+	/*
+	background-color: var(--bg-color-hover);
+	border: var(--border-size) solid var(--border-color);
+	*/
+}
+
+.launcher-item.selected {
+	/*
+	background-color: var(--mauve);
+	color: var(--bg-color);
+	border: var(--border-size) solid var(--mauve);
+	*/
+}
+
+.launcher-exec {
+	/*
+	font-weight: bold;
+	*/
+}
+
+.launcher-key,
+.launcher-plugin {
+	/*
+	font-size: 0.8rem;
+	color: var(--subtext0);
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 2px 6px;
+	border-radius: 4px;
+	margin-left: 10px;
+	*/
+}
+
+.launcher-plugin {
+	/*
+	font-style: italic;
+	*/
+}

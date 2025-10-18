@@ -1,5 +1,6 @@
 {
   pkgs,
+  stable,
   lib,
   config,
   inputs,
@@ -12,41 +13,36 @@
 
   home.packages = with pkgs; [
 
-    ####### cli tools #######
+    ####### cli #######
     ookla-speedtest
     zip
     unzip
-    nix-your-shell
     graphviz
     plantuml
     wl-clipboard
+    bc
     tldr
-    nix-output-monitor
-    progress
-    rsync
-    pulseaudio
+    bat-extras.batman
+    trash-cli
+    playerctl
+    (bottles.override { removeWarningPopup = true; })
 
-    ####### gui tools #######
-    catppuccinifier-gui
-    obs-studio
-
-    ####### eye candy #######
-    cbonsai
-    cmatrix
-    pipes
-    tty-clock
+    ####### desk env #######
+    hyprpicker
+    hyprsysteminfo
+    grim
+    slurp
+    bluetui # bluetooth
+    papirus-icon-theme
 
     ####### coding #######
-    kitty
     vscodium
     gitflow
     nixfmt-rfc-style
-    go
     gcc
     gnumake
     gdb
     cmake
-    gradle
     openjdk
     python3
     rustc
@@ -54,84 +50,117 @@
     arduino-ide
     arduino-language-server
 
-    ####### communication #######
+    ####### shell eye candy #######
+    cbonsai
+    cmatrix
+    pipes
+    tty-clock
+
+    ####### apps #######
+    catppuccinifier-gui
+    scrcpy
+    localsend
     telegram-desktop
     whatsapp-for-linux
-    discord
     teams-for-linux
-
-    ####### games #######
+    discord
     godot_4
     itch
     heroic
     retroarch
     prismlauncher
     protonup-qt
-
-    ####### 3d #######
     prusa-slicer
     openscad
-    meshlab
+    stable.meshlab
     wings
-
-    ####### browsers #######
-    google-chrome
-    firefox
-
-    ####### login #######
     ente-auth
-
-    ####### cloud #######
     pcloud
-
-    ####### media #######
-    mpvScripts.uosc
-    mpvScripts.thumbfast
     spotify
-    stremio
-
-    ####### docs and notes #######
-    anki
-    obsidian
-    onlyoffice-desktopeditors
+    # stremio # doesn't work because of qtwebengine failed build
     qpdfview
-    zathura
-
-    ####### gnome #######
-    gnome-shell-extensions
   ];
 
-  imports = [
-    ../shared/cloud/onedrive
-    ../shared/default-apps
-    ../shared/media/imv
-    ../shared/media/mpv
-    ../shared/system-themeing/cursor
-    ../shared/tools/git
-    ../shared/term/broot
-    ../shared/term/btop
-    ../shared/term/cava
-    ../shared/term/fastfetch
-    ../shared/term/fish
-    ../shared/term/ghostty
-    ../shared/term/oh-my-posh
-    ../shared/term/bat
-    ../shared/hyprland
-  ];
+  programs = {
+    ####### cli #######
+    nix-your-shell = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    eza = {
+      enable = true;
+      enableFishIntegration = true;
+      git = true;
+      icons = "auto";
+      extraOptions = [
+        "--group-directories-first"
+      ];
+    };
+    translate-shell.enable = true;
 
-  # env variables
-  home.sessionVariables = {
+    ####### apps #######
+    obs-studio.enable = true;
+    firefox.enable = true;
+    anki.enable = true;
+    obsidian.enable = true;
+    onlyoffice = {
+      enable = true;
+      settings = {
+        UITheme = "theme-contrast-dark";
+      };
+    };
+    zathura.enable = true;
+    mangohud = {
+      enable = true;
+      settings = {
+        preset = 1;
+        background_alpha = 0;
+      };
+    };
+
+    ####### coding #######
+    go.enable = true;
+    gradle.enable = true;
   };
 
-  # Tool config model
-  #	home.xdg.configFile."<tool-name>/config.toml" = {
-  #	source = ./dotfiles/config.toml;
-  #	};
+  services = {
+    clipman.enable = true;
+    tldr-update.enable = true;
+    playerctld.enable = true;
+    udiskie = {
+      enable = true;
+      settings = {
+        program_options = {
+          file_manager = "${pkgs.nautilus}/bin/nautilus";
+        };
+      };
+    };
+  };
 
-  # Scripts model
-  #	home.file.".local/bin/<script-name>"
-  #	source = ./scripts/<script-name>.sh;
-  #	executable = true;
-  #	};
+  imports = [
+    ./shared/default-apps
+    ./shared/cloud/onedrive
+    ./shared/media/imv
+    ./shared/media/mpv
+    ./shared/term/git
+    ./shared/term/broot
+    ./shared/term/btop
+    ./shared/term/cava
+    ./shared/term/fastfetch
+    ./shared/term/fish
+    ./shared/term/ghostty
+    ./shared/term/oh-my-posh
+    ./shared/term/bat
+    ./shared/desk-env/hyprland
+    ./shared/desk-env/hypridle
+    ./shared/desk-env/hyprlock
+    ./shared/desk-env/hyprpaper
+    ./shared/desk-env/hyprshell
+    ./shared/desk-env/cursor
+    ./shared/desk-env/misc
+    ./shared/desk-env/waybar
+    ./shared/desk-env/notifications
+    ./shared/desk-env/gtk
 
+  ];
 }

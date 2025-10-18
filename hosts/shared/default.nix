@@ -1,5 +1,6 @@
 {
   pkgs,
+  stable,
   lib,
   config,
   inputs,
@@ -8,14 +9,18 @@
 
 {
 
-  hardware.enableRedistributableFirmware = true;
+  hardware = {
+    # proprietary firmware
+    enableRedistributableFirmware = true;
 
-  hardware.openrazer = {
-    enable = true;
-    batteryNotifier = {
-      percentage = 15;
-      frequency = 3600;
-    };
+    # bluetooth
+    bluetooth.enable = true;
+
+    # steam hardware
+    steam-hardware.enable = true;
+
+    # xbox one accessories
+    xone.enable = true;
   };
 
   nix = {
@@ -34,6 +39,14 @@
     };
   };
 
+  boot.supportedFilesystems = [
+    "ntfs"
+    "exfat"
+    "vfat"
+    "btrfs"
+    "ext4"
+  ];
+
   boot.loader = {
     systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;
@@ -42,14 +55,26 @@
       efiSupport = true;
       device = "nodev";
       useOSProber = true;
-      theme = ./grub-theme/catppuccin-mocha-grub-theme;
+      theme = ./bsol/bsol;
     };
   };
 
-  # for faster startup
-  systemd.services."NetworkManager-wait-online".enable = false;
+  systemd.services = {
+    # for faster startup
+    "NetworkManager-wait-online".enable = false;
+  };
 
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+
+    firewall = {
+      enable = true;
+
+      # localsend ports
+      allowedTCPPorts = [ 53317 ];
+      allowedUDPPorts = [ 53317 ];
+    };
+  };
 
   time.timeZone = "Europe/Rome";
 
@@ -66,106 +91,140 @@
     LC_TELEPHONE = "it_IT.UTF-8";
   };
 
+  # window manager
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
+
+  # lock
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+    pam.services.hyprlock = {
+      text = ''
+        auth include login
+      '';
+    };
+  };
+
+  # hints apps to use ozone
+  environment.sessionVariables.NIXOS_OZONE_WL = "auto";
+
   services = {
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "us";
-        variant = "intl";
-      };
+    # autologin
+    getty.autologinUser = "riki";
+
+    # ignore power key
+    logind.settings.Login.HandlePowerKey = "ignore";
+
+    # virtual file-system
+    gvfs.enable = true;
+
+    udisks2.enable = true;
+
+    gnome = {
+      # gnome-keyring (for ente-auth)
+      gnome-keyring.enable = true;
+      gnome-settings-daemon.enable = true;
     };
 
-    printing.enable = true;
-
-    pulseaudio.enable = false;
-
+    # audio
     pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    # printing
+    printing.enable = true;
   };
 
   console.keyMap = "us-acentos";
-
-  security.rtkit.enable = true;
 
   users.users.riki = {
     isNormalUser = true;
     description = "riki";
     extraGroups = [
       "networkmanager"
+      "bluetooth"
       "wheel"
       "openrazer"
       "dialout"
       "uucp"
+      "audio"
+      "video"
+      "input"
+      "plugdev"
+      "storage"
     ];
     shell = pkgs.fish;
   };
 
-  programs.fish.enable = true;
+  nixpkgs.config = {
+    allowUnfree = true;
 
-  programs.gamemode.enable = true;
-
-  nixpkgs.config.allowUnfree = true;
+    # for stremio (still doesn't work)
+    permittedInsecurePackages = [
+      #"qtwebengine-5.15.19" # doesn't work, does not build
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     wget
-    neovim
-    git
-    fish
-    gamemode
-    gamescope
     os-prober
     gparted
-    gnome-shell
-    ntfs3g
-    openrazer-daemon
-    polychromatic
-    linuxKernel.packages.linux_zen.xone
+    brightnessctl
+    procps
+
+    ####### desk env #######
+    hyprland-qt-support
+    hyprpolkitagent
+    exfatprogs
+    dosfstools
 
     ####### theming #######
-    catppuccin-gtk
     catppuccin
     catppuccin-cursors.mochaDark
-    gnomeExtensions.blur-my-shell
   ];
+
+  programs = {
+    fish.enable = true;
+    gamemode.enable = true;
+    gamescope = {
+      enable = true;
+    };
+    neovim = {
+      enable = true;
+      vimAlias = true;
+      viAlias = true;
+    };
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+    };
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+    config = {
+      common.default = "*";
+      hyprland.default = [
+        "hyprland"
+        "gtk"
+      ];
+    };
+  };
 
   fonts.packages = with pkgs; [
     nerd-fonts.caskaydia-cove
   ];
-
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    localNetworkGameTransfers.openFirewall = true;
-  };
-
-  hardware.steam-hardware.enable = true;
-  hardware.xone.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
 }

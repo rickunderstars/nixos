@@ -12,12 +12,28 @@
     ../shared
   ];
 
-  ### disable psr, could work or break everything
+  # disable psr [laptop has issue]
   boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
 
   # hostname
   networking.hostName = "tars";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  environment.systemPackages = with pkgs; [
+  ];
+
+  programs = {
+    gamescope = {
+      args = [
+        "-w 2880 -h 1800" # game resolution
+        "-W 2880 -H 1800" # window resolution
+        "-F fsr" # upscaling method
+        "--mangoapp" # mangohud
+        "-r 120" # max fps
+        "--fullscreen"
+        "--rt" # real time priority
+      ];
+    };
+  };
 
   services = {
     # disable gnome power profile management
@@ -30,11 +46,8 @@
         CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
         CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_performance";
 
-        START_CHARGE_THRESH_BAT0 = 0;
-        STOP_CHARGE_THRESH_BAT0 = 0;
-
-        START_CHARGE_THRESH_BAT1 = 0;
-        STOP_CHARGE_THRESH_BAT1 = 0;
+        START_CHARGE_THRESH_BAT0 = 0; # dummy value
+        STOP_CHARGE_THRESH_BAT0 = 1; # 1 = 80%; 0 = 100%
       };
     };
 

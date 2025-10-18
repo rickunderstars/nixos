@@ -2,17 +2,30 @@
   description = "dev shells";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs =
     {
+      nixpkgs-unstable,
       nixpkgs,
       ...
     }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      stable = import nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+      };
+      pkgs = import nixpkgs-unstable {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+      };
     in
     {
       devShells.${system} = {
@@ -58,6 +71,25 @@
           ];
           shellHook = ''
             export DEV_ENV_NAME="stat-dev-env"
+          '';
+        };
+
+        # "tirocinio" shell
+        heartDev = pkgs.mkShell {
+          name = "tirocinio";
+          buildInputs = with pkgs; [
+            gcc
+            boost
+            stable.meshlab
+            glm
+            emscripten
+            llvmPackages.clang-tools
+            vscode-extensions.ms-vscode.cpptools
+            vscode-extensions.ms-vscode.cpptools-extension-pack
+          ];
+          shellHook = ''
+            export DEV_ENV_NAME="heart-dev-env"
+            export QT_SCALE_FACTOR="2"
           '';
         };
       };

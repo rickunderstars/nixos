@@ -13,10 +13,9 @@
   ];
 
   imports = [
-    ./term/audio-switch
     ./term/cava
     ./term/fish
-    ./hyprland
+    ./desk-env/hyprland
   ];
 
 }
