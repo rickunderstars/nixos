@@ -43,8 +43,8 @@
         "-W 1920 -H 1080" # window resolution
         "-F fsr" # upscaling method
         "--mangoapp" # mangohud
-        "-r 144" # max fps
-        "--fullscreen"
+        "-f"
+        "--force-grab-cursor"
         "--rt" # real time priority
       ];
     };

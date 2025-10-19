@@ -36,29 +36,4 @@
       };
     };
   };
-
-  /*
-    services.mako = {
-      enable = true;
-      settings = {
-        default-timeout = 3000;
-        font = "CaskaydiaCove Nerd Font Mono 12";
-        background-color = "#1e1e2eaf";
-        text-color = "#cdd6f4ff";
-        border-color = "#cba6f7e5";
-        progress-color = "over #313244e5";
-        width = 300;
-        height = 200;
-        border-size = 2;
-        border-radius = 5;
-        margin = 20;
-        icon-border-radius = 5;
-        format = "<b>%s</b>\\n%b";
-        "urgency=high" = {
-          border-color = "#fab387ff";
-        };
-
-      };
-    };
-  */
 }

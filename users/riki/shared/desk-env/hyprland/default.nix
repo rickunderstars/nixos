@@ -42,7 +42,7 @@
         "idleinhibit always, class:gamescope" # always idle inhibit when gamescope active"
 
         # steam
-        "float, title:Friends List, class:steam"
+        "float, class:steam"
         "immediate, class:steam_app_[0-9]+" # allow tearing for steam games
         "idleinhibit always, class:steam_app_[0-9]+" # always idle inhibit when playing a steam game"
 
@@ -58,7 +58,12 @@
 
         # pcloud
         "float, class:pcloud"
-        "size 60% 60%, class:pcloud "
+        "size 60% 60%, class:pcloud"
+
+        # localsend
+        "float, class:localsend_app"
+        "size 40% 50%, class:localsend_app"
+
       ];
 
       "$mod" = "SUPER";
@@ -87,7 +92,9 @@
         "$mod, p, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPause, exec, playerctl play-pause"
+        "$mod, bracketright, exec, playerctl next"
         ", XF86AudioNext, exec, playerctl next"
+        "$mod, bracketleft, exec, playerctl previous"
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86AudioStop, exec, playerctl stop"
 
@@ -168,22 +175,26 @@
 
         ### move to monitor
         "$mod SHIFT, comma, movewindow, mon:l"
-        "$mod SHIFT, comma, movewindow, mon:r"
-
+        "$mod SHIFT, period, movewindow, mon:r"
       ];
 
       bindel = [
         # volume control
         ", XF86AudioLowerVolume, exec, wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%- && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%+ && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
+        "$mod SHIFT, bracketleft, exec, wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%- && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
+        "$mod SHIFT, bracketright, exec, wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%+ && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
+
         # screen brightness control
         ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
         ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
       ];
 
       bindm = [
-        # "$mod, mouse:1, movewindow"
-        # "$mod, mouse:2, resizewindow"
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:272, togglefloating"
+        "$mod, mouse:273, resizewindow"
+
       ];
 
       animations = {
@@ -238,7 +249,7 @@
         kb_variant = "intl";
         follow_mouse = 1;
         scroll_method = "2fg";
-
+        accel_profile = "flat";
         touchpad = {
           disable_while_typing = true;
           natural_scroll = true;

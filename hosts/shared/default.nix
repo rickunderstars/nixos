@@ -212,15 +212,8 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
     ];
-    config = {
-      common.default = "*";
-      hyprland.default = [
-        "hyprland"
-        "gtk"
-      ];
-    };
+    config.common.default = "hyprland";
   };
 
   fonts.packages = with pkgs; [

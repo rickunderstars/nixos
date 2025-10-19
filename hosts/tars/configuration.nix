@@ -30,6 +30,7 @@
         "--mangoapp" # mangohud
         "-r 120" # max fps
         "--fullscreen"
+        "--force-grab-cursor "
         "--rt" # real time priority
       ];
     };

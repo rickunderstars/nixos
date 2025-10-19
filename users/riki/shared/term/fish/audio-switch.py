@@ -12,7 +12,7 @@ ENABLE_NOTIFICATIONS = True  # Set to False to disable notifications
 def notify(message):
     """Send a notification if enabled."""
     if ENABLE_NOTIFICATIONS:
-        subprocess.run(["dbus-launch", "notify-send", "Audio Switch", message])
+        subprocess.run(["dbus-launch", "dunstify", "Audio Switch", message])
 
 
 def get_sinks():
