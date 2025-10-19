@@ -65,7 +65,6 @@
     telegram-desktop
     whatsapp-electron
     teams-for-linux
-    discord
     godot_4
     itch
     heroic
@@ -101,6 +100,7 @@
     translate-shell.enable = true;
 
     ####### apps #######
+    vesktop.enable = true;
     obs-studio.enable = true;
     firefox.enable = true;
     anki.enable = true;
