@@ -63,7 +63,7 @@
     scrcpy
     localsend
     telegram-desktop
-    whatsapp-for-linux
+    whatsapp-electron
     teams-for-linux
     discord
     godot_4
