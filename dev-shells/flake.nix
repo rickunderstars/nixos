@@ -89,6 +89,8 @@
           ];
           shellHook = ''
             export DEV_ENV_NAME="heart-dev-env"
+          ''
+          + pkgs.lib.strings.optionalString ((builtins.getEnv "HOSTNAME") == "tars") ''
             export QT_SCALE_FACTOR="2"
           '';
         };

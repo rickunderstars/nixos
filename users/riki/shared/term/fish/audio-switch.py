@@ -4,7 +4,13 @@ import re
 
 # --- CONFIGURATION ---
 
-SKIP_SINK_NAMES = [""]  # List of devices to skip, leave empty for no filtering
+  # List of devices to skip, leave empty for no filtering
+SKIP_SINK_NAMES = [
+	"GA102 High Definition Audio Controller Pro",
+	"GA102 High Definition Audio Controller Pro 9",
+	"GA102 High Definition Audio Controller Pro 8"
+	]
+
 ENABLE_NOTIFICATIONS = True  # Set to False to disable notifications
 
 # ---

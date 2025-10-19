@@ -25,6 +25,7 @@
     bat-extras.batman
     trash-cli
     playerctl
+
     (bottles.override { removeWarningPopup = true; })
 
     ####### desk env #######
@@ -57,6 +58,7 @@
     tty-clock
 
     ####### apps #######
+    pavucontrol
     catppuccinifier-gui
     scrcpy
     localsend
