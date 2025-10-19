@@ -137,6 +137,7 @@
         };
       };
     };
+    easyeffects.enable = true;
   };
 
   imports = [

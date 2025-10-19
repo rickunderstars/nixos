@@ -9,7 +9,7 @@
 {
   programs.fish = {
     shellAbbrs = {
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#case --show-trace";
+      nrs = "rm /home/riki/.config/mimeapps.list.backup; sudo nixos-rebuild switch --flake ~/nixos-config#case --show-trace";
     };
   };
 }
