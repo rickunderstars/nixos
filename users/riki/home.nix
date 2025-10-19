@@ -105,6 +105,16 @@
     firefox.enable = true;
     anki.enable = true;
     obsidian.enable = true;
+    micro = {
+      enable = true;
+      settings = {
+        autosave = 5;
+        softwrap = true;
+        wordwrap = true;
+        autoclose = true;
+        colorscheme = "catppuccin-mocha";
+      };
+    };
     onlyoffice = {
       enable = true;
       settings = {
@@ -138,6 +148,16 @@
       };
     };
     easyeffects.enable = true;
+    hyprpolkitagent.enable = true;
+
+    gnome-keyring = {
+      enable = true;
+      components = [
+        "pkcs11"
+        "secrets"
+        "ssh"
+      ];
+    };
   };
 
   imports = [

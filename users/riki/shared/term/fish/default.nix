@@ -20,6 +20,7 @@
       			if not set -q IN_NIX_SHELL
       				fastfetch
       			end
+            export "MICRO_TRUECOLOR=1"
       		'';
     functions = {
       br = ''

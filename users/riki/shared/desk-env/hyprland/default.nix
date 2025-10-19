@@ -226,15 +226,10 @@
         gaps_out = 10;
         resize_on_border = true;
         extend_border_grab_area = 30;
-        layout = "dwindle";
         border_size = 2;
         allow_tearing = true;
         "col.active_border" = "rgba(89b4faff) rgba(cba6f7ff) 310deg"; # blue -> mavue
         "col.inactive_border" = "rgba(181825ff) rgba(313244ff) 310deg";
-      };
-
-      dwindle = {
-        pseudotile = true;
       };
 
       decoration = {
