@@ -35,6 +35,12 @@
     slurp
     bluetui # bluetooth
     papirus-icon-theme
+    ## pkgs for quickshell ##
+    kdePackages.qtsvg
+    kdePackages.qtimageformats
+    kdePackages.qtmultimedia
+    kdePackages.qt5compat
+    kdePackages.qtdeclarative
 
     ####### coding #######
     vscodium

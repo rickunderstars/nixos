@@ -91,13 +91,6 @@
     LC_TELEPHONE = "it_IT.UTF-8";
   };
 
-  # window manager
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
-  };
-
   # lock
   security = {
     rtkit.enable = true;
@@ -183,6 +176,7 @@
     hyprpolkitagent
     exfatprogs
     dosfstools
+    quickshell
 
     ####### theming #######
     catppuccin
@@ -190,6 +184,13 @@
   ];
 
   programs = {
+
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+    };
+
     fish.enable = true;
     gamemode.enable = true;
     gamescope = {
@@ -207,6 +208,8 @@
       localNetworkGameTransfers.openFirewall = true;
     };
   };
+
+  qt.enable = true;
 
   xdg.portal = {
     enable = true;
