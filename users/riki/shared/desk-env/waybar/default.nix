@@ -37,11 +37,6 @@
         mode = "dock";
         reload_style_on_change = true;
 
-        "hyprland/workspaces" = {
-          format = "{name}";
-          all-outputs = true;
-        };
-
         battery = {
           states = {
             warning = 15;

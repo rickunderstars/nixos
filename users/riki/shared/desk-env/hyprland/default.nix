@@ -19,31 +19,16 @@
         "hyprpaper"
         "waybar &"
         "systemctl --user start hyprpolkitagent"
-        "hyprctl dispatch workspace 4"
         "bluetoothctl power off"
-      ];
-
-      workspace = [
-        "1, name:Sol"
-        "2, name:Mercury"
-        "3, name:Venus"
-        "4, name:Earth"
-        "5, name:Mars"
-        "6, name:Jupiter"
-        "7, name:Saturn"
-        "8, name:Uranus"
-        "9, name:Neptune"
       ];
 
       windowrulev2 = [
 
         # games
-        "immediate, class:gamescope" # allow tearing for gamescope
         "idleinhibit always, class:gamescope" # always idle inhibit when gamescope active"
 
         # steam
         "float, class:steam"
-        "immediate, class:steam_app_[0-9]+" # allow tearing for steam games
         "idleinhibit always, class:steam_app_[0-9]+" # always idle inhibit when playing a steam game"
 
         # itch
@@ -155,19 +140,19 @@
         "$mod, comma, workspace, e-1"
 
         ### move to workspaces (absolute)
-        "$mod CTRL SHIFT, 1, movetoworkspace, 1"
-        "$mod CTRL SHIFT, 2, movetoworkspace, 2"
-        "$mod CTRL SHIFT, 3, movetoworkspace, 3"
-        "$mod CTRL SHIFT, 4, movetoworkspace, 4"
-        "$mod CTRL SHIFT, 5, movetoworkspace, 5"
-        "$mod CTRL SHIFT, 6, movetoworkspace, 6"
-        "$mod CTRL SHIFT, 7, movetoworkspace, 7"
-        "$mod CTRL SHIFT, 8, movetoworkspace, 8"
-        "$mod CTRL SHIFT, 9, movetoworkspace, 9"
+        "CTRL SHIFT ALT, 1, movetoworkspace, 1"
+        "CTRL SHIFT ALT, 2, movetoworkspace, 2"
+        "CTRL SHIFT ALT, 3, movetoworkspace, 3"
+        "CTRL SHIFT ALT, 4, movetoworkspace, 4"
+        "CTRL SHIFT ALT, 5, movetoworkspace, 5"
+        "CTRL SHIFT ALT, 6, movetoworkspace, 6"
+        "CTRL SHIFT ALT, 7, movetoworkspace, 7"
+        "CTRL SHIFT ALT, 8, movetoworkspace, 8"
+        "CTRL SHIFT ALT, 9, movetoworkspace, 9"
 
         ### move to workspace (relative)
-        "$mod CTRL SHIFT, period, movetoworkspace, +1"
-        "$mod CTRL SHIFT, comma, movetoworkspace, -1"
+        "CTRL SHIFT ALT, period, movetoworkspace, +1"
+        "CTRL SHIFT ALT, comma, movetoworkspace, -1"
 
         ### new empty workspace
         "CTRL ALT, period, workspace, emptyn"

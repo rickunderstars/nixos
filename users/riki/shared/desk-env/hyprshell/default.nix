@@ -27,7 +27,9 @@
           };
           hide_filtered = false;
         };
-        switch = { };
+        switch = {
+          filter_by = [ "current_monitor" ];
+        };
       };
     };
 
