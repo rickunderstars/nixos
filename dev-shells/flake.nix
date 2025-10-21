@@ -80,18 +80,19 @@
           buildInputs = with pkgs; [
             gcc
             boost
-            stable.meshlab
-            glm
-            emscripten
             llvmPackages.clang-tools
             vscode-extensions.ms-vscode.cpptools
             vscode-extensions.ms-vscode.cpptools-extension-pack
+            stable.meshlab
+            glm
+            emscripten
+            nodejs
           ];
           shellHook = ''
             export DEV_ENV_NAME="heart-dev-env"
-          ''
-          + pkgs.lib.strings.optionalString ((builtins.getEnv "HOSTNAME") == "tars") ''
-            export QT_SCALE_FACTOR="2"
+            if [ "$(hostname)" = "tars" ]; then
+              export QT_SCALE_FACTOR="2"
+            fi
           '';
         };
       };
