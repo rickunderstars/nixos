@@ -28,7 +28,7 @@
         "idleinhibit always, class:gamescope" # always idle inhibit when gamescope active"
 
         # steam
-        "float, class:steam"
+        "float, class:^(steam)$, title:negative:^(Steam)$"
         "idleinhibit always, class:steam_app_[0-9]+" # always idle inhibit when playing a steam game"
 
         # itch

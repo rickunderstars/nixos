@@ -166,6 +166,12 @@
     };
   };
 
+  home.file = {
+    ".config/micro/colorschemes/catppuccin-mocha.micro" = {
+      source = ./assets/micro/catppuccin-mocha.micro;
+    };
+  };
+
   imports = [
     ./shared/default-apps
     ./shared/cloud/onedrive

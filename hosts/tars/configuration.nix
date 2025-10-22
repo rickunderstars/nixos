@@ -26,11 +26,12 @@
       args = [
         "-w 2880 -h 1800" # game resolution
         "-W 2880 -H 1800" # window resolution
-        "-F fsr" # upscaling method
+        #"-F fsr" # upscaling method
         "--mangoapp" # mangohud
         "-r 120" # max fps
         "--fullscreen"
-        "--force-grab-cursor "
+        "--backend wayland"
+        "--force-grab-cursor"
         "--rt" # real time priority
       ];
     };

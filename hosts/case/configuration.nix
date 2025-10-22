@@ -41,9 +41,10 @@
         "--prefer-output DP-3" # monitor preference
         "-w 1920 -h 1080" # game resolution
         "-W 1920 -H 1080" # window resolution
-        "-F fsr" # upscaling method
+        #"-F fsr" # upscaling method
         "--mangoapp" # mangohud
-        "-f"
+        "--fullscreen"
+        "--backend wayland"
         "--force-grab-cursor"
         "--rt" # real time priority
       ];
