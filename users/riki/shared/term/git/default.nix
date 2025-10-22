@@ -9,20 +9,14 @@
 {
   programs.git = {
     enable = true;
-    userName = "riki";
-    userEmail = "rickunderstars@gmail.com";
-    extraConfig = {
+
+    settings = {
+      user.name = "riki";
+      user.email = "rickunderstars@gmail.com";
       url = {
         "git@github.com:" = {
           insteadOf = "https://github.com/";
         };
-      };
-    };
-    delta = {
-      enable = true;
-      options = {
-        features = "catppuccin-mocha";
-        side-by-side = true;
       };
     };
     includes = [
@@ -32,16 +26,33 @@
     ];
   };
 
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      features = "catppuccin-mocha";
+      side-by-side = true;
+    };
+  };
+
   programs.ssh = {
     enable = true;
-    enableDefaultConfig = true;
-    extraConfig = ''
-      Host github.com
-        HostName github.com
-        User git
-        IdentityFile ~/.ssh/id_ed25519
-        IdentitiesOnly yes
-    '';
+    enableDefaultConfig = false;
+    matchBlocks = {
+      "*" = {
+        sendEnv = [
+          "LANG"
+          "LC_*"
+        ];
+        hashKnownHosts = true;
+      };
+      "github.com" = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/id_ed25519";
+        identitiesOnly = true;
+      };
+    };
   };
 
   services.ssh-agent.enable = true;
