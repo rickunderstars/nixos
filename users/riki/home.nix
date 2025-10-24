@@ -192,7 +192,6 @@
     ./shared/desk-env/hyprpaper
     ./shared/desk-env/hyprshell
     ./shared/desk-env/cursor
-    ./shared/desk-env/misc
     ./shared/desk-env/waybar
     ./shared/desk-env/notifications
     ./shared/desk-env/gtk

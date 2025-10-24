@@ -54,6 +54,9 @@
       "$mod" = "SUPER";
 
       bind = [
+        ### quickshell (TO REMOVE)
+        "$mod, k, exec, pidof quickshell || quickshell -p ~/nixos-config/users/riki/shared/desk-env/quickshell/config"
+
         ### lock
         "$mod SHIFT, l, exec, pidof hyprlock || hyprlock"
 

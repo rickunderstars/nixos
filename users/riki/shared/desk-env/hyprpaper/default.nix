@@ -12,10 +12,10 @@
     settings = {
       ipc = "on";
       preload = [
-        "~/nixos-config/users/riki/shared/desk-env/hyprpaper/puffy-stars.jpg"
+        "~/nixos-config/users/riki/assets/walls/puffy-stars.jpg"
       ];
       wallpaper = [
-        ", ~/nixos-config/users/riki/shared/desk-env/hyprpaper/puffy-stars.jpg"
+        ", ~/nixos-config/users/riki/assets/walls/puffy-stars.jpg"
       ];
     };
   };
