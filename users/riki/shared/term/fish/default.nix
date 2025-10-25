@@ -101,7 +101,7 @@
       cls = "clear";
       ff = "clear;fastfetch";
       py = "python";
-      auch = "python ~/nixos-config/users/riki/shared/term/fish/audio-switch.py";
+      auch = "python ~/nixos-config/users/riki/assets/scripts/audio-switch.py";
       here = "pwd | wl-copy; pwd";
       home = "cd ~";
       goodnight = "shutdown now";
@@ -119,7 +119,7 @@
       # shells
       gopxl = "nix develop ~/nixos-config#gopxlDev";
       stat = "nix develop ~/nixos-config#statDev";
-      heart = "nix develop ~/nixos-config#heartDev";
+      heart = "nix develop ~/nixos-config#heartDev --command fish -c 'cd ~/heart-vis; codium .; fish'";
     };
   };
 }
