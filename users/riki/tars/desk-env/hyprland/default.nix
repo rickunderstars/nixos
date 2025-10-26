@@ -31,10 +31,6 @@
         "CTRL SHIFT $mod, period, movetoworkspace, +1"
         "CTRL SHIFT $mod, comma, movetoworkspace, -1"
 
-        ### move to workspaces (counting empty ones, creates new workspace if does not exist)
-        "CTRL SHIFT $mod, period, movetoworkspace, +1"
-        "CTRL SHIFT $mod, comma, movetoworkspace, -1"
-
       ];
 
       # forces xwayland not to scale x11 apps
