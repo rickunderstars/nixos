@@ -127,43 +127,19 @@
         "$mod CTRL, up, resizeactive, 0 -20"
         "$mod CTRL, down, resizeactive, 0 20"
 
-        ### siwtch workspaces (absolute)
-        "$mod, 1, workspace, 1"
-        "$mod, 2, workspace, 2"
-        "$mod, 3, workspace, 3"
-        "$mod, 4, workspace, 4"
-        "$mod, 5, workspace, 5"
-        "$mod, 6, workspace, 6"
-        "$mod, 7, workspace, 7"
-        "$mod, 8, workspace, 8"
-        "$mod, 9, workspace, 9"
-
-        ### switch workspace (relative)
-        "$mod, period, workspace, e+1"
-        "$mod, comma, workspace, e-1"
-
-        ### move to workspaces (absolute)
-        "CTRL SHIFT ALT, 1, movetoworkspace, 1"
-        "CTRL SHIFT ALT, 2, movetoworkspace, 2"
-        "CTRL SHIFT ALT, 3, movetoworkspace, 3"
-        "CTRL SHIFT ALT, 4, movetoworkspace, 4"
-        "CTRL SHIFT ALT, 5, movetoworkspace, 5"
-        "CTRL SHIFT ALT, 6, movetoworkspace, 6"
-        "CTRL SHIFT ALT, 7, movetoworkspace, 7"
-        "CTRL SHIFT ALT, 8, movetoworkspace, 8"
-        "CTRL SHIFT ALT, 9, movetoworkspace, 9"
-
-        ### move to workspace (relative)
-        "CTRL SHIFT ALT, period, movetoworkspace, +1"
-        "CTRL SHIFT ALT, comma, movetoworkspace, -1"
-
-        ### new empty workspace
-        "CTRL ALT, period, workspace, emptyn"
-        "CTRL ALT, comma, workspace, empty"
+        ### move between workspaces of same monitor
+        "$mod, period, workspace, m+1"
+        "$mod, comma, workspace, m-1"
+        "$mod, mouse_down, workspace, m+1"
+        "$mod, mouse_up, workspace, m-1"
 
         ### move to monitor
         "$mod SHIFT, comma, movewindow, mon:l"
         "$mod SHIFT, period, movewindow, mon:r"
+
+        ### focus monitor (cycle)
+        "$mod, tab, focusmonitor, +1"
+
       ];
 
       bindel = [
