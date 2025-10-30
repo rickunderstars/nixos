@@ -130,8 +130,8 @@
         ### move between workspaces of same monitor
         "$mod, period, workspace, m+1"
         "$mod, comma, workspace, m-1"
-        "$mod, mouse_down, workspace, m+1"
-        "$mod, mouse_up, workspace, m-1"
+        "$mod SHIFT, mouse_down, workspace, m+1"
+        "$mod SHIFT, mouse_up, workspace, m-1"
 
         ### move to monitor
         "$mod SHIFT, comma, movewindow, mon:l"
