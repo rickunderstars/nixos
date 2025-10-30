@@ -84,7 +84,7 @@
       stable.meshlab
       wings
       ente-auth
-      pcloud
+      pcloud.passthru.libnotify or pkgs.libnotify
       spotify
       qpdfview
       libresprite
