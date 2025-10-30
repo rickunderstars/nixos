@@ -8,85 +8,88 @@
 }:
 
 {
-  home.username = "riki";
-  home.homeDirectory = "/home/riki";
+  home = {
+    username = "riki";
+    homeDirectory = "/home/riki";
 
-  home.packages = with pkgs; [
+    packages = with pkgs; [
 
-    ####### cli #######
-    ookla-speedtest
-    zip
-    unzip
-    graphviz
-    plantuml
-    wl-clipboard
-    bc
-    tldr
-    bat-extras.batman
-    trash-cli
-    playerctl
+      ####### cli #######
+      ookla-speedtest
+      zip
+      unzip
+      graphviz
+      plantuml
+      wl-clipboard
+      bc
+      tldr
+      bat-extras.batman
+      trash-cli
+      playerctl
 
-    (bottles.override { removeWarningPopup = true; })
+      (bottles.override { removeWarningPopup = true; })
 
-    ####### desk env #######
-    hyprpicker
-    hyprsysteminfo
-    grim
-    slurp
-    bluetui # bluetooth
-    papirus-icon-theme
-    ## pkgs for quickshell ##
-    kdePackages.qtsvg
-    kdePackages.qtimageformats
-    kdePackages.qtmultimedia
-    kdePackages.qt5compat
-    kdePackages.qtdeclarative
+      ####### desk env #######
+      hyprpicker
+      hyprsysteminfo
+      grim
+      slurp
+      bluetui # bluetooth
+      papirus-icon-theme
+      ## pkgs for quickshell ##
+      kdePackages.qtsvg
+      kdePackages.qtimageformats
+      kdePackages.qtmultimedia
+      kdePackages.qt5compat
+      kdePackages.qtdeclarative
 
-    ####### coding #######
-    vscodium
-    gitflow
-    nixfmt-rfc-style
-    gcc
-    gnumake
-    gdb
-    cmake
-    openjdk
-    python3
-    rustc
-    cargo
-    arduino-ide
-    arduino-language-server
+      ####### coding #######
+      vscodium
+      gitflow
+      nixfmt-rfc-style
+      gcc
+      gnumake
+      gdb
+      cmake
+      openjdk
+      python3
+      rustc
+      cargo
+      arduino-ide
+      arduino-language-server
 
-    ####### shell eye candy #######
-    cbonsai
-    cmatrix
-    pipes
-    tty-clock
+      ####### shell eye candy #######
+      cbonsai
+      cmatrix
+      pipes
+      tty-clock
 
-    ####### apps #######
-    pavucontrol
-    catppuccinifier-gui
-    scrcpy
-    localsend
-    telegram-desktop
-    whatsapp-electron
-    teams-for-linux
-    godot_4
-    itch
-    heroic
-    retroarch
-    prismlauncher
-    protonup-qt
-    prusa-slicer
-    openscad
-    stable.meshlab
-    wings
-    ente-auth
-    pcloud
-    spotify
-    # stremio # doesn't work because of qtwebengine failed build
-    qpdfview
-  ];
+      ####### apps #######
+      uxplay
+      pavucontrol
+      catppuccinifier-gui
+      scrcpy
+      localsend
+      telegram-desktop
+      whatsapp-electron
+      teams-for-linux
+      godot_4
+      itch
+      heroic
+      retroarch
+      prismlauncher
+      protonup-qt
+      prusa-slicer
+      openscad
+      stable.meshlab
+      wings
+      ente-auth
+      pcloud
+      spotify
+      qpdfview
+      libresprite
+    ];
+  };
 
   programs = {
     ####### cli #######

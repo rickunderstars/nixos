@@ -70,9 +70,25 @@
     firewall = {
       enable = true;
 
-      # localsend ports
-      allowedTCPPorts = [ 53317 ];
-      allowedUDPPorts = [ 53317 ];
+      allowedTCPPorts = [
+        # localsend
+        53317
+
+        # uxplay
+        5353
+        7000
+        7001
+        7100
+      ];
+      allowedUDPPorts = [
+        53317
+
+        5353
+        6000
+        6001
+        7011
+
+      ];
     };
   };
 
@@ -123,6 +139,20 @@
       gnome-settings-daemon.enable = true;
     };
 
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      nssmdns6 = true;
+      openFirewall = true;
+      publish = {
+        enable = true;
+        addresses = true;
+        workstation = true;
+        hinfo = true;
+        userServices = true;
+      };
+    };
+
     # audio
     pipewire = {
       enable = true;
@@ -157,10 +187,8 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-
-    # for stremio (still doesn't work)
     permittedInsecurePackages = [
-      #"qtwebengine-5.15.19" # doesn't work, does not build
+
     ];
   };
 
