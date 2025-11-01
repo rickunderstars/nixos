@@ -55,7 +55,7 @@
       efiSupport = true;
       device = "nodev";
       useOSProber = true;
-      theme = ./bsol/bsol;
+      theme = ../assets/grub/bsol;
     };
   };
 

@@ -82,6 +82,7 @@
       prismlauncher
       protonup-qt
       prusa-slicer
+      cura-appimage
       openscad
       stable.meshlab
       wings
@@ -160,7 +161,6 @@
     };
     easyeffects.enable = true;
     hyprpolkitagent.enable = true;
-
     gnome-keyring = {
       enable = true;
       components = [
@@ -178,11 +178,11 @@
   };
 
   imports = [
-    ./shared/default-apps
-    ./shared/cloud/onedrive
-    ./shared/media/imv
-    ./shared/media/mpv
-    ./shared/term/git
+    ./shared/mimeapps
+    ./shared/apps/onedrive
+    ./shared/apps/imv
+    ./shared/apps/mpv
+    ./shared/apps/git
     ./shared/term/broot
     ./shared/term/btop
     ./shared/term/cava
@@ -200,6 +200,5 @@
     ./shared/desk-env/waybar
     ./shared/desk-env/notifications
     ./shared/desk-env/gtk
-
   ];
 }

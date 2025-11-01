@@ -19,6 +19,6 @@
 
   };
   home.file.".config/btop/themes/catppuccin_mocha.theme" = {
-    source = ./catppuccin_mocha.theme;
+    source = ../../../assets/btop/catppuccin_mocha.theme;
   };
 }
