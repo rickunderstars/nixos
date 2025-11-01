@@ -188,7 +188,7 @@
     ./shared/term/fastfetch
     ./shared/term/fish
     ./shared/term/ghostty
-    ./shared/term/oh-my-posh
+    ./shared/term/starship
     ./shared/term/bat
     ./shared/desk-env/hyprland
     ./shared/desk-env/hypridle
