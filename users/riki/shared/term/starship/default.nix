@@ -17,7 +17,7 @@
       palette = "catppuccin_mocha";
 
       format = "$username[](bold maroon)$hostname $all";
-      right_format = "$time";
+      right_format = "$nix_shell $time";
 
       username = {
         show_always = true;

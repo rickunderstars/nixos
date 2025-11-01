@@ -87,8 +87,10 @@
         ", XF86AudioStop, exec, playerctl stop"
 
         ### screenshots
-        ", print, exec, fish -c 'screenshot-full' && notify-send 'Screenshot (fullscreen)' '~/Pictures/Screenshots'"
-        "CTRL, print, exec, fish -c 'screenshot-region' && notify-send 'Screenshot (region)' '~/Pictures/Screenshots'"
+        ", print, exec, fish -c 'screenshot-full' && dunstify 'Screenshot (fullscreen)' '~/Pictures/Screenshots'"
+        "$mod, s, exec, fish -c 'screenshot-full' && dunstify 'Screenshot (fullscreen)' '~/Pictures/Screenshots'"
+        "CTRL, print, exec, fish -c 'screenshot-region' && dunstify 'Screenshot (region)' '~/Pictures/Screenshots'"
+        "ALT, s, exec, fish -c 'screenshot-region' && dunstify 'Screenshot (region)' '~/Pictures/Screenshots'"
 
         # audio mute toggle
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"

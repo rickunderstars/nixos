@@ -26,6 +26,7 @@
       bat-extras.batman
       trash-cli
       playerctl
+      coreutils
 
       (bottles.override { removeWarningPopup = true; })
 
