@@ -65,6 +65,7 @@
       tty-clock
 
       ####### apps #######
+      blender
       uxplay
       pavucontrol
       catppuccinifier-gui
