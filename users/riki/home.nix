@@ -175,6 +175,9 @@
     ".config/micro/colorschemes/catppuccin-mocha.micro" = {
       source = ./assets/micro/catppuccin-mocha.micro;
     };
+    ".arduinoIDE/.clang-format" = {
+      source = ./assets/arduino/.clang-format;
+    };
   };
 
   imports = [
