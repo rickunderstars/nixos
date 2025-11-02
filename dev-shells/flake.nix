@@ -85,11 +85,11 @@
             vscode-extensions.ms-vscode.cpptools-extension-pack
             stable.meshlab
             glm
-            emscripten
             nodejs
           ];
           shellHook = ''
             export DEV_ENV_NAME="heart-dev-env"
+            source "/home/riki/heart-vis/emsdk/emsdk_env.fish"
             if [ "$(hostname)" = "tars" ]; then
               export QT_SCALE_FACTOR="2"
             fi
