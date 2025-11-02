@@ -49,6 +49,7 @@
       gitflow
       nixfmt-rfc-style
       gcc
+      llvmPackages.clang-tools
       gnumake
       gdb
       cmake
