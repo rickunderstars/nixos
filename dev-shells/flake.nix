@@ -89,7 +89,7 @@
           ];
           shellHook = ''
             export DEV_ENV_NAME="heart-dev-env"
-            source "/home/riki/heart-vis/emsdk/emsdk_env.fish"
+            source "/home/riki/heart-vis/emsdk/emsdk_env.sh"
             if [ "$(hostname)" = "tars" ]; then
               export QT_SCALE_FACTOR="2"
             fi
