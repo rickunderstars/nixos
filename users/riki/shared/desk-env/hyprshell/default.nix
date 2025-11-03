@@ -38,7 +38,7 @@
       args = "-vv";
     };
 
-    style = "";
+    style = builtins.readFile ../../../assets/hyprshell/style.css;
   };
 
   # restart hyprshell after nixos-rebuild

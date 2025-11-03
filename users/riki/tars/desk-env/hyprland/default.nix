@@ -19,10 +19,6 @@
 
       bind = [
 
-        ### switch workspace (between active ones)
-        "$mod, period, workspace, m+1"
-        "$mod, comma, workspace, m-1"
-
         ### switch workspace (counting empty ones, creates new workspace if does not exist)
         "CTRL $mod, period, workspace, +1"
         "CTRL $mod, comma, workspace, -1"
