@@ -29,7 +29,7 @@
 	font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font";
 	color: @text;
 	font-weight: bolder;
-	font-size: 11pt;
+	font-size: 10pt;
 }
 
 #workspaces,
@@ -89,7 +89,8 @@
 	border-right: 0em;
 	border-top-right-radius: 0em;
 	border-bottom-right-radius: 0em;
-	margin-right: 0em;
+	margin-right: -0.3em;
+	padding-right: 0em;
 
 }
 
