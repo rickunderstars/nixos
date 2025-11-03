@@ -29,7 +29,7 @@
 	font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font";
 	color: @text;
 	font-weight: bolder;
-	font-size: 10pt;
+	font-size: 11pt;
 }
 
 #workspaces,
@@ -43,48 +43,100 @@
 #network,
 #battery,
 #clock {
-	background-color: alpha(@base, 0.8);
+	background-color: alpha(@base, 0.9);
 	border: 2px solid @mauve;
 	border-radius: 10px;
 
-	padding: 0px 5px;
-	margin: 3px 5px;
+	padding: 0em 0.7em;
+	margin: 10px 3px 0px;
+}
+
+#workspaces {
+	margin-left: 10px;
+}
+
+#workspaces button {
+	border-radius: 50%;
+	margin: 0.2em;
+}
+
+#workspaces button.active {
+	background-color: @surface0;
 }
 
 #waybar {
 	background-color: alpha(@base, 0);
 }
 
-#cava {}
+
 
 #tray {}
 
-#backlight {}
-
-#idle_inhibitor {}
-
-#wireplumber {}
-
-#cpu {
-	color: @peach;
+#backlight {
+	border: 2px solid @flamingo;
+	color: @flamingo;
 }
 
-#bluetooth {}
+#idle_inhibitor {
+	border: 2px solid @pink;
+	color: @pink;
+}
 
-#network {}
+
+#cava {
+	border: 2px solid @lavender;
+	color: @lavender;
+	border-right: 0em;
+	border-top-right-radius: 0em;
+	border-bottom-right-radius: 0em;
+	margin-right: 0em;
+
+}
+
+#wireplumber {
+	border: 2px solid @lavender;
+	color: @lavender;
+	min-width: 8em;
+	border-left: 0em;
+	border-top-left-radius: 0em;
+	border-bottom-left-radius: 0em;
+	margin-left: -0.3em;
+	padding-left: 0em;
+}
+
+#cpu {
+	border: 2px solid @peach;
+	color: @peach;
+	min-width: 8em;
+}
+
+#bluetooth {
+	border: 2px solid @sapphire;
+	color: @sapphire;
+}
+
+#network {
+	border: 2px solid @teal;
+	color: @teal;
+}
 
 #battery {
+	border: 2px solid @green;
 	color: @green;
 }
 
 #battery.warning {
+	border: 2px solid @yellow;
 	color: @yellow;
 }
 
 #battery.critical {
+	border: 2px solid @red;
 	color: @red;
 }
 
 #clock {
-	color: @mauve;
+	border: 2px solid @rosewater;
+	color: @rosewater;
+	margin-right: 10px;
 }

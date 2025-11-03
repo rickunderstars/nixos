@@ -20,12 +20,12 @@
           "hyprland/workspaces"
         ];
         modules-center = [
-          "cava"
         ];
         modules-right = [
           "tray"
           "backlight"
           "idle_inhibitor"
+          "cava"
           "wireplumber"
           "cpu"
           "bluetooth"
@@ -86,7 +86,7 @@
             "▇"
             "█"
           ];
-          bars = 12;
+          bars = 32;
           framerate = 120;
           hide_on_silence = false;
           bar_delimiter = 0;
@@ -122,15 +122,15 @@
 
         wireplumber = {
           format-icons = [
-            "     |"
-            "󰥛    |"
-            "󰥛󰥛   |"
-            "󰥛󰥛󰥛  |"
-            "󰥛󰥛󰥛󰥛 |"
-            "󰥛󰥛󰥛󰥛󰥛|"
+            "     "
+            "󰥛    "
+            "󰥛󰥛   "
+            "󰥛󰥛󰥛  "
+            "󰥛󰥛󰥛󰥛 "
+            "󰥛󰥛󰥛󰥛󰥛"
           ];
           format-muted = "<span font_size='180%' rise='-4096'></span>|{volume}";
-          format = "<span font_size='180%' rise='-4096'></span>{icon}{volume}";
+          format = "<span font_size='180%' rise='-4096'></span>{icon}|{volume}";
           tooltip-format = "{node_name}";
           scroll-step = 2.5;
           reverse-scrolling = true;
