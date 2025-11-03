@@ -5,31 +5,19 @@
   inputs,
   ...
 }:
-
 {
   home.packages = with pkgs; [
     nautilus
-    adwaita-icon-theme
     glib
     gsettings-desktop-schemas
-    gnome.gvfs
     gnome-settings-daemon
-    gnome-themes-extra
-
-    (catppuccin-gtk.override {
-      accents = [ "lavender" ];
-      size = "standard";
-      tweaks = [ "rimless" ];
-      variant = "mocha";
-    })
-
   ];
 
   gtk = {
     enable = true;
 
     theme = {
-      name = "Catppuccin-Mocha-Lavender";
+      name = "Catppuccin-Mocha-Standard-Lavender-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "lavender" ];
         size = "standard";
@@ -60,35 +48,13 @@
   dconf = {
     enable = true;
     settings = {
-
-      "org/gnome/nautilus/preferences" = {
-        default-folder-viewer = "icon-view";
-        search-filter-time-type = "last_modified";
-        show-create-link = true;
-        show-delete-permanently = true;
-        show-hidden-files = false;
-      };
-
-      "org/gnome/nautilus/icon-view" = {
-        default-zoom-level = "standard";
-      };
-
-      "org/gnome/nautilus/list-view" = {
-        default-zoom-level = "standard";
-        use-tree-view = false;
-      };
-
       "org/gnome/desktop/interface" = {
-        gtk-theme = config.gtk.theme.name;
-        icon-theme = config.gtk.iconTheme.name;
         color-scheme = "prefer-dark";
-        gtk-application-prefer-dark-theme = true;
-      };
-
-      "org/gnome/desktop/wm/preferences" = {
-        theme = config.gtk.theme.name;
       };
     };
   };
 
+  home.sessionVariables = {
+    GTK_THEME = "Catppuccin-Mocha-Standard-Lavender-Dark";
+  };
 }
