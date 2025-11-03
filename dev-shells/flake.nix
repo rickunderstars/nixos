@@ -79,19 +79,34 @@
           name = "tirocinio";
           buildInputs = with pkgs; [
             gcc
+            cmake
             boost
             llvmPackages.clang-tools
             vscode-extensions.ms-vscode.cpptools
             vscode-extensions.ms-vscode.cpptools-extension-pack
             stable.meshlab
+            emscripten
             glm
-            nodejs
+            python3
           ];
           shellHook = ''
             export DEV_ENV_NAME="heart-dev-env"
-            source "/home/riki/heart-vis/emsdk/emsdk_env.sh"
+            export GLM_INCLUDE_DIR="${pkgs.glm}/include"
+            export BOOST_INCLUDE_DIR="${pkgs.boost.dev}/include"
+            export EM_CACHE="$PWD/.emscripten_cache"
+
             if [ "$(hostname)" = "tars" ]; then
               export QT_SCALE_FACTOR="2"
+            fi
+
+            if [ ! -f .clangd ] || [ .clangd -ot "$0" ]; then
+                cat > .clangd << 'EOF'
+                CompileFlags:
+                  CompilationDatabase: build
+                Diagnostics:
+                  UnusedIncludes: None
+                  MissingIncludes: None
+                EOF
             fi
           '';
         };
