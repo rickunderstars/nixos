@@ -11,7 +11,7 @@
 {
   programs.waybar = {
     enable = true;
-    style = ./style.css;
+    style = ../../../assets/waybar/style.css;
     settings = {
       mainBar = {
         layer = "top";
