@@ -15,9 +15,9 @@
         font = "CaskaydiaCove Nerd Font Mono 12";
         width = 300;
         notification_height = 200;
-        offset = "20x20";
+        offset = "10x10";
         frame_width = 2;
-        corner_radius = 5;
+        corner_radius = 10;
 
         # catppuccin mavue
         background = "#1e1e2eaf";
