@@ -140,3 +140,20 @@
 	color: @rosewater;
 	margin-right: 8px;
 }
+
+#workspaces,
+#tray,
+#idle_inhibitor,
+#backlight,
+#cava,
+#wireplumber,
+#cpu,
+#bluetooth,
+#network,
+#battery,
+#battery.warning,
+#battery.critical,
+#clock {
+	border-top: 0px;
+	border-bottom: 0px;
+}
