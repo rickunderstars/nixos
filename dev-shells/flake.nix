@@ -80,6 +80,7 @@
           buildInputs = with pkgs; [
             gcc
             cmake
+            bear
             boost
             llvmPackages.clang-tools
             vscode-extensions.ms-vscode.cpptools
