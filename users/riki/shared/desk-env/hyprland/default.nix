@@ -51,6 +51,11 @@
 
       ];
 
+      layerrule = [
+        "blur, waybar"
+        "ignorezero, waybar"
+      ];
+
       "$mod" = "SUPER";
 
       bind = [

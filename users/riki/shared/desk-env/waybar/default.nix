@@ -23,8 +23,8 @@
         ];
         modules-right = [
           "tray"
-          "backlight"
           "idle_inhibitor"
+          "backlight"
           "cava"
           "wireplumber"
           "cpu"
@@ -93,6 +93,7 @@
         };
 
         tray = {
+          show-passive-items = true;
           spacing = 10;
         };
 
@@ -167,6 +168,37 @@
 
       };
 
+    };
+  };
+
+  # workaround for wireplumber graphic glitch
+  systemd.user.services.wireplumber-refresh = {
+    Unit = {
+      Description = "Refresh WirePlumber volume for Waybar";
+      After = [ "wireplumber.service" ];
+    };
+
+    Service = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.writeShellScript "wpctl-refresh" ''
+        ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
+        ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
+      ''}";
+    };
+  };
+
+  systemd.user.timers.wireplumber-refresh = {
+    Unit = {
+      Description = "Refresh WirePlumber volume timer";
+    };
+
+    Timer = {
+      OnBootSec = "5s";
+      OnUnitActiveSec = "2s";
+    };
+
+    Install = {
+      WantedBy = [ "timers.target" ];
     };
   };
 }
