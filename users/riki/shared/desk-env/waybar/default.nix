@@ -193,8 +193,8 @@
     };
 
     Timer = {
-      OnBootSec = "5s";
-      OnUnitActiveSec = "2s";
+      OnBootSec = "3s";
+      OnUnitActiveSec = "1s";
     };
 
     Install = {
