@@ -15,7 +15,7 @@
         font = "CaskaydiaCove Nerd Font Mono 12";
         width = 300;
         notification_height = 200;
-        offset = "10x10";
+        offset = "8x8";
         frame_width = 2;
         corner_radius = 10;
 
