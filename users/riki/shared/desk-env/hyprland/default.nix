@@ -35,7 +35,7 @@
         "idleinhibit always, class:itch"
 
         # heroic
-        "idleinhibit always, class:itch"
+        "idleinhibit always, class:heroic"
 
         # ente-auth
         "float, class:io.ente.auth"
@@ -48,15 +48,11 @@
         # localsend
         "float, class:localsend_app"
         "size 40% 50%, class:localsend_app"
-
       ];
 
       layerrule = [
         "blur, waybar"
         "ignorezero, waybar"
-        "blur, dunstify"
-        "ignorezero, dunstify"
-
       ];
 
       "$mod" = "SUPER";
