@@ -23,14 +23,14 @@
         ];
         modules-right = [
           "tray"
-          "idle_inhibitor"
-          "backlight"
           "cava"
           "wireplumber"
+          "backlight"
+          "idle_inhibitor"
           "cpu"
+          "battery"
           "bluetooth"
           "network"
-          "battery"
           "clock"
         ];
         spacing = 4;
@@ -191,12 +191,11 @@
     Unit = {
       Description = "Refresh WirePlumber volume timer";
     };
-
     Timer = {
       OnBootSec = "3s";
       OnUnitActiveSec = "1s";
+      Unit = "wireplumber-refresh.service";
     };
-
     Install = {
       WantedBy = [ "timers.target" ];
     };

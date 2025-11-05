@@ -29,6 +29,7 @@
 	font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font";
 	color: @text;
 	font-weight: bolder;
+	font-style: italic;
 	font-size: 10pt;
 }
 
@@ -43,12 +44,16 @@
 #network,
 #battery,
 #clock {
-	background-color: alpha(@base, 0.6);
-	border: 2px solid @mauve;
+	background-color: alpha(@base, 0.4);
+	border-width: 4px;
+	border-style: solid;
+	border-color: @mavue;
 	border-radius: 10px;
+	border-top: 0px;
+	border-bottom: 0px;
 
 	padding: 0em 0.7em;
-	margin: 8px 0px 0px;
+	margin: 8px 2px 0px;
 }
 
 #workspaces {
@@ -61,7 +66,7 @@
 }
 
 #workspaces button.active {
-	background-color: @surface0;
+	background-color: alpha(@blue, 0.3);
 }
 
 #waybar {
@@ -70,22 +75,17 @@
 
 
 
-#tray {}
-
-#backlight {
-	border: 2px solid @flamingo;
-	color: @flamingo;
+#tray {
+	border-color: @rosewater;
+	color: @rosewater;
 }
 
-#idle_inhibitor {
-	border: 2px solid @pink;
-	color: @pink;
-}
+
 
 
 #cava {
-	border: 2px solid @lavender;
-	color: @lavender;
+	border-color: @flamingo;
+	color: @flamingo;
 	border-right: 0em;
 	border-top-right-radius: 0em;
 	border-bottom-right-radius: 0em;
@@ -94,8 +94,8 @@
 }
 
 #wireplumber {
-	border: 2px solid @lavender;
-	color: @lavender;
+	border-color: @flamingo;
+	color: @flamingo;
 	min-width: 8em;
 	border-left: 0em;
 	border-top-left-radius: 0em;
@@ -104,56 +104,49 @@
 	padding-left: 0em;
 }
 
+#backlight {
+	border-color: @pink;
+	color: @pink;
+}
+
+#idle_inhibitor {
+	border-color: @maroon;
+	color: @maroon;
+}
+
 #cpu {
-	border: 2px solid @peach;
+	border-color: @peach;
 	color: @peach;
 	min-width: 8em;
 }
 
-#bluetooth {
-	border: 2px solid @sapphire;
-	color: @sapphire;
-}
-
-#network {
-	border: 2px solid @teal;
-	color: @teal;
-}
-
 #battery {
-	border: 2px solid @green;
+	border-color: @green;
 	color: @green;
 }
 
 #battery.warning {
-	border: 2px solid @yellow;
+	border-color: @yellow;
 	color: @yellow;
 }
 
 #battery.critical {
-	border: 2px solid @red;
+	border-color: @red;
 	color: @red;
 }
 
-#clock {
-	border: 2px solid @rosewater;
-	color: @rosewater;
-	margin-right: 8px;
+#bluetooth {
+	border-color: @teal;
+	color: @teal;
 }
 
-#workspaces,
-#tray,
-#idle_inhibitor,
-#backlight,
-#cava,
-#wireplumber,
-#cpu,
-#bluetooth,
-#network,
-#battery,
-#battery.warning,
-#battery.critical,
+#network {
+	border-color: @sapphire;
+	color: @sapphire;
+}
+
 #clock {
-	border-top: 0px;
-	border-bottom: 0px;
+	border-color: @lavender;
+	color: @lavender;
+	margin-right: 8px;
 }
