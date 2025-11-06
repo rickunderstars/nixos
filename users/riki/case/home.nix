@@ -16,6 +16,7 @@
     ./term/cava
     ./term/fish
     ./desk-env/hyprland
+    ./desk-env/hyprlock
   ];
 
 }
