@@ -28,7 +28,7 @@
           hide_filtered = false;
         };
         switch = {
-          filter_by = [ "current_monitor" ];
+          filter_by = [ "current_workspace" ];
         };
       };
     };
