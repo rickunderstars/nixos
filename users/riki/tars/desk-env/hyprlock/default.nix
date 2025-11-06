@@ -40,6 +40,18 @@
           shadow_passes = 2;
         }
       ];
+      label = [
+        {
+          text = "cmd[update:5000] /home/riki/nixos-config/users/riki/assets/hyprlock/battery";
+          text_align = "center";
+          halign = "right";
+          valign = "bottom";
+          color = "rgba(166, 227, 161, 1.0)";
+          font_size = 30;
+          font_family = "CaskaydiaCove Nerd Font Mono";
+          position = "-20, 20";
+        }
+      ];
     };
   };
 }
