@@ -23,7 +23,7 @@
       ];
       input-field = [
         {
-          size = "600, 120";
+          size = "600, 100";
           position = "0, -180";
           monitor = "";
           dots_center = true;
