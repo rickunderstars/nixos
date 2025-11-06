@@ -38,6 +38,12 @@
         mode = "dock";
         reload_style_on_change = true;
 
+        "hyprland/workspaces" = {
+          format = "{icon}";
+          on-scroll-up = "hyprctl dispatch workspace m+1";
+          on-scroll-down = "hyprctl dispatch workspace m-1";
+        };
+
         battery = {
           states = {
             warning = 15;

@@ -42,7 +42,7 @@
       ];
       label = [
         {
-          text = "cmd[update:5000] /home/riki/nixos-config/users/riki/assets/hyprlock/battery";
+          text = "cmd[update:5000] /home/riki/nixos-config/users/riki/assets/scripts/battery";
           text_align = "center";
           halign = "right";
           valign = "bottom";
