@@ -117,7 +117,7 @@
 #cpu {
 	border-color: @peach;
 	color: @peach;
-	min-width: 8em;
+	min-width: 8.5em;
 }
 
 #battery {

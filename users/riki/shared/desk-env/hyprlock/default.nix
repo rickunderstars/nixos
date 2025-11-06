@@ -5,7 +5,6 @@
   inputs,
   ...
 }:
-
 {
   programs.hyprlock = {
     enable = true;
@@ -15,7 +14,6 @@
         ignore_empty_input = true;
         fail_timeout = 500;
       };
-
       background = [
         {
           path = "~/nixos-config/users/riki/assets/walls/Cloudsnight.jpg";
@@ -23,11 +21,23 @@
           blur_size = 8;
         }
       ];
-
+      image = [
+        {
+          path = "~/nixos-config/users/riki/assets/avatar/marcille.jpg";
+          size = 170;
+          rounding = -1;
+          border_size = 4;
+          border_color = "rgba(89b4faff) rgba(cba6f7ff) 310deg";
+          position = "0, 80";
+          halign = "center";
+          valign = "center";
+          shadow_passes = 2;
+        }
+      ];
       input-field = [
         {
           size = "320, 80";
-          position = "0, 0";
+          position = "0, -120";
           monitor = "";
           dots_center = true;
           fade_on_empty = false;
@@ -38,7 +48,7 @@
           check_color = "rgb(137, 220, 235)";
           fail_color = "rgb(243, 139, 168)";
           fail_text = ">:P";
-          outline_thickness = 5;
+          outline_thickness = 4;
           placeholder_text = "▼・ᴥ・▼";
           shadow_passes = 2;
         }
