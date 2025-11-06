@@ -27,6 +27,7 @@
           "wireplumber"
           "backlight"
           "idle_inhibitor"
+          "memory"
           "cpu"
           "battery"
           "bluetooth"
@@ -67,6 +68,12 @@
           tooltip-format-enumerate-connected = " {device_alias}";
 
           on-click = "ghostty -e bluetui";
+        };
+
+        memory = {
+          interval = 10;
+          format = "<span font_size='150%' rise='-2560'></span> {percentage}";
+          on-click = "ghostty -e btop";
         };
 
         cpu = {
