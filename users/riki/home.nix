@@ -35,7 +35,7 @@
       hyprsysteminfo
       grim
       slurp
-      bluetui # bluetooth
+      bluetuith # bluetooth
       papirus-icon-theme
       kdePackages.dolphin
       kdePackages.breeze
@@ -151,6 +151,7 @@
   };
 
   services = {
+    network-manager-applet.enable = true;
     clipman.enable = true;
     tldr-update.enable = true;
     playerctld.enable = true;

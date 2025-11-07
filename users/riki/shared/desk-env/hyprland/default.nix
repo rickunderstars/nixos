@@ -71,11 +71,11 @@
         "$mod, q, killactive, "
         "$mod SHIFT, q, forcekillactive, "
 
-        ### wifi
-        "$mod, w, exec, ghostty -e nmtui"
+        ### network
+        "$mod, w, exec, ghostty -e nmtui-connect"
 
         ### bluetooth
-        "$mod, b, exec, ghostty -e bluetui"
+        "$mod, b, exec, ghostty -e bluetuith"
 
         ### audio switch
         "$mod, a, exec, fish -c auch"

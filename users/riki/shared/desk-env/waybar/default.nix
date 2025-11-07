@@ -95,7 +95,7 @@
           tooltip-format-connected = "{device_enumerate}";
           tooltip-format-enumerate-connected = " {device_alias}";
 
-          on-click = "ghostty -e bluetui";
+          on-click = "ghostty -e bluetuith";
         };
 
         memory = {
@@ -153,7 +153,7 @@
           tooltip-format-ethernet = "ifname: {ifname}";
           tooltip-format-disconnected = "";
 
-          on-click = "ghostty -e nmtui";
+          on-click = "ghostty -e nmtui-connect";
         };
 
         wireplumber = {
