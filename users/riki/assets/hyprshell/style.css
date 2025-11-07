@@ -45,6 +45,7 @@
 }
 
 .monitor {
+	margin-top: 40px;
 	border: unset;
 	border-radius: 20px;
 }
