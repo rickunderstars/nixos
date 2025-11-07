@@ -44,38 +44,6 @@
           monitor = "DP-3";
         }
       ];
-      label = [
-        {
-          text = "$TIME";
-          text_align = "left";
-          halign = "left";
-          valign = "top";
-          color = "rgba(205, 214, 244, 1.0)";
-          font_size = 30;
-          font_family = "CaskaydiaCove Nerd Font Mono";
-          position = "20, -20";
-        }
-        {
-          text = "cmd[update:5000] date +'%a %d-%b-%Y'";
-          text_align = "left";
-          halign = "left";
-          valign = "top";
-          color = "rgba(205, 214, 244, 1.0)";
-          font_size = 30;
-          font_family = "CaskaydiaCove Nerd Font Mono";
-          position = "20, -70";
-        }
-        {
-          text = "~$USER";
-          text_align = "center";
-          halign = "right";
-          valign = "top";
-          color = "rgba(205, 214, 244, 1.0)";
-          font_size = 30;
-          font_family = "CaskaydiaCove Nerd Font Mono";
-          position = "-20, -20";
-        }
-      ];
     };
   };
 }
