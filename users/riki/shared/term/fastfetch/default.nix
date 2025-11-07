@@ -7,7 +7,8 @@
 }:
 
 let
-  logo-src = ./logo.jpg;
+  logo-src = ../../../assets/fastfetch/frieren.jpg;
+
   logo-options =
     if builtins.pathExists logo-src then
       {

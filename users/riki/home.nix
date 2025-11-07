@@ -69,6 +69,7 @@
       tty-clock
 
       ####### apps #######
+      gthumb
       blender
       uxplay
       pavucontrol
