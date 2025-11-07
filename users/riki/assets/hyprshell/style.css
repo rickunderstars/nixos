@@ -46,6 +46,7 @@
 
 .monitor {
 	border: unset;
+	border-radius: 20px;
 }
 
 .client {
@@ -59,6 +60,7 @@
 .launcher {
 	margin-top: 80px;
 	border: unset;
+	border-radius: 20px;
 }
 
 .launcher-input {
