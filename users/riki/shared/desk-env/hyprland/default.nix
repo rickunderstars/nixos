@@ -37,6 +37,14 @@
         # heroic
         "idleinhibit always, class:heroic"
 
+        # network
+        "float, class:ghostty.network"
+        "size 60% 60%, class:ghostty.network"
+
+        # bluetooth
+        "float, class:ghostty.bluetooth"
+        "size 60% 60%, class:ghostty.bluetooth"
+
         # ente-auth
         "float, class:io.ente.auth"
         "size 60% 60%, class:io.ente.auth"
@@ -72,10 +80,10 @@
         "$mod SHIFT, q, forcekillactive, "
 
         ### network
-        "$mod, w, exec, ghostty -e nmtui-connect"
+        "$mod, w, exec, ghostty --class=ghostty.network -e nmtui-connect"
 
         ### bluetooth
-        "$mod, b, exec, ghostty -e bluetuith"
+        "$mod, b, exec, ghostty --class=ghostty.bluetooth -e bluetuith"
 
         ### audio switch
         "$mod, a, exec, fish -c auch"
