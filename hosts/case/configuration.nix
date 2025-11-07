@@ -41,6 +41,7 @@
         "--prefer-output DP-3" # monitor preference
         "-w 1920 -h 1080" # game resolution
         "-W 1920 -H 1080" # window resolution
+        "-r 200" # fps
         #"-F fsr" # upscaling method
         "--mangoapp" # mangohud
         "--fullscreen"
