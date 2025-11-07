@@ -37,6 +37,8 @@
       slurp
       bluetui # bluetooth
       papirus-icon-theme
+      kdePackages.dolphin
+      kdePackages.breeze
       ## pkgs for quickshell ##
       kdePackages.qtsvg
       kdePackages.qtimageformats
@@ -90,7 +92,7 @@
       ente-auth
       pcloud.passthru.libnotify or pkgs.libnotify
       spotify
-      qpdfview
+      kdePackages.okular
       libresprite
     ];
   };
@@ -134,7 +136,6 @@
         UITheme = "theme-contrast-dark";
       };
     };
-    zathura.enable = true;
     mangohud = {
       enable = true;
       settings = {
@@ -203,6 +204,6 @@
     ./shared/desk-env/cursor
     ./shared/desk-env/waybar
     ./shared/desk-env/notifications
-    ./shared/desk-env/gtk
+    ./shared/desk-env/global-themes
   ];
 }

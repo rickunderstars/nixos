@@ -12,7 +12,7 @@
       general = {
         hide_cursor = true;
         ignore_empty_input = true;
-        fail_timeout = 500;
+        fail_timeout = 700;
       };
       background = [
         {

@@ -54,7 +54,7 @@
       "x-scheme-handler/about" = [ "firefox.desktop" ];
       "x-scheme-handler/unknown" = [ "firefox.desktop" ];
       "text/x-arduino" = [ "arduino-arduinoide.desktop" ];
-      "application/pdf" = [ "qpdfview.desktop" ];
+      "application/pdf" = [ "org.kde.okular.desktop" ];
       "model/stl" = [ "meshlab.desktop" ];
       "model/obj" = [ "meshlab.desktop" ];
     };
