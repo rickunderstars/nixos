@@ -61,7 +61,8 @@
       tty-clock
 
       ####### apps #######
-      gthumb
+      gimp
+      grimblast
       blender
       uxplay
       pavucontrol
@@ -155,21 +156,7 @@
         };
       };
     };
-    flameshot = {
-      enable = true;
-      settings = {
-        general = {
-          savePath = "/home/riki/Pictures/Screenshots";
-          savePathFixed = true;
-          saveAsFileExtension = ".png";
-          filenamePattern = "%Y-%m-%d_%Hh%Mm%Ss";
-          saveAfterCopy = true;
-          useGrimAdapter = true;
-          disabledGrimWarning = true;
-        };
-      };
 
-    };
     easyeffects.enable = true;
     hyprpolkitagent.enable = true;
     gnome-keyring = {
@@ -182,12 +169,22 @@
     };
   };
 
-  home.file = {
-    ".config/micro/colorschemes/catppuccin-mocha.micro" = {
-      source = ./assets/micro/catppuccin-mocha.micro;
+  home = {
+    file = {
+      ".config/micro/colorschemes/catppuccin-mocha.micro" = {
+        source = ./assets/micro/catppuccin-mocha.micro;
+      };
+      ".arduinoIDE/.clang-format" = {
+        source = ./assets/arduino/.clang-format;
+      };
     };
-    ".arduinoIDE/.clang-format" = {
-      source = ./assets/arduino/.clang-format;
+  };
+
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    extraConfig = {
+      XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
     };
   };
 

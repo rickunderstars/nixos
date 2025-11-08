@@ -56,11 +56,6 @@
         # localsend
         "float, class:localsend_app"
         "size 40% 50%, class:localsend_app"
-
-        # flameshot
-        "float, title:^(flameshot)$"
-        "noborder, title:^(flameshot)$"
-        "suppressevent fullscreen, title:^(flameshot)$"
       ];
 
       layerrule = [
@@ -102,10 +97,10 @@
         ", XF86AudioStop, exec, playerctl stop"
 
         ### screenshots
-        "$mod, s, exec, fish -c 'flameshot gui'"
-        ", print, exec, fish -c 'flameshot gui'"
-        "CTRL, print, exec, fish -c 'flameshot full'"
-        "$mod SHIFT, s, exec, fish -c 'flameshot full'"
+        "$mod, s, exec, fish -c 'grimblast -n -f copysave area'"
+        ", print, exec, fish -c 'grimblast -n -f copysave area'"
+        "CTRL, print, exec, fish -c 'grimblast -n copysave screen'"
+        "$mod SHIFT, s, exec, fish -c 'grimblast -n copysave screen'"
 
         # audio mute toggle
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"

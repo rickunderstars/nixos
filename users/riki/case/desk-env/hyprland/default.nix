@@ -17,7 +17,6 @@
       ];
 
       windowrulev2 = [
-        "move -1920 0, title:^(flameshot)$"
       ];
 
       workspace = [
