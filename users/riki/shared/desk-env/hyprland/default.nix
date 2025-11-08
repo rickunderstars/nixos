@@ -89,6 +89,9 @@
         ### file explorer
         "$mod, e, exec, nautilus --new-window"
 
+        ### switch keyboard layout
+        "$mod, space, exec, hyprctl switchxkblayout all next; dunstify 'Switched keyboard layout'"
+
         ### media control
         "$mod, p, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
@@ -202,7 +205,9 @@
       };
 
       general = {
+        gaps_in = 4;
         gaps_out = 8;
+        float_gaps = 8;
         resize_on_border = true;
         extend_border_grab_area = 30;
         border_size = 2;
@@ -219,8 +224,8 @@
       };
 
       input = {
-        kb_layout = "us";
-        kb_variant = "intl";
+        kb_layout = "us,it";
+        kb_variant = "intl,";
         follow_mouse = 1;
         scroll_method = "2fg";
         accel_profile = "flat";
@@ -251,6 +256,7 @@
         inactive_timeout = 5;
         persistent_warps = true;
         warp_on_change_workspace = 1;
+        warp_on_toggle_special = 1;
         hide_on_key_press = true;
       };
 

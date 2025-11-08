@@ -44,6 +44,7 @@
 #bluetooth,
 #network,
 #battery,
+#language,
 #clock {
 	background-color: alpha(@base, 0.4);
 	border-width: 4px;
@@ -156,6 +157,12 @@
 #network {
 	border-color: @sapphire;
 	color: @sapphire;
+}
+
+#language {
+	border-color: @blue;
+	color: @blue;
+	min-width: 2em;
 }
 
 #clock {

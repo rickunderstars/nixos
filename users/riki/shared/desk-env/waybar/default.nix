@@ -32,11 +32,18 @@
           "battery"
           "bluetooth"
           "network"
+          "hyprland/language"
           "clock"
         ];
         spacing = 4;
         mode = "dock";
         reload_style_on_change = true;
+
+        "hyprland/language" = {
+          format = "{}";
+          format-it = "IT";
+          format-en = "EN";
+        };
 
         "hyprland/workspaces" = {
           format = "{icon}";
