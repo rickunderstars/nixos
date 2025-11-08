@@ -16,6 +16,10 @@
         ", preferred, auto, 1"
       ];
 
+      windowrulev2 = [
+        "move -1920 0, title:^(flameshot)$"
+      ];
+
       workspace = [
         "1, monitor:DP-3"
         "2, monitor:HDMI-A-1"
@@ -32,6 +36,7 @@
         "CTRL SHIFT $mod, comma, movetoworkspace, -2"
 
       ];
+
     };
   };
 }

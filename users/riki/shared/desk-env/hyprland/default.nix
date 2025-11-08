@@ -56,6 +56,11 @@
         # localsend
         "float, class:localsend_app"
         "size 40% 50%, class:localsend_app"
+
+        # flameshot
+        "float, title:^(flameshot)$"
+        "noborder, title:^(flameshot)$"
+        "suppressevent fullscreen, title:^(flameshot)$"
       ];
 
       layerrule = [
@@ -66,8 +71,6 @@
       "$mod" = "SUPER";
 
       bind = [
-        ### quickshell (TO REMOVE)
-        "$mod, k, exec, pidof quickshell || quickshell -p ~/nixos-config/users/riki/shared/desk-env/quickshell/config"
 
         ### lock
         "$mod SHIFT, l, exec, pidof hyprlock || hyprlock"
@@ -99,10 +102,10 @@
         ", XF86AudioStop, exec, playerctl stop"
 
         ### screenshots
-        ", print, exec, fish -c 'screenshot-full' && dunstify 'Screenshot (fullscreen)' '~/Pictures/Screenshots'"
-        "$mod, s, exec, fish -c 'screenshot-full' && dunstify 'Screenshot (fullscreen)' '~/Pictures/Screenshots'"
-        "CTRL, print, exec, fish -c 'screenshot-region' && dunstify 'Screenshot (region)' '~/Pictures/Screenshots'"
-        "ALT, s, exec, fish -c 'screenshot-region' && dunstify 'Screenshot (region)' '~/Pictures/Screenshots'"
+        "$mod, s, exec, fish -c 'flameshot gui'"
+        ", print, exec, fish -c 'flameshot gui'"
+        "CTRL, print, exec, fish -c 'flameshot full'"
+        "$mod SHIFT, s, exec, fish -c 'flameshot full'"
 
         # audio mute toggle
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"

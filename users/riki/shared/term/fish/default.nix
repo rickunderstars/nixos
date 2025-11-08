@@ -50,22 +50,6 @@
         			journalctl --user -u onedrive.service -f
         			'';
 
-      # screenshots
-      screenshot-full = ''
-        set SCREENSHOT_DIR "$HOME/Pictures/Screenshots"
-        mkdir -p $SCREENSHOT_DIR
-        set FILENAME  (date +%Y-%m-%d_%Hh%Mm%Ss)"_full.png"
-        set FILEPATH "$SCREENSHOT_DIR/$FILENAME"
-        grim - | tee $FILEPATH | wl-copy
-      '';
-      screenshot-region = ''
-        set SCREENSHOT_DIR "$HOME/Pictures/Screenshots"
-        mkdir -p $SCREENSHOT_DIR
-        set FILENAME  (date +%Y-%m-%d_%Hh%Mm%Ss)"_reg.png"
-        set FILEPATH "$SCREENSHOT_DIR/$FILENAME"
-        grim -g (slurp) - | tee $FILEPATH | wl-copy
-      '';
-
       # ls
       l = "eza -lah";
       ls = "eza";

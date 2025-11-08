@@ -29,6 +29,10 @@
 
       ];
 
+      windowrulev2 = [
+        "move 0 0, title:^(flameshot)$"
+      ];
+
       # forces xwayland not to scale x11 apps
       xwayland = {
         force_zero_scaling = true;

@@ -33,18 +33,10 @@
       ####### desk env #######
       hyprpicker
       hyprsysteminfo
-      grim
-      slurp
       bluetuith # bluetooth
       papirus-icon-theme
-      kdePackages.dolphin
+      nautilus
       kdePackages.breeze
-      ## pkgs for quickshell ##
-      kdePackages.qtsvg
-      kdePackages.qtimageformats
-      kdePackages.qtmultimedia
-      kdePackages.qt5compat
-      kdePackages.qtdeclarative
 
       ####### coding #######
       vscodium
@@ -162,6 +154,21 @@
           file_manager = "${pkgs.nautilus}/bin/nautilus";
         };
       };
+    };
+    flameshot = {
+      enable = true;
+      settings = {
+        general = {
+          savePath = "/home/riki/Pictures/Screenshots";
+          savePathFixed = true;
+          saveAsFileExtension = ".png";
+          filenamePattern = "%Y-%m-%d_%Hh%Mm%Ss";
+          saveAfterCopy = true;
+          useGrimAdapter = true;
+          disabledGrimWarning = true;
+        };
+      };
+
     };
     easyeffects.enable = true;
     hyprpolkitagent.enable = true;

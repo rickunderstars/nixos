@@ -9,7 +9,7 @@
   qt = {
     enable = true;
     platformTheme.name = "kde";
-    style.name = "breeze-dark";
+    style.name = "breeze";
   };
 
   xdg.configFile = {
