@@ -86,6 +86,9 @@
         ### audio switch
         "$mod, a, exec, fish -c auch"
 
+        ### file explorer
+        "$mod, e, exec, nautilus --new-window"
+
         ### media control
         "$mod, p, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
