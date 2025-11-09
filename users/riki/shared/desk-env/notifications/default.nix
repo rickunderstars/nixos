@@ -11,28 +11,29 @@
     enable = true;
     settings = {
       global = {
-        timeout = 3;
+        timeout = 2;
         font = "CaskaydiaCove Nerd Font Mono 12";
         width = 300;
-        notification_height = 200;
+        height = "(0, 300)";
         offset = "8x8";
         frame_width = 2;
         corner_radius = 10;
+        follow = "mouse";
+        icon_position = "left";
+        icon_corner_radius = 5;
+        max_icon_size = 64;
+        alignment = "center";
 
         # catppuccin mavue
         background = "#1e1e2eaf";
         foreground = "#cdd6f4ff";
         frame_color = "#cba6f7e5";
         highlight = "#313244e5";
-
-        icon_position = "left";
-        icon_corner_radius = 5;
-        max_icon_size = 64;
       };
 
       urgency_critical = {
         frame_color = "#fab387ff";
-        timeout = 0;
+        timeout = 10;
       };
     };
   };
