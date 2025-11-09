@@ -109,6 +109,7 @@
     translate-shell.enable = true;
 
     ####### apps #######
+    zen-browser.enable = true;
     vesktop.enable = true;
     obs-studio.enable = true;
     firefox.enable = true;
@@ -156,7 +157,6 @@
         };
       };
     };
-
     easyeffects.enable = true;
     hyprpolkitagent.enable = true;
     gnome-keyring = {
@@ -189,6 +189,7 @@
   };
 
   imports = [
+    inputs.zen-browser.homeModules.twilight
     ./shared/mimeapps
     ./shared/apps/onedrive
     ./shared/apps/imv

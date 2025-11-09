@@ -90,7 +90,31 @@
         "home-manager": "home-manager",
         "my-dev-shells": "my-dev-shells",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "zen-browser": "zen-browser"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1762665515,
+        "narHash": "sha256-0+A0nHL1+x1H4NL5bE6GyA252JOpUK6kvfHg/g75260=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "1bea5e777dd0b99158c504da1fb2913ff119e96c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "type": "github"
       }
     }
   },

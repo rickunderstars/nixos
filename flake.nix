@@ -5,7 +5,9 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+    zen-browser.inputs.home-manager.follows = "home-manager";
     my-dev-shells = {
       url = "./dev-shells";
       inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
@@ -45,6 +47,7 @@
                 backupFileExtension = "backup";
                 extraSpecialArgs = {
                   stable = pkgs-stable;
+                  inherit inputs;
                 };
                 users.riki = {
                   imports = [
@@ -78,6 +81,7 @@
                 backupFileExtension = "backup";
                 extraSpecialArgs = {
                   stable = pkgs-stable;
+                  inherit inputs;
                 };
                 users.riki = {
                   imports = [
