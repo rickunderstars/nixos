@@ -28,6 +28,7 @@
     ./desk-env/hyprland
     ./desk-env/hypridle
     ./desk-env/hyprlock
+    ./desk-env/waybar
   ];
 
 }

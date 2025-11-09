@@ -23,16 +23,16 @@
           on-resume = "brightnessctl -rd platform::kbd_backlight";
         }
         {
-          timeout = 300; # 5min - lower screen brightness
+          timeout = 180; # 3min - lower screen brightness
           on-timeout = "brightnessctl -s set 10";
           on-resume = "brightnessctl -r";
         }
         {
-          timeout = 360; # 6min - lock screen
+          timeout = 240; # 4min - lock screen
           on-timeout = "pidof hyprlock || hyprlock";
         }
         {
-          timeout = 1800; # 30min - suspend
+          timeout = 1200; # 20min - suspend
           on-timeout = "systemctl suspend";
         }
       ];

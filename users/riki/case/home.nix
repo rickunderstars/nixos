@@ -17,6 +17,7 @@
     ./term/fish
     ./desk-env/hyprland
     ./desk-env/hyprlock
+    ./desk-env/waybar
   ];
 
 }

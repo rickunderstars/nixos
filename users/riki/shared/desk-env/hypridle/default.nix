@@ -17,7 +17,7 @@
 
       listener = [
         {
-          timeout = 600; # 10min - turn off screen
+          timeout = 300; # 5min - turn off screen
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
         }

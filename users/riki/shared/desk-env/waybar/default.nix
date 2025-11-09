@@ -128,7 +128,6 @@
             "▇"
             "█"
           ];
-          bars = 32;
           framerate = 120;
           hide_on_silence = false;
           bar_delimiter = 0;
