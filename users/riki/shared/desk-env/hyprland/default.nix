@@ -70,7 +70,6 @@
       "$mod" = "SUPER";
 
       bind = [
-
         ### lock
         "$mod SHIFT, l, exec, pidof hyprlock || hyprlock"
 
@@ -95,6 +94,9 @@
 
         ### switch keyboard layout
         "$mod, space, exec, hyprctl switchxkblayout all next; dunstify 'Switched keyboard layout'"
+
+        ### hyprpicker
+        "$mod, c, exec, hyprpicker -a"
 
         ### media control
         "$mod, p, exec, playerctl play-pause"
