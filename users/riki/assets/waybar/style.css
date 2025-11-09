@@ -49,7 +49,7 @@
 	background-color: alpha(@base, 0.4);
 	border-width: 4px;
 	border-style: solid;
-	border-color: @mavue;
+	border-color: @mauve;
 	border-radius: 10px;
 	border-top: 0px;
 	border-bottom: 0px;
@@ -66,21 +66,36 @@
 #workspaces button {
 	border-radius: 50%;
 	margin: 0.2em;
+	padding: 0em 0.5em;
 }
 
 #workspaces button.active {
 	background-color: alpha(@blue, 0.3);
 }
 
+#workspaces button:hover {
+	background-color: alpha(@teal, 0.6);
+	box-shadow: none;
+}
+
 #waybar {
 	background-color: alpha(@base, 0);
 }
 
-
-
 #tray {
 	border-color: @rosewater;
 	color: @rosewater;
+}
+
+#tray menu {
+	background-color: alpha(@base, 0.9);
+	color: @text;
+	border-radius: 10px;
+}
+
+#tray menu menuitem:hover {
+  background-color: alpha(@blue, 0.3);
+  color: @text;
 }
 
 #cava {
