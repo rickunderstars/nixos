@@ -22,6 +22,10 @@
         "bluetoothctl power off"
       ];
 
+      workspace = [
+        "special:magic, gapsout:40, gapsin:20"
+      ];
+
       windowrulev2 = [
 
         # games
@@ -158,6 +162,8 @@
         ### focus monitor (cycle)
         "$mod, tab, focusmonitor, +1"
 
+        ### special workspace
+        "$mod, equal, togglespecialworkspace, magic"
       ];
 
       bindel = [
