@@ -27,7 +27,6 @@
       ];
 
       windowrulev2 = [
-
         # games
         "idleinhibit always, class:gamescope" # always idle inhibit when gamescope active"
 
@@ -48,6 +47,10 @@
         # bluetooth
         "float, class:ghostty.bluetooth"
         "size 60% 60%, class:ghostty.bluetooth"
+
+        # btop
+        "float, class:ghostty.btop"
+        "size 75% 75%, class:ghostty.btop"
 
         # ente-auth
         "float, class:io.ente.auth"
@@ -85,6 +88,9 @@
 
         ### bluetooth
         "$mod, b, exec, ghostty --class=ghostty.bluetooth -e bluetuith"
+
+        ### btop
+        "CTRL SHIFT, escape, exec, ghostty --class=ghostty.btop -e btop"
 
         ### audio switch
         "$mod, a, exec, fish -c auch"

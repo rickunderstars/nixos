@@ -108,13 +108,13 @@
         memory = {
           interval = 10;
           format = "<span font_size='150%' rise='-2560'></span> {percentage}";
-          on-click = "ghostty -e btop";
+          on-click = "ghostty --class=ghostty.btop -e btop";
         };
 
         cpu = {
           interval = 2;
           format = "<span font_size='150%' rise='-2560'></span> {usage} {max_frequency}GHz";
-          on-click = "ghostty -e btop";
+          on-click = "ghostty --class=ghostty.btop -e btop";
         };
 
         cava = {
