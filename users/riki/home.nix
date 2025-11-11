@@ -61,6 +61,7 @@
       tty-clock
 
       ####### apps #######
+      wl-mirror
       gimp
       grimblast
       blender
