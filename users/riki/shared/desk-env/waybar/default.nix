@@ -241,4 +241,21 @@
       WantedBy = [ "timers.target" ];
     };
   };
+
+  systemd.user.services = {
+    waybar-restart = {
+      Unit = {
+        Description = "waybar auto-restart";
+        After = [ "graphical-session.target" ];
+        PartOf = [ "graphical-session.target" ];
+      };
+      Service = {
+        Type = "simple";
+        ExecStart = "${pkgs.waybar}/bin/waybar";
+        Restart = "always";
+        RestartSec = "2";
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
+  };
 }

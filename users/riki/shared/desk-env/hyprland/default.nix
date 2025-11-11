@@ -17,7 +17,6 @@
         "hyprlock"
         "hypridle"
         "hyprpaper"
-        "waybar &"
         "systemctl --user start hyprpolkitagent"
         "bluetoothctl power off"
       ];
