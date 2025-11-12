@@ -14,11 +14,10 @@
 
     packages = with pkgs; [
 
-      ####### cli #######
+      ####### cli/tui #######
       ookla-speedtest
       zip
       unzip
-      graphviz
       plantuml
       wl-clipboard
       bc
@@ -27,13 +26,17 @@
       trash-cli
       playerctl
       coreutils
-
-      (bottles.override { removeWarningPopup = true; })
+      portal
+      bluetuith
+      serie
+      wiremix
+      wl-mirror
+      slides
+      cpufetch
 
       ####### desk env #######
       hyprpicker
       hyprsysteminfo
-      bluetuith # bluetooth
       papirus-icon-theme
       nautilus
       kdePackages.breeze
@@ -53,15 +56,19 @@
       cargo
       arduino-ide
       arduino-language-server
+      graphviz
 
       ####### shell eye candy #######
       cbonsai
       cmatrix
       pipes
       tty-clock
+      typtea
+      astroterm
+      countryfetch
 
       ####### apps #######
-      wl-mirror
+      (bottles.override { removeWarningPopup = true; })
       gimp
       grimblast
       blender
