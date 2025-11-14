@@ -133,6 +133,7 @@
 #memory {
 	border-color: @peach;
 	color: @peach;
+	min-width: 3.3em;
 	border-right: 0;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
