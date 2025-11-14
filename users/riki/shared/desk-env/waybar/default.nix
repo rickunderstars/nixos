@@ -115,7 +115,6 @@
           interval = 2;
           format = "<span font_size='150%' rise='-2560'> </span>{usage}";
           on-click = "fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'";
-
         };
 
         cava = {
@@ -162,6 +161,7 @@
           tooltip-format-disabled = "wifi/ethernet off";
 
           on-click = "fish -c 'pidof nmtui-connect || ghostty --class=ghostty.network -e nmtui-connect'";
+          on-click-right = "fish -c wifi-toggle";
         };
 
         wireplumber = {

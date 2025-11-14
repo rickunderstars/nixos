@@ -81,6 +81,8 @@
       mute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ 1";
       unmute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0";
 
+      wifi-toggle = "nmcli radio wifi | string match -q enabled; and nmcli radio wifi off; or nmcli radio wifi on";
+
       # misc
       cls = "clear";
       ff = "clear;fastfetch";
