@@ -151,15 +151,17 @@
             "󰤥"
             "󰤨"
           ];
-          format-wifi = "{essid}<span font_size='165%' rise='-3328'>{icon}</span>";
-          format-ethernet = "{ifname}<span font_size='165%' rise='-3328'>󰈀</span>";
+          format-wifi = "<span font_size='165%' rise='-3328'>{icon}</span>"; # "{essid}<span font_size='165%' rise='-3328'>{icon}</span>";
+          format-ethernet = "<span font_size='165%' rise='-3328'>󰈀</span>"; # "{ifname}<span font_size='165%' rise='-3328'>󰈀</span>";
           format-disconnected = "<span font_size='165%' rise='-3328'>󰤭</span>";
-          tooltip-format = "";
-          tooltip-format-wifi = "SSID: {essid}\nstrength: {signalStrength}";
+          format-disabled = "<span font_size='165%' rise='-3328'>󰀝</span>";
+          tooltip-format-wifi = "SSID: {essid}\nstr: {signalStrength}\nfreq: {frequency}GHz";
           tooltip-format-ethernet = "ifname: {ifname}";
-          tooltip-format-disconnected = "";
+          tooltip-format-disconnected = "disconnected";
+          tooltip-format-disabled = "wifi/ethernet off";
 
           on-click = "ghostty --class=ghostty.network -e nmtui-connect";
+          on-click-right = "nmcli radio wifi (test (nmcli radio wifi) = enabled && dunstify 'wifi on' || dunstify 'wifi off')";
         };
 
         wireplumber = {
