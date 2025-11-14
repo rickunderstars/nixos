@@ -102,19 +102,20 @@
           tooltip-format-connected = "{device_enumerate}";
           tooltip-format-enumerate-connected = " {device_alias}";
 
-          on-click = "ghostty --class=ghostty.bluetooth -e bluetuith";
+          on-click = "fish -c 'pidof bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith'";
         };
 
         memory = {
           interval = 10;
           format = "<span font_size='150%' rise='-2560'></span> {percentage}";
-          on-click = "ghostty --class=ghostty.btop -e btop";
+          on-click = "fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'";
         };
 
         cpu = {
           interval = 2;
-          format = "<span font_size='150%' rise='-2560'></span> {usage} {max_frequency}GHz";
-          on-click = "ghostty --class=ghostty.btop -e btop";
+          format = "<span font_size='150%' rise='-2560'></span> {usage}";
+          on-click = "fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'";
+
         };
 
         cava = {
@@ -160,8 +161,7 @@
           tooltip-format-disconnected = "disconnected";
           tooltip-format-disabled = "wifi/ethernet off";
 
-          on-click = "ghostty --class=ghostty.network -e nmtui-connect";
-          on-click-right = "nmcli radio wifi (test (nmcli radio wifi) = enabled && dunstify 'wifi on' || dunstify 'wifi off')";
+          on-click = "fish -c 'pidof nmtui-connect || ghostty --class=ghostty.network -e nmtui-connect'";
         };
 
         wireplumber = {
@@ -194,16 +194,21 @@
         backlight = {
           format = "<span font_size='200%'>{icon}</span>";
           format-icons = [
-            "󱩎"
-            "󱩏"
-            "󱩐"
-            "󱩑"
-            "󱩒"
-            "󱩓"
-            "󱩔"
-            "󱩕"
-            "󱩖"
-            "󰛨"
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
           ];
           tooltip-format = "brightness: {percent}";
           reverse-scrolling = true;

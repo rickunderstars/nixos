@@ -80,6 +80,8 @@
 
 #waybar {
 	background-color: alpha(@base, 0);
+	padding: 0em;
+	margin: 0em;
 }
 
 #tray {
@@ -88,14 +90,13 @@
 }
 
 #tray menu {
-	background-color: alpha(@base, 0.9);
+	background-color: alpha(@base, 0.98);
 	color: @text;
-	border-radius: 10px;
 }
 
 #tray menu menuitem:hover {
-  background-color: alpha(@blue, 0.3);
-  color: @text;
+	background-color: alpha(@blue, 0.3);
+	color: @text;
 }
 
 #cava {
@@ -105,7 +106,7 @@
 	border-top-right-radius: 0em;
 	border-bottom-right-radius: 0em;
 	margin-right: 0em;
-
+	padding-right: 0em;
 }
 
 #wireplumber {
@@ -115,7 +116,7 @@
 	border-left: 0em;
 	border-top-left-radius: 0em;
 	border-bottom-left-radius: 0em;
-	margin-left: -0.3em;
+	margin-left: 0em;
 	padding-left: 0em;
 }
 
@@ -136,16 +137,17 @@
 	border-top-right-radius: 0em;
 	border-bottom-right-radius: 0em;
 	margin-right: 0em;
+	padding-right: 0em;
 }
 
 #cpu {
 	border-color: @peach;
 	color: @peach;
-	min-width: 8.5em;
+	min-width: 3.5em;
 	border-left: 0em;
 	border-top-left-radius: 0em;
 	border-bottom-left-radius: 0em;
-	margin-left: -0.3em;
+	margin-left: 0em;
 	padding-left: 0em;
 }
 
@@ -177,7 +179,7 @@
 #language {
 	border-color: @blue;
 	color: @blue;
-	min-width: 2em;
+	min-width: 1.2em;
 }
 
 #clock {
