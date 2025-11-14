@@ -51,6 +51,10 @@
         "float, class:ghostty.btop"
         "size 75% 75%, class:ghostty.btop"
 
+        # wiremix
+        "float, class:ghostty.wiremix"
+        "size 60% 60%, class:ghostty.wiremix"
+
         # ente-auth
         "float, class:io.ente.auth"
         "size 60% 60%, class:io.ente.auth"
@@ -83,16 +87,19 @@
         "$mod SHIFT, q, forcekillactive, "
 
         ### network
-        "$mod, w, exec, ghostty --class=ghostty.network -e nmtui-connect"
+        "$mod, w, exec, fish -c 'pidof nmtui-connect || ghostty --class=ghostty.network -e nmtui-connect'"
 
         ### bluetooth
-        "$mod, b, exec, ghostty --class=ghostty.bluetooth -e bluetuith"
+        "$mod, b, exec, fish -c 'pidof bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith'"
 
         ### btop
-        "CTRL SHIFT, escape, exec, ghostty --class=ghostty.btop -e btop"
+        "CTRL SHIFT, escape, exec, fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'"
 
         ### audio switch
         "$mod, a, exec, fish -c auch"
+
+        ### audio mixer (wiremix)
+        "$mod, v, exec, fish -c 'pidof wiremix || ghostty --class=ghostty.wiremix -e wiremix'"
 
         ### file explorer
         "$mod, e, exec, nautilus --new-window"

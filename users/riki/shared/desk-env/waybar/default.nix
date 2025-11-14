@@ -35,7 +35,6 @@
           "hyprland/language"
           "clock"
         ];
-        spacing = 4;
         mode = "dock";
         reload_style_on_change = true;
 
@@ -98,6 +97,7 @@
           format-on = "<span font_size='145%' rise='-2304'></span>";
           format-off = "<span font_size='145%' rise='-2304'>󰂲</span>";
           format-connected = "<span font_size='145%' rise='-2304'>󰂱</span>";
+          format-no-controller = "<span font_size='145%' rise='-2304'>󰂲</span>";
           tooltip-format = "bluetooth {status}";
           tooltip-format-connected = "{device_enumerate}";
           tooltip-format-enumerate-connected = " {device_alias}";
@@ -107,13 +107,13 @@
 
         memory = {
           interval = 10;
-          format = "<span font_size='150%' rise='-2560'></span> {percentage}";
+          format = "<span font_size='150%' rise='-2560'></span>{percentage}";
           on-click = "fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'";
         };
 
         cpu = {
           interval = 2;
-          format = "<span font_size='150%' rise='-2560'></span> {usage}";
+          format = "<span font_size='150%' rise='-2560'> </span>{usage}";
           on-click = "fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'";
 
         };
@@ -166,7 +166,6 @@
 
         wireplumber = {
           format-icons = [
-            "     "
             "󰥛    "
             "󰥛󰥛   "
             "󰥛󰥛󰥛  "
@@ -179,6 +178,7 @@
           scroll-step = 2.5;
           reverse-scrolling = true;
           on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-click-right = "fish -c 'pidof wiremix || ghostty --class=ghostty.wiremix -e wiremix'";
         };
 
         idle_inhibitor = {
@@ -216,36 +216,6 @@
 
       };
 
-    };
-  };
-
-  # workaround for wireplumber graphic glitch
-  systemd.user.services.wireplumber-refresh = {
-    Unit = {
-      Description = "Refresh WirePlumber volume for Waybar";
-      After = [ "wireplumber.service" ];
-    };
-
-    Service = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.writeShellScript "wpctl-refresh" ''
-        ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
-        ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
-      ''}";
-    };
-  };
-
-  systemd.user.timers.wireplumber-refresh = {
-    Unit = {
-      Description = "Refresh WirePlumber volume timer";
-    };
-    Timer = {
-      OnBootSec = "3s";
-      OnUnitActiveSec = "1s";
-      Unit = "wireplumber-refresh.service";
-    };
-    Install = {
-      WantedBy = [ "timers.target" ];
     };
   };
 

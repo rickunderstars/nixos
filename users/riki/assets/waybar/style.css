@@ -51,12 +51,12 @@
 	border-style: solid;
 	border-color: @mauve;
 	border-radius: 10px;
-	border-top: 0px;
-	border-bottom: 0px;
+	border-top: 0;
+	border-bottom: 0;
 
-	padding: 0em 0.7em;
-	margin: 8px 2px 0px;
-	min-height: 0em;
+	padding: 0 0.7em;
+	margin: 8px 3px 0;
+	min-height: 0;
 }
 
 #workspaces {
@@ -66,7 +66,7 @@
 #workspaces button {
 	border-radius: 50%;
 	margin: 0.2em;
-	padding: 0em 0.5em;
+	padding: 0 0.5em;
 }
 
 #workspaces button.active {
@@ -80,8 +80,8 @@
 
 #waybar {
 	background-color: alpha(@base, 0);
-	padding: 0em;
-	margin: 0em;
+	padding: 0;
+	margin: 0;
 }
 
 #tray {
@@ -102,22 +102,22 @@
 #cava {
 	border-color: @flamingo;
 	color: @flamingo;
-	border-right: 0em;
-	border-top-right-radius: 0em;
-	border-bottom-right-radius: 0em;
-	margin-right: 0em;
-	padding-right: 0em;
+	border-right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-right: 0;
+	padding-right: 0;
 }
 
 #wireplumber {
 	border-color: @flamingo;
 	color: @flamingo;
-	min-width: 8em;
-	border-left: 0em;
-	border-top-left-radius: 0em;
-	border-bottom-left-radius: 0em;
-	margin-left: 0em;
-	padding-left: 0em;
+	min-width: 8.2em;
+	border-left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	margin-left: 0;
+	padding-left: 0;
 }
 
 #backlight {
@@ -133,22 +133,22 @@
 #memory {
 	border-color: @peach;
 	color: @peach;
-	border-right: 0em;
-	border-top-right-radius: 0em;
-	border-bottom-right-radius: 0em;
-	margin-right: 0em;
-	padding-right: 0em;
+	border-right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-right: 0;
+	padding-right: 0;
 }
 
 #cpu {
 	border-color: @peach;
 	color: @peach;
-	min-width: 3.5em;
-	border-left: 0em;
-	border-top-left-radius: 0em;
-	border-bottom-left-radius: 0em;
-	margin-left: 0em;
-	padding-left: 0em;
+	min-width: 4.1em;
+	border-left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	margin-left: 0;
+	padding-left: 0;
 }
 
 #battery {
