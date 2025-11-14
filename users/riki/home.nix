@@ -28,6 +28,7 @@
       coreutils
       portal
       bluetuith
+      impala
       serie
       wiremix
       wl-mirror

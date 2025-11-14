@@ -160,7 +160,7 @@
           tooltip-format-disconnected = "disconnected";
           tooltip-format-disabled = "wifi/ethernet off";
 
-          on-click = "fish -c 'pidof nmtui-connect || ghostty --class=ghostty.network -e nmtui-connect'";
+          on-click = "fish -c 'pidof impala || ghostty --class=ghostty.wifi -e impala'";
           on-click-right = "fish -c wifi-toggle";
         };
 

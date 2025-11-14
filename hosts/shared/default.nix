@@ -65,8 +65,12 @@
   };
 
   networking = {
-    networkmanager.enable = true;
-
+    networkmanager = {
+      enable = true;
+      wifi.backend = "iwd";
+    };
+    wireless.enable = false;
+    wireless.iwd.enable = true;
     firewall = {
       enable = true;
 

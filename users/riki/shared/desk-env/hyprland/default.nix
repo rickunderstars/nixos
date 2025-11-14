@@ -40,8 +40,8 @@
         "idleinhibit always, class:heroic"
 
         # network
-        "float, class:ghostty.network"
-        "size 60% 60%, class:ghostty.network"
+        "float, class:ghostty.wifi"
+        "size 60% 60%, class:ghostty.wifi"
 
         # bluetooth
         "float, class:ghostty.bluetooth"
@@ -87,7 +87,7 @@
         "$mod SHIFT, q, forcekillactive, "
 
         ### network
-        "$mod, w, exec, fish -c 'pidof nmtui-connect || ghostty --class=ghostty.network -e nmtui-connect'"
+        "$mod, w, exec, fish -c 'pidof impala || ghostty --class=ghostty.wifi -e impala'"
 
         ### bluetooth
         "$mod, b, exec, fish -c 'pidof bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith'"
