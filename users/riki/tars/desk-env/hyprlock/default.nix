@@ -98,7 +98,6 @@
           shadow_passes = 2;
           monitor = "eDP-1";
         }
-
         {
           text = "cmd[update:1000] /home/riki/nixos-config/users/riki/assets/scripts/seconds-widget";
           text_align = "center";
@@ -110,7 +109,6 @@
           position = "0, 20";
           shadow_passes = 2;
         }
-
       ];
     };
   };
