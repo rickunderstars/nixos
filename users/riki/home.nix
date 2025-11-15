@@ -154,7 +154,7 @@
   };
 
   services = {
-    network-manager-applet.enable = true;
+    # network-manager-applet.enable = true; # requires   networking.networkmanager.enable in system config
     clipman.enable = true;
     tldr-update.enable = true;
     playerctld.enable = true;

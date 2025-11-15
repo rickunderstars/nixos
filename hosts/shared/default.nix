@@ -65,10 +65,7 @@
   };
 
   networking = {
-    networkmanager = {
-      enable = true;
-      wifi.backend = "iwd";
-    };
+    networkmanager.enable = false;
     wireless.enable = false;
     wireless.iwd.enable = true;
     firewall = {
@@ -208,7 +205,6 @@
     hyprpolkitagent
     exfatprogs
     dosfstools
-    quickshell
 
     ####### theming #######
     catppuccin

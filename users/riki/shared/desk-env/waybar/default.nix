@@ -158,7 +158,7 @@
           tooltip-format-wifi = "SSID: {essid}\nstr: {signalStrength}\nfreq: {frequency}GHz";
           tooltip-format-ethernet = "ifname: {ifname}";
           tooltip-format-disconnected = "disconnected";
-          tooltip-format-disabled = "wifi/ethernet off";
+          tooltip-format-disabled = "wifi off";
 
           on-click = "fish -c 'pidof impala || ghostty --class=ghostty.wifi -e impala'";
           on-click-right = "fish -c wifi-toggle";
