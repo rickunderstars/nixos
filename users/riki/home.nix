@@ -21,7 +21,6 @@
       plantuml
       wl-clipboard
       bc
-      tldr
       bat-extras.batman
       trash-cli
       playerctl
@@ -34,6 +33,8 @@
       wl-mirror
       slides
       cpufetch
+      tdf
+      youtube-tui
 
       ####### desk env #######
       hyprpicker
@@ -116,6 +117,10 @@
       ];
     };
     translate-shell.enable = true;
+    tealdeer = {
+      enable = true;
+      settings.updates.auto_update = true;
+    };
 
     ####### apps #######
     zen-browser.enable = true;
@@ -156,7 +161,6 @@
   services = {
     # network-manager-applet.enable = true; # requires   networking.networkmanager.enable in system config
     clipman.enable = true;
-    tldr-update.enable = true;
     playerctld.enable = true;
     udiskie = {
       enable = true;
