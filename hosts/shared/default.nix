@@ -119,9 +119,6 @@
     };
   };
 
-  # hints apps to use ozone
-  environment.sessionVariables.NIXOS_OZONE_WL = "auto";
-
   services = {
     # autologin
     getty.autologinUser = "riki";

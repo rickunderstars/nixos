@@ -21,6 +21,10 @@
         "bluetoothctl power off"
       ];
 
+      env = [
+        "NIXOS_OZONE_WL,1"
+      ];
+
       workspace = [
         "special:magic, gapsout:40, gapsin:20"
       ];
