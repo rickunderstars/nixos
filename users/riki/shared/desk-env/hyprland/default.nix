@@ -231,8 +231,6 @@
         gaps_in = 4;
         gaps_out = 8;
         float_gaps = 8;
-        resize_on_border = true;
-        extend_border_grab_area = 30;
         border_size = 2;
         allow_tearing = true;
         "col.active_border" = "rgba(89b4faff) rgba(cba6f7ff) 310deg"; # blue -> mavue
@@ -268,6 +266,8 @@
       ];
 
       misc = {
+        enable_swallow = true;
+        focus_on_activate = true;
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;
         new_window_takes_over_fullscreen = 1;
