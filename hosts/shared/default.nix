@@ -67,7 +67,17 @@
   networking = {
     networkmanager.enable = false;
     wireless.enable = false;
-    wireless.iwd.enable = true;
+    wireless.iwd = {
+      enable = true;
+      settings = {
+        Network = {
+          EnableIPv6 = true;
+        };
+        Settings = {
+          AutoConnect = true;
+        };
+      };
+    };
     firewall = {
       enable = true;
 
