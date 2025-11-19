@@ -104,7 +104,7 @@
           halign = "right";
           valign = "center";
           color = "rgba(205, 214, 244, 1.0)";
-          font_size = 6;
+          font_size = 7;
           font_family = "CaskaydiaCove Nerd Font Mono";
           position = "-20, 0";
           shadow_passes = 2;
