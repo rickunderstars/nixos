@@ -98,6 +98,17 @@
           shadow_passes = 2;
           monitor = "eDP-1";
         }
+        {
+          text = "cmd[update:100] /home/riki/nixos-config/users/riki/assets/scripts/game-of-life";
+          text_align = "center";
+          halign = "right";
+          valign = "center";
+          color = "rgba(205, 214, 244, 1.0)";
+          font_size = 4;
+          font_family = "CaskaydiaCove Nerd Font Mono";
+          position = "-20, 0";
+          shadow_passes = 2;
+        }
       ];
     };
   };
