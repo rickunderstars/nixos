@@ -28,6 +28,11 @@
 
       ];
 
+      bindl = [
+        ### on lid close: mute, pause, suspend
+        ", switch:on:Lid Switch, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 1; playerctl pause; systemctl suspend"
+      ];
+
       windowrulev2 = [
       ];
 
