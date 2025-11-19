@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/gob"
 	"fmt"
+	"hash/fnv"
 	"math/rand/v2"
 	"os"
 	"path/filepath"
@@ -19,33 +20,85 @@ const (
 	H               = 120
 	DATA_PATH       = "/run/user/1000/game-of-life-state.gob"
 	RESET_TIMEOUT   = 5 * time.Second
+	STALL_THRESHOLD = 50
 )
 
 type grid [H][W]bool
 
+type GameState struct {
+	Grid       grid
+	PrevHash   uint64
+	StallCount int
+}
+
 func main() {
-	old, err := LoadGrid()
+	state, err := LoadState()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Loading error: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
 	}
 
-	evol := evolve(old)
+	currentHash := hashGrid(&state.Grid)
+	evolved := evolve(&state.Grid)
+	evolvedHash := hashGrid(evolved)
 
-	printGrid(evol)
+	isStalled := *evolved == state.Grid || evolvedHash == state.PrevHash || isEmpty(evolved)
 
-	if err := SaveGrid(evol); err != nil {
-		fmt.Fprintf(os.Stderr, "Saving error: %v\n", err)
+	if isStalled {
+		state.StallCount++
+		if state.StallCount > STALL_THRESHOLD {
+			randStart(evolved)
+			state.StallCount = 0
+			currentHash = 0
+		}
+	} else {
+		state.StallCount = 0
+	}
+
+	printGrid(evolved)
+
+	newState := GameState{
+		Grid:       *evolved,
+		PrevHash:   currentHash,
+		StallCount: state.StallCount,
+	}
+
+	if err := SaveState(&newState); err != nil {
+		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
 	}
+}
+
+func hashGrid(m *grid) uint64 {
+	h := fnv.New64a()
+	for i := 0; i < len(m); i++ {
+		for j := 0; j < len(m[i]); j++ {
+			if m[i][j] {
+				h.Write([]byte{1})
+			} else {
+				h.Write([]byte{0})
+			}
+		}
+	}
+	return h.Sum64()
+}
+
+func isEmpty(m *grid) bool {
+	for i := 0; i < len(m); i++ {
+		for j := 0; j < len(m[i]); j++ {
+			if m[i][j] {
+				return false
+			}
+		}
+	}
+	return true
 }
 
 func randStart(m *grid) {
 	clearGrid(m)
 	for i := 0; i < len(m); i++ {
 		for j := 0; j < len(m[i]); j++ {
-			n := rand.IntN(100)
-			if n < LIFE_PERCENTAGE {
+			if rand.IntN(100) < LIFE_PERCENTAGE {
 				m[i][j] = true
 			} else {
 				m[i][j] = false
@@ -86,7 +139,6 @@ func clearGrid(m *grid) {
 
 func countLiving(m *grid, row, col int) int {
 	living := 0
-
 	for dr := -1; dr <= 1; dr++ {
 		for dc := -1; dc <= 1; dc++ {
 			r := ((row+dr)%H + H) % H
@@ -96,11 +148,9 @@ func countLiving(m *grid, row, col int) int {
 			}
 		}
 	}
-
 	if m[row][col] {
 		living--
 	}
-
 	return living
 }
 
@@ -129,60 +179,53 @@ func printGrid(m *grid) {
 		sb.WriteString("  ")
 	}
 	sb.WriteString(CORNER)
-
 	fmt.Println(sb.String())
 }
 
-func SaveGrid(m *grid) error {
+func SaveState(s *GameState) error {
 	dir := filepath.Dir(DATA_PATH)
 	if err := os.MkdirAll(dir, 0755); err != nil {
-		return fmt.Errorf("Could not create directory: %w", err)
+		return err
 	}
 
 	file, err := os.Create(DATA_PATH)
 	if err != nil {
-		return fmt.Errorf("Could not create file: %w", err)
+		return err
 	}
 	defer file.Close()
 
 	encoder := gob.NewEncoder(file)
-	if err := encoder.Encode(m); err != nil {
-		return fmt.Errorf("Encoding error: %w", err)
-	}
-
-	return nil
+	return encoder.Encode(s)
 }
 
-func LoadGrid() (*grid, error) {
+func LoadState() (*GameState, error) {
 	file, err := os.Open(DATA_PATH)
 	if err != nil {
 		if os.IsNotExist(err) {
-			var r grid
-			randStart(&r)
-			return &r, nil
+			var s GameState
+			randStart(&s.Grid)
+			return &s, nil
 		}
-		return nil, fmt.Errorf("Opening file error: %w", err)
+		return nil, err
 	}
 	defer file.Close()
 
 	fileInfo, err := file.Stat()
 	if err != nil {
-		return nil, fmt.Errorf("Stat error: %w", err)
+		return nil, err
 	}
 
-	timeSinceLastRun := time.Since(fileInfo.ModTime())
-
-	if timeSinceLastRun > RESET_TIMEOUT {
-		var r grid
-		randStart(&r)
-		return &r, nil
+	if time.Since(fileInfo.ModTime()) > RESET_TIMEOUT {
+		var s GameState
+		randStart(&s.Grid)
+		return &s, nil
 	}
 
-	var m grid
+	var s GameState
 	decoder := gob.NewDecoder(file)
-	if err := decoder.Decode(&m); err != nil {
-		return nil, fmt.Errorf("Decoding error: %w", err)
+	if err := decoder.Decode(&s); err != nil {
+		return nil, err
 	}
 
-	return &m, nil
+	return &s, nil
 }
