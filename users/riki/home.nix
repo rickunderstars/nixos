@@ -24,7 +24,6 @@
       bat-extras.batman
       trash-cli
       playerctl
-      coreutils
       portal
       bluetuith
       impala

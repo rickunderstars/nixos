@@ -99,9 +99,6 @@
         ### btop
         "CTRL SHIFT, escape, exec, fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'"
 
-        ### audio switch
-        "$mod, a, exec, fish -c auch"
-
         ### audio mixer (wiremix)
         "$mod, v, exec, fish -c 'pidof wiremix || ghostty --class=ghostty.wiremix -e wiremix'"
 
@@ -114,27 +111,11 @@
         ### hyprpicker
         "$mod, c, exec, hyprpicker -a"
 
-        ### media control
-        "$mod, p, exec, playerctl play-pause"
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioPause, exec, playerctl play-pause"
-        "$mod, bracketright, exec, playerctl next"
-        ", XF86AudioNext, exec, playerctl next"
-        "$mod, bracketleft, exec, playerctl previous"
-        ", XF86AudioPrev, exec, playerctl previous"
-        ", XF86AudioStop, exec, playerctl stop"
-
         ### screenshots
         "$mod, s, exec, fish -c 'grimblast -n -f copysave area'"
         ", print, exec, fish -c 'grimblast -n -f copysave area'"
         "SHIFT, print, exec, fish -c 'grimblast -n copysave screen'"
         "$mod SHIFT, s, exec, fish -c 'grimblast -n copysave screen'"
-
-        # audio mute toggle
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        "$mod, m, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        # mic mute toggle
-        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
         ### fullscreen and floating
         "$mod SHIFT, f, fullscreen, 0"
@@ -182,6 +163,28 @@
 
         ### special workspace
         "$mod, equal, togglespecialworkspace, magic"
+      ];
+
+      bindl = [
+        ### media control
+        "$mod, p, exec, playerctl play-pause"
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPause, exec, playerctl play-pause"
+        "$mod, bracketright, exec, playerctl next"
+        ", XF86AudioNext, exec, playerctl next"
+        "$mod, bracketleft, exec, playerctl previous"
+        ", XF86AudioPrev, exec, playerctl previous"
+        ", XF86AudioStop, exec, playerctl stop"
+
+        # audio mute toggle
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "$mod, m, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        # mic mute toggle
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+
+        ### audio switch
+        "$mod, a, exec, fish -c auch"
+
       ];
 
       bindel = [

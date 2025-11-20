@@ -28,7 +28,6 @@
           valign = "center";
           position = "0, -120";
           size = "360, 60";
-
           dots_center = true;
           fade_on_empty = false;
           font_color = "rgb(205, 214, 244)";
@@ -68,6 +67,17 @@
           shadow_passes = 2;
         }
         {
+          text = "cmd[update:1000] /home/riki/nixos-config/users/riki/assets/scripts/music-info";
+          text_align = "left";
+          halign = "center";
+          valign = "top";
+          color = "rgba(137, 220, 235, 1.0)";
+          font_size = 30;
+          font_family = "CaskaydiaCove Nerd Font Mono";
+          position = "20, -20";
+          shadow_passes = 2;
+        }
+        {
           text = "~$USER";
           text_align = "center";
           halign = "right";
@@ -90,7 +100,18 @@
           position = "-20, 0";
           shadow_passes = 2;
         }
-
+        {
+          text = "cmd[update:0] hostname";
+          text_align = "center";
+          halign = "left";
+          valign = "bottom";
+          color = "rgba(205, 214, 244, 1.0)";
+          font_size = 30;
+          font_family = "CaskaydiaCove Nerd Font Mono";
+          position = "20, 20";
+          shadow_passes = 2;
+          monitor = "DP-3";
+        }
       ];
     };
   };

@@ -5,6 +5,7 @@
   inputs,
   ...
 }:
+
 {
   programs.hyprlock = {
     settings = {
@@ -25,7 +26,7 @@
         {
           size = "600, 100";
           position = "0, -180";
-          monitor = "";
+
           dots_center = true;
           fade_on_empty = false;
           font_color = "rgb(205, 214, 244)";
@@ -38,6 +39,7 @@
           outline_thickness = 4;
           placeholder_text = "ᓚᘏᗢ";
           shadow_passes = 2;
+          monitor = "eDP-1";
         }
       ];
       label = [
@@ -64,6 +66,17 @@
           shadow_passes = 2;
         }
         {
+          text = "cmd[update:1000] /home/riki/nixos-config/users/riki/assets/scripts/music-info";
+          text_align = "left";
+          halign = "center";
+          valign = "top";
+          color = "rgba(137, 220, 235, 1.0)";
+          font_size = 30;
+          font_family = "CaskaydiaCove Nerd Font Mono";
+          position = "20, -20";
+          shadow_passes = 2;
+        }
+        {
           text = "~$USER";
           text_align = "center";
           halign = "right";
@@ -87,7 +100,7 @@
           shadow_passes = 2;
         }
         {
-          text = "rickunderstars@gmail.com";
+          text = "cmd[update:0] hostname";
           text_align = "center";
           halign = "left";
           valign = "bottom";
@@ -103,7 +116,7 @@
           text_align = "center";
           halign = "right";
           valign = "center";
-          color = "rgba(205, 214, 244, 1.0)";
+          color = "rgba(205, 214, 244, 0.8)";
           font_size = 7;
           font_family = "CaskaydiaCove Nerd Font Mono";
           position = "-20, 0";
