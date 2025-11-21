@@ -34,6 +34,8 @@
       cpufetch
       tdf
       youtube-tui
+      exiftool # for superfile metadata plugin
+      zoxide # for superfile zoxide plugin
 
       ####### desk env #######
       hyprpicker
@@ -70,6 +72,7 @@
 
       ####### apps #######
       (bottles.override { removeWarningPopup = true; })
+      losslesscut-bin
       gimp
       grimblast
       blender
@@ -101,7 +104,7 @@
   };
 
   programs = {
-    ####### cli #######
+    ####### cli/tui #######
     nix-your-shell = {
       enable = true;
       enableFishIntegration = true;
@@ -119,6 +122,39 @@
     tealdeer = {
       enable = true;
       settings.updates.auto_update = true;
+    };
+    superfile = {
+      enable = true;
+      settings = {
+        theme = "catppuccin";
+        auto_check_update = false;
+        transparent_background = true;
+        default_open_file_preview = true;
+        shell_close_on_success = true;
+        show_image_preview = true;
+        default_sort_type = 2;
+        case_sensitive_sort = false;
+        code_previewer = "bat";
+        nerdfont = true;
+        metadata = true;
+        zoxide_support = true;
+      };
+      pinnedFolders = [
+        {
+          name = "Screenshots";
+          location = "/home/riki/Pictures/Screenshots";
+        }
+        {
+          name = "Onedrive";
+          location = "/home/riki/OneDrive";
+        }
+        {
+          name = "pCloud";
+          location = "/home/riki/pCloudDrive";
+        }
+      ];
+      metadataPackage = pkgs.exiftool;
+      zoxidePackage = pkgs.zoxide;
     };
 
     ####### apps #######

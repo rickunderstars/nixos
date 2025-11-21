@@ -98,6 +98,7 @@
       cat = "bat";
       top = "btop";
       man = "batman";
+      spf = "superfile";
 
       # try a package
       try = "nix-shell -p";
