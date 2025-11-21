@@ -26,7 +26,6 @@
         {
           size = "600, 100";
           position = "0, -180";
-
           dots_center = true;
           fade_on_empty = false;
           font_color = "rgb(205, 214, 244)";
@@ -66,7 +65,7 @@
           shadow_passes = 2;
         }
         {
-          text = "cmd[update:1000] /home/riki/nixos-config/users/riki/assets/scripts/music-info";
+          text = "cmd[update:100] /home/riki/nixos-config/users/riki/assets/scripts/music-info";
           text_align = "center";
           halign = "center";
           valign = "top";

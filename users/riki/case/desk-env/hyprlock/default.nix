@@ -67,7 +67,7 @@
           shadow_passes = 2;
         }
         {
-          text = "cmd[update:1000] /home/riki/nixos-config/users/riki/assets/scripts/music-info";
+          text = "cmd[update:100] /home/riki/nixos-config/users/riki/assets/scripts/music-info";
           text_align = "left";
           halign = "center";
           valign = "top";
