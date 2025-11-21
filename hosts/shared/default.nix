@@ -59,11 +59,6 @@
     };
   };
 
-  systemd.services = {
-    # for faster startup
-    "NetworkManager-wait-online".enable = false;
-  };
-
   networking = {
     networkmanager.enable = false;
     wireless.enable = false;
@@ -72,7 +67,7 @@
       settings = {
         Network = {
           EnableIPv6 = true;
-          EnableNetworkConfiguration = true;
+          EnableNetworkConfiguration = false;
         };
         Settings = {
           AutoConnect = true;
@@ -102,6 +97,10 @@
 
       ];
     };
+  };
+
+  systemd.services.dhcpcd.serviceConfig = {
+    TimeoutStartSec = "0";
   };
 
   time.timeZone = "Europe/Rome";
