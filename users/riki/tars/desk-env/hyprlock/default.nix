@@ -67,7 +67,7 @@
         }
         {
           text = "cmd[update:1000] /home/riki/nixos-config/users/riki/assets/scripts/music-info";
-          text_align = "left";
+          text_align = "center";
           halign = "center";
           valign = "top";
           color = "rgba(137, 220, 235, 1.0)";
