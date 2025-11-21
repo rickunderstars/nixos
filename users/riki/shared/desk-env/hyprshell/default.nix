@@ -43,7 +43,9 @@
 
   # restart hyprshell after nixos-rebuild
   home.activation.restartHyprshell = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    $DRY_RUN_CMD ${pkgs.systemd}/bin/systemctl --user restart hyprshell.service
+    if [ -n "''${DBUS_SESSION_BUS_ADDRESS:-}" ]; then
+      $DRY_RUN_CMD ${pkgs.systemd}/bin/systemctl --user try-restart hyprshell.service || true
+    fi
   '';
 
 }
