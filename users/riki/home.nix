@@ -43,6 +43,8 @@
       papirus-icon-theme
       nautilus
       kdePackages.breeze
+      glib
+      gsettings-desktop-schemas
 
       ####### coding #######
       vscodium

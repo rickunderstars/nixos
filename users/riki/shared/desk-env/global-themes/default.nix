@@ -33,8 +33,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Adwaita:dark";
-      package = pkgs.gnome-themes-extra;
+      package = pkgs.orchis-theme;
+      name = "Orchis-Grey-Dark-Compact";
     };
     iconTheme = {
       name = "Papirus-Dark";
@@ -44,26 +44,19 @@
       name = "CaskaydiaCove Nerd Font Mono";
       size = 11;
     };
+
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
+
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
   };
 
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-        gtk-theme = "Adwaita:dark";
-        icon-theme = "Papirus-Dark";
-      };
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
     };
-  };
-
-  home.sessionVariables = {
-    GTK_THEME = "Adwaita:dark";
   };
 }

@@ -100,6 +100,15 @@
         nix shell $packages --command env IN_NIX_SHELL=impure fish
       '';
 
+      reload-gtk = ''
+        set current_theme (gsettings get org.gnome.desktop.interface gtk-theme)
+        echo "Reloading GTK theme: $current_theme..."
+        gsettings set org.gnome.desktop.interface gtk-theme "Default"
+        sleep 0.5
+        gsettings set org.gnome.desktop.interface gtk-theme $current_theme
+        echo "Done."
+      '';
+
       # misc
       cls = "clear";
       ff = "clear;fastfetch";
