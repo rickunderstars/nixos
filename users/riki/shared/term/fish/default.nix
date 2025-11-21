@@ -83,6 +83,23 @@
 
       wifi-toggle = "rfkill list wifi | string match -q '*Soft blocked: no*'; and rfkill block wifi; or rfkill unblock wifi";
 
+      # try package from nixpkgs (current stable)
+      try = ''
+        set packages
+        for arg in $argv
+          set -a packages "nixpkgs#$arg"
+        end
+        nix shell $packages --command env IN_NIX_SHELL=impuretr fish
+      '';
+      # try package from nixpkgs-unstable
+      try-stable = ''
+        set packages
+        for arg in $argv
+          set -a packages "stable#$arg"
+        end
+        nix shell $packages --command env IN_NIX_SHELL=impure fish
+      '';
+
       # misc
       cls = "clear";
       ff = "clear;fastfetch";
@@ -99,9 +116,6 @@
       top = "btop";
       man = "batman";
       spf = "superfile";
-
-      # try a package
-      try = "nix-shell -p";
 
       # shells
       gopxl = "nix develop ~/nixos-config#gopxlDev";

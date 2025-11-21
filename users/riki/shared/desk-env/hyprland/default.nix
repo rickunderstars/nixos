@@ -114,12 +114,6 @@
         ### hyprpicker
         "$mod, c, exec, hyprpicker -a"
 
-        ### screenshots
-        "$mod, s, exec, fish -c 'grimblast -n -f copysave area'"
-        ", print, exec, fish -c 'grimblast -n -f copysave area'"
-        "SHIFT, print, exec, fish -c 'grimblast -n copysave screen'"
-        "$mod SHIFT, s, exec, fish -c 'grimblast -n copysave screen'"
-
         ### fullscreen and floating
         "$mod SHIFT, f, fullscreen, 0"
         "$mod, f, fullscreen, 1"
@@ -188,6 +182,11 @@
         ### audio switch
         "$mod, a, exec, fish -c auch"
 
+        ### screenshots
+        "$mod, s, exec, fish -c 'grimblast -n -f copysave area'"
+        ", print, exec, fish -c 'grimblast -n -f copysave area'"
+        "SHIFT, print, exec, fish -c 'grimblast -n copysave screen'"
+        "$mod SHIFT, s, exec, fish -c 'grimblast -n copysave screen'"
       ];
 
       bindel = [

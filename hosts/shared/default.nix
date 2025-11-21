@@ -24,6 +24,14 @@
   };
 
   nix = {
+    registry = {
+      nixpkgs.flake = inputs.nixpkgs-unstable;
+      stable.flake = inputs.nixpkgs;
+    };
+    nixPath = [
+      "nixpkgs=${inputs.nixpkgs-unstable}"
+      "stable=${inputs.nixpkgs}"
+    ];
     settings = {
       experimental-features = [
         "nix-command"
