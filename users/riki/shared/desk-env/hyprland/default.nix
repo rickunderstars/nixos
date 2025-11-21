@@ -43,7 +43,7 @@
         # heroic
         "idleinhibit always, class:heroic"
 
-        # network
+        # wifi
         "float, class:ghostty.wifi"
         "size 60% 60%, class:ghostty.wifi"
 
@@ -90,8 +90,11 @@
         "$mod, q, killactive, "
         "$mod SHIFT, q, forcekillactive, "
 
-        ### network
+        ### wifi (impala)
         "$mod, w, exec, fish -c 'pidof impala || ghostty --class=ghostty.wifi -e impala'"
+
+        ### plane mode toggle
+        "$mod SHIFT, w, exec, fish -c wifi-toggle"
 
         ### bluetooth
         "$mod, b, exec, fish -c 'pidof bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith'"
