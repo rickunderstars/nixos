@@ -1,87 +1,101 @@
-:root {
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color text #cdd6f4;
+@define-color subtext1 #bac2de;
+@define-color subtext0 #a6adc8;
+@define-color overlay2 #9399b2;
+@define-color overlay1 #7f849c;
+@define-color overlay0 #6c7086;
+@define-color surface2 #585b70;
+@define-color surface1 #45475a;
+@define-color surface0 #313244;
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
 
-	--rosewater: rgba(245, 224, 220, 1);
-	--flamingo: rgba(242, 205, 205, 1);
-	--pink: rgba(245, 194, 231, 1);
-	--mauve: rgba(203, 166, 247, 1);
-	--red: rgba(243, 139, 168, 1);
-	--maroon: rgba(235, 160, 172, 1);
-	--peach: rgba(250, 179, 135, 1);
-	--yellow: rgba(249, 226, 175, 1);
-	--green: rgba(166, 227, 161, 1);
-	--teal: rgba(148, 226, 213, 1);
-	--sky: rgba(137, 220, 235, 1);
-	--sapphire: rgba(116, 199, 236, 1);
-	--blue: rgba(137, 180, 250, 1);
-	--lavender: rgba(180, 190, 254, 1);
-	--text: rgba(205, 214, 244, 1);
-	--subtext1: rgba(186, 194, 222, 1);
-	--subtext0: rgba(166, 173, 200, 1);
-	--overlay2: rgba(147, 153, 178, 1);
-	--overlay1: rgba(127, 132, 156, 1);
-	--overlay0: rgba(108, 112, 134, 1);
-	--surface2: rgba(88, 91, 112, 1);
-	--surface1: rgba(69, 71, 90, 1);
-	--surface0: rgba(49, 50, 68, 1);
-	--base: rgba(30, 30, 46, 0.9);
-	--mantle: rgba(24, 24, 37, 1);
-	--crust: rgba(17, 17, 27, 1);
-
-	--border-radius: 10px;
-	--border-size: 2px;
-	--border-style: solid;
-
-	--border-color: var(--surface0);
-	--border-color-active: var(--mauve);
-
-	--bg-color: var(--base);
-	--bg-color-hover: var(--surface1);
-
-	--window-padding: 10px;
-	--font-size: 12px;
-
-	--text-color: var(--text);
-
+* {
+	font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font";
+	color: @text;
+	font-size: 1.3vh;
+	background-color: alpha(@base, 0);
+	border-color: alpha(@base, 0);
+	border-style: solid;
 }
 
 .monitor {
-	margin-top: 40px;
+	margin-top: 90px;
 	border: unset;
 	border-radius: 20px;
+	background-color: @base;
 }
 
 .client {
-	background-color: rgba(30, 30, 46, 0.5);
+	background-color: alpha(@base, 0.8);
+	margin: 4px;
+	border-width: 2px;
+}
+
+.client.active {
+	border-color: @mauve;
+}
+
+.client:hover {
+	background-color: alpha(@blue, 0.05)
 }
 
 .workspace {
 	border: unset;
+	background-color: @base;
 }
 
 .launcher {
 	margin-top: 80px;
-	border: unset;
 	border-radius: 20px;
+	border-left: 2px;
+	border-style: solid;
+	border-color: @mauve;
+	background-color: @base;
 }
 
 .launcher-input {
-	border-radius: var(--border-radius);
-}
-
-.launcher-input:focus-within {
-	outline: var(--border-size) var(--border-style, solid) var(--border-color-active);
+	border-radius: 10px;
+	border-left: 2px;
+	border-color: alpha(@mauve, 1);
+	background-color: @base;
 }
 
 
 .launcher-item {
-	padding: 0 10px;
+	padding: 4px;
 	border-radius: 10px;
+	background-color: @base;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease;
+}
+
+.launcher-item:hover {
+	background-color: alpha(@blue, 0.4);
 }
 
 .launcher-plugins {
 	display: none;
+	padding: 0;
+	margin: 0;
 }
 
 .launcher-plugin {
-	display: none
+	display: none;
+	padding: 0;
+	margin: 0;
 }
