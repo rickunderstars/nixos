@@ -94,7 +94,7 @@
           text_align = "center";
           halign = "right";
           valign = "center";
-          color = "rgba(205, 214, 244, 1.0)";
+          color = "rgba(205, 214, 244, 0.8)";
           font_size = 4;
           font_family = "CaskaydiaCove Nerd Font Mono";
           position = "-20, 0";

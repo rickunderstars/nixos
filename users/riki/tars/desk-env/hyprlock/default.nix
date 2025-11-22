@@ -111,7 +111,7 @@
           monitor = "eDP-1";
         }
         {
-          text = "cmd[update:100] /home/riki/nixos-config/users/riki/assets/scripts/game-of-life";
+          text = "cmd[update:90] /home/riki/nixos-config/users/riki/assets/scripts/game-of-life";
           text_align = "center";
           halign = "right";
           valign = "center";
