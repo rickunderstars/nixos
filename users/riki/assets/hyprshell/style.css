@@ -63,7 +63,6 @@
 .launcher {
 	margin-top: 80px;
 	border-radius: 20px;
-	border-left: 2px;
 	border-style: solid;
 	border-color: @mauve;
 	background-color: @base;
