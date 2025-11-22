@@ -99,6 +99,7 @@
           font_family = "CaskaydiaCove Nerd Font Mono";
           position = "-20, 0";
           shadow_passes = 2;
+          monitor = "";
         }
         {
           text = "cmd[update:0] hostname";

@@ -12,15 +12,16 @@ import (
 )
 
 const (
-	L_CELL          = "󱓻 "
-	D_CELL          = "  "
-	CORNER          = " "
-	LIFE_PERCENTAGE = 30
-	W               = 80
-	H               = 120
-	DATA_PATH       = "/run/user/1000/game-of-life-state.gob"
-	RESET_TIMEOUT   = 5 * time.Second
-	STALL_THRESHOLD = 50
+	L_CELL           = "󱓻 "
+	D_CELL           = "  "
+	CORNER           = " "
+	LIFE_PERCENTAGE  = 30
+	W                = 80
+	H                = 120
+	DATA_PATH        = "/run/user/1000/game-of-life-state.gob"
+	RESET_TIMEOUT    = 5 * time.Second
+	STALL_THRESHOLD  = 50
+	UPDATE_THRESHOLD = 70 * time.Millisecond
 )
 
 type grid [H][W]bool
@@ -29,6 +30,7 @@ type GameState struct {
 	Grid       grid
 	PrevHash   uint64
 	StallCount int
+	LastUpdate time.Time
 }
 
 func main() {
@@ -36,6 +38,11 @@ func main() {
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
+	}
+
+	if time.Since(state.LastUpdate) < UPDATE_THRESHOLD {
+		printGrid(&state.Grid)
+		return
 	}
 
 	currentHash := hashGrid(&state.Grid)
@@ -61,6 +68,7 @@ func main() {
 		Grid:       *evolved,
 		PrevHash:   currentHash,
 		StallCount: state.StallCount,
+		LastUpdate: time.Now(),
 	}
 
 	if err := SaveState(&newState); err != nil {
@@ -204,6 +212,7 @@ func LoadState() (*GameState, error) {
 		if os.IsNotExist(err) {
 			var s GameState
 			randStart(&s.Grid)
+			s.LastUpdate = time.Time{}
 			return &s, nil
 		}
 		return nil, err
@@ -218,6 +227,7 @@ func LoadState() (*GameState, error) {
 	if time.Since(fileInfo.ModTime()) > RESET_TIMEOUT {
 		var s GameState
 		randStart(&s.Grid)
+		s.LastUpdate = time.Time{}
 		return &s, nil
 	}
 
