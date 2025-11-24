@@ -31,17 +31,21 @@
 
       windowrulev2 = [
         # games
-        "idleinhibit always, class:gamescope" # always idle inhibit when gamescope active"
+        "idleinhibit always, class:gamescope"
 
         # steam
         "float, class:^(steam)$, title:negative:^(Steam)$"
-        "idleinhibit always, class:steam_app_[0-9]+" # always idle inhibit when playing a steam game"
+        "idleinhibit always, class:steam_app_[0-9]+"
 
         # itch
         "idleinhibit always, class:itch"
 
         # heroic
         "idleinhibit always, class:heroic"
+
+        # nautilus
+        "float, class:org.gnome.Nautilus"
+        "size 60% 60%, class:org.gnome.Nautilus"
 
         # wifi
         "float, class:ghostty.wifi"
