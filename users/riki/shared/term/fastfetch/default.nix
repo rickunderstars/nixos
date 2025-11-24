@@ -7,7 +7,7 @@
 }:
 
 let
-  logo-src = ../../../assets/fastfetch/frieren.jpg;
+  logo-src = ../../../assets/fastfetch/frieren-cat.png;
 
   logo-options =
     if builtins.pathExists logo-src then
@@ -19,7 +19,7 @@ let
       { source = "nixos-small"; };
   custom-separator = {
     type = "custom";
-    key = ">---------<*>------------------------------------<";
+    key = "---------*------------------------------------";
   };
 in
 {
@@ -36,7 +36,6 @@ in
       display.separator = "";
       display.key.width = 15;
       modules = [
-        #"Break"
         {
           type = "title";
           format = "  {user-name-colored}{at-symbol-colored}{host-name-colored}  ";
