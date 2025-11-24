@@ -19,7 +19,6 @@
 
     # solves clipboard problems
     XDG_CURRENT_DESKTOP = "Hyprland";
-    NIXOS_XDG_OPEN_USE_PORTAL = "1";
   };
 
   imports = [

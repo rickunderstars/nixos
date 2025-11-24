@@ -220,6 +220,12 @@
   };
 
   home = {
+    pointerCursor = {
+      gtk.enable = true;
+      enable = true;
+      package = pkgs.catppuccin-cursors.mochaDark;
+      name = "catppuccin-mocha-dark-cursors";
+    };
     file = {
       ".config/micro/colorschemes/catppuccin-mocha.micro" = {
         source = ./assets/micro/catppuccin-mocha.micro;
@@ -258,7 +264,6 @@
     ./shared/desk-env/hyprlock
     ./shared/desk-env/hyprpaper
     ./shared/desk-env/hyprshell
-    ./shared/desk-env/cursor
     ./shared/desk-env/waybar
     ./shared/desk-env/notifications
     ./shared/desk-env/global-themes
