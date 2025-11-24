@@ -8,25 +8,18 @@
 
 let
   logo-src = ../../../assets/fastfetch/frieren-cat.png;
-
-  logo-options =
-    if builtins.pathExists logo-src then
-      {
-        source = logo-src;
-        height = 19;
-      }
-    else
-      { source = "nixos-small"; };
   custom-separator = {
     type = "custom";
-    key = "---------*------------------------------------";
+    key = "*";
   };
 in
 {
   programs.fastfetch = {
     enable = true;
     settings = {
-      logo = logo-options // {
+      logo = {
+        source = logo-src;
+        height = 19;
         padding = {
           left = 0;
           right = 3;
