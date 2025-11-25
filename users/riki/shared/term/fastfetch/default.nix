@@ -42,7 +42,7 @@ in
       modules = [
         {
           type = "title";
-          format = "╭┤{user-name-colored}{host-name-colored}├─────────────────────── ─── ─ ──  ─ ─╮\n                                    │";
+          format = "╭┤{user-name-colored}{host-name-colored}├─────────────────────── ─── ─ ──  ─ ─╮\n                                  │";
         }
         {
           type = "os";
@@ -52,7 +52,7 @@ in
         {
           type = "host";
           key = "│ host  ";
-          format = "{vendor} {family} │";
+          format = "{vendor} {family}";
           keyColor = "italic_green";
         }
         {
