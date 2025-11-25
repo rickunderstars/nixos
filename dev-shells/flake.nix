@@ -51,29 +51,6 @@
           '';
         };
 
-        # python shell for statistics
-        statDev = pkgs.mkShell {
-          name = "py-stat-shell";
-          buildInputs = with pkgs; [
-            python3
-            python3Packages.pip
-            python3Packages.virtualenv
-            python3Packages.jupyter
-            python3Packages.numpy
-            python3Packages.pandas
-            python3Packages.matplotlib
-            python3Packages.graphviz
-            python3Packages.scipy
-            python3Packages.scikit-learn
-            # python3Packages.rogeriopradoj-paretochart
-            python3Packages.statsmodels
-            python3Packages.ipywidgets
-          ];
-          shellHook = ''
-            export DEV_ENV_NAME="stat-dev-env"
-          '';
-        };
-
         # "tirocinio" shell
         heartDev = pkgs.mkShell {
           name = "tirocinio";

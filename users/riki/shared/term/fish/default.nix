@@ -126,9 +126,10 @@
       man = "batman";
       spf = "superfile";
 
+      slidev-new = "pnpm create slidev";
+
       # shells
       gopxl = "nix develop ~/nixos-config#gopxlDev";
-      stat = "nix develop ~/nixos-config#statDev";
       heart = "nix develop ~/nixos-config#heartDev --command fish -c 'cd ~/heart-vis; codium .; fish'";
     };
   };

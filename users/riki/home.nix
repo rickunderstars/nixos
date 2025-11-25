@@ -61,7 +61,8 @@
       cargo
       arduino-ide
       arduino-language-server
-      graphviz
+      nodejs
+      pnpm
 
       ####### shell eye candy #######
       cbonsai
