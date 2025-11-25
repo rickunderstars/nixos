@@ -8,9 +8,18 @@
 
 let
   logo-src = ../../../assets/fastfetch/frieren-cat.png;
-  custom-separator = {
+  separator1 = {
     type = "custom";
-    key = "*";
+    key = "├──────────────────────────────── ─  ── ─ ─  ─";
+  };
+
+  separator2 = {
+    type = "custom";
+    key = "├────────────────────────── ─ ──── ── ─ ─  ─";
+  };
+  bottom = {
+    type = "custom";
+    key = "╰─────────────────────────── ── ─   ─ ─  ── ─ ── ╯";
   };
 in
 {
@@ -26,93 +35,94 @@ in
           top = 0;
         };
       };
-      display.separator = "";
-      display.key.width = 15;
+      display = {
+        separator = "";
+        key.width = 15;
+      };
       modules = [
         {
           type = "title";
-          format = "  {user-name-colored}{at-symbol-colored}{host-name-colored}  ";
+          format = "╭┤{user-name-colored}{host-name-colored}├─────────────────────── ─── ─ ──  ─ ─╮\n                                    │";
         }
-        custom-separator
         {
           type = "os";
-          key = "  os  ";
+          key = "│ os  ";
           keyColor = "italic_green";
         }
         {
           type = "host";
-          key = "  host  ";
-          format = "{vendor} {family}";
+          key = "│ host  ";
+          format = "{vendor} {family} │";
           keyColor = "italic_green";
         }
         {
           type = "kernel";
-          key = "  kernel  ";
+          key = "│ kernel  ";
           keyColor = "italic_green";
         }
         {
           type = "bootmgr";
-          key = "  boot  ";
+          key = "│ boot  ";
           format = "{firmware-name}";
           keyColor = "italic_green";
         }
         {
           type = "uptime";
-          key = "  uptime  ";
+          key = "│ uptime  ";
           keyColor = "italic_green";
         }
-        custom-separator
+        separator1
         {
           type = "shell";
-          key = "  shell  ";
+          key = "│ shell  ";
           keyColor = "italic_cyan";
         }
         {
           type = "terminal";
-          key = "  term  ";
+          key = "│ term  ";
           keyColor = "italic_cyan";
         }
         {
           type = "packages";
-          key = "  pkgs  ";
+          key = "│ pkgs  ";
           keyColor = "italic_cyan";
         }
         {
           type = "wm";
-          key = "  wm  ";
+          key = "│ wm  ";
           keyColor = "italic_cyan";
         }
-        custom-separator
+        separator2
         {
           type = "cpu";
-          key = "  cpu  ";
+          key = "│ cpu  ";
           format = "{name}";
           keyColor = "italic_blue";
         }
         {
           type = "gpu";
-          key = "  gpu  ";
+          key = "│ gpu  ";
           format = "{name}";
           keyColor = "italic_blue";
         }
         {
           type = "memory";
-          key = "  memory  ";
+          key = "│ memory  ";
           keyColor = "italic_blue";
         }
         {
           type = "disk";
-          key = "  ssd  ";
+          key = "│ ssd  ";
           format = "{size-used} / {size-total} ({size-percentage})";
           keyColor = "italic_blue";
         }
         {
           type = "display";
-          key = "  display  ";
+          key = "│ display  ";
           format = "{width}x{height} @ {refresh-rate}Hz ({type}) ";
           keyColor = "italic_blue";
         }
-        custom-separator
+        bottom
       ];
     };
   };
