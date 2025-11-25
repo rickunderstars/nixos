@@ -42,7 +42,11 @@ in
       modules = [
         {
           type = "title";
-          format = "╭┤{user-name-colored}{host-name-colored}├─────────────────────── ─── ─ ──  ─ ─╮\n                                  │";
+          format = "╭┤{user-name-colored}{host-name-colored}├─────────────────────── ─── ─ ──  ─ ─╮";
+        }
+        {
+          type = "custom";
+          format = "│";
         }
         {
           type = "os";
