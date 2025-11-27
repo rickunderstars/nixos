@@ -6,6 +6,17 @@
   ...
 }:
 
+# top: ─
+# bottom: ─
+# left: │
+# right: │
+# top_left: ╭
+# top_right: ╮
+# bottom_left: ╰
+# bottom_right: ╯
+# middle_left: ├
+# middle_right: ┤
+
 {
   programs.fastfetch = {
     enable = true;
@@ -26,103 +37,109 @@
       modules = [
         {
           type = "title";
-          format = "{##f5e0dc}╭┤{#}{user-name-colored}{##f5e0dc}{#}{host-name-colored}{##f5e0dc}├─────────────────────── ─── ─ ──  ─ ─╮{#}";
+          format = "{##cdd6f4}╭─{#} {#bold_italic_#74c7ec}{user-name}{#}{##cdd6f4}{#}{#bold_italic_#74c7ec}{host-name}{#}";
         }
         {
           type = "custom";
           format = "{##f5e0dc}│{#}";
         }
+
+        {
+          type = "custom";
+          format = "{#bold_italic_#f5e0dc}├─ i{#}";
+        }
         {
           type = "os";
-          key = "│ os  ";
+          key = "│  ├─ os  ";
           keyColor = "italic_#f5e0dc";
         }
         {
           type = "host";
-          key = "│ host  ";
+          key = "│  ├─ host  ";
           format = "{vendor} {family}";
           keyColor = "italic_#f2cdcd";
         }
         {
           type = "kernel";
-          key = "│ kernel  ";
+          key = "│  ├─ kernel  ";
           keyColor = "italic_#f5c2e7";
         }
         {
           type = "bootmgr";
-          key = "│ boot  ";
+          key = "│  ├─ boot  ";
           format = "{firmware-name}";
           keyColor = "italic_#cba6f7";
         }
         {
           type = "uptime";
-          key = "│ uptime  ";
+          key = "│  ╰─ uptime  ";
           keyColor = "italic_#f38ba8";
         }
         {
           type = "custom";
-          key = "├──────────────────────────────── ─  ── ─ ─  ─";
-          keyColor = "#f38ba8";
+          key = "{#bold_italic_#f38ba8}├─ sw{#}";
         }
         {
           type = "shell";
-          key = "│ shell  ";
+          key = "│  ├─ shell  ";
           keyColor = "italic_#eba0ac";
         }
         {
           type = "terminal";
-          key = "│ term  ";
+          key = "│  ├─ term  ";
           keyColor = "italic_#fab387";
         }
         {
           type = "packages";
-          key = "│ pkgs  ";
+          key = "│  ├─ pkgs  ";
           keyColor = "italic_#f9e2af";
         }
         {
           type = "wm";
-          key = "│ wm  ";
+          key = "│  ╰─ wm  ";
           keyColor = "italic_#a6e3a1";
         }
         {
           type = "custom";
-          key = "├────────────────────────── ─ ──── ── ─ ─  ─";
+          key = "{#bold_italic_#a6e3a1}╰─ hw{#}";
           keyColor = "#a6e3a1";
         }
         {
           type = "cpu";
-          key = "│ cpu  ";
+          key = "   ├─ cpu  ";
           format = "{name}";
           keyColor = "italic_#94e2d5";
         }
         {
           type = "gpu";
-          key = "│ gpu  ";
+          key = "   ├─ gpu  ";
           format = "{name}";
           keyColor = "italic_#89dceb";
         }
         {
           type = "memory";
-          key = "│ memory  ";
+          key = "   ├─ memory  ";
           keyColor = "italic_#74c7ec";
         }
         {
           type = "disk";
-          key = "│ ssd  ";
+          key = "   ├─ ssd  ";
           format = "{size-used} / {size-total} ({size-percentage})";
           keyColor = "italic_#89b4fa";
         }
         {
-          type = "display";
-          key = "│ display  ";
-          format = "{width}x{height} @ {refresh-rate}Hz ({type}) ";
+          type = "command";
+          key = "   ├─ display  ";
           keyColor = "italic_#b4befe";
+          text = "hyprctl monitors -j | jq -r '.[1] | \"\\(.width)x\\(.height) @ \\(.refreshRate)Hz (\\(.name))\"'";
         }
         {
-          type = "custom";
-          key = "╰─────────────────────────── ── ─   ─ ─  ── ─ ── ╯";
-          keyColor = "#b4befe";
+          type = "command";
+          key = "   ╰─ display  ";
+          keyColor = "italic_#b4befe";
+          text = "hyprctl monitors -j | jq -r '.[0] | \"\\(.width)x\\(.height) @ \\(.refreshRate)Hz (\\(.name))\"'";
         }
+
       ];
     };
   };

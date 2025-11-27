@@ -36,6 +36,7 @@
       youtube-tui
       exiftool # for superfile metadata plugin
       zoxide # for superfile zoxide plugin
+      jq
 
       ####### desk env #######
       hyprpicker
