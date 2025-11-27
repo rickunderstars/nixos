@@ -48,7 +48,6 @@
 	border-radius: 10px;
 	border-top: 0;
 	border-bottom: 0;
-
 	padding: 0 0.7em;
 	margin: 8px 3px 0;
 	min-height: 0;
@@ -56,7 +55,7 @@
 
 #workspaces {
 	margin-left: 8px;
-	background-color: alpha(@base, 0.45);
+	background-color: alpha(@base, 0.5);
 	color: black;
 	padding: 0;
 }
@@ -64,29 +63,23 @@
 #workspaces button {
 	border-radius: 10px;
 	margin: 0px;
-	padding: 0 2px;
+	padding: 3px 4px;
 	color: black;
+	transition: all 0.2s ease-in-out;
 }
 
 #workspaces button.active {
-	border-radius: 8px;
-	background-image: linear-gradient(
-		to right,
-		alpha(@mauve, 0.8),
-		alpha(@blue, 0.8)
-	);
-	margin: 4px;
-	padding: 0 1em;
+	border-radius: 7px;
+	background-color: alpha(@mauve, 0.8);
+	padding: 0px 1em;
+	margin: 3px;
 	color: black;
 }
 
 #workspaces button:hover {
-	background-color: alpha(@rosewater, 0.6);
+	background-color: alpha(@lavender, 0.9);
 	box-shadow: none;
-	border-radius: 10px;
-	/*
-	transition: todo
-	*/
+	border-radius: 7px;
 }
 
 #waybar {
@@ -96,7 +89,7 @@
 }
 
 #tray {
-	background-color: alpha(@base, 0.45);
+	background-color: alpha(@base, 0.5);
 	color: black;
 }
 
@@ -128,7 +121,7 @@
 	background-image: linear-gradient(
 		to right,
 		alpha(@flamingo, 0.8) 0%,
-		alpha(@pink, 0.8) 100%
+		alpha(@maroon, 0.8) 100%
 	);
 	color: black;
 	min-width: 8.2em;
@@ -137,15 +130,6 @@
 	border-bottom-left-radius: 0;
 	margin-left: 0;
 	padding-left: 0;
-}
-
-#backlight {
-	background-image: linear-gradient(
-		to right,
-		alpha(@pink, 0.8) 0%,
-		alpha(@maroon, 0.8) 100%
-	);
-	color: black;
 }
 
 #idle_inhibitor {
@@ -176,7 +160,7 @@
 	background-image: linear-gradient(
 		to right,
 		alpha(@peach, 0.8) 0%,
-		alpha(@green, 0.8) 100%
+		alpha(@teal, 0.8) 100%
 	);
 	color: black;
 	min-width: 4.2em;
@@ -185,23 +169,6 @@
 	border-bottom-left-radius: 0;
 	margin-left: 0;
 	padding-left: 0;
-}
-
-#battery {
-	background-image: linear-gradient(
-		to right,
-		alpha(@green, 0.8),
-		alpha(@teal, 0.8)
-	);
-	color: black;
-}
-
-#battery.warning {
-	color: black;
-}
-
-#battery.critical {
-	color: black;
 }
 
 #bluetooth {

@@ -1,0 +1,232 @@
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color text #cdd6f4;
+@define-color subtext1 #bac2de;
+@define-color subtext0 #a6adc8;
+@define-color overlay2 #9399b2;
+@define-color overlay1 #7f849c;
+@define-color overlay0 #6c7086;
+@define-color surface2 #585b70;
+@define-color surface1 #45475a;
+@define-color surface0 #313244;
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
+* {
+	font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font";
+	font-weight: bolder;
+	font-style: italic;
+	font-size: 10pt;
+}
+
+#workspaces,
+#cava,
+#tray,
+#backlight,
+#idle_inhibitor,
+#wireplumber,
+#memory,
+#cpu,
+#bluetooth,
+#network,
+#battery,
+#language,
+#clock {
+	border-radius: 10px;
+	border-top: 0;
+	border-bottom: 0;
+	padding: 0 0.7em;
+	margin: 8px 3px 0;
+	min-height: 0;
+}
+
+#workspaces {
+	margin-left: 8px;
+	background-color: alpha(@base, 0.5);
+	color: black;
+	padding: 0;
+}
+
+#workspaces button {
+	border-radius: 10px;
+	margin: 0px;
+	padding: 3px 4px;
+	color: black;
+	transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+	border-radius: 7px;
+	background-color: alpha(@mauve, 0.8);
+	padding: 0px 1em;
+	margin: 3px;
+	color: black;
+}
+
+#workspaces button:hover {
+	background-color: alpha(@lavender, 0.9);
+	box-shadow: none;
+	border-radius: 7px;
+}
+
+#waybar {
+	background-color: alpha(@base, 0);
+	padding: 0;
+	margin: 0;
+}
+
+#tray {
+	background-color: alpha(@base, 0.5);
+	color: black;
+}
+
+#tray menu {
+	background-color: alpha(@base, 0.98);
+	color: @text;
+}
+
+#tray menu menuitem:hover {
+	background-color: alpha(@blue, 0.3);
+	color: @text;
+}
+
+#cava {
+	background-image: linear-gradient(
+		to right,
+		alpha(@rosewater, 0.8) 0%,
+		alpha(@flamingo, 0.8) 100%
+	);
+	color: black;
+	border-right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-right: 0;
+	padding-right: 0;
+}
+
+#wireplumber {
+	background-image: linear-gradient(
+		to right,
+		alpha(@flamingo, 0.8) 0%,
+		alpha(@pink, 0.8) 100%
+	);
+	color: black;
+	min-width: 8.2em;
+	border-left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#backlight {
+	background-image: linear-gradient(
+		to right,
+		alpha(@pink, 0.8) 0%,
+		alpha(@maroon, 0.8) 100%
+	);
+	color: black;
+}
+
+#idle_inhibitor {
+	background-image: linear-gradient(
+		to right,
+		alpha(@maroon, 0.8) 0%,
+		alpha(@peach, 0.8) 100%
+	);
+	color: black;
+}
+
+#memory {
+	background-image: linear-gradient(
+		to right,
+		alpha(@peach, 0.8) 0%,
+		alpha(@peach, 0.8) 100%
+	);
+	color: black;
+	min-width: 3.2em;
+	border-right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-right: 0;
+	padding-right: 0;
+}
+
+#cpu {
+	background-image: linear-gradient(
+		to right,
+		alpha(@peach, 0.8) 0%,
+		alpha(@green, 0.8) 100%
+	);
+	color: black;
+	min-width: 4.2em;
+	border-left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#battery {
+	background-image: linear-gradient(
+		to right,
+		alpha(@green, 0.8),
+		alpha(@teal, 0.8)
+	);
+	color: black;
+}
+
+#battery.warning {
+	color: black;
+}
+
+#battery.critical {
+	color: black;
+}
+
+#bluetooth {
+	background-image: linear-gradient(
+		to right,
+		alpha(@teal, 0.8),
+		alpha(@sapphire, 0.8)
+	);
+	color: black;
+}
+
+#network {
+	background-image: linear-gradient(
+		to right,
+		alpha(@sapphire, 0.8),
+		alpha(@blue, 0.8)
+	);
+	color: black;
+}
+
+#language {
+	background-image: linear-gradient(
+		to right,
+		alpha(@blue, 0.8),
+		alpha(@lavender, 0.8)
+	);
+	color: black;
+	min-width: 1.2em;
+}
+
+#clock {
+	background-color: alpha(@lavender, 0.8);
+	color: black;
+	margin-right: 8px;
+}
