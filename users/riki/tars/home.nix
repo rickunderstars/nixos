@@ -24,6 +24,7 @@
   imports = [
     ./term/cava
     ./term/fish
+    ./term/fastfetch
     ./desk-env/hyprland
     ./desk-env/hypridle
     ./desk-env/hyprlock
