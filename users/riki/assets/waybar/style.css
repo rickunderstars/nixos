@@ -56,28 +56,34 @@
 
 #workspaces {
 	margin-left: 8px;
-	background-color: alpha(@base, 0.5);
+	background-color: alpha(@base, 0.45);
 	color: black;
 	padding: 0;
 }
 
 #workspaces button {
-	border-radius: 8px;
+	border-radius: 10px;
 	margin: 0px;
 	padding: 0 2px;
 	color: black;
 }
 
 #workspaces button.active {
-	background-color: alpha(@mauve, 0.8);
+	border-radius: 8px;
+	background-image: linear-gradient(
+		to right,
+		alpha(@mauve, 0.8),
+		alpha(@blue, 0.8)
+	);
 	margin: 4px;
 	padding: 0 1em;
 	color: black;
 }
 
 #workspaces button:hover {
-	background-color: alpha(@blue, 0.6);
+	background-color: alpha(@rosewater, 0.6);
 	box-shadow: none;
+	border-radius: 10px;
 	/*
 	transition: todo
 	*/
@@ -90,13 +96,13 @@
 }
 
 #tray {
-	background-color: alpha(@base, 0.5);
+	background-color: alpha(@base, 0.45);
 	color: black;
 }
 
 #tray menu {
 	background-color: alpha(@base, 0.98);
-	color: black;
+	color: @text;
 }
 
 #tray menu menuitem:hover {
@@ -105,7 +111,11 @@
 }
 
 #cava {
-	background-color: alpha(@flamingo, 0.8);
+	background-image: linear-gradient(
+		to right,
+		alpha(@rosewater, 0.8) 0%,
+		alpha(@flamingo, 0.8) 100%
+	);
 	color: black;
 	border-right: 0;
 	border-top-right-radius: 0;
@@ -115,7 +125,11 @@
 }
 
 #wireplumber {
-	background-color: alpha(@flamingo, 0.8);
+	background-image: linear-gradient(
+		to right,
+		alpha(@flamingo, 0.8) 0%,
+		alpha(@pink, 0.8) 100%
+	);
 	color: black;
 	min-width: 8.2em;
 	border-left: 0;
@@ -126,19 +140,31 @@
 }
 
 #backlight {
-	background-color: alpha(@pink, 0.8);
+	background-image: linear-gradient(
+		to right,
+		alpha(@pink, 0.8) 0%,
+		alpha(@maroon, 0.8) 100%
+	);
 	color: black;
 }
 
 #idle_inhibitor {
-	background-color: alpha(@maroon, 0.8);
+	background-image: linear-gradient(
+		to right,
+		alpha(@maroon, 0.8) 0%,
+		alpha(@peach, 0.8) 100%
+	);
 	color: black;
 }
 
 #memory {
-	background-color: alpha(@peach, 0.8);
+	background-image: linear-gradient(
+		to right,
+		alpha(@peach, 0.8) 0%,
+		alpha(@peach, 0.8) 100%
+	);
 	color: black;
-	min-width: 3.3em;
+	min-width: 3.2em;
 	border-right: 0;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
@@ -147,7 +173,11 @@
 }
 
 #cpu {
-	background-color: alpha(@peach, 0.8);
+	background-image: linear-gradient(
+		to right,
+		alpha(@peach, 0.8) 0%,
+		alpha(@green, 0.8) 100%
+	);
 	color: black;
 	min-width: 4.2em;
 	border-left: 0;
@@ -167,27 +197,37 @@
 }
 
 #battery.warning {
-	background-color: alpha(@yellow, 0.8);
 	color: black;
 }
 
 #battery.critical {
-	background-color: alpha(@red, 0.8);
 	color: black;
 }
 
 #bluetooth {
-	background-color: alpha(@teal, 0.8);
+	background-image: linear-gradient(
+		to right,
+		alpha(@teal, 0.8),
+		alpha(@sapphire, 0.8)
+	);
 	color: black;
 }
 
 #network {
-	background-color: alpha(@sapphire, 0.8);
+	background-image: linear-gradient(
+		to right,
+		alpha(@sapphire, 0.8),
+		alpha(@blue, 0.8)
+	);
 	color: black;
 }
 
 #language {
-	background-color: alpha(@blue, 0.8);
+	background-image: linear-gradient(
+		to right,
+		alpha(@blue, 0.8),
+		alpha(@lavender, 0.8)
+	);
 	color: black;
 	min-width: 1.2em;
 }
