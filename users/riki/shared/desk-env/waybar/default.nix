@@ -194,21 +194,21 @@
         backlight = {
           format = "<span font_size='200%'>{icon}</span>";
           format-icons = [
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
             ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
           ];
           tooltip-format = "brightness: {percent}";
           reverse-scrolling = true;

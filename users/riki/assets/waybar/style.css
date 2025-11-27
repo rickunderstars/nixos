@@ -27,7 +27,6 @@
 
 * {
 	font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font";
-	color: @text;
 	font-weight: bolder;
 	font-style: italic;
 	font-size: 10pt;
@@ -46,10 +45,6 @@
 #battery,
 #language,
 #clock {
-	background-color: alpha(@base, 0.4);
-	border-width: 4px;
-	border-style: solid;
-	border-color: @mauve;
 	border-radius: 10px;
 	border-top: 0;
 	border-bottom: 0;
@@ -61,21 +56,31 @@
 
 #workspaces {
 	margin-left: 8px;
+	background-color: alpha(@base, 0.5);
+	color: black;
+	padding: 0;
 }
 
 #workspaces button {
-	border-radius: 50%;
-	margin: 0.2em;
-	padding: 0 0.5em;
+	border-radius: 8px;
+	margin: 0px;
+	padding: 0 2px;
+	color: black;
 }
 
 #workspaces button.active {
-	background-color: alpha(@blue, 0.3);
+	background-color: alpha(@mauve, 0.8);
+	margin: 4px;
+	padding: 0 1em;
+	color: black;
 }
 
 #workspaces button:hover {
-	background-color: alpha(@teal, 0.6);
+	background-color: alpha(@blue, 0.6);
 	box-shadow: none;
+	/*
+	transition: todo
+	*/
 }
 
 #waybar {
@@ -85,13 +90,13 @@
 }
 
 #tray {
-	border-color: @rosewater;
-	color: @rosewater;
+	background-color: alpha(@base, 0.5);
+	color: black;
 }
 
 #tray menu {
 	background-color: alpha(@base, 0.98);
-	color: @text;
+	color: black;
 }
 
 #tray menu menuitem:hover {
@@ -100,8 +105,8 @@
 }
 
 #cava {
-	border-color: @flamingo;
-	color: @flamingo;
+	background-color: alpha(@flamingo, 0.8);
+	color: black;
 	border-right: 0;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
@@ -110,8 +115,8 @@
 }
 
 #wireplumber {
-	border-color: @flamingo;
-	color: @flamingo;
+	background-color: alpha(@flamingo, 0.8);
+	color: black;
 	min-width: 8.2em;
 	border-left: 0;
 	border-top-left-radius: 0;
@@ -121,18 +126,18 @@
 }
 
 #backlight {
-	border-color: @pink;
-	color: @pink;
+	background-color: alpha(@pink, 0.8);
+	color: black;
 }
 
 #idle_inhibitor {
-	border-color: @maroon;
-	color: @maroon;
+	background-color: alpha(@maroon, 0.8);
+	color: black;
 }
 
 #memory {
-	border-color: @peach;
-	color: @peach;
+	background-color: alpha(@peach, 0.8);
+	color: black;
 	min-width: 3.3em;
 	border-right: 0;
 	border-top-right-radius: 0;
@@ -142,8 +147,8 @@
 }
 
 #cpu {
-	border-color: @peach;
-	color: @peach;
+	background-color: alpha(@peach, 0.8);
+	color: black;
 	min-width: 4.2em;
 	border-left: 0;
 	border-top-left-radius: 0;
@@ -153,38 +158,42 @@
 }
 
 #battery {
-	border-color: @green;
-	color: @green;
+	background-image: linear-gradient(
+		to right,
+		alpha(@green, 0.8),
+		alpha(@teal, 0.8)
+	);
+	color: black;
 }
 
 #battery.warning {
-	border-color: @yellow;
-	color: @yellow;
+	background-color: alpha(@yellow, 0.8);
+	color: black;
 }
 
 #battery.critical {
-	border-color: @red;
-	color: @red;
+	background-color: alpha(@red, 0.8);
+	color: black;
 }
 
 #bluetooth {
-	border-color: @teal;
-	color: @teal;
+	background-color: alpha(@teal, 0.8);
+	color: black;
 }
 
 #network {
-	border-color: @sapphire;
-	color: @sapphire;
+	background-color: alpha(@sapphire, 0.8);
+	color: black;
 }
 
 #language {
-	border-color: @blue;
-	color: @blue;
+	background-color: alpha(@blue, 0.8);
+	color: black;
 	min-width: 1.2em;
 }
 
 #clock {
-	border-color: @lavender;
-	color: @lavender;
+	background-color: alpha(@lavender, 0.8);
+	color: black;
 	margin-right: 8px;
 }

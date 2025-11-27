@@ -25,10 +25,10 @@
         alignment = "center";
 
         # catppuccin mavue
-        background = "#1e1e2eaf";
+        background = "#1e1e2eff";
         foreground = "#cdd6f4ff";
-        frame_color = "#cba6f7e5";
-        highlight = "#313244e5";
+        frame_color = "#cba6f7ff";
+        highlight = "#313244ff";
       };
 
       urgency_critical = {
