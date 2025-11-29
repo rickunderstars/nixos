@@ -32,6 +32,9 @@
       display = {
         separator = "";
         key.width = 15;
+        color = {
+          output = "italic_bold_#cdd6f4";
+        };
       };
     };
   };
