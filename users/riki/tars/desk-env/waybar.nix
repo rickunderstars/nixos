@@ -8,11 +8,11 @@
 
 {
   programs.waybar = {
-    style = ../../../assets/waybar/case-style.css;
+    style = ../../assets/waybar/tars-style.css;
     settings = {
       mainBar = {
         cava = {
-          bars = 32;
+          bars = 12;
         };
       };
     };

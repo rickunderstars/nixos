@@ -248,26 +248,26 @@
 
   imports = [
     inputs.zen-browser.homeModules.twilight
-    ./shared/mimeapps
-    ./shared/apps/onedrive
-    ./shared/apps/imv
-    ./shared/apps/mpv
-    ./shared/apps/git
-    ./shared/term/broot
-    ./shared/term/btop
-    ./shared/term/cava
-    ./shared/term/fastfetch
-    ./shared/term/fish
-    ./shared/term/ghostty
-    ./shared/term/starship
-    ./shared/term/bat
-    ./shared/desk-env/hyprland
-    ./shared/desk-env/hypridle
-    ./shared/desk-env/hyprlock
-    ./shared/desk-env/hyprpaper
-    ./shared/desk-env/hyprshell
-    ./shared/desk-env/waybar
-    ./shared/desk-env/notifications
-    ./shared/desk-env/global-themes
+    ./shared/apps/onedrive.nix
+    ./shared/apps/imv.nix
+    ./shared/apps/mpv.nix
+    ./shared/apps/git.nix
+    ./shared/term/broot.nix
+    ./shared/term/btop.nix
+    ./shared/term/cava.nix
+    ./shared/term/fastfetch.nix
+    ./shared/term/fish.nix
+    ./shared/term/ghostty.nix
+    ./shared/term/starship.nix
+    ./shared/term/bat.nix
+    ./shared/desk-env/mimeapps.nix
+    ./shared/desk-env/hyprland.nix
+    ./shared/desk-env/hypridle.nix
+    ./shared/desk-env/hyprlock.nix
+    ./shared/desk-env/hyprpaper.nix
+    ./shared/desk-env/hyprshell.nix
+    ./shared/desk-env/waybar.nix
+    ./shared/desk-env/dunst.nix
+    ./shared/desk-env/global-themes.nix
   ];
 }

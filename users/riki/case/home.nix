@@ -13,12 +13,12 @@
   ];
 
   imports = [
-    ./term/cava
-    ./term/fish
-    ./term/fastfetch
-    ./desk-env/hyprland
-    ./desk-env/hyprlock
-    ./desk-env/waybar
+    ./term/cava.nix
+    ./term/fish.nix
+    ./term/fastfetch.nix
+    ./desk-env/hyprland.nix
+    ./desk-env/hyprlock.nix
+    ./desk-env/waybar.nix
   ];
 
 }

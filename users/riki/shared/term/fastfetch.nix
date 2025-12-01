@@ -22,7 +22,7 @@
     enable = true;
     settings = {
       logo = {
-        source = ../../../assets/fastfetch/frieren-cat.png;
+        source = ../../assets/fastfetch/frieren-cat.png;
         padding = {
           left = 0;
           right = 3;
