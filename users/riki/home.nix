@@ -248,6 +248,7 @@
 
   imports = [
     inputs.zen-browser.homeModules.twilight
+    ./assets/scripts/scripts.nix
     ./shared/apps/onedrive.nix
     ./shared/apps/imv.nix
     ./shared/apps/mpv.nix

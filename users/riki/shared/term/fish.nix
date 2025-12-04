@@ -113,7 +113,7 @@
       cls = "clear";
       ff = "clear;fastfetch";
       py = "python";
-      auch = "python ~/nixos-config/users/riki/assets/scripts/audio-switch.py";
+      auch = "audio-switch";
       here = "pwd | wl-copy; pwd";
       home = "cd ~";
       goodnight = "shutdown now";

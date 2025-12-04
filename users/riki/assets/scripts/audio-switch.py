@@ -4,12 +4,12 @@ import re
 
 # --- CONFIGURATION ---
 
-  # List of devices to skip, leave empty for no filtering
+# List of devices to skip, leave empty for no filtering
 SKIP_SINK_NAMES = [
-	"GA102 High Definition Audio Controller Pro",
-	"GA102 High Definition Audio Controller Pro 9",
-	"GA102 High Definition Audio Controller Pro 8"
-	]
+    "GA102 High Definition Audio Controller Pro",
+    "GA102 High Definition Audio Controller Pro 9",
+    "GA102 High Definition Audio Controller Pro 8"
+]
 
 ENABLE_NOTIFICATIONS = True  # Set to False to disable notifications
 
@@ -18,12 +18,18 @@ ENABLE_NOTIFICATIONS = True  # Set to False to disable notifications
 def notify(message):
     """Send a notification if enabled."""
     if ENABLE_NOTIFICATIONS:
-        subprocess.run(["dbus-launch", "dunstify", "Audio Switch", message])
-
+        try:
+            subprocess.run(["dbus-launch", "dunstify", "Audio Switch", message], check=False)
+        except FileNotFoundError:
+            pass
 
 def get_sinks():
     """Retrieve available audio sinks."""
-    output = subprocess.check_output(["wpctl", "status"], encoding="utf-8")
+    try:
+        output = subprocess.check_output(["wpctl", "status"], encoding="utf-8")
+    except FileNotFoundError:
+        print("Error: wpctl not found.")
+        return []
 
     # Remove ASCII tree characters
     lines = output.replace("├", "").replace("─", "").replace("│", "").replace("└", "").splitlines()
@@ -63,11 +69,14 @@ def toggle_sink():
 
     # Find current default device
     current_index = next((i for i, sink in enumerate(sinks) if sink["is_default"]), -1)
-    if current_index == -1:
-        return
 
     # Calculate next device in list (cyclic)
-    next_index = (current_index + 1) % len(sinks)
+    # If no default is found, start from 0
+    if current_index == -1:
+        next_index = 0
+    else:
+        next_index = (current_index + 1) % len(sinks)
+
     next_sink = sinks[next_index]
 
     # Set default device
@@ -77,4 +86,5 @@ def toggle_sink():
     notify(f"{next_sink['sink_name']}")
 
 # Execute script
-toggle_sink()
+if __name__ == "__main__":
+    toggle_sink()

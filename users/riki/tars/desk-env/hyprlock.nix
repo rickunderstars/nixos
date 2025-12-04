@@ -20,6 +20,7 @@
           halign = "center";
           valign = "center";
           shadow_passes = 2;
+          monitor = "eDP-1";
         }
       ];
       input-field = [
@@ -65,7 +66,7 @@
           shadow_passes = 2;
         }
         {
-          text = "cmd[update:100] /home/riki/nixos-config/users/riki/assets/scripts/music-info";
+          text = "cmd[update:100] music-info";
           text_align = "center";
           halign = "center";
           valign = "top";
@@ -88,7 +89,7 @@
           monitor = "eDP-1";
         }
         {
-          text = "cmd[update:5000] /home/riki/nixos-config/users/riki/assets/scripts/battery";
+          text = "cmd[update:5000] battery-info";
           text_align = "center";
           halign = "right";
           valign = "bottom";
@@ -111,7 +112,7 @@
           monitor = "eDP-1";
         }
         {
-          text = "cmd[update:90] /home/riki/nixos-config/users/riki/assets/scripts/game-of-life";
+          text = "cmd[update:90] game-of-life";
           text_align = "center";
           halign = "right";
           valign = "center";

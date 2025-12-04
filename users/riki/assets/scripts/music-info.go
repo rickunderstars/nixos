@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	cmd := exec.Command("playerctl", "metadata", "--format", " {{ artist }} - {{ title }}")
+	cmd := exec.Command("playerctl", "metadata", "--format", " {{ artist }} - {{ title }} ")
 	info, err := cmd.Output()
 
 	if err != nil {

@@ -237,5 +237,11 @@ func LoadState() (*GameState, error) {
 		return nil, err
 	}
 
+	if s.LastUpdate.After(time.Now()) {
+		randStart(&s.Grid)
+		s.LastUpdate = time.Time{}
+		return &s, nil
+	}
+
 	return &s, nil
 }
