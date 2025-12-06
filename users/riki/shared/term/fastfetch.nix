@@ -6,17 +6,6 @@
   ...
 }:
 
-# top: ─
-# bottom: ─
-# left: │
-# right: │
-# top_left: ╭
-# top_right: ╮
-# bottom_left: ╰
-# bottom_right: ╯
-# middle_left: ├
-# middle_right: ┤
-
 {
   programs.fastfetch = {
     enable = true;

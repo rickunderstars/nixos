@@ -16,7 +16,7 @@
 
       palette = "catppuccin_mocha";
 
-      format = "$username[](bold maroon)$hostname $all";
+      format = "[╭─](lavender) $username[](bold maroon)$hostname $all";
       right_format = "$nix_shell $time";
 
       username = {
@@ -39,9 +39,8 @@
       };
 
       character = {
-        success_symbol = "🍙 [❯](green)";
-        error_symbol = "🍙 [❯](red)";
-        vimcmd_symbol = "🍙 [❮](subtext1)";
+        success_symbol = "[╰───](lavender) 🍙 [❯](teal)";
+        error_symbol = "[╰───](lavender) 🍙 [❯](red)";
       };
 
       git_branch = {
