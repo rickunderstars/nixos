@@ -41,6 +41,7 @@
       ####### desk env #######
       hyprpicker
       hyprsysteminfo
+      hyprshade
       papirus-icon-theme
       nautilus
       kdePackages.breeze
