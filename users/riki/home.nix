@@ -37,6 +37,7 @@
       exiftool # for superfile metadata plugin
       zoxide # for superfile zoxide plugin
       jq
+      wev
 
       ####### desk env #######
       hyprpicker
