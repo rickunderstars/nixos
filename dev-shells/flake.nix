@@ -66,6 +66,7 @@
             emscripten
             glm
             python3
+            nodejs
           ];
           shellHook = ''
             export DEV_ENV_NAME="heart-dev-env"
