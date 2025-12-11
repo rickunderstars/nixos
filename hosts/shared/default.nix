@@ -82,6 +82,16 @@
         };
       };
     };
+
+    dhcpcd = {
+      enable = true;
+      wait = "background";
+      extraConfig = ''
+        nocarrier_roaming
+        timeout 10
+      '';
+    };
+
     firewall = {
       enable = true;
 
@@ -105,10 +115,6 @@
 
       ];
     };
-  };
-
-  systemd.services.dhcpcd.serviceConfig = {
-    TimeoutStartSec = "0";
   };
 
   time.timeZone = "Europe/Rome";
