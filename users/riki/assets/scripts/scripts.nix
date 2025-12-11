@@ -15,9 +15,9 @@ let
         go build -ldflags="-s -w" -o $out/bin/${name} main.go
       '';
 
-  game-of-life = mkGoBin "game-of-life" ./game-of-life.go;
-  battery-info = mkGoBin "battery-info" ./battery-info.go;
-  music-info = mkGoBin "music-info" ./music-info.go;
+  game-of-life = mkGoBin "game-of-life" ./go/game-of-life.go;
+  battery-info = mkGoBin "battery-info" ./go/battery-info.go;
+  music-info = mkGoBin "music-info" ./go/music-info.go;
 
   audio-switch = pkgs.writers.writePython3Bin "audio-switch" {
     libraries = [ ];
@@ -28,7 +28,7 @@ let
       "W292"
       "E265"
     ];
-  } (builtins.readFile ./audio-switch.py);
+  } (builtins.readFile ./python/audio-switch.py);
 
 in
 {
