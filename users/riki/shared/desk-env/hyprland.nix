@@ -79,6 +79,14 @@
       layerrule = [
         "blur, waybar"
         "ignorezero, waybar"
+
+        "blur, launcher"
+        "ignorezero, launcher"
+        "xray off, launcher"
+
+        "blur, notifications"
+        "ignorezero, notifications"
+        "xray off, notifications"
       ];
 
       "$mod" = "SUPER";
@@ -103,6 +111,9 @@
         ### bluetooth
         "$mod, b, exec, fish -c 'pidof bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith'"
 
+        ### tofi
+        "$mod, space, exec, tofi-drun"
+
         ### btop
         "CTRL SHIFT, escape, exec, fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'"
 
@@ -113,7 +124,7 @@
         "$mod, e, exec, nautilus --new-window"
 
         ### switch keyboard layout
-        "$mod, space, exec, hyprctl switchxkblayout all next; dunstify 'Switched keyboard layout'"
+        "$mod SHIFT, space, exec, hyprctl switchxkblayout all next; dunstify 'Switched keyboard layout'"
 
         ### hyprpicker
         "$mod, c, exec, hyprpicker -a"
@@ -275,7 +286,6 @@
       ];
 
       misc = {
-        enable_swallow = true;
         focus_on_activate = true;
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;

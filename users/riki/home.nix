@@ -269,6 +269,7 @@
     ./shared/desk-env/hyprlock.nix
     ./shared/desk-env/hyprpaper.nix
     ./shared/desk-env/hyprshell.nix
+    ./shared/desk-env/tofi.nix
     ./shared/desk-env/waybar.nix
     ./shared/desk-env/dunst.nix
     ./shared/desk-env/global-themes.nix
