@@ -13,7 +13,7 @@
       font = "CaskaydiaCove Nerd Font Mono";
       font-size = "16vh";
       prompt-text = "run?";
-      placeholder-text = "   but i don't like running...";
+      placeholder-text = "but i don't like running...";
       prompt-padding = 16;
       height = "100%";
       width = "100%";
@@ -30,7 +30,7 @@
       text-color = "#cdd6f4";
       prompt-color = "#eba0ac";
       selection-color = "#89dceb";
-      background-color = "#1e1e2ee0";
+      background-color = "#1e1e2ec0";
     };
   };
 }

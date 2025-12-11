@@ -255,10 +255,20 @@
         allow_tearing = true;
         "col.active_border" = "rgba(89b4faff) rgba(cba6f7ff) 310deg"; # blue -> mavue
         "col.inactive_border" = "rgba(181825ff) rgba(313244ff) 310deg";
+
+        snap = {
+          enabled = true;
+          window_gap = 20;
+          monitor_gap = 30;
+          respect_gaps = true;
+        };
       };
 
       decoration = {
         rounding = 10;
+        shadow = {
+          enabled = false;
+        };
         blur = {
           xray = true;
         };
