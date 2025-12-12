@@ -82,6 +82,7 @@
       gimp
       grimblast
       blender
+      krita
       uxplay
       pavucontrol
       catppuccinifier-gui

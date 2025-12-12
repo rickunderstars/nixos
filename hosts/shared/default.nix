@@ -259,14 +259,6 @@
 
   qt.enable = true;
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-    ];
-    config.common.default = "hyprland";
-  };
-
   fonts.packages = with pkgs; [
     nerd-fonts.caskaydia-cove
   ];
