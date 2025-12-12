@@ -35,7 +35,6 @@
 }
 
 .monitor {
-	margin-top: 90px;
 	border: unset;
 	border-radius: 20px;
 	background-color: @base;
@@ -58,42 +57,4 @@
 .workspace {
 	border: unset;
 	background-color: @base;
-}
-
-.launcher {
-	margin-top: 80px;
-	border-radius: 20px;
-	border-style: solid;
-	border-color: @mauve;
-	background-color: @base;
-}
-
-.launcher-input {
-	border-radius: 10px;
-	border-left: 2px;
-	border-color: alpha(@mauve, 1);
-	background-color: @base;
-}
-
-.launcher-item {
-	padding: 4px;
-	border-radius: 10px;
-	background-color: @base;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease;
-}
-
-.launcher-item:hover {
-	background-color: alpha(@blue, 0.4);
-}
-
-.launcher-plugins {
-	display: none;
-	padding: 0;
-	margin: 0;
-}
-
-.launcher-plugin {
-	display: none;
-	padding: 0;
-	margin: 0;
 }
