@@ -12,6 +12,9 @@
     systemd.enable = false;
     package = null;
     portalPackage = null;
+    plugins = [
+      inputs.hyprland-plugins.packages."${pkgs.stdenv.hostPlatform.system}".hyprexpo
+    ];
     settings = {
       exec-once = [
         "hyprlock"
@@ -77,16 +80,16 @@
       ];
 
       layerrule = [
-        "blur, waybar"
-        "ignorezero, waybar"
+        "match:namespace waybar, blur on"
+        "match:namespace waybar, ignore_alpha 0"
 
-        "blur, launcher"
-        "ignorezero, launcher"
-        "xray off, launcher"
+        "match:namespace launcher, blur on"
+        "match:namespace launcher, ignore_alpha 0"
+        "match:namespace launcher, xray off"
 
-        "blur, notifications"
-        "ignorezero, notifications"
-        "xray off, notifications"
+        "match:namespace notifications, blur on"
+        "match:namespace notifications, ignore_alpha 0"
+        "match:namespace notifications, xray off"
       ];
 
       "$mod" = "SUPER";
@@ -113,6 +116,9 @@
 
         ### tofi
         "$mod, space, exec, tofi-drun"
+
+        ### hyprexpo
+        "$mod, o, hyprexpo:expo, toggle"
 
         ### btop
         "CTRL SHIFT, escape, exec, fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'"
@@ -299,7 +305,7 @@
         focus_on_activate = true;
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;
-        new_window_takes_over_fullscreen = 1;
+        on_focus_under_fullscreen = 1;
         mouse_move_enables_dpms = true;
         key_press_enables_dpms = true;
       };
