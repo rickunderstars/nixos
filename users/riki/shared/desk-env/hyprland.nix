@@ -14,6 +14,7 @@
     portalPackage = null;
     plugins = [
       inputs.hyprland-plugins.packages."${pkgs.stdenv.hostPlatform.system}".hyprexpo
+      # inputs.Hyprspace.packages."${pkgs.stdenv.hostPlatform.system}".Hyprspace # doesn't compile
     ];
     settings = {
       exec-once = [
@@ -115,10 +116,10 @@
         "$mod, b, exec, fish -c 'pidof bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith'"
 
         ### tofi
-        "$mod, space, exec, tofi-drun"
+        "$mod, space, exec, pkill tofi || tofi-drun"
 
         ### hyprexpo
-        "$mod, o, hyprexpo:expo, toggle"
+        "$mod, Alt_L, hyprexpo:expo, toggle"
 
         ### btop
         "CTRL SHIFT, escape, exec, fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'"
@@ -320,6 +321,14 @@
 
       ecosystem = {
         no_donation_nag = true;
+      };
+
+      "plugin:hyprexpo" = {
+        columns = 3;
+        gap_size = 0;
+        bg_col = "rgb(17, 17, 27)";
+        workspace_method = "center current";
+        skip_empty = true;
       };
     };
   };
