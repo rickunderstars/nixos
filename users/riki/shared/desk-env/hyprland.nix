@@ -8,8 +8,8 @@
 
 {
   wayland.windowManager.hyprland = {
-    systemd.enable = false;
     enable = true;
+    systemd.enable = false;
     package = null;
     portalPackage = null;
     settings = {

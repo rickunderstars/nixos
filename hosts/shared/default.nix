@@ -41,6 +41,9 @@
         "root"
         "@wheel"
       ];
+      substituters = [ "https://hyprland.cachix.org" ];
+      trusted-substituters = [ "https://hyprland.cachix.org" ];
+      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
       download-buffer-size = 1048576000;
       auto-optimise-store = true;
       warn-dirty = false;
@@ -236,6 +239,7 @@
     dconf.enable = true;
     hyprland = {
       enable = true;
+      package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
       withUWSM = true;
       xwayland.enable = true;
     };
