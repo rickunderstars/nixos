@@ -33,51 +33,60 @@
         "special:magic, gapsout:40, gapsin:20"
       ];
 
-      windowrulev2 = [
+      windowrule = [
         # games
-        "idleinhibit always, class:gamescope"
+        "match:class gamescope, idle_inhibit always"
 
         # steam
-        "float, class:^(steam)$, title:negative:^(Steam)$"
-        "idleinhibit always, class:steam_app_[0-9]+"
+        "match:class ^(steam)$ match:title negative:^(Steam)$, float on"
+        "match:class ^(steam)$ match:title negative:^(Steam)$, center on"
+        "match:class steam_app_[0-9]+, idle_inhibit always"
 
         # itch
-        "idleinhibit always, class:itch"
+        "match:class itch, idle_inhibit always"
 
         # heroic
-        "idleinhibit always, class:heroic"
+        "match:class heroic, idle_inhibit always"
 
         # nautilus
-        "float, class:org.gnome.Nautilus"
-        "size 60% 60%, class:org.gnome.Nautilus"
+        "match:class org.gnome.Nautilus, float on"
+        "match:class org.gnome.Nautilus, center on"
+        "match:class org.gnome.Nautilus, size (monitor_w*0.6) (monitor_h*0.6)"
 
         # wifi
-        "float, class:ghostty.wifi"
-        "size 60% 60%, class:ghostty.wifi"
+        "match:class ghostty.wifi, float on"
+        "match:class ghostty.wifi, center on"
+        "match:class ghostty.wifi, size (monitor_w*0.6) (monitor_h*0.6)"
 
         # bluetooth
-        "float, class:ghostty.bluetooth"
-        "size 60% 60%, class:ghostty.bluetooth"
+        "match:class ghostty.bluetooth, float on"
+        "match:class ghostty.bluetooth, center on"
+        "match:class ghostty.bluetooth, size (monitor_w*0.6) (monitor_h*0.6)"
 
         # btop
-        "float, class:ghostty.btop"
-        "size 75% 75%, class:ghostty.btop"
+        "match:class ghostty.btop, float on"
+        "match:class ghostty.btop, center on"
+        "match:class ghostty.btop, size (monitor_w*0.75) (monitor_h*0.75)"
 
         # wiremix
-        "float, class:ghostty.wiremix"
-        "size 60% 60%, class:ghostty.wiremix"
+        "match:class ghostty.wiremix, float on"
+        "match:class ghostty.wiremix, center on"
+        "match:class ghostty.wiremix, size (monitor_w*0.6) (monitor_h*0.6)"
 
         # ente-auth
-        "float, class:io.ente.auth"
-        "size 60% 60%, class:io.ente.auth"
+        "match:class io.ente.auth, float on"
+        "match:class io.ente.auth, center on"
+        "match:class io.ente.auth, size (monitor_w*0.6) (monitor_h*0.6)"
 
         # pcloud
-        "float, class:pcloud"
-        "size 60% 60%, class:pcloud"
+        "match:class pcloud, float on"
+        "match:class pcloud, center on"
+        "match:class pcloud, size (monitor_w*0.6) (monitor_h*0.6)"
 
         # localsend
-        "float, class:localsend_app"
-        "size 40% 50%, class:localsend_app"
+        "match:class localsend_app, float on"
+        "match:class localsend_app, center on"
+        "match:class localsend_app, size (monitor_w*0.4) (monitor_h*0.5)"
       ];
 
       layerrule = [
