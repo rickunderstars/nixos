@@ -4,27 +4,31 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    emscripten-pin.url = "github:nixos/nixpkgs/6d662c5";
   };
 
   outputs =
     {
+      self,
       nixpkgs-unstable,
       nixpkgs,
+      emscripten-pin,
       ...
     }:
     let
       system = "x86_64-linux";
       stable = import nixpkgs {
         inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        config.allowUnfree = true;
       };
       pkgs = import nixpkgs-unstable {
         inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        config.allowUnfree = true;
+      };
+
+      pkgsEmscripten = import emscripten-pin {
+        inherit system;
+        config.allowUnfree = true;
       };
     in
     {
@@ -63,7 +67,7 @@
             vscode-extensions.ms-vscode.cpptools
             vscode-extensions.ms-vscode.cpptools-extension-pack
             stable.meshlab
-            emscripten
+            pkgsEmscripten.emscripten
             glm
             python3
             nodejs
@@ -75,17 +79,17 @@
             export EM_CACHE="$PWD/.emscripten_cache"
 
             if [ "$(hostname)" = "tars" ]; then
-              export QT_SCALE_FACTOR="2"
+             export QT_SCALE_FACTOR="2"
             fi
 
             if [ ! -f .clangd ] || [ .clangd -ot "$0" ]; then
-                cat > .clangd << 'EOF'
-                CompileFlags:
-                  CompilationDatabase: build
-                Diagnostics:
-                  UnusedIncludes: None
-                  MissingIncludes: None
-                EOF
+              cat > .clangd << 'EOF'
+              CompileFlags:
+               CompilationDatabase: build
+              Diagnostics:
+               UnusedIncludes: None
+               MissingIncludes: None
+              EOF
             fi
           '';
         };
