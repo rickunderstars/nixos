@@ -238,6 +238,9 @@
       ".arduinoIDE/.clang-format" = {
         source = ./assets/arduino/.clang-format;
       };
+      ".config/ghostty/shaders/cursor_warp.glsl" = {
+        source = ./assets/ghostty/cursor_warp.glsl;
+      };
     };
   };
 
