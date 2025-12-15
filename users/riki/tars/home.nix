@@ -10,16 +10,8 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
-    geteduroam # eduroam
+    geteduroam
   ];
-
-  home.sessionVariables = {
-    # tells x11 (gdk) apps to scale x2
-    GDK_SCALE = "2";
-
-    # solves clipboard problems
-    XDG_CURRENT_DESKTOP = "Hyprland";
-  };
 
   imports = [
     ./term/cava.nix

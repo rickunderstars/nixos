@@ -16,6 +16,11 @@
       exec-once = [
       ];
 
+      env = [
+        "GDK_SCALE, 2"
+        "QT_SCALE_FACTOR, 2"
+      ];
+
       bind = [
 
         ### switch workspace (counting empty ones, creates new workspace if does not exist)
