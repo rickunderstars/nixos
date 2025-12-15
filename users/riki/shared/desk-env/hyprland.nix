@@ -125,7 +125,7 @@
         "$mod, b, exec, fish -c 'pidof bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith'"
 
         ### tofi
-        "$mod, space, exec, pkill tofi || tofi-drun"
+        "$mod, space, exec, fish -c 'pkill tofi || tofi-drun --placeholder-text=(tofi-random)'"
 
         ### hyprexpo
         "$mod, Alt_L, hyprexpo:expo, toggle"

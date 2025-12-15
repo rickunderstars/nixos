@@ -13,7 +13,7 @@
       font = "CaskaydiaCove Nerd Font Mono";
       font-size = "16vh";
       prompt-text = "run?";
-      placeholder-text = "but i don't like running...";
+      placeholder-text = "are you sure?";
       prompt-padding = 16;
       height = "100%";
       width = "100%";
