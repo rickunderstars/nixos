@@ -12,7 +12,7 @@ func main() {
 		"I am the one who knocks!   ~Walter White",
 		"It's over 9000!   ~Vegeta",
 		"Let me in!   ~Eric André",
-		"It's a trap! ~Admiral Ackbar",
+		"It's a trap!   ~Admiral Ackbar",
 		"Identity theft is not a joke, Jim!   ~Dwight Shrute",
 		"Coincidence? I think not!   ~Bernie Kropp",
 		"What if I told you...   ~Morpheus",
