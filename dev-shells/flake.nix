@@ -78,10 +78,6 @@
             export BOOST_INCLUDE_DIR="${pkgs.boost.dev}/include"
             export EM_CACHE="$PWD/.emscripten_cache"
 
-            if [ "$(hostname)" = "tars" ]; then
-             export QT_SCALE_FACTOR="2"
-            fi
-
             if [ ! -f .clangd ] || [ .clangd -ot "$0" ]; then
               cat > .clangd << 'EOF'
               CompileFlags:
