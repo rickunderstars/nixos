@@ -38,6 +38,7 @@
       zoxide # for superfile zoxide plugin
       jq
       wev
+      dust
 
       ####### desk env #######
       hyprpicker
