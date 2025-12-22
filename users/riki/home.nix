@@ -39,6 +39,8 @@
       jq
       wev
       dust
+      bit-logo
+      mcat
 
       ####### desk env #######
       hyprpicker
