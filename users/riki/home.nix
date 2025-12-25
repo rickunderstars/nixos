@@ -102,7 +102,7 @@
       protonup-qt
       prusa-slicer
       cura-appimage
-      openscad
+      freecad
       stable.meshlab
       wings
       ente-auth
@@ -247,11 +247,19 @@
     };
   };
 
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-    extraConfig = {
-      XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
+  xdg = {
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      extraConfig = {
+        XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
+      };
+    };
+    desktopEntries.freecad = {
+      name = "FreeCAD";
+      exec = "env QT_QPA_PLATFORM=xcb freecad %U";
+      terminal = false;
+      categories = [ "Application" ];
     };
   };
 
