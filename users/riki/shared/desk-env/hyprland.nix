@@ -92,7 +92,7 @@
         "match:class spotify, opacity 0.8"
 
         # nautilus
-        "match:class org.gnome.Nautilus, opacity 0.9"
+        "match:class org.gnome.Nautilus, opacity 0.95"
       ];
 
       layerrule = [
