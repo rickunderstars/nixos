@@ -87,6 +87,12 @@
         "match:class localsend_app, float on"
         "match:class localsend_app, center on"
         "match:class localsend_app, size (monitor_w*0.4) (monitor_h*0.5)"
+
+        # spotify
+        "match:class spotify, opacity 0.8"
+
+        # nautilus
+        "match:class org.gnome.Nautilus, opacity 0.9"
       ];
 
       layerrule = [
