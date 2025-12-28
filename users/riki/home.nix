@@ -18,11 +18,9 @@
       ookla-speedtest
       zip
       unzip
-      plantuml
       wl-clipboard
       bc
       bat-extras.batman
-      trash-cli
       playerctl
       portal
       bluetuith
@@ -30,7 +28,6 @@
       serie
       wiremix
       wl-mirror
-      slides
       cpufetch
       tdf
       youtube-tui
@@ -68,14 +65,12 @@
       arduino-ide
       arduino-language-server
       nodejs
-      pnpm
 
       ####### shell eye candy #######
       cbonsai
       cmatrix
       pipes
       tty-clock
-      typtea
       astroterm
       countryfetch
 
@@ -106,7 +101,6 @@
       stable.meshlab
       wings
       ente-auth
-      pcloud.passthru.libnotify or pkgs.libnotify
       spotify
       kdePackages.okular
       libresprite
@@ -171,7 +165,6 @@
 
     ####### apps #######
     zen-browser.enable = true;
-    vesktop.enable = true;
     obs-studio.enable = true;
     firefox.enable = true;
     anki.enable = true;
