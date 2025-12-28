@@ -110,6 +110,8 @@
       spotify
       kdePackages.okular
       libresprite
+      discord
+      discover-overlay
     ];
   };
 
