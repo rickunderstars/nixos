@@ -78,11 +78,6 @@
         "match:class io.ente.auth, center on"
         "match:class io.ente.auth, size (monitor_w*0.6) (monitor_h*0.6)"
 
-        # pcloud
-        "match:class pcloud, float on"
-        "match:class pcloud, center on"
-        "match:class pcloud, size (monitor_w*0.6) (monitor_h*0.6)"
-
         # localsend
         "match:class localsend_app, float on"
         "match:class localsend_app, center on"

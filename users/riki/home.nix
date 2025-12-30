@@ -154,10 +154,6 @@
           name = "Onedrive";
           location = "/home/riki/OneDrive";
         }
-        {
-          name = "pCloud";
-          location = "/home/riki/pCloudDrive";
-        }
       ];
       metadataPackage = pkgs.exiftool;
       zoxidePackage = pkgs.zoxide;
