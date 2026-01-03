@@ -29,6 +29,7 @@
       wiremix
       wl-mirror
       cpufetch
+      nitch
       tdf
       youtube-tui
       exiftool # for superfile metadata plugin
