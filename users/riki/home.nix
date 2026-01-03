@@ -70,6 +70,7 @@
       python3Packages.scikit-learn
       python3Packages.statsmodels
       python3Packages.ipywidgets
+      texliveFull
       rustc
       cargo
       arduino-ide
