@@ -61,6 +61,15 @@
       cmake
       openjdk
       python3
+      python3Packages.jupyter
+      python3Packages.numpy
+      python3Packages.pandas
+      python3Packages.matplotlib
+      python3Packages.graphviz
+      python3Packages.scipy
+      python3Packages.scikit-learn
+      python3Packages.statsmodels
+      python3Packages.ipywidgets
       rustc
       cargo
       arduino-ide
