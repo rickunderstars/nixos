@@ -61,15 +61,6 @@
       cmake
       openjdk
       python3
-      python3Packages.jupyter
-      python3Packages.numpy
-      python3Packages.pandas
-      python3Packages.matplotlib
-      python3Packages.graphviz
-      python3Packages.scipy
-      python3Packages.scikit-learn
-      python3Packages.statsmodels
-      python3Packages.ipywidgets
       texliveFull
       rustc
       cargo
@@ -125,6 +116,10 @@
     nix-your-shell = {
       enable = true;
       enableFishIntegration = true;
+    };
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
     };
     eza = {
       enable = true;
