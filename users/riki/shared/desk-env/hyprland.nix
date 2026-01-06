@@ -13,9 +13,9 @@
     package = null;
     portalPackage = null;
     plugins = [
-      inputs.hyprland-plugins.packages."${pkgs.stdenv.hostPlatform.system}".hyprexpo
-      # inputs.Hyprspace.packages."${pkgs.stdenv.hostPlatform.system}".Hyprspace # doesn't compile
+
     ];
+
     settings = {
       exec-once = [
         "hyprlock"
@@ -127,9 +127,6 @@
 
         ### tofi
         "$mod, space, exec, fish -c 'pkill tofi || tofi-drun --placeholder-text=(tofi-random)'"
-
-        ### hyprexpo
-        "$mod, Alt_L, hyprexpo:expo, toggle"
 
         ### btop
         "CTRL SHIFT, escape, exec, fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'"
