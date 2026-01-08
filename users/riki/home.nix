@@ -27,6 +27,7 @@
       impala
       serie
       wiremix
+      pulseaudio
       wl-mirror
       cpufetch
       tdf
