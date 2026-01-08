@@ -4,7 +4,12 @@ import subprocess
 # --- CONFIGURATION ---
 
 # List of devices to skip, leave empty for no filtering. Device names can be found by running the command "pactl list sinks short".
-SKIP_SINK_NAMES = ["easyeffects_sink"]
+SKIP_SINK_NAMES = [
+    "easyeffects_sink",
+    "alsa_output.pci-0000_07_00.1.pro-output-3",
+    "alsa_output.pci-0000_07_00.1.pro-output-8",
+    "alsa_output.pci-0000_07_00.1.pro-output-9",
+]
 
 ENABLE_NOTIFICATIONS = True  # Set to False to disable notifications
 
