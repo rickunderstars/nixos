@@ -88,6 +88,9 @@
 
         # nautilus
         "match:class org.gnome.Nautilus, opacity 0.95"
+
+        # codium
+        "match:class codium, opacity 0.93"
       ];
 
       layerrule = [
