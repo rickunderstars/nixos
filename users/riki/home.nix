@@ -74,6 +74,7 @@
       tty-clock
       astroterm
       countryfetch
+      pokemon-colorscripts
 
       ####### apps #######
       (bottles.override { removeWarningPopup = true; })
