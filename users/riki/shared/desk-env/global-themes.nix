@@ -1,45 +1,28 @@
+{ pkgs, ... }:
 {
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}:
-{
-  qt = {
-    enable = true;
-    platformTheme.name = "kde";
-    style.name = "breeze";
-  };
-
-  xdg.configFile = {
-    "kdeglobals".text = ''
-      [Icons]
-      Theme=Papirus-Dark
-
-      [General]
-      fixed=CaskaydiaCove Nerd Font Mono,12,-1,5,50,0,0,0,0,0
-      font=CaskaydiaCove Nerd Font Mono,12,-1,5,50,0,0,0,0,0
-      menuFont=CaskaydiaCove Nerd Font Mono,12,-1,5,50,0,0,0,0,0
-      toolBarFont=CaskaydiaCove Nerd Font Mono,12,-1,5,50,0,0,0,0,0
-    '';
-
-    "dolphinrc".text = ''
-      [General]
-      ViewPropsTimestamp=2024,1,1,0,0,0
-    '';
-  };
 
   gtk = {
     enable = true;
+
     theme = {
-      package = pkgs.orchis-theme;
-      name = "Orchis-Grey-Dark-Compact";
+      name = "catppuccin-mocha-lavender-standard";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "lavender" ];
+        variant = "mocha";
+      };
     };
+
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
+
+      # name = "Catppuccin-Mocha-Lavender";
+      # package = pkgs.catppuccin-papirus-folders.override {
+      #    flavor = "mocha";
+      #    accent = "lavender";
+      # };
     };
+
     font = {
       name = "CaskaydiaCove Nerd Font Mono";
       size = 11;
@@ -48,15 +31,28 @@
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
-
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
   };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
+  qt = {
+    enable = true;
+    platformTheme.name = "kvantum";
+    style.name = "kvantum";
   };
+
+  home.packages = with pkgs; [
+    libsForQt5.qtstyleplugin-kvantum
+    kdePackages.qtstyleplugin-kvantum
+    (pkgs.catppuccin-kvantum.override {
+      accent = "lavender";
+      variant = "mocha";
+    })
+  ];
+
+  xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
+    [General]
+    theme=Catppuccin-Mocha-Lavender
+  '';
 }
