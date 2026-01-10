@@ -46,7 +46,9 @@
       hyprshade
       papirus-icon-theme
       nautilus
-      kdePackages.breeze
+      nautilus-python
+      nautilus-open-any-terminal
+      turtle
       glib
       gsettings-desktop-schemas
 
@@ -102,10 +104,11 @@
       cura-appimage
       freecad
       stable.meshlab
+      f3d
       wings
       ente-auth
       spotify
-      kdePackages.okular
+      papers
       libresprite
       discord
       discover-overlay

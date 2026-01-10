@@ -11,6 +11,7 @@
     enable = true;
 
     defaultApplications = {
+      "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
       "image/jpeg" = [ "imv.desktop" ];
       "image/png" = [ "imv.desktop" ];
       "image/gif" = [ "imv.desktop" ];
@@ -54,13 +55,19 @@
       "x-scheme-handler/about" = [ "zen-twilight.desktop" ];
       "x-scheme-handler/unknown" = [ "zen-twilight.desktop" ];
       "text/x-arduino" = [ "arduino-arduinoide.desktop" ];
-      "application/pdf" = [ "org.kde.okular.desktop" ];
-      "model/stl" = [ "meshlab.desktop" ];
-      "model/obj" = [ "meshlab.desktop" ];
+      "application/pdf" = [ "org.gnome.Papers.desktop" ];
+      "model/stl" = [ "f3d.desktop" ];
+      "model/obj" = [ "f3d.desktop" ];
+      "model/ply" = [ "f3d.desktop" ];
+      "application/x-blender" = [ "blender.desktop" ];
     };
 
     associations.added = {
       "application/pdf" = [ "zen-twilight.desktop" ];
+      "text/html" = [ "firefox.desktop" ];
+      "model/stl" = [ "meshlab.desktop" ];
+      "model/obj" = [ "meshlab.desktop" ];
+      "model/ply" = [ "meshlab.desktop" ];
     };
   };
 }

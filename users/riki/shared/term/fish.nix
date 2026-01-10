@@ -126,7 +126,7 @@
       man = "batman";
       spf = "superfile";
 
-      slidev-new = "pnpm create slidev";
+      mime = "xdg-mime query filetype";
 
       # shells
       gopxl = "nix develop ~/nixos-config#gopxlDev";
