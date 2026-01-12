@@ -101,7 +101,6 @@
 
         # calendar
         "match:class gsimplecal, opacity 0.95"
-        "match:class gsimplecal, move (monitor_w-window_w-(5+2)) (5*2+32)"
         "match:class gsimplecal, pin on"
       ];
 

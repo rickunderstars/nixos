@@ -16,7 +16,9 @@
         ", preferred, auto, 1"
       ];
 
-      windowrulev2 = [
+      windowrule = [
+        # calendar
+        "match:class gsimplecal, move (monitor_w-window_w-(5+2)) (5*2+32)"
       ];
 
       workspace = [
