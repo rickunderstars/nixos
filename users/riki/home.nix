@@ -84,6 +84,7 @@
       losslesscut-bin
       gimp
       grimblast
+      gsimplecal
       blender
       krita
       uxplay

@@ -141,6 +141,7 @@
         clock = {
           tooltip-format = "{:%a %d-%b-%Y}";
           format = "{:%H:%M}";
+          on-click = "fish -c 'pidof gsimplecal && pkill gsimplecal || gsimplecal'";
         };
 
         network = {

@@ -15,7 +15,7 @@
         font = "CaskaydiaCove Nerd Font Mono 12";
         width = 300;
         height = "(0, 300)";
-        offset = "8x8";
+        offset = "5x5";
         frame_width = 2;
         corner_radius = 10;
         follow = "mouse";

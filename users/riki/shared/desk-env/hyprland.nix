@@ -30,22 +30,23 @@
       ];
 
       workspace = [
-        "special:magic, gapsout:40, gapsin:20"
+        "special:magic, gapsout:30, gapsin:15"
       ];
 
       windowrule = [
+
+        /*
+                  "col.active_border" = "rgba(89b4faff) rgba(cba6f7ff) 310deg"; # blue -> mavue
+          "col.inactive_border" = "rgba(181825ff) rgba(313244ff) 310deg";
+        */
+
+        # floating
+        "match:float true, border_color rgba(74c7ecff) rgba(f5c2e7ff) 310deg" # sapphire -> pink
+
         # games
         "match:class gamescope, idle_inhibit always"
-
-        # steam
-        "match:class ^(steam)$ match:title negative:^(Steam)$, float on"
-        "match:class ^(steam)$ match:title negative:^(Steam)$, center on"
-        "match:class steam_app_[0-9]+, idle_inhibit always"
-
-        # itch
+        "match:content 3, idle_inhibit always"
         "match:class itch, idle_inhibit always"
-
-        # heroic
         "match:class heroic, idle_inhibit always"
 
         # nautilus
@@ -57,31 +58,43 @@
         "match:class ghostty.wifi, float on"
         "match:class ghostty.wifi, center on"
         "match:class ghostty.wifi, size (monitor_w*0.6) (monitor_h*0.6)"
+        "match:class ghostty.wifi, pin on"
+        "match:class ghostty.wifi, dim_around on"
 
         # bluetooth
         "match:class ghostty.bluetooth, float on"
         "match:class ghostty.bluetooth, center on"
         "match:class ghostty.bluetooth, size (monitor_w*0.6) (monitor_h*0.6)"
+        "match:class ghostty.bluetooth, pin on"
+        "match:class ghostty.bluetooth, dim_around on"
 
         # btop
         "match:class ghostty.btop, float on"
         "match:class ghostty.btop, center on"
         "match:class ghostty.btop, size (monitor_w*0.75) (monitor_h*0.75)"
+        "match:class ghostty.btop, pin on"
+        "match:class ghostty.btop, dim_around on"
 
         # wiremix
         "match:class ghostty.wiremix, float on"
         "match:class ghostty.wiremix, center on"
         "match:class ghostty.wiremix, size (monitor_w*0.6) (monitor_h*0.6)"
+        "match:class ghostty.wiremix, pin on"
+        "match:class ghostty.wiremix, dim_around on"
 
         # ente-auth
         "match:class io.ente.auth, float on"
         "match:class io.ente.auth, center on"
         "match:class io.ente.auth, size (monitor_w*0.6) (monitor_h*0.6)"
+        "match:class io.ente.auth, opacity 0.85"
+        "match:class io.ente.auth, dim_around on"
 
         # localsend
         "match:class localsend_app, float on"
         "match:class localsend_app, center on"
-        "match:class localsend_app, size (monitor_w*0.4) (monitor_h*0.5)"
+        "match:class localsend_app, size (monitor_w*0.5) (monitor_h*0.6)"
+        "match:class localsend_app, opacity 0.85"
+        "match:class localsend_app, dim_around on"
 
         # spotify
         "match:class spotify, opacity 0.8"
@@ -91,6 +104,12 @@
 
         # codium
         "match:class codium, opacity 0.93"
+
+        # calendar
+        "match:class gsimplecal, opacity 0.95"
+        "match:class gsimplecal, move (monitor_w-window_w-(5+2)) (5*2+32)"
+        "match:class gsimplecal, pin on"
+        "match:class gsimplecal, dim_around on"
       ];
 
       layerrule = [
@@ -144,7 +163,7 @@
         "$mod SHIFT, space, exec, hyprctl switchxkblayout all next; dunstify 'Switched keyboard layout'"
 
         ### hyprpicker
-        "$mod, c, exec, hyprpicker -a"
+        "$mod, c, exec, fish -c 'pidof hyprpicker && pkill hyprpicker || hyprpicker -a'"
 
         ### fullscreen and floating
         "$mod SHIFT, f, fullscreen, 0"
@@ -265,9 +284,9 @@
       };
 
       general = {
-        gaps_in = 4;
-        gaps_out = 8;
-        float_gaps = 8;
+        gaps_in = 5;
+        gaps_out = 5;
+        float_gaps = 5;
         border_size = 2;
         allow_tearing = true;
         "col.active_border" = "rgba(89b4faff) rgba(cba6f7ff) 310deg"; # blue -> mavue
