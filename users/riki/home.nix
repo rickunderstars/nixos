@@ -110,6 +110,7 @@
       ente-auth
       spotify
       papers
+      gnome-text-editor
       libresprite
       discord
       discover-overlay

@@ -90,6 +90,12 @@
         "match:class localsend_app, size (monitor_w*0.5) (monitor_h*0.6)"
         "match:class localsend_app, opacity 0.85"
 
+        # text editor
+        "match:class org.gnome.TextEditor, float on"
+        "match:class org.gnome.TextEditor, center on"
+        "match:class org.gnome.TextEditor, size (monitor_w*0.6) (monitor_h*0.6)"
+        "match:class org.gnome.TextEditor, opacity 0.85"
+
         # spotify
         "match:class spotify, opacity 0.8"
 
@@ -150,6 +156,9 @@
 
         ### file explorer
         "$mod, e, exec, nautilus --new-window"
+
+        ### text editor
+        "$mod, n, exec, gnome-text-editor"
 
         ### switch keyboard layout
         "$mod SHIFT, space, exec, hyprctl switchxkblayout all next && dunstify \"Layout: $(hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap')\""
