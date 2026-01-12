@@ -276,9 +276,9 @@
       };
 
       general = {
-        gaps_in = 5;
+        gaps_in = 3;
         gaps_out = 5;
-        float_gaps = 5;
+        float_gaps = 3;
         border_size = 2;
         allow_tearing = true;
         "col.active_border" = "rgba(89b4faff) rgba(cba6f7ff) 310deg"; # blue -> mavue
