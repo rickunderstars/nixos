@@ -35,11 +35,6 @@
 
       windowrule = [
 
-        /*
-                  "col.active_border" = "rgba(89b4faff) rgba(cba6f7ff) 310deg"; # blue -> mavue
-          "col.inactive_border" = "rgba(181825ff) rgba(313244ff) 310deg";
-        */
-
         # floating
         "match:float true, border_color rgba(74c7ecff) rgba(f5c2e7ff) 310deg" # sapphire -> pink
 
@@ -94,7 +89,6 @@
         "match:class localsend_app, center on"
         "match:class localsend_app, size (monitor_w*0.5) (monitor_h*0.6)"
         "match:class localsend_app, opacity 0.85"
-        "match:class localsend_app, dim_around on"
 
         # spotify
         "match:class spotify, opacity 0.8"
@@ -109,7 +103,6 @@
         "match:class gsimplecal, opacity 0.95"
         "match:class gsimplecal, move (monitor_w-window_w-(5+2)) (5*2+32)"
         "match:class gsimplecal, pin on"
-        "match:class gsimplecal, dim_around on"
       ];
 
       layerrule = [
@@ -160,7 +153,7 @@
         "$mod, e, exec, nautilus --new-window"
 
         ### switch keyboard layout
-        "$mod SHIFT, space, exec, hyprctl switchxkblayout all next; dunstify 'Switched keyboard layout'"
+        "$mod SHIFT, space, exec, hyprctl switchxkblayout all next && dunstify \"Layout: $(hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap')\""
 
         ### hyprpicker
         "$mod, c, exec, fish -c 'pidof hyprpicker && pkill hyprpicker || hyprpicker -a'"
