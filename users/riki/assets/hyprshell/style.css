@@ -37,11 +37,11 @@
 .monitor {
 	border: unset;
 	border-radius: 20px;
-	background-color: @base;
+	background-color: alpha(@base, 0.5);
 }
 
 .client {
-	background-color: alpha(@base, 0.8);
+	background-color: alpha(@base, 0.5);
 	margin: 4px;
 	border-width: 2px;
 }
@@ -56,5 +56,5 @@
 
 .workspace {
 	border: unset;
-	background-color: @base;
+	background-color: alpha(@base, 0.5);
 }
