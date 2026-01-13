@@ -258,11 +258,19 @@
         XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
       };
     };
-    desktopEntries.freecad = {
-      name = "FreeCAD";
-      exec = "env QT_QPA_PLATFORM=xcb freecad %U";
-      terminal = false;
-      categories = [ "Application" ];
+    desktopEntries = {
+      freecad = {
+        name = "FreeCAD";
+        exec = "env QT_QPA_PLATFORM=xcb freecad %U";
+        terminal = false;
+        categories = [ "Application" ];
+      };
+      onlyoffice-desktopeditors = {
+        name = "ONLYOFFICE";
+        exec = "env QT_SCALE_FACTOR=1 onlyoffice-desktopeditors %U";
+        terminal = false;
+        categories = [ "Office" ];
+      };
     };
   };
 
