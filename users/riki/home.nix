@@ -81,7 +81,7 @@
 
       ####### apps #######
       (bottles.override { removeWarningPopup = true; })
-      losslesscut-bin
+      video-trimmer
       gimp
       grimblast
       gsimplecal
