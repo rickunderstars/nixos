@@ -361,14 +361,6 @@
       ecosystem = {
         no_donation_nag = true;
       };
-
-      "plugin:hyprexpo" = {
-        columns = 3;
-        gap_size = 0;
-        bg_col = "rgb(17, 17, 27)";
-        workspace_method = "center current";
-        skip_empty = true;
-      };
     };
   };
 
