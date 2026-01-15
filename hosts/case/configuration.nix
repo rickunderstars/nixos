@@ -22,9 +22,11 @@
   hardware = {
     openrazer = {
       enable = true;
+      keyStatistics = true;
       batteryNotifier = {
+        enable = true;
         percentage = 15;
-        frequency = 3600;
+        frequency = 600;
       };
     };
   };
