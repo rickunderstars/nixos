@@ -130,7 +130,6 @@
 
       # shells
       gopxl = "nix develop ~/nixos-config#gopxlDev";
-      heart = "nix develop ~/nixos-config#heartDev --command fish -c 'cd ~/heart-vis; codium .; fish'";
     };
   };
 }
