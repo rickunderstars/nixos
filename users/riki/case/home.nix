@@ -14,6 +14,7 @@
   ];
 
   imports = [
+    ./term/ghostty.nix
     ./term/cava.nix
     ./term/fish.nix
     ./term/fastfetch.nix

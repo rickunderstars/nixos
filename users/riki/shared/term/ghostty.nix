@@ -19,7 +19,6 @@
       background-blur = true;
       shell-integration-features = "no-cursor";
       cursor-style = "underline";
-      custom-shader = "shaders/cursor_warp.glsl";
       mouse-hide-while-typing = true;
       maximize = true;
       window-padding-x = 16;
