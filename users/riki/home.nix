@@ -102,10 +102,7 @@
     ####### coding #######
     go.enable = true;
     gradle.enable = true;
-    gemini-cli = {
-      enable = true;
-      defaultModel = "gemini-3-pro";
-    };
+    gemini-cli.enable = true;
   };
 
   services = {
