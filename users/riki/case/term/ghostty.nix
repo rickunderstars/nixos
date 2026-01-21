@@ -8,6 +8,6 @@
 
 {
   programs.ghostty = {
-    custom-shader = "shaders/cursor_warp.glsl";
+    settings.custom-shader = "shaders/cursor_warp.glsl";
   };
 }
