@@ -32,7 +32,7 @@
       "audio/opus" = [ "mpv.desktop" ];
       "audio/x-m4a" = [ "mpv.desktop" ];
       "audio/x-musepack" = [ "mpv.desktop" ];
-      "text/plain" = [ "codium.desktop" ];
+      "text/plain" = [ "org.gnome.TextEditor.desktop" ];
       "text/x-go" = [ "codium.desktop" ];
       "text/x-csrc" = [ "codium.desktop" ];
       "text/x-chdr" = [ "codium.desktop" ];
@@ -65,6 +65,7 @@
     associations.added = {
       "application/pdf" = [ "zen-twilight.desktop" ];
       "text/html" = [ "firefox.desktop" ];
+      "text/plain" = [ "codium.desktop" ];
       "model/stl" = [ "meshlab.desktop" ];
       "model/obj" = [ "meshlab.desktop" ];
       "model/ply" = [ "meshlab.desktop" ];
