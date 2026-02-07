@@ -33,6 +33,7 @@
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
+        "HYPRCURSOR_THEME,catppuccin-mocha-dark-cursors"
       ];
 
       workspace = [
@@ -246,8 +247,8 @@
         ### screenshots
         "$mod, s, exec, fish -c 'grimblast -n -f copysave area'"
         ", print, exec, fish -c 'grimblast -n -f copysave area'"
-        "SHIFT, print, exec, fish -c 'grimblast -n copysave screen'"
-        "$mod SHIFT, s, exec, fish -c 'grimblast -n copysave screen'"
+        "SHIFT, print, exec, fish -c 'grimblast --cursor -n copysave screen'"
+        "$mod SHIFT, s, exec, fish -c 'grimblast --cursor -n copysave screen'"
       ];
 
       bindel = [
