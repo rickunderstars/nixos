@@ -28,7 +28,6 @@
     dust
     bit-logo
     mcat
-    nvitop
 
     ####### desk env #######
     hyprpicker
