@@ -42,7 +42,7 @@
     gsettings-desktop-schemas
 
     ####### coding #######
-    stable.vscodium
+    vscodium
     gitflow
     nixfmt
     gcc
