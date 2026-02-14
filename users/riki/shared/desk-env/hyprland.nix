@@ -186,6 +186,9 @@
         "$mod, f, fullscreen, 1"
         "$mod, t, togglefloating, "
 
+        ### rotate focused monitor
+        "$mod, r, exec, fish -c 'rotate-toggle'"
+
         ### move focus
         "SUPER, h, movefocus, l"
         "SUPER, l, movefocus, r"

@@ -109,6 +109,24 @@
         echo "Done."
       '';
 
+      rotate-toggle = ''
+        set -l monitor_data (hyprctl -j monitors | jq -r '.[] | select(.focused==true) | "\(.name) \(.width)x\(.height)@\(.refreshRate) \(.x)x\(.y) \(.scale) \(.transform)"')
+
+        set -l parts (string split " " $monitor_data)
+        set -l name $parts[1]
+        set -l res $parts[2]
+        set -l pos $parts[3]
+        set -l scale $parts[4]
+        set -l transform $parts[5]
+
+        set -l new_transform 0
+        if test "$transform" = "0"
+            set new_transform 1
+        end
+
+        hyprctl keyword monitor "$name, $res, $pos, $scale, transform, $new_transform"
+      '';
+
       # misc
       cls = "clear";
       ff = "clear;fastfetch";
