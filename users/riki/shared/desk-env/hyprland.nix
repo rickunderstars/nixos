@@ -253,8 +253,8 @@
         "$mod, a, exec, fish -c auch"
 
         ### screenshots
-        "$mod, s, exec, fish -c 'grimblast -n -f copysave area'"
-        ", print, exec, fish -c 'grimblast -n -f copysave area'"
+        "$mod, s, exec, fish -c 'grimblast -w 0.2 -n -f copysave area'"
+        ", print, exec, fish -c 'grimblast -w 0.2 -n -f copysave area'"
         "SHIFT, print, exec, fish -c 'grimblast --cursor -n copysave screen'"
         "$mod SHIFT, s, exec, fish -c 'grimblast --cursor -n copysave screen'"
       ];
