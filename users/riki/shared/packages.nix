@@ -75,6 +75,7 @@
     grimblast
     gsimplecal
     blender
+    goxel
     krita
     uxplay
     pavucontrol
