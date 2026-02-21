@@ -84,6 +84,7 @@
     localsend
     telegram-desktop
     whatsapp-electron
+    signal-desktop
     teams-for-linux
     godot_4
     itch
