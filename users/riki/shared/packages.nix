@@ -67,6 +67,7 @@
     astroterm
     countryfetch
     pokemon-colorscripts
+    element
 
     ####### apps #######
     (bottles.override { removeWarningPopup = true; })
