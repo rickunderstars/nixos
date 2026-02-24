@@ -10,18 +10,20 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-            if uwsm check may-start
-            	exec uwsm start hyprland-uwsm.desktop
-            end
-      			set -g fish_greeting
-      			if command -q nix-your-shell
-      				nix-your-shell fish | source
-      			end
-      			if not set -q IN_NIX_SHELL
-      				fastfetch
-      			end
-            export "MICRO_TRUECOLOR=1"
-      		'';
+      if status is-login
+        if uwsm check may-start
+          exec uwsm start hyprland-uwsm.desktop
+        end
+      end
+
+      set -g fish_greeting
+      if command -q nix-your-shell
+          nix-your-shell fish | source
+      end
+      if not set -q IN_NIX_SHELL
+          fastfetch
+      end
+    '';
     functions = {
       br = ''
         			set -l cmd_file (mktemp)

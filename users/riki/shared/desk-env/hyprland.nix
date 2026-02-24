@@ -34,6 +34,7 @@
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
         "HYPRCURSOR_THEME,catppuccin-mocha-dark-cursors"
+        "MICRO_TRUECOLOR,1"
       ];
 
       workspace = [
