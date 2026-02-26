@@ -106,5 +106,6 @@
     libresprite
     discord
     discover-overlay
+    chameleos
   ];
 }
