@@ -19,6 +19,7 @@
       windowrule = [
         # calendar
         "match:class gsimplecal, move (monitor_w-window_w-(5+2)) (5*2+32)"
+        "match:class gamescope, monitor DP-2"
       ];
 
       workspace = [

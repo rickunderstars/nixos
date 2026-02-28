@@ -48,7 +48,6 @@
 
         # games
         "match:class gamescope, idle_inhibit always"
-        "match:class gamescope, monitor DP-2"
         "match:content 3, idle_inhibit always"
         "match:class itch, idle_inhibit always"
         "match:class heroic, idle_inhibit always"
