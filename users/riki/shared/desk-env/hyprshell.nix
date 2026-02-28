@@ -14,7 +14,7 @@
       windows = {
         items_per_row = 5;
         switch = {
-          filter_by = [ "current_monitor" ];
+          filter_by = [ "current_workspace" ];
         };
       };
     };

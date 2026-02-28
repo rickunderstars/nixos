@@ -37,11 +37,11 @@
 .monitor {
 	border: unset;
 	border-radius: 20px;
-	background-color: alpha(@base, 0.5);
+	background-color: alpha(@base, 0.9);
 }
 
 .client {
-	background-color: alpha(@base, 0.5);
+	background-color: alpha(@base, 0.7);
 	margin: 4px;
 	border-width: 2px;
 }

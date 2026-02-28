@@ -135,7 +135,6 @@
         "match:namespace notifications, ignore_alpha 0"
         "match:namespace notifications, xray off"
 
-        "match:namespace hyprshell_switch, blur on"
         "match:namespace hyprshell_switch, ignore_alpha 0"
       ];
 
