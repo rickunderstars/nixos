@@ -85,6 +85,11 @@
         "match:class ghostty.wiremix, pin on"
         "match:class ghostty.wiremix, dim_around on"
 
+        # save a file
+        "match:title ^(.*Save a File.*)$, float on"
+        "match:title ^(.*Save a File.*)$, center on"
+        "match:title ^(.*Save a File.*)$, size (monitor_w*0.6) (monitor_h*0.6)"
+
         # ente-auth
         "match:class io.ente.auth, float on"
         "match:class io.ente.auth, center on"
