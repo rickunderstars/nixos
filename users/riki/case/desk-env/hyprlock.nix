@@ -19,7 +19,7 @@
           border_size = 4;
           border_color = "rgba(89b4faff) rgba(cba6f7ff) 310deg";
           shadow_passes = 2;
-          monitor = "DP-3";
+          monitor = "DP-2";
         }
       ];
       input-field = [
@@ -40,7 +40,7 @@
           fail_text = ">:P";
           outline_thickness = 4;
           placeholder_text = "ᓚᘏᗢ";
-          monitor = "DP-3";
+          monitor = "DP-2";
         }
       ];
       label = [
@@ -87,7 +87,7 @@
           font_family = "CaskaydiaCove Nerd Font Mono";
           position = "-20, -20";
           shadow_passes = 2;
-          monitor = "DP-3";
+          monitor = "DP-2";
         }
         {
           text = "cmd[update:90] game-of-life";
@@ -111,7 +111,7 @@
           font_family = "CaskaydiaCove Nerd Font Mono";
           position = "20, 20";
           shadow_passes = 2;
-          monitor = "DP-3";
+          monitor = "DP-2";
         }
       ];
     };
