@@ -178,7 +178,7 @@
         "$mod, e, exec, nautilus --new-window"
 
         ### text editor
-        "$mod, n, exec, gnome-text-editor"
+        "$mod, n, exec, gedit"
 
         ### switch keyboard layout
         "$mod SHIFT, space, exec, hyprctl switchxkblayout all next && dunstify \"Layout: $(hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap')\""

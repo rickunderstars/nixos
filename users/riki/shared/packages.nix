@@ -102,7 +102,7 @@
     ente-auth
     spotify
     papers
-    gnome-text-editor
+    gedit
     libresprite
     discord
     discover-overlay
