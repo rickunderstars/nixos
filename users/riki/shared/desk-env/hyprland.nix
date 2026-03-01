@@ -86,10 +86,10 @@
         "match:class ghostty.wiremix, pin on"
         "match:class ghostty.wiremix, dim_around on"
 
-        # save a file
-        "match:title ^(.*Save a File.*)$, float on"
-        "match:title ^(.*Save a File.*)$, center on"
-        "match:title ^(.*Save a File.*)$, size (monitor_w*0.6) (monitor_h*0.6)"
+        # save, choose, open files dialogs
+        "match:title ^(?i).*(save|choose|open) file.*$, float on"
+        "match:title ^(?i).*(save|choose|open) file.*$, center on"
+        "match:title ^(?i).*(save|choose|open) file.*$, size (monitor_w*0.6) (monitor_h*0.6)"
 
         # ente-auth
         "match:class io.ente.auth, float on"
@@ -105,10 +105,10 @@
         "match:class localsend_app, opacity 0.85"
 
         # text editor
-        "match:class org.gnome.TextEditor, float on"
-        "match:class org.gnome.TextEditor, center on"
-        "match:class org.gnome.TextEditor, size (monitor_w*0.6) (monitor_h*0.6)"
-        "match:class org.gnome.TextEditor, opacity 0.85"
+        "match:class gedit, float on"
+        "match:class gedit, center on"
+        "match:class gedit, size (monitor_w*0.6) (monitor_h*0.6)"
+        "match:class gedit, opacity 0.85"
 
         # imv
         "match:class imv, float on"
