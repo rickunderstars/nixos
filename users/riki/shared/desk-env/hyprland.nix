@@ -363,8 +363,8 @@
 
       gesture = [
         "3, vertical, workspace"
-        "3, left, dispatcher, layoutmsg, move -1"
-        "3, right, dispatcher, layoutmsg, move +1"
+        "3, left, dispatcher, layoutmsg, focus right"
+        "3, right, dispatcher, layoutmsg, focus left"
       ];
 
       misc = {
