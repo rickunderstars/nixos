@@ -30,8 +30,10 @@
 	font-weight: bolder;
 	font-style: italic;
 	font-size: 10pt;
+	transition: all 0.2s ease-in-out;
 }
 
+#taskbar,
 #workspaces,
 #cava,
 #tray,
@@ -51,6 +53,25 @@
 	padding: 0 0.7em;
 	margin: 5px 2px 0;
 	min-height: 0;
+}
+
+#taskbar {
+	background-color: alpha(@base, 0.5);
+	padding: 0;
+}
+
+#taskbar button {
+	border-radius: 99px;
+	margin: 3px;
+	padding: 0px 4px;
+	transition: all 0.2s ease-in-out;
+}
+
+#taskbar button.active {
+	border-radius: 99px;
+	background-color: alpha(white, 0.1);
+	padding: 0px 1em;
+	margin: 3px;
 }
 
 #workspaces {

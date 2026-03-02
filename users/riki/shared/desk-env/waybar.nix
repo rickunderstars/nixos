@@ -17,6 +17,7 @@
         position = "top";
         modules-left = [
           "hyprland/workspaces"
+          "wlr/taskbar"
         ];
         modules-center = [
         ];
@@ -36,6 +37,11 @@
         ];
         mode = "dock";
         reload_style_on_change = true;
+
+        "wlr/taskbar" = {
+          icon-size = 15;
+          on-click = "activate";
+        };
 
         "hyprland/language" = {
           format = "{}";
@@ -71,6 +77,90 @@
           on-scroll-down = "hyprctl dispatch workspace m-1";
         };
 
+        tray = {
+          show-passive-items = true;
+          spacing = 10;
+        };
+
+        cava = {
+          format-icons = [
+            "▁" # "▁"
+            "🭻" # "▂"
+            "🭺" # "▃"
+            "🭹" # "▄"
+            "🭸" # "▅"
+            "🭷" # "▆"
+            "🭶" # "▇"
+            "▔" # "█"
+
+          ];
+          framerate = 120;
+          hide_on_silence = false;
+          bar_delimiter = 0;
+        };
+
+        wireplumber = {
+          format-icons = [
+            "󰥛    "
+            "󰥛󰥛   "
+            "󰥛󰥛󰥛  "
+            "󰥛󰥛󰥛󰥛 "
+            "󰥛󰥛󰥛󰥛󰥛"
+          ];
+          format-muted = "<span font_size='180%' rise='-4096'></span>|{volume}";
+          format = "<span font_size='180%' rise='-4096'></span>{icon}|{volume}";
+          tooltip-format = "{node_name}";
+          scroll-step = 2.5;
+          reverse-scrolling = true;
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-click-right = "fish -c 'pidof wiremix || ghostty --class=ghostty.wiremix -e wiremix'";
+        };
+
+        backlight = {
+          format = "<span font_size='200%'>{icon}</span>";
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
+          tooltip-format = "brightness: {percent}";
+          reverse-scrolling = true;
+        };
+
+        idle_inhibitor = {
+          format = "<span font_size='160%'>{icon}</span>";
+          format-icons = {
+            activated = "󰈈";
+            deactivated = "󰒲";
+          };
+          tooltip-format-activated = "caffeinated";
+          tooltip-format-deactivated = "no caffeine";
+        };
+
+        memory = {
+          interval = 10;
+          format = "<span font_size='150%' rise='-2560'></span>{percentage}";
+          on-click = "fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'";
+        };
+
+        cpu = {
+          interval = 2;
+          format = "<span font_size='150%' rise='-2560'> </span>{usage}";
+          on-click = "fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'";
+        };
+
         battery = {
           states = {
             warning = 15;
@@ -104,46 +194,6 @@
           on-click = "fish -c 'pidof bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith'";
         };
 
-        memory = {
-          interval = 10;
-          format = "<span font_size='150%' rise='-2560'></span>{percentage}";
-          on-click = "fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'";
-        };
-
-        cpu = {
-          interval = 2;
-          format = "<span font_size='150%' rise='-2560'> </span>{usage}";
-          on-click = "fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'";
-        };
-
-        cava = {
-          format-icons = [
-            "▁" # "▁"
-            "🭻" # "▂"
-            "🭺" # "▃"
-            "🭹" # "▄"
-            "🭸" # "▅"
-            "🭷" # "▆"
-            "🭶" # "▇"
-            "▔" # "█"
-
-          ];
-          framerate = 120;
-          hide_on_silence = false;
-          bar_delimiter = 0;
-        };
-
-        tray = {
-          show-passive-items = true;
-          spacing = 10;
-        };
-
-        clock = {
-          tooltip-format = "{:%a %d-%b-%Y}";
-          format = "{:%H:%M}";
-          on-click = "fish -c 'pidof gsimplecal && pkill gsimplecal || gsimplecal'";
-        };
-
         network = {
           interval = 5;
           format-icons = [
@@ -165,58 +215,12 @@
           on-click-right = "fish -c wifi-toggle";
         };
 
-        wireplumber = {
-          format-icons = [
-            "󰥛    "
-            "󰥛󰥛   "
-            "󰥛󰥛󰥛  "
-            "󰥛󰥛󰥛󰥛 "
-            "󰥛󰥛󰥛󰥛󰥛"
-          ];
-          format-muted = "<span font_size='180%' rise='-4096'></span>|{volume}";
-          format = "<span font_size='180%' rise='-4096'></span>{icon}|{volume}";
-          tooltip-format = "{node_name}";
-          scroll-step = 2.5;
-          reverse-scrolling = true;
-          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          on-click-right = "fish -c 'pidof wiremix || ghostty --class=ghostty.wiremix -e wiremix'";
+        clock = {
+          tooltip-format = "{:%a %d-%b-%Y}";
+          format = "{:%H:%M}";
+          on-click = "fish -c 'pidof gsimplecal && pkill gsimplecal || gsimplecal'";
         };
-
-        idle_inhibitor = {
-          format = "<span font_size='160%'>{icon}</span>";
-          format-icons = {
-            activated = "󰈈";
-            deactivated = "󰒲";
-          };
-          tooltip-format-activated = "caffeinated";
-          tooltip-format-deactivated = "no caffeine";
-        };
-
-        backlight = {
-          format = "<span font_size='200%'>{icon}</span>";
-          format-icons = [
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-          ];
-          tooltip-format = "brightness: {percent}";
-          reverse-scrolling = true;
-        };
-
       };
-
     };
   };
 
