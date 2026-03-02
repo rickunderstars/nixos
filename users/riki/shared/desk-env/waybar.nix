@@ -39,7 +39,6 @@
         reload_style_on_change = true;
 
         "wlr/taskbar" = {
-          icon-size = 15;
           on-click = "activate";
         };
 
