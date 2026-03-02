@@ -209,10 +209,14 @@
         "$mod SHIFT, right, layoutmsg, swapcol r"
 
         ### promote window to its own column
-        "$mod SHIFT, up, layoutmsg, promote"
+        "$mod SHIFT, u, layoutmsg, promote"
 
         ### column resize
-        "$mod SHIFT, down, layoutmsg, colresize +conf"
+        "$mod SHIFT, up, layoutmsg, colresize +conf"
+        "$mod SHIFT, down, layoutmsg, colresize -conf"
+
+        ### fit
+        "$mod, j, layoutmsg, fit visible"
 
         ### resize window
         "$mod CTRL, h, resizeactive, -20 0"
