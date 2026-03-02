@@ -175,7 +175,7 @@
         ### audio mixer (wiremix)
         "$mod, v, exec, fish -c 'pidof wiremix || ghostty --class=ghostty.wiremix -e wiremix'"
 
-        ### file explorer
+        ### file manager
         "$mod, e, exec, nautilus --new-window"
 
         ### text editor
@@ -196,20 +196,23 @@
         "$mod, r, exec, fish -c 'rotate-toggle'"
 
         ### move focus
-        "SUPER, h, movefocus, l"
-        "SUPER, l, movefocus, r"
-        "SUPER, k, movefocus, u"
-        "SUPER, j, movefocus, d"
-        "SUPER, left, movefocus, l"
-        "SUPER, right, movefocus, r"
-        "SUPER, up, movefocus, u"
-        "SUPER, down, movefocus, d"
+        "$mod, left, layoutmsg, focus left"
+        "$mod, right, layoutmsg, focus right"
+        "$mod, up, layoutmsg, focus up"
+        "$mod, down, layoutmsg, focus down"
 
-        ### move window
-        "$mod SHIFT, left, movewindow, l"
-        "$mod SHIFT, right, movewindow, r"
-        "$mod SHIFT, up, movewindow, u"
-        "$mod SHIFT, down, movewindow, d"
+        "$mod, mouse_up, layoutmsg, focus left"
+        "$mod, mouse_down, layoutmsg, focus right"
+
+        ### swap columns
+        "$mod SHIFT, left, layoutmsg, swapcol l"
+        "$mod SHIFT, right, layoutmsg, swapcol r"
+
+        ### promote window to its own column
+        "$mod SHIFT, up, layoutmsg, promote"
+
+        ### column resize
+        "$mod SHIFT, down, layoutmsg, colresize +conf"
 
         ### resize window
         "$mod CTRL, h, resizeactive, -20 0"
@@ -224,8 +227,8 @@
         ### move between workspaces of same monitor
         "$mod, period, workspace, m+1"
         "$mod, comma, workspace, m-1"
-        "$mod SHIFT, mouse_down, workspace, m+1"
-        "$mod SHIFT, mouse_up, workspace, m-1"
+        "$mod CTRL, mouse_down, workspace, m+1"
+        "$mod CTRL, mouse_up, workspace, m-1"
 
         ### move to monitor
         "$mod SHIFT, comma, movewindow, mon:l"
@@ -303,12 +306,13 @@
           "windows, 1, 3, md3_decel, popin 60%"
           "border, 1, 10, default"
           "fade, 1, 2.5, md3_decel"
-          "workspaces, 1, 3.5, easeOutExpo, slide"
+          "workspaces, 1, 3.5, easeOutExpo, slidevert"
           "specialWorkspace, 1, 3, md3_decel, slidevert"
         ];
       };
 
       general = {
+        layout = "scrolling";
         gaps_in = 3;
         gaps_out = 5;
         float_gaps = 3;
@@ -323,6 +327,14 @@
           monitor_gap = 30;
           respect_gaps = true;
         };
+      };
+
+      scrolling = {
+        fullscreen_on_one_column = true;
+        column_width = 0.75;
+        focus_fit_method = 0;
+        follow_min_visible = 0.4;
+        explicit_column_widths = "0.333, 0.5, 0.667, 0.75, 1.0";
       };
 
       decoration = {
@@ -350,10 +362,9 @@
       };
 
       gesture = [
-        "3, horizontal, workspace"
-        "3, vertical, fullscreen, maximize"
-        "4, left, dispatcher, movetoworkspace, -1"
-        "4, right, dispatcher, movetoworkspace, +1"
+        "3, vertical, workspace"
+        "3, left, dispatcher, layoutmsg, move -1"
+        "3, right, dispatcher, layoutmsg, move +1"
       ];
 
       misc = {
