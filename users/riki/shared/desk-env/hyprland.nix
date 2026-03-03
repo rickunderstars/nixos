@@ -148,7 +148,7 @@
 
       bind = [
         ### lock
-        "$mod SHIFT, l, exec, pidof hyprlock || hyprlock"
+        "$mod SHIFT, l, exec, fish -c 'pidof hyprlock || hyprlock'"
 
         ### ghostty
         "$mod, return, exec, ghostty"
