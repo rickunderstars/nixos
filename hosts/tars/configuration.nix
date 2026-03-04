@@ -1,5 +1,6 @@
 {
   pkgs,
+  stable,
   lib,
   config,
   inputs,
@@ -11,6 +12,9 @@
     ./hardware-configuration.nix
     ../shared
   ];
+
+  # TEMPORARY fix for suspend not working
+  boot.kernelPackages = stable.linuxPackages;
 
   # disable psr [laptop has issue]
   boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
