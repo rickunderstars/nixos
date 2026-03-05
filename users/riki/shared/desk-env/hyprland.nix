@@ -343,6 +343,7 @@
 
       decoration = {
         rounding = 10;
+        rounding_power = 4.0;
         shadow = {
           enabled = false;
         };
