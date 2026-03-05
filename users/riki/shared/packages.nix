@@ -28,6 +28,7 @@
     dust
     bit-logo
     mcat
+    nix-search-cli
 
     ####### desk env #######
     hyprpicker
