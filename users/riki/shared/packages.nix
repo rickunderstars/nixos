@@ -93,7 +93,7 @@
     heroic
     retroarch
     prismlauncher
-    protonup-qt
+    protonplus
     prusa-slicer
     cura-appimage
     freecad
