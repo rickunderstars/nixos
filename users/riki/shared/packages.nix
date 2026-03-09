@@ -104,7 +104,7 @@
     spotify
     papers
     gedit
-    libresprite
+    aseprite
     discord
     discover-overlay
     chameleos
