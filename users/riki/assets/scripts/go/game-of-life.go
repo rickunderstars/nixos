@@ -14,7 +14,7 @@ import (
 const (
 	L_CELL           = "󱓻 "
 	D_CELL           = "  "
-	CORNER           = "  "
+	CORNER           = " "
 	LIFE_PERCENTAGE  = 30
 	W                = 80
 	H                = 120
