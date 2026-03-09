@@ -85,21 +85,21 @@
 
       wifi-toggle = "rfkill list wifi | string match -q '*Soft blocked: no*'; and rfkill block wifi; or rfkill unblock wifi";
 
-      # try package from nixpkgs (current stable)
+      # try package from nixpkgs-unstable
       try = ''
         set packages
         for arg in $argv
           set -a packages "nixpkgs#$arg"
         end
-        nix shell $packages --command env IN_NIX_SHELL=impuretr fish
+        NIXPKGS_ALLOW_UNFREE=1 nix shell --impure $packages --command env IN_NIX_SHELL=impure fish
       '';
-      # try package from nixpkgs-unstable
+      # try package from nixpkgs (current stable)
       try-stable = ''
         set packages
         for arg in $argv
           set -a packages "stable#$arg"
         end
-        nix shell $packages --command env IN_NIX_SHELL=impure fish
+        NIXPKGS_ALLOW_UNFREE=1 nix shell --impure $packages --command env IN_NIX_SHELL=impure fish
       '';
 
       reload-gtk = ''
