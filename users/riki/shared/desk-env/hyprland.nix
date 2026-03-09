@@ -86,10 +86,10 @@
         "match:class ghostty.wiremix, pin on"
         "match:class ghostty.wiremix, dim_around on"
 
-        # save, choose, open files dialogs
-        "match:title ^(?i).*(save|choose|open) file.*$, float on"
-        "match:title ^(?i).*(save|choose|open) file.*$, center on"
-        "match:title ^(?i).*(save|choose|open) file.*$, size (monitor_w*0.6) (monitor_h*0.6)"
+        # save, choose, open, upload files dialogs
+        "match:title ^(?i).*(save|choose|open|upload) file.*$, float on"
+        "match:title ^(?i).*(save|choose|open|upload) file.*$, center on"
+        "match:title ^(?i).*(save|choose|open|upload) file.*$, size (monitor_w*0.6) (monitor_h*0.6)"
 
         # ente-auth
         "match:class io.ente.auth, float on"
