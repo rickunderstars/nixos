@@ -89,6 +89,7 @@
     signal-desktop
     teams-for-linux
     godot_4
+    unityhub
     itch
     heroic
     retroarch
