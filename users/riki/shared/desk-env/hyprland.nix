@@ -87,9 +87,9 @@
         "match:class ghostty.wiremix, dim_around on"
 
         # xdg-desktop-portal dialogs
-        "match:class ^(xdg-desktop-portal.*), float on"
-        "match:class ^(xdg-desktop-portal.*), center on"
-        "match:class ^(xdg-desktop-portal.*), size (monitor_w*0.6) (monitor_h*0.6)"
+        "match:class ^(?i)(xdg-desktop-portal.*), float on"
+        "match:class ^(?i)(xdg-desktop-portal.*), center on"
+        "match:class ^(?i)(xdg-desktop-portal.*), size (monitor_w*0.6) (monitor_h*0.6)"
 
         # ente-auth
         "match:class io.ente.auth, float on"
