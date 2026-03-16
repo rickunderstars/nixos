@@ -59,6 +59,7 @@
     arduino-ide
     arduino-language-server
     nodejs
+    typst
 
     ####### shell eye candy #######
     cbonsai
