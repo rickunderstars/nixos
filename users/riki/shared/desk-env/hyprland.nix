@@ -91,6 +91,16 @@
         "match:class ^(?i)(xdg-desktop-portal.*), center on"
         "match:class ^(?i)(xdg-desktop-portal.*), size (monitor_w*0.6) (monitor_h*0.6)"
 
+        # blender dialogs
+        "match:class ^(?i)(blender)$, center on"
+        "match:class ^(?i)(blender)$, size (monitor_w*0.75) (monitor_h*0.75)"
+
+        # zen dialogs
+        "match:class ^(?i)(zen.*)$, match:title ^(Library|Extension:.*)$, float on"
+        "match:class ^(?i)(zen.*)$, match:title ^(Library|Extension:.*)$, center on"
+        "match:class ^(?i)(zen.*)$, match:title ^(Library|Extension:.*)$, size (monitor_w*0.7) (monitor_h*0.7)"
+        "match:class ^(?i)(zen.*)$, match:title ^(Library|Extension:.*)$, opacity 0.95"
+
         # ente-auth
         "match:class io.ente.auth, float on"
         "match:class io.ente.auth, center on"
