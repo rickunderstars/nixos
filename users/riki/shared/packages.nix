@@ -110,5 +110,6 @@
     discord
     discover-overlay
     chameleos
+    stremio-linux-shell
   ];
 }
