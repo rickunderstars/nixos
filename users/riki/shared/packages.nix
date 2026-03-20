@@ -84,6 +84,7 @@
     pavucontrol
     catppuccinifier-gui
     scrcpy
+    android-tools
     localsend
     telegram-desktop
     whatsapp-electron
