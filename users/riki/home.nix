@@ -146,6 +146,10 @@
       ".config/ghostty/shaders/cursor_warp.glsl" = {
         source = ./assets/ghostty/cursor_warp.glsl;
       };
+
+      # using mkOutOfStoreSymlink avoids copying files
+      ".assets".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/users/riki/assets";
     };
   };
 

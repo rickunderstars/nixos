@@ -16,7 +16,7 @@
       };
       background = [
         {
-          path = "~/nixos-config/users/riki/assets/walls/Cloudsnight.jpg";
+          path = "~/.assets/walls/Cloudsnight.jpg";
           blur_passes = 3;
           blur_size = 8;
         }

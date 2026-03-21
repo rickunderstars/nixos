@@ -10,7 +10,7 @@
     settings = {
       image = [
         {
-          path = "~/nixos-config/users/riki/assets/avatar/marcille.jpg";
+          path = "~/.assets/avatar/marcille.jpg";
           halign = "center";
           valign = "center";
           position = "0, 80";

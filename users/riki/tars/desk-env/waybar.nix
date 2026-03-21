@@ -8,7 +8,7 @@
 
 {
   programs.waybar = {
-    style = ../../assets/waybar/tars-style.css;
+    style = "~/.assets/waybar/tars-style.css";
     settings = {
       mainBar = {
         cava = {
