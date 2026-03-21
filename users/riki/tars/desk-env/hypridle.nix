@@ -18,17 +18,17 @@
 
       listener = [
         {
-          timeout = 30; # 30sec - turn off keyboard backlight
+          timeout = 20; # 20sec - turn off keyboard backlight
           on-timeout = "brightnessctl -sd platform::kbd_backlight set 0";
           on-resume = "brightnessctl -rd platform::kbd_backlight";
         }
         {
-          timeout = 180; # 3min - lower screen brightness
+          timeout = 240; # 4min - lower screen brightness
           on-timeout = "brightnessctl -s set 10";
           on-resume = "brightnessctl -r";
         }
         {
-          timeout = 240; # 4min - lock screen
+          timeout = 300; # 5min - lock screen
           on-timeout = "pidof hyprlock || hyprlock";
         }
         {
