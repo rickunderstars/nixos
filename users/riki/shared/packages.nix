@@ -56,6 +56,7 @@
     texliveFull
     rustc
     cargo
+    rustfmt
     arduino-ide
     arduino-language-server
     nodejs
