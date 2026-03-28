@@ -26,7 +26,10 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs-stable = nixpkgs.legacyPackages.${system};
+      pkgs-stable = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
       pkgs = nixpkgs-unstable.legacyPackages.${system};
     in
     {

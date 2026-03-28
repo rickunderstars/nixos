@@ -101,7 +101,7 @@
     prusa-slicer
     cura-appimage
     freecad
-    stable.meshlab
+    meshlab
     f3d
     wings
     ente-auth
@@ -112,6 +112,6 @@
     discord
     discover-overlay
     chameleos
-    stremio-linux-shell
+    stable.stremio-linux-shell
   ];
 }
