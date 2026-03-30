@@ -89,6 +89,11 @@
         "match:class ^(?i)(xdg-desktop-portal.*), center on"
         "match:class ^(?i)(xdg-desktop-portal.*), size (monitor_w*0.6) (monitor_h*0.6)"
 
+        # discord screen share dialog (and possibly other)
+        "match:title ^(?i)(select.*), float on"
+        "match:title ^(?i)(select.*), center on"
+        "match:title ^(?i)(select.*), size (monitor_w*0.6) (monitor_h*0.6)"
+
         # blender dialogs
         "match:class ^(?i)(blender)$, center on"
         "match:class ^(?i)(blender)$, size (monitor_w*0.75) (monitor_h*0.75)"
