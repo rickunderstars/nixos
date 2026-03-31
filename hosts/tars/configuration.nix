@@ -14,7 +14,7 @@
   ];
 
   # TEMPORARY fix for suspend not working
-  boot.kernelPackages = stable.linuxPackages;
+  # boot.kernelPackages = stable.linuxPackages;
 
   # disable psr [laptop has issue]
   boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
