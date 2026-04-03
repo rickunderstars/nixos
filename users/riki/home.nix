@@ -162,12 +162,6 @@
       };
     };
     desktopEntries = {
-      freecad = {
-        name = "FreeCAD";
-        exec = "env QT_QPA_PLATFORM=xcb freecad %U";
-        terminal = false;
-        categories = [ "Application" ];
-      };
       onlyoffice-desktopeditors = {
         name = "ONLYOFFICE";
         exec = "env QT_SCALE_FACTOR=1 onlyoffice-desktopeditors %U";
