@@ -9,6 +9,10 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
+      exec-once = [
+        "sleep 5; easyeffects"
+      ];
+
       ## third is top left corner
       monitor = [
         "DP-2, 1920x1080@144, 0x0, 1"
