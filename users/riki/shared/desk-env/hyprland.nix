@@ -229,6 +229,8 @@
         ### column resize
         "$mod SHIFT, up, layoutmsg, colresize +conf"
         "$mod SHIFT, down, layoutmsg, colresize -conf"
+        "$mod SHIFT, mouse_down, layoutmsg, colresize +conf"
+        "$mod SHIFT, mouse_up, layoutmsg, colresize -conf"
 
         ### fit
         "$mod, j, layoutmsg, fit visible"
