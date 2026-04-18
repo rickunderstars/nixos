@@ -7,7 +7,7 @@
 }:
 
 {
-  services.swww = {
+  services.awww = {
     enable = true;
     extraArgs = [
 

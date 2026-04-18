@@ -190,7 +190,7 @@
     ./shared/desk-env/hyprland.nix
     ./shared/desk-env/hypridle.nix
     ./shared/desk-env/hyprlock.nix
-    ./shared/desk-env/swww.nix
+    ./shared/desk-env/awww.nix
     ./shared/desk-env/hyprshell.nix
     ./shared/desk-env/tofi.nix
     ./shared/desk-env/waybar.nix
