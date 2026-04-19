@@ -145,7 +145,7 @@
       top = "btop";
       man = "batman";
       spf = "superfile";
-      airplay = "uxplay -p";
+      airplay = "uxplay -p -fps 60 -vsync no";
 
       mime = "xdg-mime query filetype";
 
