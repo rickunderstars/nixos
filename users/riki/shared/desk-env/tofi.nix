@@ -12,8 +12,8 @@
     settings = {
       font = "CaskaydiaCove Nerd Font Mono";
       font-size = "16vh";
-      prompt-text = "run?";
-      placeholder-text = "are you sure?";
+      prompt-text = ">";
+      placeholder-text = "_";
       prompt-padding = 16;
       height = "100%";
       width = "100%";

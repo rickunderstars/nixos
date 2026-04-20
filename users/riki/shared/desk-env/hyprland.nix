@@ -182,7 +182,7 @@
         "$mod, b, exec, fish -c 'pidof bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith'"
 
         ### tofi
-        "$mod, space, exec, fish -c 'pkill tofi || tofi-drun --placeholder-text=(tofi-random)'"
+        "$mod, space, exec, fish -c 'pkill tofi || tofi-drun'"
 
         ### btop
         "CTRL SHIFT, escape, exec, fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'"
