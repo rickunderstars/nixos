@@ -151,6 +151,7 @@
 
       # shells
       gopxl = "nix develop ~/nixos-config#gopxlDev";
+      ros = "nix develop ~/nixos-config#rosDev";
     };
   };
 }
