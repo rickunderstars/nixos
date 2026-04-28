@@ -17,7 +17,6 @@ let
   game-of-life = mkGoBin "game-of-life" ./go/game-of-life.go;
   battery-info = mkGoBin "battery-info" ./go/battery-info.go;
   music-info = mkGoBin "music-info" ./go/music-info.go;
-  tofi-random = mkGoBin "tofi-random" ./go/tofi-random.go;
 
   audio-switch = pkgs.writers.writePython3Bin "audio-switch" {
     libraries = [ ];
@@ -37,7 +36,6 @@ in
     game-of-life
     battery-info
     music-info
-    tofi-random
 
     ### python
     audio-switch

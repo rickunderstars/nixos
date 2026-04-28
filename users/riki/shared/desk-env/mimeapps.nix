@@ -32,7 +32,7 @@
       "audio/opus" = [ "mpv.desktop" ];
       "audio/x-m4a" = [ "mpv.desktop" ];
       "audio/x-musepack" = [ "mpv.desktop" ];
-      "text/plain" = [ "org.gnome.gedit.desktop" ];
+      "text/plain" = [ "codium.desktop" ];
       "text/x-go" = [ "codium.desktop" ];
       "text/x-csrc" = [ "codium.desktop" ];
       "text/x-chdr" = [ "codium.desktop" ];
