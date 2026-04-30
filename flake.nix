@@ -10,9 +10,12 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.inputs.home-manager.follows = "home-manager";
-    my-dev-shells = {
-      url = "./dev-shells";
+    gopxl-shell = {
+      url = "./dev-shells/gopxl";
       inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
+    };
+    ros-shell = {
+      url = "./dev-shells/ros";
     };
   };
 
@@ -21,7 +24,8 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
-      my-dev-shells,
+      gopxl-shell,
+      ros-shell,
       ...
     }@inputs:
     let
@@ -101,7 +105,10 @@
         ];
       };
 
-      devShells.${system} = my-dev-shells.devShells.${system};
+      devShells.${system} = {
+        gopxlDev = gopxl-shell.devShells.${system}.default;
+        rosDev = ros-shell.devShells.${system}.default;
+      };
 
     };
 }
