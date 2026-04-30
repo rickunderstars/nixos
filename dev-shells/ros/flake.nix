@@ -30,20 +30,28 @@
         default = pkgs.mkShell {
           name = "ros-dev-shell";
           packages = [
+            # non-ROS pkgs
             pkgs.colcon
             (
               with pkgs.rosPackages.humble;
               buildEnv {
                 paths = [
+                  # ROS pkgs
                   ros-core
                   geometry-msgs
                   sensor-msgs
+                  turtlesim
+                  rqt
+                  rqt-common-plugins
                 ];
               }
             )
           ];
           shellHook = ''
             export DEV_ENV_NAME="ros-dev-env"
+
+            unset QT_PLUGIN_PATH
+            unset QML2_IMPORT_PATH
           '';
         };
       };
