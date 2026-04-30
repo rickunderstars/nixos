@@ -58,6 +58,10 @@
         "match:class org.gnome.Nautilus, center on"
         "match:class org.gnome.Nautilus, size (monitor_w*0.6) (monitor_h*0.6)"
 
+        # ghostty float
+        "match:class ghostty.float, float on"
+        "match:class ghostty.float, size (monitor_w*0.15) (monitor_h*0.05)"
+
         # wifi
         "match:class ghostty.wifi, float on"
         "match:class ghostty.wifi, center on"
@@ -167,6 +171,7 @@
 
         ### ghostty
         "$mod, return, exec, ghostty"
+        "$mod SHIFT, return, exec, fish -c 'ghostty --class=ghostty.float'"
 
         ### close/kill window
         "$mod, q, killactive, "
@@ -353,7 +358,7 @@
       scrolling = {
         fullscreen_on_one_column = true;
         column_width = 0.75;
-        focus_fit_method = 0;
+        focus_fit_method = 1;
         follow_min_visible = 0.4;
         explicit_column_widths = "0.333, 0.5, 0.667, 0.75, 1.0";
       };
