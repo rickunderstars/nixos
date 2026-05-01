@@ -137,6 +137,7 @@
       here = "pwd | wl-copy; pwd";
       home = "cd ~";
       goodnight = "shutdown now";
+      ros-shell = "nix develop /home/riki/nixos-config#rosDev -c fish -C clear";
     };
 
     shellAbbrs = {

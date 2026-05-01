@@ -28,7 +28,7 @@
     {
       devShells.${system} = {
         default = pkgs.mkShell {
-          name = "ros-dev-shell";
+          name = "ros";
           packages = [
             # non-ROS pkgs
             pkgs.colcon

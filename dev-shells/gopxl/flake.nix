@@ -21,7 +21,7 @@
     {
       devShells.${system} = {
         default = unstable.mkShell {
-          name = "gopxl-shell";
+          name = "gopxl";
           buildInputs = with unstable; [
             go
             gopls

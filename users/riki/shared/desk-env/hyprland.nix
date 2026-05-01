@@ -180,6 +180,7 @@
         ### ghostty
         "$mod, return, exec, ghostty"
         "$mod SHIFT, return, exec, fish -c 'ghostty --class=ghostty.float'"
+        "$mod SHIFT, r, exec, fish -c 'ghostty --class=ghostty.float -e fish -c ros-shell'"
 
         ### close/kill window
         "$mod, q, killactive, "
@@ -248,16 +249,6 @@
         ### fit
         "$mod, j, layoutmsg, fit visible"
 
-        ### resize window
-        "$mod CTRL, h, resizeactive, -20 0"
-        "$mod CTRL, l, resizeactive, 20 0"
-        "$mod CTRL, k, resizeactive, 0 -20"
-        "$mod CTRL, j, resizeactive, 0 20"
-        "$mod CTRL, left, resizeactive, -20 0"
-        "$mod CTRL, right, resizeactive, 20 0"
-        "$mod CTRL, up, resizeactive, 0 -20"
-        "$mod CTRL, down, resizeactive, 0 20"
-
         ### move between workspaces of same monitor
         "$mod, period, workspace, m+1"
         "$mod, comma, workspace, m-1"
@@ -273,6 +264,15 @@
 
         ### special workspace
         "$mod, equal, togglespecialworkspace, magic"
+      ];
+
+      binde = [
+        ### resize window
+        "$mod CTRL, left, resizeactive, -20 0"
+        "$mod CTRL, right, resizeactive, 20 0"
+        "$mod CTRL, up, resizeactive, 0 -20"
+        "$mod CTRL, down, resizeactive, 0 20"
+
       ];
 
       bindl = [
