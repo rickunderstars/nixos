@@ -39,7 +39,7 @@
       ];
 
       workspace = [
-        "special:magic, gapsout:30, gapsin:15"
+        "special:magic, gapsout:24, gapsin:16"
       ];
 
       windowrule = [
@@ -60,7 +60,8 @@
 
         # ghostty float
         "match:class ghostty.float, float on"
-        "match:class ghostty.float, size (monitor_w*0.15) (monitor_h*0.05)"
+        "match:class ghostty.float, move cursor_x cursor_y"
+        "match:class ghostty.float, size (monitor_w*0.3) (monitor_h*0.25)"
 
         # wifi
         "match:class ghostty.wifi, float on"
