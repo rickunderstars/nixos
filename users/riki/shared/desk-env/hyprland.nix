@@ -318,6 +318,7 @@
         "$mod, mouse:272, movewindow"
         "$mod, mouse:272, togglefloating"
         "$mod, mouse:273, resizewindow"
+        "$mod SHIFT, mouse:272, resizewindow"
       ];
 
       animations = {

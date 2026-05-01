@@ -24,6 +24,15 @@
         inherit system;
         overlays = [ nix-ros-overlay.overlays.default ];
       };
+
+      turtlesim-scaled = pkgs.rosPackages.humble.turtlesim.overrideAttrs (old: {
+        nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ pkgs.makeWrapper ];
+        postFixup = (old.postFixup or "") + ''
+          wrapProgram $out/lib/turtlesim/turtlesim_node \
+            --set QT_SCALE_FACTOR 1
+        '';
+      });
+
     in
     {
       devShells.${system} = {
@@ -40,7 +49,7 @@
                   ros-core
                   geometry-msgs
                   sensor-msgs
-                  turtlesim
+                  turtlesim-scaled
                   rqt
                   rqt-common-plugins
                 ];
