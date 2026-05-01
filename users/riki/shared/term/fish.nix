@@ -59,7 +59,7 @@
 
       # nixos
       config = "cd ~/nixos-config";
-      nixos-clean = "sudo nix-collect-garbage -d --delete-older-than 14d; sudo nix-store --optimise";
+      nixos-clean = "sudo nix-collect-garbage -d --delete-older-than 28d; sudo nix-store --optimise";
 
       # set volume (0-100)
       vol = ''
