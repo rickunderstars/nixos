@@ -349,8 +349,8 @@
 
         snap = {
           enabled = true;
-          window_gap = 20;
-          monitor_gap = 30;
+          window_gap = 10;
+          monitor_gap = 15;
           respect_gaps = true;
         };
       };
