@@ -113,5 +113,7 @@
     discover-overlay
     chameleos
     stable.stremio-linux-shell
+    fuse
+    steam-run
   ];
 }

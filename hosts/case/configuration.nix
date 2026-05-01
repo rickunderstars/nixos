@@ -14,12 +14,13 @@
   # hostname
   networking.hostName = "case";
 
+  # nvidia gpu
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
 
-  # razer
   hardware = {
+    # razer
     openrazer = {
       enable = true;
       keyStatistics = true;
@@ -58,6 +59,15 @@
 
   boot.kernelParams = [ "amd_pstate=disable" ];
   services.power-profiles-daemon.enable = true;
+
+  services = {
+    sunshine = {
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
+  };
 
   system.stateVersion = "25.05";
 }

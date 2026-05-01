@@ -19,6 +19,9 @@
     # steam hardware
     steam-hardware.enable = true;
 
+    # virtual input
+    uinput.enable = true;
+
     # xbox one accessories
     xone.enable = true;
   };
@@ -212,6 +215,7 @@
       "input"
       "plugdev"
       "storage"
+      "uinput"
     ];
     shell = pkgs.fish;
   };
