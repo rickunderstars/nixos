@@ -17,7 +17,7 @@
         height = "(0, 300)";
         offset = "5x5";
         frame_width = 2;
-        corner_radius = 10;
+        corner_radius = 8;
         follow = "mouse";
         icon_position = "left";
         icon_corner_radius = 5;
