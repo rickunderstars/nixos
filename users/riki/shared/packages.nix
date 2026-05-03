@@ -116,5 +116,6 @@
     fuse
     steam-run
     sgdboop
+    boilr
   ];
 }
