@@ -115,5 +115,6 @@
     stable.stremio-linux-shell
     fuse
     steam-run
+    sgdboop
   ];
 }
