@@ -118,5 +118,6 @@
     sgdboop
     boilr
     sm64coopdx
+    dolphin-emu
   ];
 }
