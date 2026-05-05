@@ -117,5 +117,6 @@
     steam-run
     sgdboop
     boilr
+    sm64coopdx
   ];
 }
