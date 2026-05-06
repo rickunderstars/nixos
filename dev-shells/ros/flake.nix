@@ -41,25 +41,29 @@
           packages = [
             # non-ROS pkgs
             pkgs.colcon
-            (
-              with pkgs.rosPackages.humble;
-              buildEnv {
-                paths = [
-                  # ROS pkgs
-                  ros-core
-                  geometry-msgs
-                  sensor-msgs
-                  turtlesim-scaled
-                  rqt
-                  rqt-common-plugins
-                ];
-              }
-            )
-          ];
+            pkgs.libsForQt5.qtwayland
+          ]
+          ++ (with pkgs.rosPackages.humble; [
+            # ROS pkgs
+            ros-core
+            geometry-msgs
+            sensor-msgs
+            turtlesim-scaled
+            rqt
+            rqt-common-plugins
+            ament-cmake
+            rclcpp
+            rclcpp-components
+            std-msgs
+            example-interfaces
+            rclpy
+          ]);
+
           shellHook = ''
             export DEV_ENV_NAME="ros-dev-env"
 
-            unset QT_PLUGIN_PATH
+            unset QT_STYLE_OVERRIDE
+            unset QT_QPA_PLATFORMTHEME
             unset QML2_IMPORT_PATH
           '';
         };

@@ -9,6 +9,12 @@
 {
   programs.fish = {
     enable = true;
+    plugins = [
+      {
+        name = "bass";
+        src = pkgs.fishPlugins.bass.src;
+      }
+    ];
     interactiveShellInit = ''
       if status is-login
         if uwsm check may-start
