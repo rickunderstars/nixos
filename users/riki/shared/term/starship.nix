@@ -17,7 +17,7 @@
       palette = "catppuccin_mocha";
 
       format = "[╭─](lavender) $username[](bold maroon)$hostname $all";
-      right_format = "$nix_shell $time";
+      right_format = "$container$nix_shell $time";
 
       username = {
         show_always = true;
@@ -51,6 +51,12 @@
         disabled = false;
         style = "italic bold overlay1";
         format = "[$time]($style)";
+      };
+
+      container = {
+        format = "[$symbol \\[$name\\]]($style) ";
+        style = "bold blue";
+        symbol = "📦";
       };
 
       palettes = {
