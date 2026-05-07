@@ -29,11 +29,6 @@
       if not set -q IN_NIX_SHELL
           fastfetch
       end
-
-      # TO-REMOVE
-      if abbr -q ros
-          abbr --erase ros
-      end
     '';
     functions = {
       br = ''
