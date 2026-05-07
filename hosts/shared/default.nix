@@ -233,6 +233,7 @@
     gparted
     brightnessctl
     procps
+    distrobox
 
     ####### desk env #######
     hyprland-qt-support
@@ -244,6 +245,8 @@
     catppuccin
     catppuccin-cursors.mochaDark
   ];
+
+  virtualisation.podman.enable = true;
 
   programs = {
     dconf.enable = true;
