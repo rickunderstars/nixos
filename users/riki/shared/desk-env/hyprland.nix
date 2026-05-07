@@ -154,6 +154,9 @@
         # calendar
         "match:class gsimplecal, opacity 0.95"
         "match:class gsimplecal, pin on"
+
+        # ros
+        "match:class rqt, float on"
       ];
 
       layerrule = [
@@ -180,7 +183,7 @@
         ### ghostty
         "$mod, return, exec, ghostty"
         "$mod SHIFT, return, exec, fish -c 'ghostty --class=ghostty.float'"
-        "$mod SHIFT, r, exec, fish -c 'ghostty --class=ghostty.float -e fish -c ros-shell'"
+        "$mod SHIFT, r, exec, fish -c 'ghostty --class=ghostty.float -e fish -c ros'"
 
         ### close/kill window
         "$mod, q, killactive, "

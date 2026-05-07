@@ -29,6 +29,11 @@
       if not set -q IN_NIX_SHELL
           fastfetch
       end
+
+      # TO-REMOVE
+      if abbr -q ros
+          abbr --erase ros
+      end
     '';
     functions = {
       br = ''
@@ -143,7 +148,7 @@
       here = "pwd | wl-copy; pwd";
       home = "cd ~";
       goodnight = "shutdown now";
-      ros-shell = "nix develop /home/riki/nixos-config#rosDev -c fish -C clear";
+      ros = "distrobox enter ros-humble -- bash -c 'source /opt/ros/humble/setup.bash && exec bash'";
     };
 
     shellAbbrs = {
@@ -158,7 +163,6 @@
 
       # shells
       gopxl = "nix develop ~/nixos-config#gopxlDev";
-      ros = "nix develop ~/nixos-config#rosDev";
     };
   };
 }

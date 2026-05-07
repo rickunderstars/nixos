@@ -14,9 +14,6 @@
       url = "./dev-shells/gopxl";
       inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
     };
-    ros-shell = {
-      url = "./dev-shells/ros";
-    };
   };
 
   outputs =
@@ -25,7 +22,6 @@
       nixpkgs-unstable,
       home-manager,
       gopxl-shell,
-      ros-shell,
       ...
     }@inputs:
     let
@@ -107,7 +103,6 @@
 
       devShells.${system} = {
         gopxlDev = gopxl-shell.devShells.${system}.default;
-        rosDev = ros-shell.devShells.${system}.default;
       };
 
     };
