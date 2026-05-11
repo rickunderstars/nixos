@@ -3,14 +3,12 @@
   lib,
   config,
   inputs,
-  stable,
   ...
 }:
 
 {
   programs.ghostty = {
     enable = true;
-    package = stable.ghostty;
     enableFishIntegration = true;
     installBatSyntax = true;
     settings = {
