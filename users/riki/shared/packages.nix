@@ -72,7 +72,7 @@
     element
 
     ####### apps #######
-    (bottles.override { removeWarningPopup = true; })
+    (stable.bottles.override { removeWarningPopup = true; })
     video-trimmer
     gimp
     grimblast
