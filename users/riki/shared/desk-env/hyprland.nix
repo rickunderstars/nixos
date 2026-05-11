@@ -219,6 +219,9 @@
         ### hyprpicker
         "$mod, c, exec, fish -c 'pidof hyprpicker && pkill hyprpicker || hyprpicker -a'"
 
+        ### cycle wallpaper
+        "$mod SHIFT, a, exec, fish -c nawww"
+
         ### fullscreen and floating
         "$mod SHIFT, f, fullscreen, 0"
         "$mod, f, fullscreen, 1"
@@ -289,7 +292,7 @@
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86AudioStop, exec, playerctl stop"
 
-        # audio mute toggle
+        ### audio mute toggle
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         "$mod, m, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         # mic mute toggle
@@ -306,13 +309,13 @@
       ];
 
       bindel = [
-        # volume control
+        ### volume control
         ", XF86AudioLowerVolume, exec, wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%- && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%+ && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
         "$mod SHIFT, bracketleft, exec, wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%- && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
         "$mod SHIFT, bracketright, exec, wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%+ && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
 
-        # screen brightness control
+        ### screen brightness control
         ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
         ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
       ];

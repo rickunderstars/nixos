@@ -29,6 +29,10 @@ let
     ];
   } (builtins.readFile ./python/audio-switch.py);
 
+  nawww = pkgs.writeShellScriptBin "nawww" ''
+    exec ${pkgs.fish}/bin/fish ${./fish/nawww.fish}
+  '';
+
 in
 {
   home.packages = [
@@ -39,5 +43,8 @@ in
 
     ### python
     audio-switch
+
+    ### fish
+    nawww
   ];
 }
