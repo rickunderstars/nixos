@@ -15,20 +15,12 @@
 
   # TEMPORARY fix for suspend not working
   # boot.kernelPackages = stable.linuxPackages;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  boot.initrd.kernelModules = [ "amdgpu" ];
 
   # disable psr [laptop has issue]
   boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
 
   # hostname
   networking.hostName = "tars";
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
 
   environment.systemPackages = with pkgs; [
   ];
