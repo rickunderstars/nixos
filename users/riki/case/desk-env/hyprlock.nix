@@ -1,10 +1,5 @@
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}:
+{ ... }:
+
 {
   programs.hyprlock = {
     settings = {
