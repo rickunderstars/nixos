@@ -151,10 +151,6 @@
         # zen
         # "match:class zen-twilight, scrolling_width 1.0"
 
-        # calendar
-        "match:class gsimplecal, opacity 0.95"
-        "match:class gsimplecal, pin on"
-
         # ros
         "match:class rqt, float on"
       ];

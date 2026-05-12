@@ -40,8 +40,6 @@
       ];
 
       windowrule = [
-        # calendar
-        "match:class gsimplecal, move (monitor_w-window_w-(5+2)) (5*2+34)"
       ];
 
       # forces xwayland not to scale x11 apps

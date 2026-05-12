@@ -76,7 +76,6 @@
     video-trimmer
     gimp
     grimblast
-    gsimplecal
     blender
     goxel
     krita
