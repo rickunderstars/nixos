@@ -45,6 +45,7 @@
     vscodium
     gitflow
     nixfmt
+    nixd
     gcc
     llvmPackages.clang-tools
     gnumake
