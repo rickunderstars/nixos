@@ -187,22 +187,22 @@
         "$mod SHIFT, q, forcekillactive, "
 
         ### wifi (impala)
-        "$mod, w, exec, fish -c 'pidof impala || ghostty --class=ghostty.wifi -e impala'"
+        "$mod, w, exec, fish -c 'pidof impala && pkill impala || ghostty --class=ghostty.wifi -e impala'"
 
         ### plane mode toggle
         "$mod SHIFT, w, exec, fish -c wifi-toggle"
 
         ### bluetooth
-        "$mod, b, exec, fish -c 'pidof bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith'"
+        "$mod, b, exec, fish -c 'pidof bluetuith && pkill bluetuith|| ghostty --class=ghostty.bluetooth -e bluetuith'"
 
         ### tofi
         "$mod, space, exec, fish -c 'pkill tofi || tofi-drun'"
 
         ### btop
-        "CTRL SHIFT, escape, exec, fish -c 'pidof btop || ghostty --class=ghostty.btop -e btop'"
+        "CTRL SHIFT, escape, exec, fish -c 'pidof btop && pkill btop|| ghostty --class=ghostty.btop -e btop'"
 
         ### audio mixer (wiremix)
-        "$mod, v, exec, fish -c 'pidof wiremix || ghostty --class=ghostty.wiremix -e wiremix'"
+        "$mod, v, exec, fish -c 'pidof wiremix && pkill wiremix || ghostty --class=ghostty.wiremix -e wiremix'"
 
         ### tty-clock
         "$mod, h, exec, fish -c 'pidof tty-clock && pkill tty-clock || ghostty --class=ghostty.clock -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'"
