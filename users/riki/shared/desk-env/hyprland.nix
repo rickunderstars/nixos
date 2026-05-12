@@ -127,12 +127,6 @@
         "match:class localsend_app, size (monitor_w*0.5) (monitor_h*0.6)"
         "match:class localsend_app, opacity 0.85"
 
-        # text editor
-        "match:class gedit, float on"
-        "match:class gedit, center on"
-        "match:class gedit, size (monitor_w*0.6) (monitor_h*0.6)"
-        "match:class gedit, opacity 0.85"
-
         # imv
         "match:class imv, float on"
         "match:class imv, center on"
@@ -205,9 +199,6 @@
 
         ### file manager
         "$mod, e, exec, nautilus --new-window"
-
-        ### text editor
-        "$mod, n, exec, gedit"
 
         ### switch keyboard layout
         "$mod SHIFT, space, exec, hyprctl switchxkblayout all next && dunstify \"Layout: $(hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap')\""

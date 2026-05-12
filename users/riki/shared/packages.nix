@@ -106,7 +106,6 @@
     ente-auth
     spotify
     papers
-    gedit
     aseprite
     discord
     discover-overlay
