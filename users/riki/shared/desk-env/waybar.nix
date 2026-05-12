@@ -217,7 +217,7 @@
         clock = {
           tooltip-format = "{:%a %d-%b-%Y}";
           format = "{:%H:%M}";
-          # on-click = "fish -c 'pidof gsimplecal && pkill gsimplecal || gsimplecal'";
+          on-click = "fish -c 'pidof tty-clock && pkill tty-clock|| ghostty --class=ghostty.clock -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'";
         };
       };
     };

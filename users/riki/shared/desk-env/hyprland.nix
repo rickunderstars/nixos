@@ -94,6 +94,13 @@
         "match:class ghostty.wiremix, pin on"
         "match:class ghostty.wiremix, dim_around on"
 
+        # tty-clock
+        "match:class ghostty.clock, float on"
+        "match:class ghostty.clock, center on"
+        "match:class ghostty.clock, size (monitor_w*0.5) (monitor_h*0.5)"
+        "match:class ghostty.clock, pin on"
+        "match:class ghostty.clock, dim_around on"
+
         # xdg-desktop-portal dialogs
         "match:class ^(?i)(xdg-desktop-portal.*), float on"
         "match:class ^(?i)(xdg-desktop-portal.*), center on"
@@ -196,6 +203,9 @@
 
         ### audio mixer (wiremix)
         "$mod, v, exec, fish -c 'pidof wiremix || ghostty --class=ghostty.wiremix -e wiremix'"
+
+        ### tty-clock
+        "$mod, h, exec, fish -c 'pidof tty-clock && pkill tty-clock || ghostty --class=ghostty.clock -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'"
 
         ### file manager
         "$mod, e, exec, nautilus --new-window"
