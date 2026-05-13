@@ -57,14 +57,5 @@
   boot.kernelParams = [ "amd_pstate=disable" ];
   services.power-profiles-daemon.enable = true;
 
-  services = {
-    sunshine = {
-      enable = true;
-      autoStart = true;
-      capSysAdmin = true;
-      openFirewall = true;
-    };
-  };
-
   system.stateVersion = "25.05";
 }
