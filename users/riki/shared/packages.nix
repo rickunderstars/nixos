@@ -65,6 +65,7 @@
     arduino-language-server
     nodejs
     typst
+    tinymist
 
     ####### shell eye candy #######
     cbonsai
