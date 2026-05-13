@@ -33,6 +33,7 @@
     bit-logo
     mcat
     nix-search-cli
+    caligula
 
     ####### desk env #######
     hyprpicker
