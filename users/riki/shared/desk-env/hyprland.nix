@@ -47,6 +47,9 @@
         "match:content 3, idle_inhibit always" # games
         "match:content 2, idle_inhibit always" # videos
 
+        # fullscreen games
+        "match:content 3, fullscreen on"
+
         # nautilus
         "match:class org.gnome.Nautilus, float on"
         "match:class org.gnome.Nautilus, center on"

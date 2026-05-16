@@ -34,6 +34,7 @@
       ];
 
       windowrule = [
+        "match:content 3, monitor 0"
       ];
 
       # forces xwayland not to scale x11 apps

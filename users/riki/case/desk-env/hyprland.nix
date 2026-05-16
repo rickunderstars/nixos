@@ -15,6 +15,7 @@
       ];
 
       windowrule = [
+        "match:content 3, monitor 1"
       ];
 
       workspace = [
