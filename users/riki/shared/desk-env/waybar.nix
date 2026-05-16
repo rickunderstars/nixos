@@ -231,7 +231,7 @@
         Type = "simple";
         ExecStart = "${pkgs.waybar}/bin/waybar";
         Restart = "always";
-        RestartSec = "2";
+        RestartSec = "1";
       };
       Install.WantedBy = [ "graphical-session.target" ];
     };

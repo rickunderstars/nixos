@@ -216,6 +216,8 @@
         ### cycle wallpaper
         "$mod SHIFT, a, exec, fish -c nawww"
 
+        ### toggle monitor split
+        "$mod, slash, exec, fish -c toggle-monitor-split"
         ### fullscreen and floating
         "$mod SHIFT, f, fullscreen, 0"
         "$mod, f, fullscreen, 1"
@@ -256,8 +258,8 @@
         "$mod CTRL, mouse_up, workspace, m-1"
 
         ### move to monitor
-        "$mod SHIFT, comma, movewindow, mon:l"
-        "$mod SHIFT, period, movewindow, mon:r"
+        "$mod SHIFT, comma, movewindow, mon:-1"
+        "$mod SHIFT, period, movewindow, mon:+1"
 
         ### focus monitor (cycle)
         "$mod, tab, focusmonitor, +1"
