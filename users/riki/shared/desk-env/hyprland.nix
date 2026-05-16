@@ -41,14 +41,15 @@
         # floating
         "match:float true, border_color rgba(74c7ecff) rgba(f5c2e7ff) 310deg" # sapphire -> pink
 
-        # idle inhibit
+        # games and idle inhibit
         "match:class gamescope, idle_inhibit always"
         "match:class com.stremio.Stremio, idle_inhibit always"
         "match:content 3, idle_inhibit always" # games
         "match:content 2, idle_inhibit always" # videos
-
-        # fullscreen games
         "match:content 3, fullscreen on"
+        "match:xwayland true, fullscreen on"
+        "match:xwayland true, immediate on"
+
 
         # nautilus
         "match:class org.gnome.Nautilus, float on"
