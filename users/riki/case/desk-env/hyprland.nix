@@ -15,8 +15,6 @@
       ];
 
       windowrule = [
-        "match:content 3, monitor 1"
-        "match:xwayland true, monitor 1"
       ];
 
       workspace = [
