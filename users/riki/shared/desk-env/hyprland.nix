@@ -49,7 +49,6 @@
         "match:content 3, idle_inhibit always" # games
         "match:content 3, fullscreen on"
 
-        "match:xwayland true, fullscreen on"
         "match:xwayland true, immediate on"
         "match:xwayland true, idle_inhibit always"
 
