@@ -71,6 +71,9 @@
     ####### shell eye candy #######
     cbonsai
     cmatrix
+    unimatrix
+    nsnake
+    bastet
     pipes
     tty-clock
     astroterm
