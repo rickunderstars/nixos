@@ -104,7 +104,16 @@
     itch
     heroic
     retroarch
-    prismlauncher
+    (symlinkJoin {
+      name = "prismlauncher-wrapped";
+      paths = [ prismlauncher ];
+      buildInputs = [ makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/prismlauncher \
+          --set QT_QPA_PLATFORMTHEME ""
+      '';
+    })
+
     protonplus
     prusa-slicer
     cura-appimage
