@@ -28,7 +28,7 @@
 * {
 	font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font";
 	font-weight: bolder;
-	font-style: italic;
+	/* font-style: italic; */
 	font-size: 10pt;
 	transition: all 0.2s ease-in-out;
 }
@@ -47,7 +47,7 @@
 #battery,
 #language,
 #clock {
-	border-radius: 99px;
+	border-radius: 6px;
 	border-top: 0;
 	border-bottom: 0;
 	padding: 0 0.7em;
@@ -56,8 +56,10 @@
 }
 
 #taskbar {
-	background-color: alpha(@base, 0.5);
+	background-color: alpha(@crust, 0.4);
 	padding: 0;
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 16px;
 }
 
 #taskbar button {
@@ -76,9 +78,11 @@
 
 #workspaces {
 	margin-left: 5px;
-	background-color: alpha(@base, 0.5);
+	background-color: alpha(@crust, 0.4);
 	color: black;
 	padding: 0;
+	border-top-left-radius: 16px;
+	border-bottom-left-radius: 16px;
 }
 
 #workspaces button {
@@ -110,8 +114,10 @@
 }
 
 #tray {
-	background-color: alpha(@base, 0.5);
+	background-color: alpha(@crust, 0.4);
 	color: black;
+	border-top-left-radius: 16px;
+	border-bottom-left-radius: 16px;
 }
 
 #tray menu {
@@ -250,4 +256,7 @@
 	background-color: alpha(@lavender, 0.8);
 	color: black;
 	margin-right: 5px;
+	padding-right: 0.8em;
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 16px;
 }
