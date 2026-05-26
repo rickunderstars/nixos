@@ -57,9 +57,6 @@
         "match:class org.gnome.Nautilus, center on"
         "match:class org.gnome.Nautilus, size (monitor_w*0.6) (monitor_h*0.6)"
 
-        # ghostty
-        # "match:class com.mitchellh.ghostty, scrolling_width 0.333"
-
         # ghostty float
         "match:class ghostty.float, float on"
         "match:class ghostty.float, move cursor_x cursor_y"
@@ -146,10 +143,6 @@
 
         # codium
         "match:class codium, opacity 0.93"
-        # "match:class codium, scrolling_width 1.0"
-
-        # zen
-        # "match:class zen-twilight, scrolling_width 1.0"
 
         # ros
         "match:class rqt, float on"
