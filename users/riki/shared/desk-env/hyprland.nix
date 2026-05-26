@@ -14,7 +14,7 @@
       exec-once = [
         "hyprlock"
         "hypridle"
-        "hyprpaper"
+        "nawww --init"
         "systemctl --user start hyprpolkitagent"
         "bluetoothctl power off"
       ];

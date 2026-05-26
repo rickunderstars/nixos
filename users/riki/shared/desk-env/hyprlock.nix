@@ -11,7 +11,7 @@
       };
       background = [
         {
-          path = "~/.assets/walls/Cloudsnight.jpg";
+          path = "~/.cache/current_wallpaper";
           blur_passes = 3;
           blur_size = 8;
         }
