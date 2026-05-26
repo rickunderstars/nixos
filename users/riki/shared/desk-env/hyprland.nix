@@ -380,7 +380,10 @@
         rounding = 8;
         rounding_power = 4.0;
         shadow = {
-          enabled = false;
+          enabled = true;
+          range = 4;
+          render_power = 4;
+          color = "rgba(0,0,0,0.5)";
         };
         blur = {
           xray = true;
