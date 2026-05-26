@@ -159,8 +159,8 @@
 
         battery = {
           states = {
-            warning = 15;
-            critical = 5;
+            warning = 16;
+            critical = 8;
           };
           interval = 1;
           format = "{icon}{capacity}";
@@ -171,10 +171,10 @@
             "[///  ]"
             "[//// ]"
             "[/////]"
-
           ];
           format-charging = "[󱐋󱐋󱐋󱐋󱐋]{capacity}";
-          format-warning = "[!!!!!]{capacity}";
+          format-warning = "[󱐋 󱐋 󱐋]{capacity}";
+          format-critical = "[ 󱐋 󱐋 ]{capacity}";
           tooltip-format = "PD: {power}W\n{timeTo}";
         };
 

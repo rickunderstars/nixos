@@ -10,7 +10,7 @@
 
       palette = "catppuccin_mocha";
 
-      format = "[╭─](lavender)$container $username[](bold maroon)$hostname $all";
+      format = "[╭─](lavender)$container$battery $username[](bold maroon)$hostname $all";
       right_format = "$nix_shell $time";
 
       username = {
@@ -51,6 +51,10 @@
         format = " [$symbol \\[$name\\]]($style)";
         style = "bold blue";
         symbol = "📦";
+      };
+
+      battery = {
+        format = " [$symbol$percentage]($style) |";
       };
 
       palettes = {
