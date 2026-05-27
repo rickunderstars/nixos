@@ -12,9 +12,9 @@
 
     settings = {
       exec-once = [
+        "nawww --init"
         "hyprlock"
         "hypridle"
-        "nawww --init"
         "systemctl --user start hyprpolkitagent"
         "bluetoothctl power off"
       ];

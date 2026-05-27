@@ -33,11 +33,11 @@ let
   } (builtins.readFile ./python/audio-switch.py);
 
   nawww = pkgs.writeShellScriptBin "nawww" ''
-    exec ${pkgs.fish}/bin/fish ${./fish/nawww.fish}
+    exec ${pkgs.fish}/bin/fish ${./fish/nawww.fish} "$@"
   '';
 
   toggle-monitor-split = pkgs.writeShellScriptBin "toggle-monitor-split" ''
-    exec ${pkgs.fish}/bin/fish ${./fish/toggle-monitor-split.fish}
+    exec ${pkgs.fish}/bin/fish ${./fish/toggle-monitor-split.fish} "$@"
   '';
 
 in
