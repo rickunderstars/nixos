@@ -135,5 +135,6 @@
     boilr
     sm64coopdx
     dolphin-emu
+    gnome-boxes
   ];
 }
