@@ -243,7 +243,10 @@
     catppuccin-cursors.mochaDark
   ];
 
-  virtualisation.podman.enable = true;
+  virtualisation = {
+    podman.enable = true;
+    libvirtd.enable = true;
+  };
 
   programs = {
     dconf.enable = true;
