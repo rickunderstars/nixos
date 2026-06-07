@@ -21,4 +21,6 @@
       window-decoration = "server";
     };
   };
+
+  home.file.".config/ghostty/shaders/cursor_warp.glsl".source = ./cursor_warp.glsl;
 }

@@ -7,7 +7,7 @@
     ./fish.nix
     ./ghostty.nix
     ./hyprland.nix
-    ./hyprlock.nix
-    ./waybar.nix
+    ./hyprlock/hyprlock.nix
+    ./waybar/waybar.nix
   ];
 }

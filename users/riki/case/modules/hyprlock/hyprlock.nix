@@ -5,7 +5,7 @@
     settings = {
       image = [
         {
-          path = "~/.assets/avatar/marcille.jpg";
+          path = "${./marcille.jpg}";
           halign = "center";
           valign = "center";
           position = "0, 80";

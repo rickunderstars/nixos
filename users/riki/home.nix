@@ -20,14 +20,8 @@
     };
 
     file = {
-      ".config/micro/colorschemes/catppuccin-mocha.micro" = {
-        source = ./assets/micro/catppuccin-mocha.micro;
-      };
       ".arduinoIDE/.clang-format" = {
         source = ./assets/arduino/.clang-format;
-      };
-      ".config/ghostty/shaders/cursor_warp.glsl" = {
-        source = ./assets/ghostty/cursor_warp.glsl;
       };
 
       # using mkOutOfStoreSymlink avoids copying files

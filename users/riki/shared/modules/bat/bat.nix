@@ -5,7 +5,7 @@
     enable = true;
     themes = {
       catppuccin-mocha = {
-        src = ../../assets/bat/.;
+        src = "${./.}";
         file = "catppuccin-mocha.tmTheme";
       };
     };

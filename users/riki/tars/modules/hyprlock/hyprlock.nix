@@ -5,7 +5,7 @@
     settings = {
       image = [
         {
-          path = "~/.assets/avatar/marcille.jpg";
+          path = "${./marcille.jpg}";
           size = 300;
           rounding = -1;
           border_size = 4;

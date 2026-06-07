@@ -15,7 +15,7 @@
     };
     includes = [
       {
-        path = "~/.assets/git/catppuccin.gitconfig";
+        path = "${./catppuccin.gitconfig}";
       }
     ];
   };

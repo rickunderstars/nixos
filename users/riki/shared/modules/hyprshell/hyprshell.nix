@@ -17,7 +17,7 @@
       };
     };
 
-    style = builtins.readFile ../../assets/hyprshell/style.css;
+    style = builtins.readFile ./style.css;
   };
 
   # restart hyprshell after nixos-rebuild

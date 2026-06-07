@@ -2,7 +2,7 @@
 
 {
   programs.waybar = {
-    style = ../../assets/waybar/tars-style.css;
+    style = ./tars-style.css;
     settings = {
       mainBar = {
         cava = {

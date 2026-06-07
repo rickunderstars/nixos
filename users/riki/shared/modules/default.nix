@@ -3,27 +3,27 @@
 {
   imports = [
     ./awww.nix
-    ./bat.nix
+    ./bat/bat.nix
     ./broot.nix
-    ./btop.nix
+    ./btop/btop.nix
     ./cava.nix
     ./direnv.nix
     ./dunst.nix
     ./eza.nix
-    ./fastfetch.nix
+    ./fastfetch/fastfetch.nix
     ./firefox.nix
     ./fish.nix
-    ./ghostty.nix
-    ./git.nix
+    ./ghostty/ghostty.nix
+    ./git/git.nix
     ./global-themes.nix
     ./gnome-keyring.nix
     ./hypridle.nix
-    ./hyprland.nix
-    ./hyprlock.nix
-    ./hyprshell.nix
+    ./hyprland/hyprland.nix
+    ./hyprlock/hyprlock.nix
+    ./hyprshell/hyprshell.nix
     ./imv.nix
     ./mangohud.nix
-    ./micro.nix
+    ./micro/micro.nix
     ./mimeapps.nix
     ./mpv.nix
     ./onedrive.nix
@@ -32,6 +32,6 @@
     ./superfile.nix
     ./tofi.nix
     ./udiskie.nix
-    ./waybar.nix
+    ./waybar/waybar.nix
   ];
 }

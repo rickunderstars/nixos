@@ -11,4 +11,6 @@
       colorscheme = "catppuccin-mocha";
     };
   };
+
+  home.file.".config/micro/colorschemes/catppuccin-mocha.micro".source = ./catppuccin-mocha.micro;
 }
