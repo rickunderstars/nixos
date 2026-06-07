@@ -18,7 +18,7 @@
     ./global-themes.nix
     ./gnome-keyring.nix
     ./hypridle.nix
-    ./hyprland/hyprland.nix
+    ./hyprland.nix
     ./hyprlock/hyprlock.nix
     ./hyprshell/hyprshell.nix
     ./imv.nix
