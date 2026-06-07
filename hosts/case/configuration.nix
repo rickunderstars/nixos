@@ -8,24 +8,21 @@
     ./hardware-configuration.nix
     ../shared
   ];
-  # hostname
+
   networking.hostName = "case";
 
-  # nvidia gpu
+  # Hardware-specific logic
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
 
-  hardware = {
-    # razer
-    openrazer = {
+  hardware.openrazer = {
+    enable = true;
+    keyStatistics = true;
+    batteryNotifier = {
       enable = true;
-      keyStatistics = true;
-      batteryNotifier = {
-        enable = true;
-        percentage = 15;
-        frequency = 600;
-      };
+      percentage = 15;
+      frequency = 600;
     };
   };
 
@@ -35,25 +32,19 @@
     linuxKernel.packages.linux_zen.xone
   ];
 
-  programs = {
-    gamescope = {
-      args = [
-        "--prefer-output DP-2" # monitor preference
-        "-w 1920 -h 1080" # game resolution
-        "-W 1920 -H 1080" # window resolution
-        "-r 200" # fps
-        #"-F fsr" # upscaling method
-        "--mangoapp" # mangohud
-        "--fullscreen"
-        "--backend wayland"
-        "--force-grab-cursor"
-        "--rt" # real time priority
-      ];
-    };
-  };
+  programs.gamescope.args = [
+    "--prefer-output DP-2"
+    "-w 1920 -h 1080"
+    "-W 1920 -H 1080"
+    "-r 200"
+    "--mangoapp"
+    "--fullscreen"
+    "--backend wayland"
+    "--force-grab-cursor"
+    "--rt"
+  ];
 
   time.hardwareClockInLocalTime = true;
-
   boot.kernelParams = [ "amd_pstate=disable" ];
   services.power-profiles-daemon.enable = true;
 
