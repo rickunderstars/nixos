@@ -33,5 +33,6 @@
     ./tofi.nix
     ./udiskie.nix
     ./waybar/waybar.nix
+    ./niri/niri.nix
   ];
 }

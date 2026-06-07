@@ -8,5 +8,6 @@
     ./services.nix
     ./users.nix
     ./packages.nix
+    ./niri.nix
   ];
 }
