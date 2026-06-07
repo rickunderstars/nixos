@@ -70,7 +70,10 @@
     ####### apps #######
     zen-browser.enable = true;
     obs-studio.enable = true;
-    firefox.enable = true;
+    firefox = {
+      enable = true;
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
+    };
     anki.enable = true;
     obsidian.enable = true;
     micro = {
@@ -101,6 +104,8 @@
     go.enable = true;
     gradle.enable = true;
     gemini-cli.enable = true;
+    # NEXT UPDATE
+    # antigravity-cli.enable = true;
   };
 
   services = {

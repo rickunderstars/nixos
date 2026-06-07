@@ -6,6 +6,8 @@
     systemd.enable = false;
     package = null;
     portalPackage = null;
+    #  NEXT UPDATE
+    #  configType = "hyprlang";
     plugins = [
 
     ];
