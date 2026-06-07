@@ -11,14 +11,7 @@
   ];
 
   imports = [
-    ./term/ghostty.nix
-    ./term/cava.nix
-    ./term/fish.nix
-    ./term/fastfetch.nix
-    ./desk-env/hyprland.nix
-    ./desk-env/hypridle.nix
-    ./desk-env/hyprlock.nix
-    ./desk-env/waybar.nix
+    ./modules
   ];
 
 }
