@@ -273,6 +273,9 @@ window-rule {
 // spotify
 window-rule {
 	match app-id="spotify"
+	default-column-width {
+		proportion 0.66667
+	}
 	opacity 0.95
 }
 // codium
