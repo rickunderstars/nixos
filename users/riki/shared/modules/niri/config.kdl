@@ -278,6 +278,9 @@ window-rule {
 // codium
 window-rule {
 	match app-id="codium"
+	default-column-width {
+		proportion 1.0
+	}
  //opacity 0.93
 }
 // rqt
