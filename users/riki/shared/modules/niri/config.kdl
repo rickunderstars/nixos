@@ -115,6 +115,13 @@ window-rule {
 	default-window-height {
 		proportion 0.6
 	}
+}
+// ghostty
+window-rule {
+	match app-id="com.mitchellh.ghostty"
+	default-column-width {
+		proportion 0.333
+	}
 	opacity 0.95
 }
 // ghostty.float
@@ -127,7 +134,7 @@ window-rule {
 	default-window-height {
 		proportion 0.25
 	}
-	opacity 0.9
+	opacity 0.95
 }
 // ghostty.wifi
 window-rule {
@@ -139,7 +146,7 @@ window-rule {
 	default-window-height {
 		proportion 0.6
 	}
-	opacity 0.9
+	opacity 0.95
 }
 // ghostty.bluetooth
 window-rule {
@@ -151,7 +158,7 @@ window-rule {
 	default-window-height {
 		proportion 0.6
 	}
-	opacity 0.9
+	opacity 0.95
 }
 // ghostty.btop
 window-rule {
@@ -163,7 +170,7 @@ window-rule {
 	default-window-height {
 		proportion 0.75
 	}
-	opacity 0.9
+	opacity 0.95
 }
 // ghostty.wiremix
 window-rule {
@@ -175,7 +182,7 @@ window-rule {
 	default-window-height {
 		proportion 0.6
 	}
-	opacity 0.9
+	opacity 0.95
 }
 // ghostty.clock
 window-rule {
@@ -187,7 +194,7 @@ window-rule {
 	default-window-height {
 		proportion 0.5
 	}
-	opacity 0.9
+	opacity 0.95
 }
 // xdg-desktop-portal
 window-rule {
@@ -200,7 +207,7 @@ window-rule {
 		proportion 0.6
 	}
 }
-// select dialogs (discord screen share, etc.)
+// select dialogs
 window-rule {
 	match title="(?i)^select"
 	open-floating true
@@ -209,6 +216,13 @@ window-rule {
 	}
 	default-window-height {
 		proportion 0.6
+	}
+}
+// zen
+window-rule {
+	match app-id="zen-twilight"
+	default-column-width {
+		proportion 1.0
 	}
 }
 // zen dialogs
@@ -221,9 +235,8 @@ window-rule {
 	default-window-height {
 		proportion 0.7
 	}
-	opacity 0.95
 }
-// ente-auth (dim_around non ha equivalente in niri)
+// ente-auth
 window-rule {
 	match app-id="io.ente.auth"
 	open-floating true
@@ -233,7 +246,7 @@ window-rule {
 	default-window-height {
 		proportion 0.6
 	}
-	opacity 0.85
+	opacity 0.9
 }
 // localsend
 window-rule {
@@ -245,7 +258,6 @@ window-rule {
 	default-window-height {
 		proportion 0.6
 	}
-	opacity 0.85
 }
 // imv
 window-rule {
@@ -261,12 +273,12 @@ window-rule {
 // spotify
 window-rule {
 	match app-id="spotify"
-	opacity 0.9
+	opacity 0.95
 }
 // codium
 window-rule {
 	match app-id="codium"
-	opacity 0.93
+ //opacity 0.93
 }
 // rqt
 window-rule {
