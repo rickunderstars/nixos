@@ -58,6 +58,7 @@ layout {
 		inactive-gradient from="#181825ff" to="#313244ff" angle=310
 		urgent-color "#fab387"
 	}
+	background-color "transparent"
 	shadow {
 
 	}
@@ -74,6 +75,204 @@ window-rule {
 	//	blur true
 	//}
 }
+cursor {
+	hide-when-typing
+	hide-after-inactive-ms 5000
+}
+overview {
+	zoom 0.45
+	backdrop-color "#1e1e2e"
+}
+recent-windows {
+	highlight {
+		active-color "#94e2d5"
+		urgent-color "#fab387"
+		padding 16
+		corner-radius 8
+	}
+	previews {
+		max-scale 0.4
+	}
+}
+layer-rule {
+	match namespace="awww-daemon"
+	place-within-backdrop true
+}
+// floating windows border
+window-rule {
+	match is-floating=true
+	border {
+		active-gradient from="#74c7ecff" to="#f5c2e7ff" angle=310
+	}
+}
+// nautilus
+window-rule {
+	match app-id="org.gnome.Nautilus"
+	open-floating true
+	default-column-width {
+		proportion 0.6
+	}
+	default-window-height {
+		proportion 0.6
+	}
+	opacity 0.95
+}
+// ghostty.float
+window-rule {
+	match app-id="ghostty.float"
+	open-floating true
+	default-column-width {
+		proportion 0.3
+	}
+	default-window-height {
+		proportion 0.25
+	}
+	opacity 0.9
+}
+// ghostty.wifi
+window-rule {
+	match app-id="ghostty.wifi"
+	open-floating true
+	default-column-width {
+		proportion 0.6
+	}
+	default-window-height {
+		proportion 0.6
+	}
+	opacity 0.9
+}
+// ghostty.bluetooth
+window-rule {
+	match app-id="ghostty.bluetooth"
+	open-floating true
+	default-column-width {
+		proportion 0.6
+	}
+	default-window-height {
+		proportion 0.6
+	}
+	opacity 0.9
+}
+// ghostty.btop
+window-rule {
+	match app-id="ghostty.btop"
+	open-floating true
+	default-column-width {
+		proportion 0.75
+	}
+	default-window-height {
+		proportion 0.75
+	}
+	opacity 0.9
+}
+// ghostty.wiremix
+window-rule {
+	match app-id="ghostty.wiremix"
+	open-floating true
+	default-column-width {
+		proportion 0.6
+	}
+	default-window-height {
+		proportion 0.6
+	}
+	opacity 0.9
+}
+// ghostty.clock
+window-rule {
+	match app-id="ghostty.clock"
+	open-floating true
+	default-column-width {
+		proportion 0.5
+	}
+	default-window-height {
+		proportion 0.5
+	}
+	opacity 0.9
+}
+// xdg-desktop-portal
+window-rule {
+	match app-id="(?i)^xdg-desktop-portal"
+	open-floating true
+	default-column-width {
+		proportion 0.6
+	}
+	default-window-height {
+		proportion 0.6
+	}
+}
+// select dialogs (discord screen share, etc.)
+window-rule {
+	match title="(?i)^select"
+	open-floating true
+	default-column-width {
+		proportion 0.6
+	}
+	default-window-height {
+		proportion 0.6
+	}
+}
+// zen dialogs
+window-rule {
+	match app-id="(?i)^zen" title="^(Library|Extension:.*)"
+	open-floating true
+	default-column-width {
+		proportion 0.7
+	}
+	default-window-height {
+		proportion 0.7
+	}
+	opacity 0.95
+}
+// ente-auth (dim_around non ha equivalente in niri)
+window-rule {
+	match app-id="io.ente.auth"
+	open-floating true
+	default-column-width {
+		proportion 0.6
+	}
+	default-window-height {
+		proportion 0.6
+	}
+	opacity 0.85
+}
+// localsend
+window-rule {
+	match app-id="localsend_app"
+	open-floating true
+	default-column-width {
+		proportion 0.5
+	}
+	default-window-height {
+		proportion 0.6
+	}
+	opacity 0.85
+}
+// imv
+window-rule {
+	match app-id="imv"
+	open-floating true
+	default-column-width {
+		proportion 0.8
+	}
+	default-window-height {
+		proportion 0.8
+	}
+}
+// spotify
+window-rule {
+	match app-id="spotify"
+	opacity 0.9
+}
+// codium
+window-rule {
+	match app-id="codium"
+	opacity 0.93
+}
+// rqt
+window-rule {
+	match app-id="rqt"
+	open-floating true
+}
 layer-rule {
  //background-effect {
 	//	blur true
@@ -83,7 +282,7 @@ layer-rule {
 spawn-at-startup "nawww" "--init"
 spawn-at-startup "hyprlock"
 spawn-at-startup "hypridle"
-spawn-at-startup "bluetoothctl power off"
+spawn-at-startup "bluetoothctl" "power" "off"
 hotkey-overlay {
 	skip-at-startup
 }
