@@ -120,7 +120,7 @@ window-rule {
 window-rule {
 	match app-id="com.mitchellh.ghostty"
 	default-column-width {
-		proportion 0.333
+		proportion 0.45
 	}
 	opacity 0.95
 }
