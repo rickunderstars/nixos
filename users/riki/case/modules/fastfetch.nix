@@ -114,13 +114,13 @@
           type = "command";
           key = "   ├─ display  ";
           keyColor = "italic_#b4befe";
-          text = "hyprctl monitors -j | jq -r '.[1] | \"\\(.width)x\\(.height) @ \\(.refreshRate)Hz (\\(.name))\"'";
+          text = "niri msg --json outputs | jq -r 'to_entries[1] | .value as $v | \"\\($v.modes[$v.current_mode].width)x\\($v.modes[$v.current_mode].height) @ \\($v.modes[$v.current_mode].refresh_rate / 1000 | round)Hz (\\(.key))\"'";
         }
         {
           type = "command";
           key = "   ╰─ display  ";
           keyColor = "italic_#b4befe";
-          text = "hyprctl monitors -j | jq -r '.[0] | \"\\(.width)x\\(.height) @ \\(.refreshRate)Hz (\\(.name))\"'";
+          text = "niri msg --json outputs | jq -r 'to_entries[0] | .value as $v | \"\\($v.modes[$v.current_mode].width)x\\($v.modes[$v.current_mode].height) @ \\($v.modes[$v.current_mode].refresh_rate / 1000 | round)Hz (\\(.key))\"'";
         }
       ];
     };

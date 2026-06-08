@@ -13,8 +13,8 @@
         layer = "top";
         position = "top";
         modules-left = [
-          "hyprland/workspaces"
-          "wlr/taskbar"
+          "niri/workspaces"
+          "niri/window"
         ];
         modules-center = [
         ];
@@ -29,23 +29,29 @@
           "battery"
           "bluetooth"
           "network"
-          "hyprland/language"
+          "niri/language"
           "clock"
         ];
         mode = "dock";
         reload_style_on_change = true;
 
-        "wlr/taskbar" = {
-          on-click = "activate";
+        "niri/window" = {
+          format = "{app_id}";
+          separate-outputs = true;
+          icon = true;
+          icon-size = 20;
+          rewrite = {
+            ".*\\.(.+)" = "$1";
+          };
         };
 
-        "hyprland/language" = {
+        "niri/language" = {
           format = "{}";
           format-it = "IT";
           format-en = "EN";
         };
 
-        "hyprland/workspaces" = {
+        "niri/workspaces" = {
           format = "{icon}";
           format-icons = {
             "1" = "I";
@@ -69,8 +75,8 @@
             "19" = "XIX";
             "20" = "XX";
           };
-          on-scroll-up = "hyprctl dispatch workspace m+1";
-          on-scroll-down = "hyprctl dispatch workspace m-1";
+          on-scroll-up = "niri msg action focus-workspace-down";
+          on-scroll-down = "niri msg action focus-workspace-up";
         };
 
         tray = {

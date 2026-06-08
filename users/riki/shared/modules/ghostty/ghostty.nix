@@ -14,7 +14,6 @@
       shell-integration-features = "no-cursor";
       cursor-style = "underline";
       mouse-hide-while-typing = true;
-      maximize = true;
       window-padding-x = 16;
       window-padding-y = 16;
       window-padding-balance = true;

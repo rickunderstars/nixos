@@ -7,7 +7,7 @@
 {
 
   services.hyprshell = {
-    enable = true;
+    enable = false;
     settings = {
       windows = {
         items_per_row = 5;

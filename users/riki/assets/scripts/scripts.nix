@@ -36,10 +36,6 @@ let
     exec ${pkgs.fish}/bin/fish ${./fish/nawww.fish} "$@"
   '';
 
-  toggle-monitor-split = pkgs.writeShellScriptBin "toggle-monitor-split" ''
-    exec ${pkgs.fish}/bin/fish ${./fish/toggle-monitor-split.fish} "$@"
-  '';
-
 in
 {
   home.packages = [
@@ -53,6 +49,5 @@ in
 
     ### fish
     nawww
-    toggle-monitor-split
   ];
 }

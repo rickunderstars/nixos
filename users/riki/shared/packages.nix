@@ -37,7 +37,6 @@
 
     ####### desk env #######
     hyprpicker
-    hyprshade
     papirus-icon-theme
     nautilus
     nautilus-python
@@ -50,6 +49,7 @@
     vscodium
     gitflow
     nixfmt
+    kdlfmt
     nixd
     gcc
     llvmPackages.clang-tools
@@ -85,9 +85,7 @@
     (stable.bottles.override { removeWarningPopup = true; })
     video-trimmer
     gimp
-    grimblast
     blender
-    goxel
     krita
     uxplay
     pavucontrol

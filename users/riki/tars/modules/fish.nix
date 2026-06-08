@@ -4,7 +4,7 @@
   programs.fish = {
 
     functions = {
-      mirror = "wl-mirror eDP-1 & sleep 0.5 && hyprctl dispatch fullscreen 0 && hyprctl dispatch movewindow mon:+1 && hyprctl dispatch focusmonitor -1";
+      mirror = "wl-mirror eDP-1 & sleep 0.5 && niri msg action fullscreen-window && niri msg action move-column-to-monitor-next && niri msg action focus-monitor-previous";
     };
     shellAbbrs = {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#tars --show-trace";

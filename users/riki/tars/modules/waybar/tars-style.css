@@ -33,7 +33,7 @@
 	transition: all 0.2s ease-in-out;
 }
 
-#taskbar,
+#window,
 #workspaces,
 #cava,
 #tray,
@@ -55,25 +55,15 @@
 	min-height: 0;
 }
 
-#taskbar {
+#window {
 	background-color: alpha(@crust, 0.4);
-	padding: 0;
 	border-top-right-radius: 16px;
+	padding: 0 0.7em 0 0.5em;
 	border-bottom-right-radius: 16px;
 }
 
-#taskbar button {
-	border-radius: 99px;
-	margin: 3px;
-	padding: 0px 4px;
-	transition: all 0.2s ease-in-out;
-}
-
-#taskbar button.active {
-	border-radius: 99px;
-	background-color: alpha(white, 0.1);
-	padding: 0px 1em;
-	margin: 3px;
+window#waybar.empty #window {
+	background-color: alpha(@crust, 0);
 }
 
 #workspaces {
@@ -96,7 +86,7 @@
 #workspaces button.active {
 	border-radius: 99px;
 	background-color: alpha(@mauve, 0.8);
-	padding: 0px 1em;
+	padding: 0px 0.4em;
 	margin: 3px;
 	color: black;
 }

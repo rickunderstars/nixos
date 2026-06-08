@@ -2,7 +2,7 @@
 
 {
   programs.niri = {
-    enable = false;
+    enable = true;
     useNautilus = true;
   };
 }

@@ -1,1 +1,365 @@
-//import host.kdl for host-specific settings
+include "host.kdl"
+input {
+	disable-power-key-handling
+	focus-follows-mouse max-scroll-amount="33%"
+	keyboard {
+		xkb {
+			layout "us,it"
+			variant "intl,"
+		}
+		numlock
+	}
+	touchpad {
+		tap
+		dwt
+		dwtp
+		drag true
+		drag-lock
+		natural-scroll
+		click-method "clickfinger"
+		accel-speed 0.0
+		accel-profile "flat"
+		scroll-method "two-finger"
+	}
+	mouse {
+		accel-speed 0.0
+		accel-profile "flat"
+	}
+}
+environment {
+	NIXOS_OZONE_WL "1"
+	QT_QPA_PLATFORM "wayland;xcb"
+	QT_QPA_PLATFORMTHEME "gtk3"
+	XDG_CURRENT_DESKTOP "niri"
+	XDG_SESSION_TYPE "wayland"
+	XDG_SESSION_DESKTOP "niri"
+	MICRO_TRUECOLOR "1"
+	GSK_RENDERER "gl"
+}
+layout {
+	gaps 5
+	center-focused-column "never"
+	preset-column-widths {
+		proportion 0.33333
+		proportion 0.5
+		proportion 0.66667
+		proportion 0.75
+		proportion 1.0
+	}
+	default-column-width {
+		proportion 0.5
+	}
+	focus-ring {
+		off
+	}
+	border {
+		width 2
+		active-gradient from="#89b4faff" to="#cba6f7ff" angle=310
+		inactive-gradient from="#181825ff" to="#313244ff" angle=310
+		urgent-color "#fab387"
+	}
+	shadow {
+
+	}
+	struts {
+		left 8
+		right 8
+	}
+}
+prefer-no-csd
+window-rule {
+	geometry-corner-radius 8
+	clip-to-geometry true
+ //background-effect {
+	//	blur true
+	//}
+}
+layer-rule {
+ //background-effect {
+	//	blur true
+	//}
+
+}
+spawn-at-startup "nawww" "--init"
+spawn-at-startup "hyprlock"
+spawn-at-startup "hypridle"
+spawn-at-startup "bluetoothctl power off"
+hotkey-overlay {
+	skip-at-startup
+}
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"
+animations {
+	slowdown 0.8
+}
+binds {
+	// binds cheatsheet
+	Mod+Shift+Slash {
+		show-hotkey-overlay
+	}
+	// overview
+	Mod+O repeat=false {
+		toggle-overview
+	}
+	// close window
+	Mod+Q repeat=false {
+		close-window
+	}
+	// terminal (ghostty)
+	Mod+Return {
+		spawn "ghostty"
+	}
+	Mod+Shift+Return {
+		spawn "ghostty" "--class=ghostty.float"
+	}
+	Mod+Shift+R {
+		spawn "fish" "-c" "ghostty --class=ghostty.float -e fish -c ros"
+	}
+	// app launcher (tofi)
+	Mod+Space {
+		spawn "fish" "-c" "pkill tofi || tofi-drun"
+	}
+	// lock screen (hyprlock)
+	Mod+Shift+L {
+		spawn "fish" "-c" "pidof hyprlock || hyprlock"
+	}
+	// file manager (nautilus)
+	Mod+E {
+		spawn "nautilus" "--new-window"
+	}
+	// wifi (impala)
+	Mod+W {
+		spawn "fish" "-c" "pidof impala && pkill impala || ghostty --class=ghostty.wifi -e impala"
+	}
+	Mod+Shift+W {
+		spawn "fish" "-c" "wifi-toggle"
+	}
+	// bluetooth (bluetuith)
+	Mod+B {
+		spawn "fish" "-c" "pidof bluetuith && pkill bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith"
+	}
+	// top (btop)
+	Ctrl+Shift+Escape {
+		spawn "fish" "-c" "pidof btop && pkill btop || ghostty --class=ghostty.btop -e btop"
+	}
+	// wallpaper
+	Mod+Shift+A {
+		spawn "fish" "-c" "nawww"
+	}
+	// audio switch
+	Mod+A allow-when-locked=true {
+		spawn "fish" "-c" "auch"
+	}
+	// media
+	Mod+P allow-when-locked=true {
+		spawn "playerctl" "play-pause"
+	}
+	Mod+BracketLeft allow-when-locked=true {
+		spawn "playerctl" "previous"
+	}
+	Mod+BracketRight allow-when-locked=true {
+		spawn "playerctl" "next"
+	}
+	// volume
+	Mod+Shift+BracketLeft allow-when-locked=true {
+		spawn-sh "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%- && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
+	}
+	Mod+Shift+BracketRight allow-when-locked=true {
+		spawn-sh "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%+ && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
+	}
+	// screenshot
+	Mod+Ctrl+Shift+S {
+		screenshot
+	}
+	Mod+S {
+		screenshot-window
+	}
+	Mod+Shift+S {
+		screenshot-screen
+	}
+	Print {
+		screenshot
+	}
+	Ctrl+Print {
+		screenshot-screen
+	}
+	Alt+Print {
+		screenshot-window
+	}
+	// tty-clock
+	Mod+H {
+		spawn "fish" "-c" "pidof tty-clock && pkill tty-clock || ghostty --class=ghostty.clock -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\""
+	}
+	// wiremix
+	Mod+V {
+		spawn "fish" "-c" "pidof wiremix && pkill wiremix || ghostty --class=ghostty.wiremix -e wiremix"
+	}
+	// hyprpicker
+	Mod+C {
+		spawn "fish" "-c" "pidof hyprpicker && pkill hyprpicker || hyprpicker -a"
+	}
+	// mute
+	Mod+M allow-when-locked=true {
+		spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	}
+	// keyboard layout
+	Mod+Shift+Space {
+		spawn-sh "niri msg action switch-layout next; layout=$(niri msg -j keyboard-layouts | jq -r '.names[.current_idx]'); dunstify -h string:x-dunst-stack-tag:kblayout \"Layout: $layout\""
+	}
+	XF86AudioRaiseVolume allow-when-locked=true {
+		spawn-sh "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%+ && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
+	}
+	XF86AudioLowerVolume allow-when-locked=true {
+		spawn-sh "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%- && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
+	}
+	XF86AudioMute allow-when-locked=true {
+		spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	}
+	XF86AudioMicMute allow-when-locked=true {
+		spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+	}
+	XF86AudioPlay allow-when-locked=true {
+		spawn-sh "playerctl play-pause"
+	}
+	XF86AudioPause allow-when-locked=true {
+		spawn-sh "playerctl play-pause"
+	}
+	XF86AudioStop allow-when-locked=true {
+		spawn-sh "playerctl stop"
+	}
+	XF86AudioPrev allow-when-locked=true {
+		spawn-sh "playerctl previous"
+	}
+	XF86AudioNext allow-when-locked=true {
+		spawn-sh "playerctl next"
+	}
+	XF86MonBrightnessUp allow-when-locked=true {
+		spawn "brightnessctl" "--class=backlight" "set" "5%+"
+	}
+	XF86MonBrightnessDown allow-when-locked=true {
+		spawn "brightnessctl" "--class=backlight" "set" "5%-"
+	}
+	// focus columns/windows
+	Mod+Left {
+		focus-column-left
+	}
+	Mod+Down {
+		focus-window-down
+	}
+	Mod+Up {
+		focus-window-up
+	}
+	Mod+Right {
+		focus-column-right
+	}
+	Mod+WheelScrollDown cooldown-ms=150 {
+		focus-column-left
+	}
+	Mod+WheelScrollUp cooldown-ms=150 {
+		focus-column-right
+	}
+	// move columns/windows
+	Mod+Shift+Left {
+		move-column-left
+	}
+	Mod+Shift+Right {
+		move-column-right
+	}
+	Mod+Shift+Down {
+		move-window-down
+	}
+	Mod+Shift+Up {
+		move-window-up
+	}
+	// move windows (consume/expel)
+	Mod+Ctrl+BracketLeft {
+		consume-or-expel-window-left
+	}
+	Mod+Ctrl+BracketRight {
+		consume-or-expel-window-right
+	}
+	// move columns (monitor)
+	Mod+Shift+Comma {
+		move-column-to-monitor-left
+	}
+	Mod+Shift+Period {
+		move-column-to-monitor-right
+	}
+	// move columns (workspace)
+	Mod+Ctrl+Shift+Period {
+		move-column-to-workspace-down
+	}
+	Mod+Ctrl+Shift+Comma {
+		move-column-to-workspace-up
+	}
+	Mod+Ctrl+Shift+WheelScrollDown cooldown-ms=150 {
+		move-column-to-workspace-down
+	}
+	Mod+Ctrl+Shift+WheelScrollUp cooldown-ms=150 {
+		move-column-to-workspace-up
+	}
+	// move workspace
+	Mod+Ctrl+Period {
+		move-workspace-down
+	}
+	Mod+Ctrl+Comma {
+		move-workspace-up
+	}
+	// focus workspace
+	Mod+Period {
+		focus-workspace-down
+	}
+	Mod+Comma {
+		focus-workspace-up
+	}
+	Mod+Ctrl+WheelScrollDown cooldown-ms=150 {
+		focus-workspace-down
+	}
+	Mod+Ctrl+WheelScrollUp cooldown-ms=150 {
+		focus-workspace-up
+	}
+	// focus monitor (cycle)
+	Mod+Tab {
+		spawn "fish" "-c" "focus-monitor-next"
+	}
+	Mod+T {
+		toggle-window-floating
+	}
+	// rotate monitor
+	Mod+R {
+		spawn "fish" "-c" "rotate-toggle"
+	}
+	Mod+Ctrl+Shift+Up {
+		switch-preset-window-width
+	}
+	Mod+Ctrl+Shift+R {
+		reset-window-height
+	}
+	// maximize/fullscreen
+	Mod+F {
+		maximize-column
+	}
+	Mod+Shift+F {
+		fullscreen-window
+	}
+	// change width/height
+	Mod+Minus {
+		set-column-width "-10%"
+	}
+	Mod+Equal {
+		set-column-width "+10%"
+	}
+	Mod+Shift+Minus {
+		set-window-height "-10%"
+	}
+	Mod+Shift+Equal {
+		set-window-height "+10%"
+	}
+	// toggle binds inhibitors
+	Mod+Escape allow-inhibiting=false {
+		toggle-keyboard-shortcuts-inhibit
+	}
+	// monitor off
+	Mod+Shift+P {
+		power-off-monitors
+	}
+}

@@ -14,19 +14,20 @@
     ];
     interactiveShellInit = ''
       if status is-login
-        if uwsm check may-start
-          exec uwsm start hyprland-uwsm.desktop
+        if test "$XDG_VTNR" = "1"
+          exec niri-session
         end
       end
 
       set -g fish_greeting
       if command -q nix-your-shell
-          nix-your-shell fish | source
+        nix-your-shell fish | source
       end
       if not set -q IN_NIX_SHELL
-          fastfetch
+        fastfetch
       end
     '';
+
     functions = {
       br = ''
         			set -l cmd_file (mktemp)
@@ -115,21 +116,24 @@
       '';
 
       rotate-toggle = ''
-        set -l monitor_data (hyprctl -j monitors | jq -r '.[] | select(.focused==true) | "\(.name) \(.width)x\(.height)@\(.refreshRate) \(.x)x\(.y) \(.scale) \(.transform)"')
-
-        set -l parts (string split " " $monitor_data)
-        set -l name $parts[1]
-        set -l res $parts[2]
-        set -l pos $parts[3]
-        set -l scale $parts[4]
-        set -l transform $parts[5]
-
-        set -l new_transform 0
-        if test "$transform" = "0"
-            set new_transform 1
+        set -l output (niri msg -j workspaces | jq -r '.[] | select(.is_focused == true) | .output')
+        set -l state_file /tmp/rotate-toggle-$output
+        if test -f $state_file
+            niri msg output $output transform normal
+            rm $state_file
+        else
+            niri msg output $output transform 90
+            touch $state_file
         end
+      '';
 
-        hyprctl keyword monitor "$name, $res, $pos, $scale, transform, $new_transform"
+      focus-monitor-next = ''
+        set -l before (niri msg -j workspaces | jq -r '.[] | select(.is_focused == true) | .output')
+        niri msg action focus-monitor-right
+        set -l after (niri msg -j workspaces | jq -r '.[] | select(.is_focused == true) | .output')
+        if test "$before" = "$after"
+            niri msg action focus-monitor-left
+        end
       '';
 
       # misc

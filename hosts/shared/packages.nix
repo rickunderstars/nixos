@@ -8,8 +8,7 @@
     brightnessctl
     procps
     distrobox
-    hyprland-qt-support
-    hyprpolkitagent
+    xwayland-satellite
     exfatprogs
     dosfstools
     catppuccin
