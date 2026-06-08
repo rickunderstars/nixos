@@ -270,6 +270,20 @@ window-rule {
 		proportion 0.8
 	}
 }
+// steam
+window-rule {
+	match app-id="steam"
+	default-column-width {
+		proportion 0.66667
+	}
+}
+// discord
+window-rule {
+	match app-id="discord"
+	default-column-width {
+		proportion 0.66667
+	}
+}
 // spotify
 window-rule {
 	match app-id="spotify"
