@@ -355,9 +355,6 @@ binds {
 	Mod+Shift+Return {
 		spawn "ghostty" "--class=float.com.mitchellh.ghostty"
 	}
-	Mod+Shift+R {
-		spawn "fish" "-c" "ghostty -e fish -c ros"
-	}
 	// app launcher (tofi)
 	Mod+Space {
 		spawn "fish" "-c" "pkill tofi || tofi-drun"
@@ -609,4 +606,15 @@ binds {
 	Mod+Shift+P {
 		power-off-monitors
 	}
+	// ROS //
+	Mod+Shift+R {
+		spawn "fish" "-c" "ghostty -e fish -c ros"
+	}
 }
+window-rule {
+	match app-id="rviz2"
+	default-column-width {
+		proportion 1.0
+	}
+}
+ // ROS //
