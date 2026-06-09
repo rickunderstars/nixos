@@ -134,5 +134,6 @@
     sm64coopdx
     dolphin-emu
     quickemu
+    yt-dlp
   ];
 }
