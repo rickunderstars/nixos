@@ -14,6 +14,7 @@
     ./firefox.nix
     ./fish.nix
     ./ghostty/ghostty.nix
+    ./kitty.nix
     ./git/git.nix
     ./global-themes.nix
     ./gnome-keyring.nix
