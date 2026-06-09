@@ -127,17 +127,17 @@ window-rule {
 	}
 	opacity 0.97
 }
-// ghostty
+// kitty
 window-rule {
-	match app-id="com.mitchellh.com.mitchellh.ghostty"
+	match app-id="kitty"
 	default-column-width {
 		proportion 0.5
 	}
 	opacity 0.95
 }
-// float.com.mitchellh.ghostty
+// float.kitty
 window-rule {
-	match app-id="float.com.mitchellh.ghostty"
+	match app-id="float.kitty"
 	open-floating true
 	default-column-width {
 		proportion 0.3
@@ -147,9 +147,9 @@ window-rule {
 	}
 	opacity 0.95
 }
-// wifi.com.mitchellh.ghostty
+// wifi.kitty
 window-rule {
-	match app-id="wifi.com.mitchellh.ghostty"
+	match app-id="wifi.kitty"
 	open-floating true
 	default-column-width {
 		proportion 0.6
@@ -159,9 +159,9 @@ window-rule {
 	}
 	opacity 0.95
 }
-// bluetooth.com.mitchellh.ghostty
+// bluetooth.kitty
 window-rule {
-	match app-id="bluetooth.com.mitchellh.ghostty"
+	match app-id="bluetooth.kitty"
 	open-floating true
 	default-column-width {
 		proportion 0.6
@@ -171,9 +171,9 @@ window-rule {
 	}
 	opacity 0.95
 }
-// btop.com.mitchellh.ghostty
+// btop.kitty
 window-rule {
-	match app-id="btop.com.mitchellh.ghostty"
+	match app-id="btop.kitty"
 	open-floating true
 	default-column-width {
 		proportion 0.75
@@ -183,9 +183,9 @@ window-rule {
 	}
 	opacity 0.95
 }
-// wiremix.com.mitchellh.ghostty
+// wiremix.kitty
 window-rule {
-	match app-id="wiremix.com.mitchellh.ghostty"
+	match app-id="wiremix.kitty"
 	open-floating true
 	default-column-width {
 		proportion 0.6
@@ -195,9 +195,9 @@ window-rule {
 	}
 	opacity 0.95
 }
-// clock.com.mitchellh.ghostty
+// clock.kitty
 window-rule {
-	match app-id="clock.com.mitchellh.ghostty"
+	match app-id="clock.kitty"
 	open-floating true
 	default-column-width {
 		proportion 0.5
@@ -348,12 +348,12 @@ binds {
 	Mod+Q repeat=false {
 		close-window
 	}
-	// terminal (ghostty)
+	// terminal (kitty)
 	Mod+Return {
-		spawn "ghostty"
+		spawn "kitty"
 	}
 	Mod+Shift+Return {
-		spawn "ghostty" "--class=float.com.mitchellh.ghostty"
+		spawn "kitty" "--class=float.kitty"
 	}
 	// app launcher (tofi)
 	Mod+Space {
@@ -369,18 +369,18 @@ binds {
 	}
 	// wifi (impala)
 	Mod+W {
-		spawn "fish" "-c" "pidof impala && pkill impala || ghostty --class=wifi.com.mitchellh.ghostty -e impala"
+		spawn "fish" "-c" "pidof impala && pkill impala || kitty --class=wifi.kitty -e impala"
 	}
 	Mod+Shift+W {
 		spawn "fish" "-c" "wifi-toggle"
 	}
 	// bluetooth (bluetuith)
 	Mod+B {
-		spawn "fish" "-c" "pidof bluetuith && pkill bluetuith || ghostty --class=bluetooth.com.mitchellh.ghostty -e bluetuith"
+		spawn "fish" "-c" "pidof bluetuith && pkill bluetuith || kitty --class=bluetooth.kitty -e bluetuith"
 	}
 	// top (btop)
 	Ctrl+Shift+Escape {
-		spawn "fish" "-c" "pidof btop && pkill btop || ghostty --class=btop.com.mitchellh.ghostty -e btop"
+		spawn "fish" "-c" "pidof btop && pkill btop || kitty --class=btop.kitty -e btop"
 	}
 	// wallpaper
 	Mod+Shift+A {
@@ -428,11 +428,11 @@ binds {
 	}
 	// tty-clock
 	Mod+H {
-		spawn "fish" "-c" "pidof tty-clock && pkill tty-clock || ghostty --class=clock.com.mitchellh.ghostty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\""
+		spawn "fish" "-c" "pidof tty-clock && pkill tty-clock || kitty --class=clock.kitty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\""
 	}
 	// wiremix
 	Mod+V {
-		spawn "fish" "-c" "pidof wiremix && pkill wiremix || ghostty --class=wiremix.com.mitchellh.ghostty -e wiremix"
+		spawn "fish" "-c" "pidof wiremix && pkill wiremix || kitty --class=wiremix.kitty -e wiremix"
 	}
 	// hyprpicker
 	Mod+C {
@@ -608,10 +608,10 @@ binds {
 	}
 	// ROS //
 	Mod+Shift+R {
-		spawn "fish" "-c" "ghostty -e fish -c ros"
+		spawn "fish" "-c" "kitty -e fish -c ros"
 	}
 	Mod+Shift+M {
-		spawn "fish" "-c" "ghostty -e fish -c moveit"
+		spawn "fish" "-c" "kitty -e fish -c moveit"
 	}
 }
 window-rule {

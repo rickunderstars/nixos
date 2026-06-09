@@ -115,7 +115,7 @@
           scroll-step = 2.5;
           reverse-scrolling = true;
           on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          on-click-right = "fish -c 'pidof wiremix || ghostty --class=wiremix.com.mitchellh.ghostty -e wiremix'";
+          on-click-right = "fish -c 'pidof wiremix || kitty --class=wiremix.kitty -e wiremix'";
         };
 
         backlight = {
@@ -154,13 +154,13 @@
         memory = {
           interval = 10;
           format = "<span font_size='150%' rise='-2560'></span>{percentage}";
-          on-click = "fish -c 'pidof btop || ghostty --class=btop.com.mitchellh.ghostty -e btop'";
+          on-click = "fish -c 'pidof btop || kitty --class=btop.kitty -e btop'";
         };
 
         cpu = {
           interval = 2;
           format = "<span font_size='150%' rise='-2560'> </span>{usage}";
-          on-click = "fish -c 'pidof btop || ghostty --class=btop.com.mitchellh.ghostty -e btop'";
+          on-click = "fish -c 'pidof btop || kitty --class=btop.kitty -e btop'";
         };
 
         battery = {
@@ -193,7 +193,7 @@
           tooltip-format-connected = "{device_enumerate}";
           tooltip-format-enumerate-connected = " {device_alias}";
 
-          on-click = "fish -c 'pidof bluetuith || ghostty --class=bluetooth.com.mitchellh.ghostty -e bluetuith'";
+          on-click = "fish -c 'pidof bluetuith || kitty --class=bluetooth.kitty -e bluetuith'";
         };
 
         network = {
@@ -213,14 +213,14 @@
           tooltip-format-disconnected = "disconnected";
           tooltip-format-disabled = "wifi off";
 
-          on-click = "fish -c 'pidof impala || ghostty --class=wifi.com.mitchellh.ghostty -e impala'";
+          on-click = "fish -c 'pidof impala || kitty --class=wifi.kitty -e impala'";
           on-click-right = "fish -c wifi-toggle";
         };
 
         clock = {
           tooltip-format = "{:%a %d-%b-%Y}";
           format = "{:%H:%M}";
-          on-click = "fish -c 'pidof tty-clock && pkill tty-clock|| ghostty --class=clock.com.mitchellh.ghostty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'";
+          on-click = "fish -c 'pidof tty-clock && pkill tty-clock|| kitty --class=clock.kitty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'";
         };
       };
     };
