@@ -356,7 +356,7 @@ binds {
 		spawn "ghostty" "--class=float.com.mitchellh.ghostty"
 	}
 	Mod+Shift+R {
-		spawn "fish" "-c" "ghostty --class=float.com.mitchellh.ghostty -e fish -c ros"
+		spawn "fish" "-c" "ghostty -e fish -c ros"
 	}
 	// app launcher (tofi)
 	Mod+Space {
