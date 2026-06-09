@@ -610,6 +610,9 @@ binds {
 	Mod+Shift+R {
 		spawn "fish" "-c" "ghostty -e fish -c ros"
 	}
+	Mod+Shift+M {
+		spawn "fish" "-c" "ghostty -e fish -c moveit"
+	}
 }
 window-rule {
 	match app-id="rviz2"
