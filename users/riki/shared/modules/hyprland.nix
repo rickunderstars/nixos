@@ -60,44 +60,44 @@
         "match:class org.gnome.Nautilus, size (monitor_w*0.6) (monitor_h*0.6)"
 
         # ghostty float
-        "match:class ghostty.float, float on"
-        "match:class ghostty.float, move cursor_x cursor_y"
-        "match:class ghostty.float, size (monitor_w*0.3) (monitor_h*0.25)"
+        "match:class float.com.mitchellh.ghostty, float on"
+        "match:class float.com.mitchellh.ghostty, move cursor_x cursor_y"
+        "match:class float.com.mitchellh.ghostty, size (monitor_w*0.3) (monitor_h*0.25)"
 
         # wifi
-        "match:class ghostty.wifi, float on"
-        "match:class ghostty.wifi, center on"
-        "match:class ghostty.wifi, size (monitor_w*0.6) (monitor_h*0.6)"
-        "match:class ghostty.wifi, pin on"
-        "match:class ghostty.wifi, dim_around on"
+        "match:class wifi.com.mitchellh.ghostty, float on"
+        "match:class wifi.com.mitchellh.ghostty, center on"
+        "match:class wifi.com.mitchellh.ghostty, size (monitor_w*0.6) (monitor_h*0.6)"
+        "match:class wifi.com.mitchellh.ghostty, pin on"
+        "match:class wifi.com.mitchellh.ghostty, dim_around on"
 
         # bluetooth
-        "match:class ghostty.bluetooth, float on"
-        "match:class ghostty.bluetooth, center on"
-        "match:class ghostty.bluetooth, size (monitor_w*0.6) (monitor_h*0.6)"
-        "match:class ghostty.bluetooth, pin on"
-        "match:class ghostty.bluetooth, dim_around on"
+        "match:class bluetooth.com.mitchellh.ghostty, float on"
+        "match:class bluetooth.com.mitchellh.ghostty, center on"
+        "match:class bluetooth.com.mitchellh.ghostty, size (monitor_w*0.6) (monitor_h*0.6)"
+        "match:class bluetooth.com.mitchellh.ghostty, pin on"
+        "match:class bluetooth.com.mitchellh.ghostty, dim_around on"
 
         # btop
-        "match:class ghostty.btop, float on"
-        "match:class ghostty.btop, center on"
-        "match:class ghostty.btop, size (monitor_w*0.75) (monitor_h*0.75)"
-        "match:class ghostty.btop, pin on"
-        "match:class ghostty.btop, dim_around on"
+        "match:class btop.com.mitchellh.ghostty, float on"
+        "match:class btop.com.mitchellh.ghostty, center on"
+        "match:class btop.com.mitchellh.ghostty, size (monitor_w*0.75) (monitor_h*0.75)"
+        "match:class btop.com.mitchellh.ghostty, pin on"
+        "match:class btop.com.mitchellh.ghostty, dim_around on"
 
         # wiremix
-        "match:class ghostty.wiremix, float on"
-        "match:class ghostty.wiremix, center on"
-        "match:class ghostty.wiremix, size (monitor_w*0.6) (monitor_h*0.6)"
-        "match:class ghostty.wiremix, pin on"
-        "match:class ghostty.wiremix, dim_around on"
+        "match:class wiremix.com.mitchellh.ghostty, float on"
+        "match:class wiremix.com.mitchellh.ghostty, center on"
+        "match:class wiremix.com.mitchellh.ghostty, size (monitor_w*0.6) (monitor_h*0.6)"
+        "match:class wiremix.com.mitchellh.ghostty, pin on"
+        "match:class wiremix.com.mitchellh.ghostty, dim_around on"
 
         # tty-clock
-        "match:class ghostty.clock, float on"
-        "match:class ghostty.clock, center on"
-        "match:class ghostty.clock, size (monitor_w*0.5) (monitor_h*0.5)"
-        "match:class ghostty.clock, pin on"
-        "match:class ghostty.clock, dim_around on"
+        "match:class clock.com.mitchellh.ghostty, float on"
+        "match:class clock.com.mitchellh.ghostty, center on"
+        "match:class clock.com.mitchellh.ghostty, size (monitor_w*0.5) (monitor_h*0.5)"
+        "match:class clock.com.mitchellh.ghostty, pin on"
+        "match:class clock.com.mitchellh.ghostty, dim_around on"
 
         # xdg-desktop-portal dialogs
         "match:class ^(?i)(xdg-desktop-portal.*), float on"
@@ -173,33 +173,33 @@
 
         ### ghostty
         "$mod, return, exec, ghostty"
-        "$mod SHIFT, return, exec, fish -c 'ghostty --class=ghostty.float'"
-        "$mod SHIFT, r, exec, fish -c 'ghostty --class=ghostty.float -e fish -c ros'"
+        "$mod SHIFT, return, exec, fish -c 'ghostty --class=float.com.mitchellh.ghostty'"
+        "$mod SHIFT, r, exec, fish -c 'ghostty --class=float.com.mitchellh.ghostty -e fish -c ros'"
 
         ### close/kill window
         "$mod, q, killactive, "
         "$mod SHIFT, q, forcekillactive, "
 
         ### wifi (impala)
-        "$mod, w, exec, fish -c 'pidof impala && pkill impala || ghostty --class=ghostty.wifi -e impala'"
+        "$mod, w, exec, fish -c 'pidof impala && pkill impala || ghostty --class=wifi.com.mitchellh.ghostty -e impala'"
 
         ### plane mode toggle
         "$mod SHIFT, w, exec, fish -c wifi-toggle"
 
         ### bluetooth
-        "$mod, b, exec, fish -c 'pidof bluetuith && pkill bluetuith|| ghostty --class=ghostty.bluetooth -e bluetuith'"
+        "$mod, b, exec, fish -c 'pidof bluetuith && pkill bluetuith|| ghostty --class=bluetooth.com.mitchellh.ghostty -e bluetuith'"
 
         ### tofi
         "$mod, space, exec, fish -c 'pkill tofi || tofi-drun'"
 
         ### btop
-        "CTRL SHIFT, escape, exec, fish -c 'pidof btop && pkill btop|| ghostty --class=ghostty.btop -e btop'"
+        "CTRL SHIFT, escape, exec, fish -c 'pidof btop && pkill btop|| ghostty --class=btop.com.mitchellh.ghostty -e btop'"
 
         ### audio mixer (wiremix)
-        "$mod, v, exec, fish -c 'pidof wiremix && pkill wiremix || ghostty --class=ghostty.wiremix -e wiremix'"
+        "$mod, v, exec, fish -c 'pidof wiremix && pkill wiremix || ghostty --class=wiremix.com.mitchellh.ghostty -e wiremix'"
 
         ### tty-clock
-        "$mod, h, exec, fish -c 'pidof tty-clock && pkill tty-clock || ghostty --class=ghostty.clock -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'"
+        "$mod, h, exec, fish -c 'pidof tty-clock && pkill tty-clock || ghostty --class=clock.com.mitchellh.ghostty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'"
 
         ### file manager
         "$mod, e, exec, nautilus --new-window"

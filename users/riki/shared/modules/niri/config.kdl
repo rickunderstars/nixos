@@ -38,12 +38,18 @@ environment {
 }
 layout {
 	gaps 5
-	center-focused-column "never"
+	center-focused-column "on-overflow"
+	always-center-single-column
 	preset-column-widths {
 		proportion 0.33333
 		proportion 0.5
 		proportion 0.66667
-		proportion 0.75
+		proportion 1.0
+	}
+	preset-window-heights {
+		proportion 0.33333
+		proportion 0.5
+		proportion 0.66667
 		proportion 1.0
 	}
 	default-column-width {
@@ -54,11 +60,14 @@ layout {
 	}
 	border {
 		width 2
-		active-gradient from="#89b4faff" to="#cba6f7ff" angle=310
-		inactive-gradient from="#181825ff" to="#313244ff" angle=310
+		active-gradient from="#89b4fa" to="#cba6f7" angle=330
+		inactive-gradient from="#181825" to="#313244" angle=330
 		urgent-color "#fab387"
 	}
 	background-color "transparent"
+	insert-hint {
+		gradient from="#74c7ec" to="#cba6f7" angle=60
+	}
 	shadow {
 
 	}
@@ -103,7 +112,7 @@ layer-rule {
 window-rule {
 	match is-floating=true
 	border {
-		active-gradient from="#74c7ecff" to="#f5c2e7ff" angle=310
+		active-gradient from="#74c7ec" to="#f5c2e7" angle=330
 	}
 }
 // nautilus
@@ -120,27 +129,27 @@ window-rule {
 }
 // ghostty
 window-rule {
-	match app-id="com.mitchellh.ghostty"
+	match app-id="com.mitchellh.com.mitchellh.ghostty"
 	default-column-width {
 		proportion 0.5
 	}
 	opacity 0.95
 }
-// ghostty.float
+// float.com.mitchellh.ghostty
 window-rule {
-	match app-id="ghostty.float"
+	match app-id="float.com.mitchellh.ghostty"
 	open-floating true
 	default-column-width {
 		proportion 0.3
 	}
 	default-window-height {
-		proportion 0.25
+		proportion 0.5
 	}
 	opacity 0.95
 }
-// ghostty.wifi
+// wifi.com.mitchellh.ghostty
 window-rule {
-	match app-id="ghostty.wifi"
+	match app-id="wifi.com.mitchellh.ghostty"
 	open-floating true
 	default-column-width {
 		proportion 0.6
@@ -150,9 +159,9 @@ window-rule {
 	}
 	opacity 0.95
 }
-// ghostty.bluetooth
+// bluetooth.com.mitchellh.ghostty
 window-rule {
-	match app-id="ghostty.bluetooth"
+	match app-id="bluetooth.com.mitchellh.ghostty"
 	open-floating true
 	default-column-width {
 		proportion 0.6
@@ -162,9 +171,9 @@ window-rule {
 	}
 	opacity 0.95
 }
-// ghostty.btop
+// btop.com.mitchellh.ghostty
 window-rule {
-	match app-id="ghostty.btop"
+	match app-id="btop.com.mitchellh.ghostty"
 	open-floating true
 	default-column-width {
 		proportion 0.75
@@ -174,9 +183,9 @@ window-rule {
 	}
 	opacity 0.95
 }
-// ghostty.wiremix
+// wiremix.com.mitchellh.ghostty
 window-rule {
-	match app-id="ghostty.wiremix"
+	match app-id="wiremix.com.mitchellh.ghostty"
 	open-floating true
 	default-column-width {
 		proportion 0.6
@@ -186,9 +195,9 @@ window-rule {
 	}
 	opacity 0.95
 }
-// ghostty.clock
+// clock.com.mitchellh.ghostty
 window-rule {
-	match app-id="ghostty.clock"
+	match app-id="clock.com.mitchellh.ghostty"
 	open-floating true
 	default-column-width {
 		proportion 0.5
@@ -320,6 +329,7 @@ spawn-at-startup "hypridle"
 spawn-at-startup "bluetoothctl" "power" "off"
 hotkey-overlay {
 	skip-at-startup
+	hide-not-bound
 }
 screenshot-path "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"
 animations {
@@ -343,10 +353,10 @@ binds {
 		spawn "ghostty"
 	}
 	Mod+Shift+Return {
-		spawn "ghostty" "--class=ghostty.float"
+		spawn "ghostty" "--class=float.com.mitchellh.ghostty"
 	}
 	Mod+Shift+R {
-		spawn "fish" "-c" "ghostty --class=ghostty.float -e fish -c ros"
+		spawn "fish" "-c" "ghostty --class=float.com.mitchellh.ghostty -e fish -c ros"
 	}
 	// app launcher (tofi)
 	Mod+Space {
@@ -362,18 +372,18 @@ binds {
 	}
 	// wifi (impala)
 	Mod+W {
-		spawn "fish" "-c" "pidof impala && pkill impala || ghostty --class=ghostty.wifi -e impala"
+		spawn "fish" "-c" "pidof impala && pkill impala || ghostty --class=wifi.com.mitchellh.ghostty -e impala"
 	}
 	Mod+Shift+W {
 		spawn "fish" "-c" "wifi-toggle"
 	}
 	// bluetooth (bluetuith)
 	Mod+B {
-		spawn "fish" "-c" "pidof bluetuith && pkill bluetuith || ghostty --class=ghostty.bluetooth -e bluetuith"
+		spawn "fish" "-c" "pidof bluetuith && pkill bluetuith || ghostty --class=bluetooth.com.mitchellh.ghostty -e bluetuith"
 	}
 	// top (btop)
 	Ctrl+Shift+Escape {
-		spawn "fish" "-c" "pidof btop && pkill btop || ghostty --class=ghostty.btop -e btop"
+		spawn "fish" "-c" "pidof btop && pkill btop || ghostty --class=btop.com.mitchellh.ghostty -e btop"
 	}
 	// wallpaper
 	Mod+Shift+A {
@@ -421,11 +431,11 @@ binds {
 	}
 	// tty-clock
 	Mod+H {
-		spawn "fish" "-c" "pidof tty-clock && pkill tty-clock || ghostty --class=ghostty.clock -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\""
+		spawn "fish" "-c" "pidof tty-clock && pkill tty-clock || ghostty --class=clock.com.mitchellh.ghostty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\""
 	}
 	// wiremix
 	Mod+V {
-		spawn "fish" "-c" "pidof wiremix && pkill wiremix || ghostty --class=ghostty.wiremix -e wiremix"
+		spawn "fish" "-c" "pidof wiremix && pkill wiremix || ghostty --class=wiremix.com.mitchellh.ghostty -e wiremix"
 	}
 	// hyprpicker
 	Mod+C {
@@ -564,6 +574,9 @@ binds {
 	}
 	Mod+Ctrl+Shift+Up {
 		switch-preset-window-width
+	}
+	Mod+Ctrl+Shift+Down {
+		switch-preset-window-height
 	}
 	Mod+Ctrl+Shift+R {
 		reset-window-height
