@@ -16,7 +16,7 @@
     obsidian.enable = true;
     go.enable = true;
     gradle.enable = true;
-    gemini-cli.enable = true;
+    antigravity-cli.enable = true;
     claude-code.enable = true;
   };
 }
