@@ -72,8 +72,8 @@ layout {
 
 	}
 	struts {
-		left 8
-		right 8
+		left 10
+		right 10
 	}
 }
 prefer-no-csd
