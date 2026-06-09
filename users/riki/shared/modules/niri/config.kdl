@@ -71,6 +71,7 @@ prefer-no-csd
 window-rule {
 	geometry-corner-radius 8
 	clip-to-geometry true
+	draw-border-with-background false
  //background-effect {
 	//	blur true
 	//}
@@ -115,6 +116,7 @@ window-rule {
 	default-window-height {
 		proportion 0.6
 	}
+	opacity 0.97
 }
 // ghostty
 window-rule {
@@ -246,7 +248,7 @@ window-rule {
 	default-window-height {
 		proportion 0.6
 	}
-	opacity 0.9
+	opacity 0.95
 }
 // localsend
 window-rule {
@@ -258,6 +260,7 @@ window-rule {
 	default-window-height {
 		proportion 0.6
 	}
+	opacity 0.97
 }
 // imv
 window-rule {
@@ -298,7 +301,7 @@ window-rule {
 	default-column-width {
 		proportion 1.0
 	}
- //opacity 0.93
+	opacity 0.93
 }
 // rqt
 window-rule {
