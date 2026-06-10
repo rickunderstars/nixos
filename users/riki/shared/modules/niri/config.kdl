@@ -92,7 +92,7 @@ blur {
 }
 cursor {
 	hide-when-typing
-	hide-after-inactive-ms 5000
+	hide-after-inactive-ms 4096
 }
 overview {
 	zoom 0.45
@@ -362,6 +362,10 @@ binds {
 	}
 	Mod+Shift+Return {
 		spawn "kitty" "--class=float.kitty"
+	}
+	// terminal (ghostty)
+	Mod+G {
+		spawn "ghostty"
 	}
 	// app launcher (tofi)
 	Mod+Space {
