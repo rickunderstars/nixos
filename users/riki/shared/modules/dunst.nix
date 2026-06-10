@@ -19,7 +19,7 @@
         alignment = "center";
 
         # catppuccin mavue
-        background = "#1e1e2ed5";
+        background = "#1e1e2e80";
         foreground = "#cdd6f4ff";
         frame_color = "#cba6f7ff";
         highlight = "#313244ff";
