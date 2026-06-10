@@ -12,26 +12,6 @@
       mainBar = {
         layer = "top";
         position = "top";
-        modules-left = [
-          "niri/workspaces"
-          "niri/window"
-        ];
-        modules-center = [
-        ];
-        modules-right = [
-          "tray"
-          "cava"
-          "wireplumber"
-          "backlight"
-          "idle_inhibitor"
-          "memory"
-          "cpu"
-          "battery"
-          "bluetooth"
-          "network"
-          "niri/language"
-          "clock"
-        ];
         mode = "dock";
         reload_style_on_change = true;
 

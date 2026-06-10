@@ -2,7 +2,6 @@
 
 {
   services.hypridle = {
-    enable = true;
     settings = {
       general = {
         lock_cmd = "pidof hyprlock || hyprlock";
@@ -12,21 +11,26 @@
 
       listener = [
         {
-          timeout = 20; # 20sec - turn off keyboard backlight
+          timeout = 10; # 10sec - turn off keyboard backlight
           on-timeout = "brightnessctl -sd platform::kbd_backlight set 0";
           on-resume = "brightnessctl -rd platform::kbd_backlight";
         }
         {
-          timeout = 240; # 4min - lower screen brightness
-          on-timeout = "brightnessctl -s set 10";
+          timeout = 20; # 20sec - lower screen brightness
+          on-timeout = "brightnessctl -s; [ $(brightnessctl get) -gt 25 ] && brightnessctl set 20";
           on-resume = "brightnessctl -r";
         }
         {
-          timeout = 300; # 5min - lock screen
+          timeout = 60; # 1min - lock screen
           on-timeout = "pidof hyprlock || hyprlock";
         }
         {
-          timeout = 1200; # 20min - suspend
+          timeout = 120; # 2min - turn off screen
+          on-timeout = "niri msg action power-off-monitors";
+          on-resume = "niri msg action power-on-monitors";
+        }
+        {
+          timeout = 600; # 10min - suspend
           on-timeout = "systemctl suspend";
         }
       ];

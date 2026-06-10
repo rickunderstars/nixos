@@ -24,7 +24,7 @@
       text-color = "#cdd6f4";
       prompt-color = "#eba0ac";
       selection-color = "#89dceb";
-      background-color = "#1e1e2ec0";
+      background-color = "#1e1e2ea0";
     };
   };
 }

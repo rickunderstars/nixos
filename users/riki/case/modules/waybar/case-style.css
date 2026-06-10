@@ -149,19 +149,10 @@ window#waybar.empty #window {
 	padding-left: 0;
 }
 
-#idle_inhibitor {
-	background-image: linear-gradient(
-		to right,
-		alpha(@maroon, 0.8) 0%,
-		alpha(@peach, 0.8) 100%
-	);
-	color: black;
-}
-
 #memory {
 	background-image: linear-gradient(
 		to right,
-		alpha(@peach, 0.8) 0%,
+		alpha(@maroon, 0.8) 0%,
 		alpha(@peach, 0.8) 100%
 	);
 	color: black;
