@@ -12,12 +12,12 @@
       listener = [
         {
           timeout = 10; # 10sec - turn off keyboard backlight
-          on-timeout = "brightnessctl -sd platform::kbd_backlight set 0";
+          on-timeout = "brightnessctl -sd platform::kbd_backlight set 0%";
           on-resume = "brightnessctl -rd platform::kbd_backlight";
         }
         {
           timeout = 20; # 20sec - lower screen brightness
-          on-timeout = "brightnessctl -s; [ $(brightnessctl get) -gt 25 ] && brightnessctl set 20";
+          on-timeout = "brightnessctl -s; [ $(brightnessctl get) -gt 63840 ] && brightnessctl set 16%";
           on-resume = "brightnessctl -r";
         }
         {
