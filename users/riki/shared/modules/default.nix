@@ -16,6 +16,7 @@
     ./ghostty/ghostty.nix
     ./kitty.nix
     ./git/git.nix
+    ./ssh.nix
     ./global-themes.nix
     ./gnome-keyring.nix
     ./hypridle.nix

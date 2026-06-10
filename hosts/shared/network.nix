@@ -28,8 +28,21 @@
 
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 53317 5353 7000 7001 7100 ];
-      allowedUDPPorts = [ 53317 5353 6000 6001 7011 ];
+      allowedTCPPorts = [
+        22
+        53317
+        5353
+        7000
+        7001
+        7100
+      ];
+      allowedUDPPorts = [
+        53317
+        5353
+        6000
+        6001
+        7011
+      ];
     };
   };
 

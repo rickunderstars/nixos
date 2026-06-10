@@ -16,6 +16,13 @@
   };
 
   services = {
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+        PermitRootLogin = "no";
+      };
+    };
     logind.settings.Login.HandlePowerKey = "ignore";
     gvfs.enable = true;
     udisks2.enable = true;
