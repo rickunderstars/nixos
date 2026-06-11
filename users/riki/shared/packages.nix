@@ -34,6 +34,7 @@
     mcat
     nix-search-cli
     caligula
+    kalker
 
     ####### desk env #######
     hyprpicker
