@@ -155,6 +155,7 @@
       man = "batman";
       spf = "superfile";
       airplay = "uxplay -p -fps 60 -vsync no";
+      calc = "kalker";
 
       mime = "xdg-mime query filetype";
 
