@@ -352,6 +352,9 @@ binds {
 	Mod+O repeat=false {
 		toggle-overview
 	}
+	Mod+Z repeat=false {
+		toggle-overview
+	}
 	// close window
 	Mod+Q repeat=false {
 		close-window
