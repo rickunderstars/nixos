@@ -122,7 +122,6 @@
     wings
     ente-auth
     spotify
-    papers
     aseprite
     discord
     discover-overlay

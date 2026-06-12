@@ -49,7 +49,7 @@
       "x-scheme-handler/about" = [ "zen-twilight.desktop" ];
       "x-scheme-handler/unknown" = [ "zen-twilight.desktop" ];
       "text/x-arduino" = [ "arduino-arduinoide.desktop" ];
-      "application/pdf" = [ "org.gnome.Papers.desktop" ];
+      "application/pdf" = [ "zen-twilight.desktop" ];
       "model/stl" = [ "f3d.desktop" ];
       "model/obj" = [ "f3d.desktop" ];
       "model/ply" = [ "f3d.desktop" ];
@@ -73,7 +73,6 @@
     };
 
     associations.added = {
-      "application/pdf" = [ "zen-twilight.desktop" ];
       "text/html" = [ "firefox.desktop" ];
       "text/plain" = [ "codium.desktop" ];
       "model/stl" = [ "meshlab.desktop" ];
