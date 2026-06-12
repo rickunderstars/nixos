@@ -12,7 +12,7 @@
           size = 180;
           rounding = -1;
           border_size = 4;
-          border_color = "rgba(89b4faff) rgba(cba6f7ff) 310deg";
+          border_color = "rgba(89b4faff) rgba(cba6f7ff) 30deg";
           shadow_passes = 2;
           monitor = "DP-2";
         }
@@ -27,7 +27,7 @@
           fade_on_empty = false;
           font_color = "rgb(205, 214, 244)";
           inner_color = "rgb(108, 112, 134)";
-          outer_color = "rgba(89b4faff) rgba(cba6f7ff) 310deg";
+          outer_color = "rgba(89b4faff) rgba(cba6f7ff) 30deg";
           shadow_passes = 2;
           font_family = "CaskaydiaCove Nerd Font Mono";
           check_color = "rgb(137, 220, 235)";
