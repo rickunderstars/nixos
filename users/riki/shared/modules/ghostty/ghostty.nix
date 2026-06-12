@@ -7,7 +7,7 @@
     installBatSyntax = true;
     settings = {
       font-family = "CaskaydiaCove Nerd Font Mono";
-      font-size = 12;
+      font-size = 11;
       theme = "Catppuccin Mocha";
       background-opacity = 0.75;
       background-blur = true;
