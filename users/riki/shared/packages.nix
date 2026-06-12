@@ -6,8 +6,8 @@
 
 {
   home.packages = with pkgs; [
-
     ####### cli/tui #######
+    (writeShellScriptBin "xdg-open" ''exec ${glib}/bin/gio open "$@"'')
     ookla-speedtest
     zip
     unzip
@@ -94,7 +94,7 @@
     scrcpy
     android-tools
     localsend
-    telegram-desktop
+    ayugram-desktop
     whatsapp-electron
     signal-desktop
     teams-for-linux
