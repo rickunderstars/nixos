@@ -18,5 +18,6 @@
     gradle.enable = true;
     antigravity-cli.enable = true;
     claude-code.enable = true;
+    zathura.enable = true;
   };
 }
