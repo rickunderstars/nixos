@@ -257,7 +257,7 @@ window-rule {
 }
 // zen dialogs
 window-rule {
-	match app-id="(?i)^zen" title="^(Library|Extension:.*)"
+	match title="^(Library|Extension:.*)"
 	open-floating true
 	default-column-width {
 		proportion 0.7
