@@ -278,6 +278,15 @@ window-rule {
 	}
 	opacity 0.9
 }
+// messaging apps
+window-rule {
+	match app-id="whatsapp-electron"
+	match app-id="com.ayugram.desktop"
+	match app-id="signal"
+	default-column-width {
+		proportion 0.66667
+	}
+}
 // localsend
 window-rule {
 	match app-id="localsend_app"
