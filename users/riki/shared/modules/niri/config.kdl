@@ -418,37 +418,37 @@ binds {
 	Mod+P allow-when-locked=true {
 		spawn "playerctl" "play-pause"
 	}
-	Mod+BracketLeft allow-when-locked=true {
+	Mod+Minus allow-when-locked=true {
 		spawn "playerctl" "previous"
 	}
-	Mod+BracketRight allow-when-locked=true {
+	Mod+Equal allow-when-locked=true {
 		spawn "playerctl" "next"
 	}
 	// volume
-	Mod+Shift+BracketLeft allow-when-locked=true {
+	Mod+Shift+Minus allow-when-locked=true {
 		spawn-sh "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%- && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
 	}
-	Mod+Shift+BracketRight allow-when-locked=true {
+	Mod+Shift+Equal allow-when-locked=true {
 		spawn-sh "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%+ && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
 	}
 	// screenshot
-	Mod+Ctrl+Shift+S {
-		screenshot
-	}
 	Mod+S {
-		screenshot-window
-	}
-	Mod+Shift+S {
 		screenshot-screen
 	}
 	Print {
+		screenshot-screen
+	}
+	Mod+Shift+S {
+		screenshot-window
+	}
+	Shift+Print {
+		screenshot-window
+	}
+	Mod+Ctrl+S {
 		screenshot
 	}
 	Ctrl+Print {
-		screenshot-screen
-	}
-	Alt+Print {
-		screenshot-window
+		screenshot
 	}
 	// tty-clock
 	Mod+H {
@@ -467,7 +467,7 @@ binds {
 		spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 	}
 	// keyboard layout
-	Mod+Shift+Space {
+	Mod+Shift+Space allow-when-locked=true {
 		spawn-sh "niri msg action switch-layout next; layout=$(niri msg -j keyboard-layouts | jq -r '.names[.current_idx]'); dunstify -h string:x-dunst-stack-tag:kblayout \"Layout: $layout\""
 	}
 	XF86AudioRaiseVolume allow-when-locked=true {
@@ -503,15 +503,16 @@ binds {
 	XF86MonBrightnessDown allow-when-locked=true {
 		spawn "brightnessctl" "--class=backlight" "set" "5%-"
 	}
-	// focus columns/windows
-	Mod+Left {
-		focus-column-left
+	//////// FOCUS ////////
+	// within workspace
+	Mod+Up {
+		focus-window-up
 	}
 	Mod+Down {
 		focus-window-down
 	}
-	Mod+Up {
-		focus-window-up
+	Mod+Left {
+		focus-column-left
 	}
 	Mod+Right {
 		focus-column-right
@@ -522,84 +523,109 @@ binds {
 	Mod+WheelScrollUp cooldown-ms=150 {
 		focus-column-right
 	}
-	// move columns/windows
-	Mod+Shift+Left {
-		move-column-left
-	}
-	Mod+Shift+Right {
-		move-column-right
-	}
-	Mod+Shift+Down {
-		move-window-down
-	}
-	Mod+Shift+Up {
-		move-window-up
-	}
-	// move windows (consume/expel)
-	Mod+Ctrl+BracketLeft {
-		consume-or-expel-window-left
-	}
-	Mod+Ctrl+BracketRight {
-		consume-or-expel-window-right
-	}
-	// move columns (monitor)
-	Mod+Shift+Comma {
-		move-column-to-monitor-left
-	}
-	Mod+Shift+Period {
-		move-column-to-monitor-right
-	}
-	// move columns (workspace)
-	Mod+Ctrl+Shift+Period {
-		move-column-to-workspace-down
-	}
-	Mod+Ctrl+Shift+Comma {
-		move-column-to-workspace-up
-	}
-	Mod+Ctrl+Shift+WheelScrollDown cooldown-ms=150 {
-		move-column-to-workspace-down
-	}
-	Mod+Ctrl+Shift+WheelScrollUp cooldown-ms=150 {
-		move-column-to-workspace-up
-	}
-	// move workspace
-	Mod+Ctrl+Period {
-		move-workspace-down
-	}
-	Mod+Ctrl+Comma {
-		move-workspace-up
-	}
-	// focus workspace
-	Mod+Period {
-		focus-workspace-down
-	}
+	// between workspaces
 	Mod+Comma {
 		focus-workspace-up
 	}
-	Mod+Ctrl+WheelScrollDown cooldown-ms=150 {
+	Mod+Period {
 		focus-workspace-down
 	}
-	Mod+Ctrl+WheelScrollUp cooldown-ms=150 {
+	Mod+MouseForward {
 		focus-workspace-up
 	}
-	// focus monitor (cycle)
+	Mod+MouseBack {
+		focus-workspace-down
+	}
+	// between monitors (cycle)
 	Mod+Tab {
 		spawn "fish" "-c" "focus-monitor-next"
+	}
+	//////// MOVE WINDOW/COLUMN ////////
+	// within workspace
+	Mod+Ctrl+Up {
+		move-window-up
+	}
+	Mod+Ctrl+Down {
+		move-window-down
+	}
+	Mod+Ctrl+Left {
+		move-column-left
+	}
+	Mod+Ctrl+Right {
+		move-column-right
+	}
+	Mod+Ctrl+WheelScrollDown cooldown-ms=150 {
+		move-column-left
+	}
+	Mod+Ctrl+WheelScrollUp cooldown-ms=150 {
+		move-column-right
+	}
+	// between workspaces
+	Mod+Ctrl+Comma {
+		move-column-to-workspace-up
+	}
+	Mod+Ctrl+Period {
+		move-column-to-workspace-down
+	}
+	Mod+Ctrl+MouseForward cooldown-ms=150 {
+		move-column-to-workspace-up
+	}
+	Mod+Ctrl+MouseBack cooldown-ms=150 {
+		move-column-to-workspace-down
+	}
+	// between monitors
+	Mod+Ctrl+BracketLeft {
+		move-column-to-monitor-left
+	}
+	Mod+Ctrl+BracketRight {
+		move-column-to-monitor-right
+	}
+	//////// CONSUME/EXPAND WINDOW ////////
+	// within workspace
+	Mod+Alt+Left {
+		consume-or-expel-window-left
+	}
+	Mod+Alt+Right {
+		consume-or-expel-window-right
+	}
+	Mod+Alt+WheelScrollDown cooldown-ms=150 {
+		consume-or-expel-window-left
+	}
+	Mod+Alt+WheelScrollUp cooldown-ms=150 {
+		consume-or-expel-window-right
+	}
+	//////// MOVE WORKSPACE ////////
+	// between workspaces
+	Mod+Ctrl+Alt+Comma {
+		move-workspace-up
+	}
+	Mod+Ctrl+Alt+Period {
+		move-workspace-down
+	}
+	Mod+Ctrl+Alt+MouseForward {
+		move-workspace-up
+	}
+	Mod+Ctrl+Alt+MouseBack {
+		move-workspace-down
+	}
+	// between monitors
+	Mod+Ctrl+Alt+BracketLeft {
+		move-workspace-to-monitor-previous
+	}
+	Mod+Ctrl+Alt+BracketRight {
+		move-workspace-to-monitor-next
 	}
 	Mod+T {
 		toggle-window-floating
 	}
-	// rotate monitor
-	Mod+R {
-		spawn "fish" "-c" "rotate-toggle"
-	}
-	Mod+Ctrl+Shift+Up {
+	// width/height presets
+	Mod+Slash {
 		switch-preset-window-width
 	}
-	Mod+Ctrl+Shift+Down {
+	Mod+Backslash {
 		switch-preset-window-height
 	}
-	Mod+Ctrl+Shift+R {
+	Mod+Shift+Backslash {
 		reset-window-height
 	}
 	// maximize/fullscreen
@@ -609,18 +635,9 @@ binds {
 	Mod+Shift+F {
 		fullscreen-window
 	}
-	// change width/height
-	Mod+Minus {
-		set-column-width "-10%"
-	}
-	Mod+Equal {
-		set-column-width "+10%"
-	}
-	Mod+Shift+Minus {
-		set-window-height "-10%"
-	}
-	Mod+Shift+Equal {
-		set-window-height "+10%"
+	// rotate monitor
+	Mod+R {
+		spawn "fish" "-c" "rotate-toggle"
 	}
 	// toggle binds inhibitors
 	Mod+Escape allow-inhibiting=false {
@@ -630,9 +647,9 @@ binds {
 	Mod+Shift+P {
 		power-off-monitors
 	}
-	// ROS //
+	//// ROS ////
 	Mod+Shift+R {
-		spawn "fish" "-c" "kitty -e fish -c ros"
+		spawn "fish" "-c" "kitty -e fish -c 'cd ~/repos/violet && ros'"
 	}
 	Mod+Shift+M {
 		spawn "fish" "-c" "kitty -e fish -c moveit"
@@ -648,4 +665,3 @@ window-rule {
 		proportion 1.0
 	}
 }
- // ROS //
