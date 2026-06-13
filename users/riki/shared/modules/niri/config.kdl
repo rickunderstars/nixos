@@ -283,6 +283,7 @@ window-rule {
 	match app-id="whatsapp-electron"
 	match app-id="com.ayugram.desktop"
 	match app-id="signal"
+	match app-id="discord"
 	default-column-width {
 		proportion 0.66667
 	}
@@ -313,13 +314,6 @@ window-rule {
 // steam
 window-rule {
 	match app-id="steam"
-	default-column-width {
-		proportion 0.66667
-	}
-}
-// discord
-window-rule {
-	match app-id="discord"
 	default-column-width {
 		proportion 0.66667
 	}
