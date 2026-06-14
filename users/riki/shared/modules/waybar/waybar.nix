@@ -154,11 +154,11 @@
           format = "{icon}{capacity}";
           format-icons = [
             "[     ]"
-            "[/    ]"
-            "[//   ]"
-            "[///  ]"
-            "[//// ]"
-            "[/////]"
+            "[    ]"
+            "[   ]"
+            "[  ]"
+            "[ ]"
+            "[]"
           ];
           format-charging = "[󱐋󱐋󱐋󱐋󱐋]{capacity}";
           format-warning = "[󱐋 󱐋 󱐋]{capacity}";

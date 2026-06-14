@@ -492,10 +492,10 @@ binds {
 		spawn-sh "playerctl next"
 	}
 	XF86MonBrightnessUp allow-when-locked=true {
-		spawn "brightnessctl" "--class=backlight" "set" "5%+"
+		spawn "brightnessctl" "--class=backlight" "set" "4%+"
 	}
 	XF86MonBrightnessDown allow-when-locked=true {
-		spawn "brightnessctl" "--class=backlight" "set" "5%-"
+		spawn "brightnessctl" "--class=backlight" "set" "4%-"
 	}
 	//////// FOCUS ////////
 	// within workspace
