@@ -5,6 +5,7 @@
     clipman.enable = true;
     playerctld.enable = true;
     easyeffects.enable = true;
+    swayosd.enable = true;
   };
 
   systemd.user.services.polkit-agent = {

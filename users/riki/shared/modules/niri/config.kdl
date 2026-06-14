@@ -420,10 +420,10 @@ binds {
 	}
 	// volume
 	Mod+Shift+Minus allow-when-locked=true {
-		spawn-sh "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%- && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
+		spawn "swayosd-client" "--output-volume" "lower"
 	}
 	Mod+Shift+Equal allow-when-locked=true {
-		spawn-sh "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%+ && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
+		spawn "swayosd-client" "--output-volume" "raise"
 	}
 	// screenshot
 	Mod+S {
@@ -458,23 +458,23 @@ binds {
 	}
 	// mute
 	Mod+M allow-when-locked=true {
-		spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+		spawn "swayosd-client" "--output-volume" "mute-toggle"
 	}
 	// keyboard layout
 	Mod+Shift+Space allow-when-locked=true {
 		spawn-sh "niri msg action switch-layout next; layout=$(niri msg -j keyboard-layouts | jq -r '.names[.current_idx]'); dunstify -h string:x-dunst-stack-tag:kblayout \"Layout: $layout\""
 	}
 	XF86AudioRaiseVolume allow-when-locked=true {
-		spawn-sh "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%+ && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
+		spawn "swayosd-client" "--output-volume" "raise"
 	}
 	XF86AudioLowerVolume allow-when-locked=true {
-		spawn-sh "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 2%- && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0"
+		spawn "swayosd-client" "--output-volume" "lower"
 	}
 	XF86AudioMute allow-when-locked=true {
-		spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+		spawn "swayosd-client" "--output-volume" "mute-toggle"
 	}
 	XF86AudioMicMute allow-when-locked=true {
-		spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+		spawn "swayosd-client" "--input-volume" "mute-toggle"
 	}
 	XF86AudioPlay allow-when-locked=true {
 		spawn-sh "playerctl play-pause"
@@ -492,10 +492,10 @@ binds {
 		spawn-sh "playerctl next"
 	}
 	XF86MonBrightnessUp allow-when-locked=true {
-		spawn "brightnessctl" "--class=backlight" "set" "4%+"
+		spawn "swayosd-client" "--brightness" "raise"
 	}
 	XF86MonBrightnessDown allow-when-locked=true {
-		spawn "brightnessctl" "--class=backlight" "set" "4%-"
+		spawn "swayosd-client" "--brightness" "lower"
 	}
 	//////// FOCUS ////////
 	// within workspace
