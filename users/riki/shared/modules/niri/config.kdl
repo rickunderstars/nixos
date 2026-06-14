@@ -420,10 +420,10 @@ binds {
 	}
 	// volume
 	Mod+Shift+Minus allow-when-locked=true {
-		spawn "swayosd-client" "--output-volume" "lower"
+		spawn "swayosd-client" "--output-volume" "-2"
 	}
 	Mod+Shift+Equal allow-when-locked=true {
-		spawn "swayosd-client" "--output-volume" "raise"
+		spawn "swayosd-client" "--output-volume" "+2"
 	}
 	// screenshot
 	Mod+S {
@@ -465,10 +465,10 @@ binds {
 		spawn-sh "niri msg action switch-layout next; layout=$(niri msg -j keyboard-layouts | jq -r '.names[.current_idx]'); dunstify -h string:x-dunst-stack-tag:kblayout \"Layout: $layout\""
 	}
 	XF86AudioRaiseVolume allow-when-locked=true {
-		spawn "swayosd-client" "--output-volume" "raise"
+		spawn "swayosd-client" "--output-volume" "+2"
 	}
 	XF86AudioLowerVolume allow-when-locked=true {
-		spawn "swayosd-client" "--output-volume" "lower"
+		spawn "swayosd-client" "--output-volume" "-2"
 	}
 	XF86AudioMute allow-when-locked=true {
 		spawn "swayosd-client" "--output-volume" "mute-toggle"
@@ -477,19 +477,19 @@ binds {
 		spawn "swayosd-client" "--input-volume" "mute-toggle"
 	}
 	XF86AudioPlay allow-when-locked=true {
-		spawn-sh "playerctl play-pause"
+		spawn "swayosd-client" "--playerctl" "play-pause"
 	}
 	XF86AudioPause allow-when-locked=true {
-		spawn-sh "playerctl play-pause"
+		spawn "swayosd-client" "--playerctl" "play-pause"
 	}
 	XF86AudioStop allow-when-locked=true {
-		spawn-sh "playerctl stop"
+		spawn "swayosd-client" "--playerctl" "stop"
 	}
 	XF86AudioPrev allow-when-locked=true {
-		spawn-sh "playerctl previous"
+		spawn "swayosd-client" "--playerctl" "previous"
 	}
 	XF86AudioNext allow-when-locked=true {
-		spawn-sh "playerctl next"
+		spawn "swayosd-client" "--playerctl" "next"
 	}
 	XF86MonBrightnessUp allow-when-locked=true {
 		spawn "swayosd-client" "--brightness" "raise"
