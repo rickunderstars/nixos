@@ -2,16 +2,14 @@
   pkgs,
   ...
 }:
-
 {
-
   programs.onedrive = {
     enable = true;
     settings = {
-      monitor_interval = "150";
       no_remote_delete = "false";
     };
   };
+
   systemd.user.services.onedrive = {
     Unit = {
       Description = "OneDrive sync service";
@@ -20,12 +18,25 @@
     };
     Service = {
       Type = "simple";
-      ExecStart = "${pkgs.onedrive}/bin/onedrive --monitor";
+      ExecStart = "${pkgs.onedrive}/bin/onedrive --synchronize";
       Restart = "on-failure";
       RestartSec = 3;
     };
     Install = {
       WantedBy = [ "default.target" ];
+    };
+  };
+
+  systemd.user.timers.onedrive = {
+    Unit = {
+      Description = "OneDrive periodic sync";
+    };
+    Timer = {
+      OnCalendar = "*:0/3";
+      Persistent = true;
+    };
+    Install = {
+      WantedBy = [ "timers.target" ];
     };
   };
 }
