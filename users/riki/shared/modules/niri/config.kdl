@@ -412,17 +412,17 @@ binds {
 	Mod+P allow-when-locked=true {
 		spawn "playerctl" "play-pause"
 	}
-	Mod+Minus allow-when-locked=true {
+	Mod+Shift+Minus allow-when-locked=true {
 		spawn "playerctl" "previous"
 	}
-	Mod+Equal allow-when-locked=true {
+	Mod+Shift+Equal allow-when-locked=true {
 		spawn "playerctl" "next"
 	}
 	// volume
-	Mod+Shift+Minus allow-when-locked=true {
+	Mod+Minus allow-when-locked=true {
 		spawn "swayosd-client" "--output-volume" "-2"
 	}
-	Mod+Shift+Equal allow-when-locked=true {
+	Mod+Equal allow-when-locked=true {
 		spawn "swayosd-client" "--output-volume" "+2"
 	}
 	// screenshot
