@@ -15,6 +15,10 @@
     pam.services.hyprlock.text = "auth include login";
   };
 
+  systemd.packages = [ pkgs.swayosd ];
+  systemd.services.swayosd-libinput-backend.wantedBy = [ "graphical.target" ];
+  services.dbus.packages = [ pkgs.swayosd ];
+
   services = {
     openssh = {
       enable = true;
