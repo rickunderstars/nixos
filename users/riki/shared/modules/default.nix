@@ -30,6 +30,7 @@
     ./mpv.nix
     ./onedrive.nix
     ./onlyoffice.nix
+    ./polkit-agent.nix
     ./starship.nix
     ./superfile.nix
     ./tofi.nix
