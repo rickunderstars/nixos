@@ -31,6 +31,7 @@
     ./onedrive.nix
     ./onlyoffice.nix
     ./polkit-agent.nix
+    ./swayosd/swayosd.nix
     ./starship.nix
     ./superfile.nix
     ./tofi.nix
