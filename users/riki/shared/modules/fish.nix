@@ -41,16 +41,19 @@
         			end
         			'';
       onedrive-status = ''
-        			systemctl --user status onedrive.service
+        			systemctl --user status onedrive.timer onedrive.service
         			'';
       onedrive-start = ''
-        			systemctl --user start onedrive.service
+        			systemctl --user start onedrive.timer
         			'';
       onedrive-stop = ''
-        			systemctl --user stop onedrive.service
+        			systemctl --user stop onedrive.timer
         			'';
       onedrive-restart = ''
-        			systemctl --user restart onedrive.service
+        			systemctl --user restart onedrive.timer
+        			'';
+      onedrive-sync = ''
+        			systemctl --user start onedrive.service
         			'';
       onedrive-log = ''
         			journalctl --user -u onedrive.service -f
