@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ ... }:
 
 # rise = - ( BaseSizePt * ( (Percentage / 100) - 1 ) / 2 ) * 1024
 
