@@ -202,7 +202,19 @@
 
         clock = {
           format = "{:%a | %d.%m.%Y | %H:%M}";
-          tooltip-format = "{:%A\n%d %B %Y\n%H:%M}";
+
+          tooltip-format = "<tt><span font='12'>{calendar}</span></tt>";
+
+          calendar = {
+            mode = "month";
+            format = {
+              today = "<span color='#94e2d5'><b><u>{}</u></b></span>";
+              days = "<span color='#cdd6f4'>{}</span>";
+              weekdays = "<span color='#89dceb'><b>{}</b></span>";
+              months = "<span color='#74c7ec'><b>{}</b></span>";
+            };
+          };
+
           on-click = "fish -c 'pidof tty-clock && pkill tty-clock|| kitty --class=clock.kitty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'";
         };
       };
