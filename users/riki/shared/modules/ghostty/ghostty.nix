@@ -21,5 +21,5 @@
     };
   };
 
-  home.file.".config/ghostty/shaders/cursor_warp.glsl".source = ./cursor_warp.glsl;
+  xdg.configFile."ghostty/shaders/cursor_warp.glsl".source = ./cursor_warp.glsl;
 }

@@ -200,8 +200,8 @@
         };
 
         clock = {
-          tooltip-format = "{:%a %d-%b-%Y}";
-          format = "{:%H:%M}";
+          format = "{:%a | %d.%m.%Y | %H:%M}";
+          tooltip-format = "{:%A\n%d %B %Y\n%H:%M}";
           on-click = "fish -c 'pidof tty-clock && pkill tty-clock|| kitty --class=clock.kitty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'";
         };
       };

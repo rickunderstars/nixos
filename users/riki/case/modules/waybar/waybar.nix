@@ -2,7 +2,7 @@
 
 {
   programs.waybar = {
-    style = ./case-style.css;
+    style = ./style.css;
     settings = {
       mainBar = {
         modules-left = [

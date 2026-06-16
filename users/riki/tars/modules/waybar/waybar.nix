@@ -2,7 +2,7 @@
 
 {
   programs.waybar = {
-    style = ./tars-style.css;
+    style = ./style.css;
     settings = {
       mainBar = {
         modules-left = [

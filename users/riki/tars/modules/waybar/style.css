@@ -79,7 +79,7 @@ window#waybar.empty #window {
 	border-radius: 99px;
 	margin: 3px;
 	padding: 0px 4px;
-	color: black;
+	color: white;
 	transition: all 0.2s ease-in-out;
 }
 
@@ -138,7 +138,7 @@ window#waybar.empty #window {
 	background-image: linear-gradient(
 		to right,
 		alpha(@flamingo, 0.8) 0%,
-		alpha(@maroon, 0.8) 100%
+		alpha(@pink, 0.8) 100%
 	);
 	color: black;
 	min-width: 8.2em;
@@ -149,10 +149,28 @@ window#waybar.empty #window {
 	padding-left: 0;
 }
 
-#memory {
+#backlight {
+	background-image: linear-gradient(
+		to right,
+		alpha(@pink, 0.8) 0%,
+		alpha(@maroon, 0.8) 100%
+	);
+	color: black;
+}
+
+#idle_inhibitor {
 	background-image: linear-gradient(
 		to right,
 		alpha(@maroon, 0.8) 0%,
+		alpha(@peach, 0.8) 100%
+	);
+	color: black;
+}
+
+#memory {
+	background-image: linear-gradient(
+		to right,
+		alpha(@peach, 0.8) 0%,
 		alpha(@peach, 0.8) 100%
 	);
 	color: black;
@@ -168,7 +186,7 @@ window#waybar.empty #window {
 	background-image: linear-gradient(
 		to right,
 		alpha(@peach, 0.8) 0%,
-		alpha(@teal, 0.8) 100%
+		alpha(@green, 0.8) 100%
 	);
 	color: black;
 	min-width: 4.2em;
@@ -177,6 +195,23 @@ window#waybar.empty #window {
 	border-bottom-left-radius: 0;
 	margin-left: 0;
 	padding-left: 0;
+}
+
+#battery {
+	background-image: linear-gradient(
+		to right,
+		alpha(@green, 0.8),
+		alpha(@teal, 0.8)
+	);
+	color: black;
+}
+
+#battery.warning {
+	color: black;
+}
+
+#battery.critical {
+	color: black;
 }
 
 #bluetooth {
@@ -208,8 +243,8 @@ window#waybar.empty #window {
 }
 
 #clock {
-	background-color: alpha(@lavender, 0.8);
-	color: black;
+	background-color: alpha(@crust, 0.4);
+	color: white;
 	margin-right: 5px;
 	padding-right: 0.8em;
 	border-top-right-radius: 16px;

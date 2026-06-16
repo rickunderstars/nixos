@@ -12,5 +12,5 @@
     };
   };
 
-  home.file.".config/micro/colorschemes/catppuccin-mocha.micro".source = ./catppuccin-mocha.micro;
+  xdg.configFile."micro/colorschemes/catppuccin-mocha.micro".source = ./catppuccin-mocha.micro;
 }
