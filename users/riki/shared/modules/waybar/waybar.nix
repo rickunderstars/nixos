@@ -8,6 +8,7 @@
 {
   programs.waybar = {
     enable = true;
+    systemd.enable = true;
     settings = {
       mainBar = {
         layer = "top";
@@ -205,23 +206,6 @@
           on-click = "fish -c 'pidof tty-clock && pkill tty-clock|| kitty --class=clock.kitty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'";
         };
       };
-    };
-  };
-
-  systemd.user.services = {
-    waybar-restart = {
-      Unit = {
-        Description = "waybar auto-restart";
-        After = [ "graphical-session.target" ];
-        PartOf = [ "graphical-session.target" ];
-      };
-      Service = {
-        Type = "simple";
-        ExecStart = "${pkgs.waybar}/bin/waybar";
-        Restart = "always";
-        RestartSec = "1";
-      };
-      Install.WantedBy = [ "graphical-session.target" ];
     };
   };
 }
