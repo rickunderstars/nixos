@@ -5,29 +5,33 @@
 onSessionEnd: ask
 
 asciiArt:
-  enabled: true
-  font: ansi
-  color: '#89DCEB'
+    enabled: true
+    font: ansi
+    color: "#89DCEB"
 
 work:
-  duration: 25m
-  title: focus
-  notification:
-    enabled: true
-    urgent: false
-    title: work finished 🎉
-    message: time to take a break
+    duration: 25m
+    title: focus
+    notification:
+        enabled: true
+        urgent: true
+        title: task finished 🎉
+        message: time to take a break
+    then:
+        - ["paplay", "~/.assets/pomo/break.wav"]
 
 break:
-  duration: 5m
-  title: break session
-  notification:
-    enabled: true
-    urgent: false
-    title: break over 😴
-    message: back to work!
+    duration: 5m
+    title: break session
+    notification:
+        enabled: true
+        urgent: true
+        title: break over 😴
+        message: back to task!
+    then:
+        - ["paplay", "~/.assets/pomo/focus.wav"]
 
 longBreak:
-  enabled: true
-  after: 4
-  duration: 20m
+    enabled: true
+    after: 3
+    duration: 20m

@@ -37,6 +37,8 @@
     nix-search-cli
     caligula
     kalker
+    yt-dlp
+    rename
 
     ####### desk env #######
     hyprpicker
@@ -136,6 +138,5 @@
     sm64coopdx
     dolphin-emu
     quickemu
-    yt-dlp
   ];
 }
