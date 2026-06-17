@@ -1,12 +1,14 @@
 {
   pkgs,
   stable,
+  inputs,
   ...
 }:
 
 {
   home.packages = with pkgs; [
     ####### cli/tui #######
+    inputs.pomo.packages.${pkgs.stdenv.hostPlatform.system}.default
     (writeShellScriptBin "xdg-open" ''exec ${glib}/bin/gio open "$@"'')
     ookla-speedtest
     zip

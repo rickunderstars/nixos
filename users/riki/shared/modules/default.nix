@@ -36,5 +36,6 @@
     ./udiskie.nix
     ./waybar/waybar.nix
     ./niri/niri.nix
+    ./pomo/pomo.nix
   ];
 }
