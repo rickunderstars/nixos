@@ -148,6 +148,7 @@
       auch = "audio-switch";
       here = "pwd | wl-copy; pwd";
       home = "cd ~";
+      dl = "cd ~/Downloads";
       goodnight = "shutdown now";
       ros = "distrobox enter ros-humble -- bash -c 'source /opt/ros/humble/setup.bash && exec bash'";
       moveit = "distrobox enter ros-humble -- bash -c 'source /opt/ros/humble/setup.bash && source ~/ws_moveit/install/setup.bash && exec bash'";
