@@ -39,6 +39,7 @@
     kalker
     yt-dlp
     rename
+    ffmpeg
 
     ####### desk env #######
     hyprpicker
