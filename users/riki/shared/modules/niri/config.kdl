@@ -448,6 +448,10 @@ binds {
 	Mod+H {
 		spawn "fish" "-c" "pidof tty-clock && pkill tty-clock || kitty --class=clock.kitty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\""
 	}
+	// idle inhibitor
+	Mod+I allow-when-locked=true {
+		spawn "fish" "-c" "idle-toggle"
+	}
 	// wiremix
 	Mod+V {
 		spawn "fish" "-c" "pidof wiremix && pkill wiremix || kitty --class=wiremix.kitty -e wiremix"

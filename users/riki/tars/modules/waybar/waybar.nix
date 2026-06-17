@@ -16,7 +16,7 @@
           "cava"
           "wireplumber"
           "backlight"
-          "idle_inhibitor"
+          "custom/idle-inhibitor"
           "memory"
           "cpu"
           "battery"

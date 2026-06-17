@@ -121,14 +121,12 @@
           reverse-scrolling = true;
         };
 
-        idle_inhibitor = {
-          format = "<span font_size='160%'>{icon}</span>";
-          format-icons = {
-            activated = "󰈈";
-            deactivated = "󰒲";
-          };
-          tooltip-format-activated = "caffeinated";
-          tooltip-format-deactivated = "no caffeine";
+        "custom/idle-inhibitor" = {
+          exec = ''systemctl --user is-active --quiet hypridle && echo '{"text":"󰒲","tooltip":"no caffeine","class":"deactivated"}' || echo '{"text":"󰈈","tooltip":"caffeinated","class":"activated"}' '';
+          return-type = "json";
+          format = "<span font_size='160%'>{}</span>";
+          interval = 2;
+          on-click = "idle-toggle";
         };
 
         memory = {
