@@ -24,7 +24,9 @@
         nix-your-shell fish | source
       end
       if not set -q IN_NIX_SHELL
-        fastfetch
+        if set -q WAYLAND_DISPLAY
+          fastfetch
+        end
       end
     '';
 
