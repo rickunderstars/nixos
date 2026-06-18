@@ -40,15 +40,19 @@
         images = false;
         same_type = true;
       };
+      uosc = {
+        color = "foreground=b4befe,foreground_text=313244,background=000000,background_text=cdd6f4,curtain=181825,success=a6e3a1,error=f38ba8";
+      };
     };
-    scripts = [
-      pkgs.mpvScripts.modernx
-      pkgs.mpvScripts.thumbfast
-      pkgs.mpvScripts.mpris
-      pkgs.mpvScripts.sponsorblock
-      pkgs.mpvScripts.quality-menu
-      pkgs.mpvScripts.autoload
-      pkgs.mpvScripts.mpv-cheatsheet-ng
+    scripts = with pkgs; [
+      mpvScripts.uosc
+      # mpvScripts.modernx
+      mpvScripts.thumbfast
+      mpvScripts.mpris
+      mpvScripts.sponsorblock
+      mpvScripts.quality-menu
+      mpvScripts.autoload
+      mpvScripts.mpv-cheatsheet-ng
     ];
   };
 }
