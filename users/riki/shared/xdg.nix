@@ -17,6 +17,20 @@
         terminal = false;
         categories = [ "Office" ];
       };
+      codium-new-window = {
+        name = "VSCodium (new window)";
+        exec = "codium --new-window %F";
+        terminal = false;
+        type = "Application";
+        mimeType = [ "text/plain" ];
+      };
+      zen-new-window = {
+        name = "Zen Browser (new window)";
+        exec = "zen-twilight --new-window %U";
+        terminal = false;
+        type = "Application";
+        mimeType = [ "application/pdf" ];
+      };
       youtube = {
         name = "YouTube";
         exec = "zen-twilight --new-window https://www.youtube.com";

@@ -26,22 +26,22 @@
       "audio/opus" = [ "mpv.desktop" ];
       "audio/x-m4a" = [ "mpv.desktop" ];
       "audio/x-musepack" = [ "mpv.desktop" ];
-      "text/plain" = [ "codium.desktop" ];
-      "text/x-go" = [ "codium.desktop" ];
-      "text/x-csrc" = [ "codium.desktop" ];
-      "text/x-chdr" = [ "codium.desktop" ];
-      "text/x-c++src" = [ "codium.desktop" ];
-      "text/x-java-source" = [ "codium.desktop" ];
-      "text/x-python" = [ "codium.desktop" ];
-      "text/rust" = [ "codium.desktop" ];
-      "text/markdown" = [ "codium.desktop" ];
-      "application/json" = [ "codium.desktop" ];
-      "application/yaml" = [ "codium.desktop" ];
-      "application/toml" = [ "codium.desktop" ];
-      "application/xml" = [ "codium.desktop" ];
-      "text/x-shellscript" = [ "codium.desktop" ];
-      "text/css" = [ "codium.desktop" ];
-      "application/javascript" = [ "codium.desktop" ];
+      "text/plain" = [ "codium-new-window.desktop" ];
+      "text/x-go" = [ "codium-new-window.desktop" ];
+      "text/x-csrc" = [ "codium-new-window.desktop" ];
+      "text/x-chdr" = [ "codium-new-window.desktop" ];
+      "text/x-c++src" = [ "codium-new-window.desktop" ];
+      "text/x-java-source" = [ "codium-new-window.desktop" ];
+      "text/x-python" = [ "codium-new-window.desktop" ];
+      "text/rust" = [ "codium-new-window.desktop" ];
+      "text/markdown" = [ "codium-new-window.desktop" ];
+      "application/json" = [ "codium-new-window.desktop" ];
+      "application/yaml" = [ "codium-new-window.desktop" ];
+      "application/toml" = [ "codium-new-window.desktop" ];
+      "application/xml" = [ "codium-new-window.desktop" ];
+      "text/x-shellscript" = [ "codium-new-window.desktop" ];
+      "text/css" = [ "codium-new-window.desktop" ];
+      "application/javascript" = [ "codium-new-window.desktop" ];
       "text/html" = [ "zen-twilight.desktop" ];
       "application/xhtml+xml" = [ "zen-twilight.desktop" ];
       "x-scheme-handler/http" = [ "zen-twilight.desktop" ];
@@ -49,7 +49,7 @@
       "x-scheme-handler/about" = [ "zen-twilight.desktop" ];
       "x-scheme-handler/unknown" = [ "zen-twilight.desktop" ];
       "text/x-arduino" = [ "arduino-arduinoide.desktop" ];
-      "application/pdf" = [ "zen-twilight.desktop" ];
+      "application/pdf" = [ "zen-new-window.desktop" ];
       "model/stl" = [ "f3d.desktop" ];
       "model/obj" = [ "f3d.desktop" ];
       "model/ply" = [ "f3d.desktop" ];
@@ -64,20 +64,12 @@
       ];
       "application/vnd.ms-excel" = [ "onlyoffice-desktopeditors.desktop" ];
       "application/vnd.oasis.opendocument.spreadsheet" = [ "onlyoffice-desktopeditors.desktop" ];
-      "text/csv" = [ "onlyoffice-desktopeditors.desktop" ];
+      "text/csv" = [ "codium-new-window.desktop" ];
       "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [
         "onlyoffice-desktopeditors.desktop"
       ];
       "application/vnd.ms-powerpoint" = [ "onlyoffice-desktopeditors.desktop" ];
       "application/vnd.oasis.opendocument.presentation" = [ "onlyoffice-desktopeditors.desktop" ];
-    };
-
-    associations.added = {
-      "text/html" = [ "firefox.desktop" ];
-      "text/plain" = [ "codium.desktop" ];
-      "model/stl" = [ "meshlab.desktop" ];
-      "model/obj" = [ "meshlab.desktop" ];
-      "model/ply" = [ "meshlab.desktop" ];
     };
   };
 }
