@@ -8,7 +8,7 @@ output "eDP-1" {
 }
 switch-events {
 	lid-close {
-		spawn "fish" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ 1; playerctl pause; systemctl suspend";
+		spawn "fish" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ 1; playerctl -a pause; systemctl suspend";
 	}
 }
 environment {
