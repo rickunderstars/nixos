@@ -10,6 +10,9 @@ switch-events {
 	lid-close {
 		spawn "fish" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ 1; playerctl -a pause; systemctl suspend";
 	}
+	lid-open {
+		spawn "fish" "-c" "hyprlock"
+	}
 }
 environment {
 	//GDK_SCALE "2"
