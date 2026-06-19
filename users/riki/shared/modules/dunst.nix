@@ -26,7 +26,7 @@
       };
 
       urgency_critical = {
-        frame_color = "#fab387ff";
+        frame_color = "#f5c2e7ff";
         timeout = 10;
       };
     };
