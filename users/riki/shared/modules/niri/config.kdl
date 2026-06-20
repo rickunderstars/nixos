@@ -126,12 +126,25 @@ layer-rule {
 		blur true
 		xray false
 	}
+	block-out-from "screencast"
 }
 // floating windows border
 window-rule {
 	match is-floating=true
 	border {
 		active-gradient from="#74c7ec" to="#f5c2e7" angle=330
+	}
+}
+// casted windows
+window-rule {
+	match is-window-cast-target=true
+	border {
+		active-gradient from="#40a02b" to="#40a02b" angle=330
+		inactive-gradient from="#40a02b" to="#40a02b" angle=330
+	}
+	shadow {
+		on
+		color "#40a02b70"
 	}
 }
 // nautilus
@@ -277,6 +290,7 @@ window-rule {
 		proportion 0.6
 	}
 	opacity 0.9
+	block-out-from "screencast"
 }
 // messaging apps
 window-rule {
@@ -287,6 +301,7 @@ window-rule {
 	default-column-width {
 		proportion 0.66667
 	}
+	block-out-from "screencast"
 }
 // localsend
 window-rule {
@@ -333,6 +348,14 @@ window-rule {
 		proportion 1.0
 	}
 	opacity 0.93
+}
+// stremio
+window-rule {
+	match app-id="com.stremio.Stremio"
+	default-column-width {
+		proportion 1.0
+	}
+	open-fullscreen true
 }
 spawn-at-startup "nawww" "--init"
 spawn-at-startup "hyprlock"
@@ -632,6 +655,9 @@ binds {
 	}
 	Mod+Shift+F {
 		fullscreen-window
+	}
+	Mod+Ctrl+Shift+F {
+		toggle-windowed-fullscreen
 	}
 	// rotate monitor
 	Mod+R {
