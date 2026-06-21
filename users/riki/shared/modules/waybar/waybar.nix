@@ -126,7 +126,7 @@
           return-type = "json";
           format = "<span font_size='160%'>{}</span>";
           interval = 2;
-          on-click = "idle-toggle";
+          on-click = "fish -c idle-toggle";
         };
 
         memory = {

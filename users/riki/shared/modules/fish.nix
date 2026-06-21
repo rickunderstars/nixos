@@ -94,7 +94,15 @@
 
       wifi-toggle = "rfkill list wifi | string match -q '*Soft blocked: no*'; and rfkill block wifi; or rfkill unblock wifi";
 
-      idle-toggle = "systemctl --user is-active --quiet hypridle && systemctl --user stop hypridle || systemctl --user start hypridle";
+      idle-toggle = ''
+        if systemctl --user is-active --quiet hypridle
+            systemctl --user stop hypridle
+            dunstify 'caffeinated'
+        else
+            systemctl --user start hypridle
+            dunstify 'no caffeine'
+        end
+      '';
 
       # try package from nixpkgs-unstable
       try = ''
