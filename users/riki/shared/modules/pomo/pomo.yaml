@@ -10,7 +10,7 @@ asciiArt:
     color: "#89DCEB"
 
 work:
-    duration: 25m
+    duration: 27m
     title: focus
     notification:
         enabled: true
@@ -18,10 +18,10 @@ work:
         title: task finished 🎉
         message: time to take a break
     then:
-        - ["paplay", "~/.assets/pomo/break.wav"]
+        - ["paplay", "--volume=32768", "~/.assets/pomo/break.wav"]
 
 break:
-    duration: 5m
+    duration: 8m
     title: break session
     notification:
         enabled: true
@@ -29,9 +29,9 @@ break:
         title: break over 😴
         message: back to task!
     then:
-        - ["paplay", "~/.assets/pomo/focus.wav"]
+        - ["paplay", "--volume=32768", "~/.assets/pomo/focus.wav"]
 
 longBreak:
     enabled: true
-    after: 3
-    duration: 20m
+    after: 4
+    duration: 30m
