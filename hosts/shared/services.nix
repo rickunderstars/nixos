@@ -1,7 +1,11 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   hardware = {
+    graphics.enable = true;
     enableRedistributableFirmware = true;
     bluetooth.enable = true;
     steam-hardware.enable = true;

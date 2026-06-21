@@ -12,7 +12,6 @@
   networking.hostName = "case";
 
   # Hardware-specific logic
-  hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     open = true;
