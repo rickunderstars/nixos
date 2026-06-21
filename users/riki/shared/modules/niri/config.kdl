@@ -35,6 +35,7 @@ environment {
 	XDG_SESSION_DESKTOP "niri"
 	MICRO_TRUECOLOR "1"
 	GSK_RENDERER "gl"
+	GTK_IM_MODULE "simple"
 }
 layout {
 	gaps 5
@@ -332,6 +333,10 @@ window-rule {
 	default-column-width {
 		proportion 0.66667
 	}
+}
+window-rule {
+	match app-id="steam" title="^notificationtoasts_\\d+_desktop$"
+	default-floating-position x=10 y=10 relative-to="bottom-right"
 }
 // spotify
 window-rule {
