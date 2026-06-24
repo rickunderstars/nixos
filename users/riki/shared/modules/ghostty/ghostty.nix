@@ -3,6 +3,7 @@
 {
   programs.ghostty = {
     enable = true;
+    systemd.enable = true;
     enableFishIntegration = true;
     installBatSyntax = true;
     settings = {
