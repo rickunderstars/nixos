@@ -17,6 +17,7 @@
       mouse_hide_wait = "3.0";
       window_padding_width = 16;
       hide_window_decorations = "no";
+      enable_audio_bell = false;
     };
   };
 }
