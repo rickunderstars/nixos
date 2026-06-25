@@ -440,6 +440,9 @@ binds {
 	Mod+P allow-when-locked=true {
 		spawn "swayosd-client" "--playerctl" "play-pause"
 	}
+	Mod+Ctrl+P allow-when-locked=true {
+		spawn "swayosd-client" "--player" "shift"
+	}
 	Mod+Shift+Minus allow-when-locked=true {
 		spawn "swayosd-client" "--playerctl" "previous"
 	}
