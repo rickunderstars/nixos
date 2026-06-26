@@ -2,7 +2,6 @@
 
 {
   programs.imv = {
-    enable = true;
     settings = {
       options = {
         background = "#1e1e2e";

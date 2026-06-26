@@ -2,23 +2,19 @@
 
 {
   imports = [
-    ./awww.nix
     ./bat/bat.nix
     ./broot.nix
     ./btop/btop.nix
     ./cava.nix
-    ./direnv.nix
     ./dunst.nix
     ./eza.nix
     ./fastfetch/fastfetch.nix
-    ./firefox.nix
     ./fish.nix
     ./ghostty/ghostty.nix
     ./kitty.nix
     ./git/git.nix
     ./ssh.nix
     ./global-themes.nix
-    ./gnome-keyring.nix
     ./hypridle.nix
     ./hyprlock/hyprlock.nix
     ./imv.nix
@@ -27,15 +23,11 @@
     ./mimeapps.nix
     ./mpv.nix
     ./onedrive.nix
-    ./onlyoffice.nix
     ./polkit-agent.nix
-    ./swayosd/swayosd.nix
     ./starship.nix
     ./superfile.nix
     ./tofi.nix
     ./udiskie.nix
     ./waybar/waybar.nix
-    ./niri/niri.nix
-    ./pomo/pomo.nix
   ];
 }

@@ -4,7 +4,6 @@
 }:
 {
   programs.mpv = {
-    enable = true;
     config = {
       background-color = "#000000";
       # background-color = "#1e1e2e";

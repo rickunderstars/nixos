@@ -6,8 +6,6 @@
 {
 
   gtk = {
-    enable = true;
-
     theme = {
       name = "catppuccin-mocha-lavender-standard";
       package = pkgs.catppuccin-gtk.override {
@@ -44,7 +42,6 @@
   };
 
   qt = {
-    enable = true;
     platformTheme.name = "kvatum";
     style.name = "kvantum";
   };

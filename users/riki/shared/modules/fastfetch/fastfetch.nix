@@ -2,7 +2,6 @@
 
 {
   programs.fastfetch = {
-    enable = true;
     settings = {
       logo = {
         source = "${./frieren-cat.png}";

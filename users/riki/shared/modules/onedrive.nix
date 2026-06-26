@@ -4,7 +4,6 @@
 }:
 {
   programs.onedrive = {
-    enable = true;
     settings = {
       no_remote_delete = "false";
     };

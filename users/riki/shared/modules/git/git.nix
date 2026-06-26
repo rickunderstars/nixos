@@ -2,8 +2,6 @@
 
 {
   programs.git = {
-    enable = true;
-
     settings = {
       user.name = "riki";
       user.email = "rickunderstars@gmail.com";
@@ -21,7 +19,6 @@
   };
 
   programs.delta = {
-    enable = true;
     enableGitIntegration = true;
     options = {
       features = "catppuccin-mocha";

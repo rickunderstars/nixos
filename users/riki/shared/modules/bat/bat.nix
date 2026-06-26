@@ -2,7 +2,6 @@
 
 {
   programs.bat = {
-    enable = true;
     themes = {
       catppuccin-mocha = {
         src = "${./.}";

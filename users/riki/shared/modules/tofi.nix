@@ -2,7 +2,6 @@
 
 {
   programs.tofi = {
-    enable = true;
     settings = {
       font = "CaskaydiaCove Nerd Font Mono";
       font-size = "16vh";

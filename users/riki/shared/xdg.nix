@@ -2,6 +2,12 @@
 
 {
   xdg = {
+    mimeApps.enable = true;
+    configFile = {
+      "swayosd/style.css".source = ./modules/swayosd/style.css;
+      "niri/config.kdl".source = ./modules/niri/config.kdl;
+      "pomo/pomo.yaml".source = ./modules/pomo/pomo.yaml;
+    };
     userDirs = {
       enable = true;
       createDirectories = true;

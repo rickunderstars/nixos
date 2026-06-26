@@ -2,7 +2,6 @@
 
 {
   programs.broot = {
-    enable = true;
     enableFishIntegration = true;
     settings = {
       default_flags = "gs";

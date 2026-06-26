@@ -2,7 +2,6 @@
 
 {
   programs.ssh = {
-    enable = true;
     enableDefaultConfig = false;
 
     settings = {
@@ -34,5 +33,4 @@
     };
   };
 
-  services.ssh-agent.enable = true;
 }

@@ -2,7 +2,6 @@
 
 {
   programs.cava = {
-    enable = true;
     settings = {
       color = {
         gradient = 1;

@@ -2,7 +2,6 @@
 
 {
   programs.superfile = {
-    enable = true;
     settings = {
       theme = "catppuccin";
       auto_check_update = false;

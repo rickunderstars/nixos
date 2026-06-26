@@ -5,7 +5,6 @@
 
 {
   programs.fish = {
-    enable = true;
     plugins = [
       {
         name = "bass";
