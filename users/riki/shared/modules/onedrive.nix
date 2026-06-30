@@ -6,6 +6,7 @@
   programs.onedrive = {
     settings = {
       no_remote_delete = "false";
+      disable_notifications = "false";
     };
   };
 
