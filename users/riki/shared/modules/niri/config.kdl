@@ -340,7 +340,7 @@ window-rule {
 }
 // spotify
 window-rule {
-	match app-id="Spotify"
+	match app-id="spotify"
 	default-column-width {
 		proportion 0.66667
 	}
