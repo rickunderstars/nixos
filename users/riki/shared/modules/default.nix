@@ -13,6 +13,7 @@
     ./ghostty/ghostty.nix
     ./kitty.nix
     ./git/git.nix
+    ./jujutsu.nix
     ./ssh.nix
     ./global-themes.nix
     ./hypridle.nix

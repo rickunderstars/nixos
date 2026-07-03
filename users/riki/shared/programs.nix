@@ -40,7 +40,10 @@
     ghostty.enable = true;
     kitty.enable = true;
     git.enable = true;
-    delta.enable = true;
+    delta = {
+      enable = true;
+      enableJujutsuIntegration = true;
+    };
     ssh.enable = true;
     hyprlock.enable = true;
     imv.enable = true;
@@ -56,6 +59,7 @@
     superfile.enable = true;
     tofi.enable = true;
     waybar.enable = true;
+    jujutsu.enable = true;
   };
 
   gtk.enable = true;
