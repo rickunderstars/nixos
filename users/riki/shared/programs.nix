@@ -60,6 +60,7 @@
     tofi.enable = true;
     waybar.enable = true;
     jujutsu.enable = true;
+    jjui.enable = true;
   };
 
   gtk.enable = true;
