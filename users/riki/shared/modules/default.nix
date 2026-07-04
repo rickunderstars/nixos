@@ -16,7 +16,6 @@
     ./jujutsu.nix
     ./ssh.nix
     ./global-themes.nix
-    ./hypridle.nix
     ./hyprlock/hyprlock.nix
     ./imv.nix
     ./mangohud.nix

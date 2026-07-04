@@ -16,7 +16,12 @@
         PermitRootLogin = "no";
       };
     };
-    logind.settings.Login.HandlePowerKey = "ignore";
+    logind.settings.Login = {
+      HandlePowerKey = "ignore";
+      HandleLidSwitch = "ignore";
+      HandleLidSwitchExternalPower = "ignore";
+      HandleLidSwitchDocked = "ignore";
+    };
     gvfs.enable = true;
     udisks2.enable = true;
     gnome = {

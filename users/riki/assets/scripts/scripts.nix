@@ -35,6 +35,12 @@ let
   nawww = pkgs.writeShellScriptBin "nawww" ''
     exec ${pkgs.fish}/bin/fish ${./fish/nawww.fish} "$@"
   '';
+  on-lid-close = pkgs.writeShellScriptBin "on-lid-close" ''
+    exec ${pkgs.fish}/bin/fish ${./fish/on-lid-close.fish}
+  '';
+  on-lid-open = pkgs.writeShellScriptBin "on-lid-open" ''
+    exec ${pkgs.fish}/bin/fish ${./fish/on-lid-open.fish}
+  '';
 
 in
 {
@@ -49,5 +55,7 @@ in
 
     ### fish
     nawww
+    on-lid-close
+    on-lid-open
   ];
 }

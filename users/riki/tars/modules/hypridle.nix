@@ -3,7 +3,6 @@
 {
   services.hypridle = {
     settings = {
-
       listener = [
         {
           timeout = 16; # turn off keyboard backlight
