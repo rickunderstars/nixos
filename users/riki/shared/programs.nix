@@ -60,7 +60,10 @@
     tofi.enable = true;
     waybar.enable = true;
     jujutsu.enable = true;
-    jjui.enable = true;
+    jjui = {
+      enable = true;
+      settings.ui.auto_refresh_interval = 1;
+    };
   };
 
   gtk.enable = true;
