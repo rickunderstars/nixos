@@ -38,7 +38,7 @@
 #cava,
 #tray,
 #backlight,
-#custom-idle-inhibitor,
+#custom-mouse-battery,
 #wireplumber,
 #memory,
 #cpu,
@@ -168,7 +168,7 @@ window#waybar.empty #window {
 	background-image: linear-gradient(
 		to right,
 		alpha(@peach, 0.8) 0%,
-		alpha(@teal, 0.8) 100%
+		alpha(@green, 0.8) 100%
 	);
 	color: black;
 	min-width: 4.2em;
@@ -177,6 +177,15 @@ window#waybar.empty #window {
 	border-bottom-left-radius: 0;
 	margin-left: 0;
 	padding-left: 0;
+}
+
+#custom-mouse-battery {
+	background-image: linear-gradient(
+		to right,
+		alpha(@green, 0.8) 0%,
+		alpha(@teal, 0.8) 100%
+	);
+	color: black;
 }
 
 #bluetooth {

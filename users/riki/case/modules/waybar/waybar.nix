@@ -17,6 +17,7 @@
           "wireplumber"
           "memory"
           "cpu"
+          "custom/mouse-battery"
           "bluetooth"
           "network"
           "niri/language"

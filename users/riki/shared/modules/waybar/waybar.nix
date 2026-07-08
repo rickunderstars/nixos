@@ -140,6 +140,14 @@
           on-click = "fish -c 'pidof btop || kitty --class=btop.kitty -e btop'";
         };
 
+        "custom/mouse-battery" = {
+          exec = "mouse-battery";
+          interval = 4;
+          tooltip = true;
+          tooltip-format = "Razer DeathAdder V3 Pro";
+          format = "{}";
+        };
+
         battery = {
           states = {
             warning = 16;
