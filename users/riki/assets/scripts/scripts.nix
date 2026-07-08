@@ -20,6 +20,7 @@ let
   game-of-life = mkGoBin "game-of-life" ./go/game-of-life.go;
   battery-info = mkGoBin "battery-info" ./go/battery-info.go;
   music-info = mkGoBin "music-info" ./go/music-info.go;
+  mouse-battery = mkGoBin "mouse-battery" ./go/mouse-battery.go;
 
   audio-switch = pkgs.writers.writePython3Bin "audio-switch" {
     libraries = [ ];
@@ -49,6 +50,7 @@ in
     game-of-life
     battery-info
     music-info
+    mouse-battery
 
     ### python
     audio-switch
