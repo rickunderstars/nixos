@@ -124,9 +124,10 @@ layer-rule {
 layer-rule {
 	match namespace="notifications"
 	background-effect {
-		blur true
+		blur false
 		xray false
 	}
+	opacity 0.97
 	block-out-from "screencast"
 }
 // floating windows border
@@ -435,6 +436,10 @@ binds {
 	// audio switch
 	Mod+A allow-when-locked=true {
 		spawn "fish" "-c" "auch"
+	}
+	// toggle notifications
+	Mod+N {
+		spawn "fish" "-c" "toggle-msg-notif && dunstify 'toggled notifications'"
 	}
 	// media
 	Mod+P allow-when-locked=true {

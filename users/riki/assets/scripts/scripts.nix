@@ -42,6 +42,9 @@ let
   on-lid-open = pkgs.writeShellScriptBin "on-lid-open" ''
     exec ${pkgs.fish}/bin/fish ${./fish/on-lid-open.fish}
   '';
+  toggle-msg-notif = pkgs.writeShellScriptBin "toggle-msg-notif" ''
+    exec ${pkgs.fish}/bin/fish ${./fish/toggle-msg-notif.fish}
+  '';
 
 in
 {
@@ -59,5 +62,6 @@ in
     nawww
     on-lid-close
     on-lid-open
+    toggle-msg-notif
   ];
 }

@@ -40,6 +40,7 @@
     yt-dlp
     rename
     ffmpeg
+    libnotify
 
     ####### desk env #######
     hyprpicker
