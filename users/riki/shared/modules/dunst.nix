@@ -28,6 +28,24 @@
         frame_color = "#f5c2e7ff";
         timeout = 10;
       };
+
+      "whatsapp" = {
+        enable = true;
+        appname = "whatsapp-electron";
+      };
+      "telegram" = {
+        enable = true;
+        appname = "AyuGram Desktop";
+      };
+      "signal" = {
+        enable = true;
+        appname = "Signal";
+      };
+      "discord" = {
+        enable = true;
+        appname = "discord";
+      };
+
     };
   };
 }
