@@ -270,6 +270,13 @@ window-rule {
 		proportion 1.0
 	}
 }
+// blender
+window-rule {
+	match app-id="blender"
+	default-column-width {
+		proportion 1.0
+	}
+}
 // zen dialogs
 window-rule {
 	match title="^(Library|Extension:.*)"
