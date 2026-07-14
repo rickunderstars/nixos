@@ -374,6 +374,7 @@ spawn-at-startup "nawww" "--init"
 spawn-at-startup "hyprlock"
 spawn-at-startup "hypridle"
 spawn-at-startup "bluetoothctl" "power" "off"
+spawn-at-startup "fish" "-c" "chameleos -w 5 -c '#d20f39'"
 hotkey-overlay {
 	skip-at-startup
 	hide-not-bound
@@ -443,6 +444,13 @@ binds {
 	// audio switch
 	Mod+A allow-when-locked=true {
 		spawn "fish" "-c" "auch"
+	}
+	// chameleos
+	Mod+Ctrl+C {
+		spawn "fish" "-c" "chamel toggle"
+	}
+	Mod+Ctrl+X {
+		spawn "fish" "-c" "chamel clear-and-deactivate"
 	}
 	// toggle notifications
 	Mod+N {

@@ -118,7 +118,6 @@
           --set QT_QPA_PLATFORMTHEME ""
       '';
     })
-
     protonplus
     prusa-slicer
     cura-appimage
