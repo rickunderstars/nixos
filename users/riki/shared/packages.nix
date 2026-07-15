@@ -41,6 +41,7 @@
     rename
     ffmpeg
     libnotify
+    mdfried
 
     ####### desk env #######
     hyprpicker
