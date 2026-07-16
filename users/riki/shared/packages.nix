@@ -42,6 +42,7 @@
     ffmpeg
     libnotify
     mdfried
+    cliamp
 
     ####### desk env #######
     hyprpicker

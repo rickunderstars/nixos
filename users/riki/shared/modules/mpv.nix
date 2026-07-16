@@ -29,7 +29,8 @@
       };
       "audio-only" = {
         profile-cond = ''get("vid") == false or get("current-tracks/video/image") == true'';
-        force-window = "no";
+        # force-window = "no";
+        fullscreen = "no";
       };
     };
     scriptOpts = {
