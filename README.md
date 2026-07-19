@@ -1,20 +1,12 @@
-# ✨ Riki's wondrous NixOS config ✨
+# Riki's wondrous NixOS config
 
-My (Riki) wondrous daily driver config: this is still very much a work in progress (and probably it will never not be as such) and there is probably a better way to do this but I'm a newbie. Enjoy the madness.
+My wondrous daily driver config: this is still very much a work in progress (and probably it will never not be as such) and there is probably a better way to do this but I'm a newbie. Enjoy the madness.
 
-My latest considerations:
-
-- Niri is crazy good!
-- Why did I choose NixOS, this is pain...
-- NixOS is crazy good, I would never use something else!
-- Why does ROS 2 run only on Ubuntu?
-- I like goblins.
-
-## ❄️ Premise
+## Premise
 
 The config is for both my laptop (`tars`) and my desktop (`case`). The systems are built using a NixOS flake and the packages are (mostly) managed through home manager.
 
-## 💻 Desktop Environment
+## Desktop Environment
 
 | (╯°□°）╯︵ ┻━┻    |                 |
 | ----------------- | --------------- |
@@ -32,7 +24,7 @@ The config is for both my laptop (`tars`) and my desktop (`case`). The systems a
 
 \* I don't use a login manager, I just autologin and launch hyprlock (I know it is not secure, but I do it anyway, I like it risky).
 
-## 📁 How does it work?
+## How does it work?
 
 ```
 .
@@ -56,11 +48,9 @@ The config is split between `hosts` and `users`: the first contains the system c
 
 Both `hosts` and `users` use the same philosophy: `shared` holds the modules and config common to both machines, while `case`/`tars` hold the system-specific parts; the flake wires them together for each host.
 
-## 🖼️ Gallery [16.06.2026]
+## Gallery [16.06.2026]
 
 ![Hero](assets/readme/hero.png)
 ![App launcher](assets/readme/tofi.png)
 ![Overview](assets/readme/overview.png)
 ![Fetch](assets/readme/fastfetch.png)
-
-Goblins...
