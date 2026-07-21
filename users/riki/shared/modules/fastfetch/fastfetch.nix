@@ -1,10 +1,13 @@
-{ ... }:
+{
+  config,
+  ...
+}:
 
 {
   programs.fastfetch = {
     settings = {
       logo = {
-        source = "${./frieren-cat.png}";
+        source = "${./logos/Marcille.png}";
         padding = {
           left = 0;
           right = 3;
@@ -20,4 +23,7 @@
       };
     };
   };
+
+  home.file.".logos".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/users/riki/shared/modules/fastfetch/logos";
 }

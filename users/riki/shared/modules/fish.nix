@@ -24,7 +24,7 @@
       end
       if not set -q IN_NIX_SHELL
         if set -q WAYLAND_DISPLAY
-          fastfetch
+          ff
         end
       end
     '';
@@ -152,7 +152,7 @@
 
       # misc
       cls = "clear";
-      ff = "clear;fastfetch";
+      ff = "clear; fastfetch --logo (random choice ~/.logos/*.{png,jpg,jpeg,webp})";
       py = "python";
       auch = "audio-switch";
       here = "pwd | wl-copy; pwd";
