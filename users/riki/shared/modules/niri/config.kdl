@@ -454,7 +454,7 @@ binds {
 	}
 	// toggle notifications
 	Mod+N {
-		spawn "fish" "-c" "toggle-msg-notif && dunstify 'toggled notifications'"
+		spawn "fish" "-c" "dunstify (toggle-msg-notif)"
 	}
 	// media
 	Mod+P allow-when-locked=true {
