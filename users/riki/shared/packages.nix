@@ -43,6 +43,7 @@
     libnotify
     mdfried
     cliamp
+    trash-cli
 
     ####### desk env #######
     hyprpicker
