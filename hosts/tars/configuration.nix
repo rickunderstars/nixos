@@ -1,4 +1,7 @@
-{ ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -25,16 +28,19 @@
     };
   };
 
-  programs.gamescope.args = [
-    "-w 2880 -h 1800"
-    "-W 2880 -h 1800"
-    "--mangoapp"
-    "-r 120"
-    "--fullscreen"
-    "--backend wayland"
-    "--force-grab-cursor"
-    "--rt"
-  ];
+  programs.gamescope = {
+    package = pkgs.gamescope;
+    args = [
+      "-w 1920 -h 1200"
+      "-W 2880 -H 1800"
+      "--mangoapp"
+      "-r 150"
+      "--fullscreen"
+      "--backend wayland"
+      "--force-grab-cursor"
+      "--rt"
+    ];
+  };
 
   system.stateVersion = "24.11";
 }

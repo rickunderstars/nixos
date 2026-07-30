@@ -34,17 +34,20 @@
     linuxKernel.packages.linux_zen.xone
   ];
 
-  programs.gamescope.args = [
-    "--prefer-output DP-2"
-    "-w 1920 -h 1080"
-    "-W 1920 -H 1080"
-    "-r 200"
-    "--mangoapp"
-    "--fullscreen"
-    "--backend wayland"
-    "--force-grab-cursor"
-    "--rt"
-  ];
+  programs.gamescope = {
+    package = pkgs.gamescope;
+    args = [
+      "--prefer-output DP-2"
+      "-w 1920 -h 1080"
+      "-W 1920 -H 1080"
+      "-r 200"
+      "--mangoapp"
+      "--fullscreen"
+      "--backend wayland"
+      "--force-grab-cursor"
+      "--rt"
+    ];
+  };
 
   time.hardwareClockInLocalTime = true;
   boot.kernelParams = [ "amd_pstate=disable" ];
