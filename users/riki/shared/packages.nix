@@ -132,7 +132,7 @@
     spotify
     aseprite
     discord
-    discover-overlay
+    stable.discover-overlay
     chameleos
     stable.stremio-linux-shell
     fuse
