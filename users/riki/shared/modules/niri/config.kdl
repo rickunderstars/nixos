@@ -153,6 +153,7 @@ window-rule {
 window-rule {
 	match app-id="org.gnome.Nautilus"
 	open-floating true
+	default-floating-position x=128 y=128 relative-to="top-left"
 	default-column-width {
 		proportion 0.6
 	}
@@ -316,6 +317,7 @@ window-rule {
 window-rule {
 	match app-id="localsend_app"
 	open-floating true
+	default-floating-position x=100 y=100 relative-to="top-right"
 	default-column-width {
 		proportion 0.5
 	}
