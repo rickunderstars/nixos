@@ -9,6 +9,33 @@
     ../shared
   ];
 
+  fileSystems."/home/riki/mnt/ssd" = {
+    device = "/dev/disk/by-uuid/440bb6bb-09e3-4dd0-a481-b57921a0bf45";
+    fsType = "ext4";
+    options = [
+      "nofail"
+      "users"
+      "exec"
+      "x-gvfs-show"
+    ];
+  };
+
+  fileSystems."/home/riki/mnt/hdd" = {
+    device = "/dev/disk/by-uuid/c45c2cf3-4d92-4961-95e4-6f461a246cbc";
+    fsType = "ext4";
+    options = [
+      "nofail"
+      "users"
+      "exec"
+      "x-gvfs-show"
+    ];
+  };
+
+  systemd.tmpfiles.rules = [
+    "z /home/riki/mnt/ssd 0755 riki users -"
+    "z /home/riki/mnt/hdd 0755 riki users -"
+  ];
+
   networking.hostName = "case";
 
   # Hardware-specific logic
