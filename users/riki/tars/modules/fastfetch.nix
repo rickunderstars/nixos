@@ -101,7 +101,7 @@
         }
         {
           type = "memory";
-          key = "   ├─ memory  ";
+          key = "   ├─ mem  ";
           keyColor = "italic_#74c7ec";
         }
         {

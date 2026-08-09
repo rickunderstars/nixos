@@ -15,7 +15,7 @@
   programs.fastfetch = {
     settings = {
       logo = {
-        height = 19;
+        height = 21;
       };
       modules = [
         {
@@ -100,25 +100,40 @@
           keyColor = "italic_#89dceb";
         }
         {
-          type = "memory";
-          key = "   ├─ memory  ";
+          type = "mem";
+          key = "   ├─ mem  ";
           keyColor = "italic_#74c7ec";
         }
         {
           type = "disk";
+          key = "   ├─ nvme  ";
+          folders = "/";
+          format = "{size-used} / {size-total} ({size-percentage})";
+          keyColor = "italic_#89b4fa";
+        }
+        {
+          type = "disk";
           key = "   ├─ ssd  ";
+          folders = "/home/riki/mnt/ssd";
+          format = "{size-used} / {size-total} ({size-percentage})";
+          keyColor = "italic_#89b4fa";
+        }
+        {
+          type = "disk";
+          key = "   ├─ hdd  ";
+          folders = "/home/riki/mnt/hdd";
           format = "{size-used} / {size-total} ({size-percentage})";
           keyColor = "italic_#89b4fa";
         }
         {
           type = "command";
-          key = "   ├─ display  ";
+          key = "   ├─ out-1  ";
           keyColor = "italic_#b4befe";
           text = "niri msg --json outputs | jq -r 'to_entries[1] | .value as $v | \"\\($v.modes[$v.current_mode].width)x\\($v.modes[$v.current_mode].height) @ \\($v.modes[$v.current_mode].refresh_rate / 1000 | round)Hz (\\(.key))\"'";
         }
         {
           type = "command";
-          key = "   ╰─ display  ";
+          key = "   ╰─ out-2  ";
           keyColor = "italic_#b4befe";
           text = "niri msg --json outputs | jq -r 'to_entries[0] | .value as $v | \"\\($v.modes[$v.current_mode].width)x\\($v.modes[$v.current_mode].height) @ \\($v.modes[$v.current_mode].refresh_rate / 1000 | round)Hz (\\(.key))\"'";
         }
