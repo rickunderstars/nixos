@@ -11,7 +11,7 @@
 
   networking.hostName = "tars";
 
-  boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
+  # boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
 
   services = {
     xserver.videoDrivers = [ "amdgpu" ];
