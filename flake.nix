@@ -17,11 +17,6 @@
       };
     };
 
-    pomo = {
-      url = "github:Bahaaio/pomo";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     gopxl-shell = {
       url = "./dev-shells/gopxl";
       inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
