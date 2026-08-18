@@ -15,7 +15,7 @@
   programs.fastfetch = {
     settings = {
       logo = {
-        height = 21;
+        height = 20;
       };
       modules = [
         {
