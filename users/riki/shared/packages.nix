@@ -30,6 +30,7 @@
     jq
     wev
     dust
+    diskbloom
     bit-logo
     mcat
     nix-search-cli
@@ -44,6 +45,7 @@
     trash-cli
     pomo
     qpdf
+    usbtree
 
     ####### desk env #######
     hyprpicker
