@@ -43,6 +43,7 @@
     cliamp
     trash-cli
     pomo
+    qpdf
 
     ####### desk env #######
     hyprpicker
@@ -141,5 +142,7 @@
     sm64coopdx
     dolphin-emu
     quickemu
+    pdfarranger
+    pdfmixtool
   ];
 }
