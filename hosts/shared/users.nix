@@ -24,6 +24,7 @@
       "plugdev"
       "storage"
       "uinput"
+      "gamemode"
     ];
     shell = pkgs.fish;
   };

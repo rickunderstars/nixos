@@ -15,7 +15,6 @@
     bc
     bat-extras.batman
     playerctl
-    portal
     bluetuith
     impala
     serie
@@ -23,7 +22,6 @@
     pulseaudio
     wl-mirror
     cpufetch
-    tdf
     youtube-tui
     exiftool # for superfile metadata plugin
     zoxide # for superfile zoxide plugin
@@ -83,9 +81,6 @@
     ####### shell eye candy #######
     cbonsai
     cmatrix
-    unimatrix
-    nsnake
-    bastet
     pipes
     tty-clock
     astroterm
@@ -109,7 +104,8 @@
     whatsapp-electron
     signal-desktop
     teams-for-linux
-    godot_4
+    godot
+	godot
     unityhub
     itch
     heroic
