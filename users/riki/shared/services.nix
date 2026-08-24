@@ -7,7 +7,7 @@
     easyeffects.enable = true;
     awww = {
       enable = true;
-      extraArgs = [];
+      extraArgs = [ ];
     };
     dunst.enable = true;
     gnome-keyring = {

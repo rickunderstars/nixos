@@ -16,6 +16,10 @@
         PermitRootLogin = "no";
       };
     };
+    locate = {
+      enable = true;
+      interval = "22:00";
+    };
     logind.settings.Login = {
       HandlePowerKey = "ignore";
       HandleLidSwitch = "ignore";
