@@ -8,7 +8,7 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
-      useOSProber = true;
+      useOSProber = false;
       theme = ../../assets/grub/bsol;
     };
   };

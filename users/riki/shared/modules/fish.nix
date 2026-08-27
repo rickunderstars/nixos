@@ -174,6 +174,11 @@
 
       mime = "xdg-mime query filetype";
 
+      # trash-cli
+      tp = "trash-put";
+      te = "trash-empty";
+      tl = "trash-list";
+
       # shells
       gopxl = "nix develop ~/nixos-config#gopxlDev";
     };
