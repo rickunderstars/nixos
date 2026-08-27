@@ -18,10 +18,10 @@ const (
 	LIFE_PERCENTAGE  = 30
 	W                = 80
 	H                = 120
-	DATA_PATH        = "/run/user/1000/game-of-life-state.gob"
 	RESET_TIMEOUT    = 5 * time.Second
-	STALL_THRESHOLD  = 50
-	UPDATE_THRESHOLD = 70 * time.Millisecond
+	MAX_PLAUSIBLE_GAP = 10 * time.Second
+	STALL_THRESHOLD   = 50
+	UPDATE_THRESHOLD  = 70 * time.Millisecond
 )
 
 type grid [H][W]bool
@@ -191,12 +191,12 @@ func printGrid(m *grid) {
 }
 
 func SaveState(s *GameState) error {
-	dir := filepath.Dir(DATA_PATH)
+	dir := filepath.Dir(fmt.Sprintf("/run/user/%d/game-of-life-state.gob", os.Getuid()))
 	if err := os.MkdirAll(dir, 0755); err != nil {
 		return err
 	}
 
-	file, err := os.Create(DATA_PATH)
+	file, err := os.Create(fmt.Sprintf("/run/user/%d/game-of-life-state.gob", os.Getuid()))
 	if err != nil {
 		return err
 	}
@@ -206,14 +206,25 @@ func SaveState(s *GameState) error {
 	return encoder.Encode(s)
 }
 
+func freshState() *GameState {
+	var s GameState
+	randStart(&s.Grid)
+	s.LastUpdate = time.Time{}
+	return &s
+}
+
+func timeIsUntrustworthy(reference, now time.Time) bool {
+	if now.Before(reference) {
+		return true
+	}
+	return now.Sub(reference) > MAX_PLAUSIBLE_GAP
+}
+
 func LoadState() (*GameState, error) {
-	file, err := os.Open(DATA_PATH)
+	file, err := os.Open(fmt.Sprintf("/run/user/%d/game-of-life-state.gob", os.Getuid()))
 	if err != nil {
 		if os.IsNotExist(err) {
-			var s GameState
-			randStart(&s.Grid)
-			s.LastUpdate = time.Time{}
-			return &s, nil
+			return freshState(), nil
 		}
 		return nil, err
 	}
@@ -224,11 +235,14 @@ func LoadState() (*GameState, error) {
 		return nil, err
 	}
 
-	if time.Since(fileInfo.ModTime()) > RESET_TIMEOUT {
-		var s GameState
-		randStart(&s.Grid)
-		s.LastUpdate = time.Time{}
-		return &s, nil
+	now := time.Now()
+
+	if now.Sub(fileInfo.ModTime()) > RESET_TIMEOUT {
+		return freshState(), nil
+	}
+
+	if timeIsUntrustworthy(fileInfo.ModTime(), now) {
+		return freshState(), nil
 	}
 
 	var s GameState
@@ -237,10 +251,8 @@ func LoadState() (*GameState, error) {
 		return nil, err
 	}
 
-	if s.LastUpdate.After(time.Now()) {
-		randStart(&s.Grid)
-		s.LastUpdate = time.Time{}
-		return &s, nil
+	if timeIsUntrustworthy(s.LastUpdate, now) {
+		return freshState(), nil
 	}
 
 	return &s, nil

@@ -377,6 +377,7 @@ spawn-at-startup "hyprlock"
 spawn-at-startup "hypridle"
 spawn-at-startup "bluetoothctl" "power" "off"
 spawn-at-startup "fish" "-c" "chameleos -w 5 -c '#d20f39'"
+spawn-at-startup "fish" "-c" "toggle-msg-notif"
 hotkey-overlay {
 	skip-at-startup
 	hide-not-bound
