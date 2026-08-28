@@ -18,7 +18,7 @@
     };
     Service = {
       Type = "simple";
-      ExecStart = "${pkgs.onedrive}/bin/onedrive --sync";
+      ExecStart = "${pkgs.onedrive}/bin/onedrive --sync --force";
       Restart = "on-failure";
       RestartSec = 3;
     };
