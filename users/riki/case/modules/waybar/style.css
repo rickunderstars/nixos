@@ -57,8 +57,8 @@
 
 #window {
 	background-color: alpha(@crust, 0.4);
-	border-top-right-radius: 16px;
 	padding: 0 0.7em 0 0.5em;
+	/* border-top-right-radius: 16px; */
 	border-bottom-right-radius: 16px;
 }
 
@@ -71,7 +71,7 @@ window#waybar.empty #window {
 	background-color: alpha(@crust, 0.4);
 	color: black;
 	padding: 0;
-	border-top-left-radius: 16px;
+	/* border-top-left-radius: 16px; */
 	border-bottom-left-radius: 16px;
 }
 
@@ -106,7 +106,7 @@ window#waybar.empty #window {
 #tray {
 	background-color: alpha(@crust, 0.4);
 	color: black;
-	border-top-left-radius: 16px;
+	/* border-top-left-radius: 16px; */
 	border-bottom-left-radius: 16px;
 }
 
@@ -221,6 +221,6 @@ window#waybar.empty #window {
 	color: white;
 	margin-right: 5px;
 	padding-right: 0.8em;
-	border-top-right-radius: 16px;
+	/* border-top-right-radius: 16px; */
 	border-bottom-right-radius: 16px;
 }
