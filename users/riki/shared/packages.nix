@@ -40,6 +40,7 @@
     libnotify
     mdfried
     cliamp
+    feishin
     trash-cli
     pomo
     qpdf
@@ -105,7 +106,7 @@
     signal-desktop
     teams-for-linux
     godot
-	godot
+    godot
     unityhub
     itch
     heroic

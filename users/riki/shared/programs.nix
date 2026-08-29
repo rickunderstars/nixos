@@ -64,6 +64,7 @@
       enable = true;
       settings.ui.auto_refresh_interval = 1;
     };
+    beets.enable = true;
   };
 
   gtk.enable = true;

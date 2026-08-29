@@ -29,5 +29,6 @@
     ./tofi.nix
     ./udiskie.nix
     ./waybar/waybar.nix
+    ./beets/beets.nix
   ];
 }

@@ -348,9 +348,10 @@ window-rule {
 	match app-id="steam" title="^notificationtoasts_\\d+_desktop$"
 	default-floating-position x=10 y=10 relative-to="bottom-right"
 }
-// spotify
+// spotify and feishin
 window-rule {
 	match app-id="spotify"
+	match app-id="feishin"
 	default-column-width {
 		proportion 0.66667
 	}

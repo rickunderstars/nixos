@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ...
 }:
 
@@ -38,7 +39,26 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    navidrome = {
+      enable = true;
+      openFirewall = true;
+      settings = {
+        MusicFolder = "/home/riki/OneDrive/media/music";
+        Address = "0.0.0.0";
+        EnableSharing = true;
+        LyricsPriority = ".ttml,.yaml,.yml,.elrc,.srt,lyrics-plugin,embedded,.lrc,.txt";
+      };
+      plugins = with pkgs.navidromePlugins; [
+        audiomuseai
+        apple-music
+        listenbrainz-daily-playlist
+      ];
+    };
     fwupd.enable = true;
     printing.enable = true;
+  };
+  systemd.services.navidrome.serviceConfig = {
+    ProtectHome = lib.mkForce "read-only";
+    BindReadOnlyPaths = [ "/home/riki/OneDrive/media/music" ];
   };
 }
