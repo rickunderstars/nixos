@@ -16,6 +16,7 @@
     dosfstools
     catppuccin
     catppuccin-cursors.mochaDark
+    android-tools
   ];
 
   fonts.packages = with pkgs; [

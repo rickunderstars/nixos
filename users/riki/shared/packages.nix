@@ -99,7 +99,6 @@
     pavucontrol
     catppuccinifier-gui
     scrcpy
-    android-tools
     localsend
     ayugram-desktop
     whatsapp-electron

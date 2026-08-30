@@ -25,6 +25,8 @@
       "storage"
       "uinput"
       "gamemode"
+      "adbusers"
+      "kvm"
     ];
     shell = pkgs.fish;
   };
