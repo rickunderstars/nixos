@@ -1,6 +1,12 @@
-{ ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
+
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+
   boot.loader = {
     systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;

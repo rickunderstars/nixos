@@ -4,6 +4,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -27,6 +29,7 @@
     {
       nixpkgs,
       nixpkgs-unstable,
+      nix-cachyos-kernel,
       home-manager,
       gopxl-shell,
       ...
@@ -50,6 +53,15 @@
         modules = [
           ./hosts/tars/configuration.nix
           home-manager.nixosModules.home-manager
+          {
+            nix.settings = {
+              substituters = [ "https://attic.xuyh0120.win/lantian" ];
+              trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+            };
+            nixpkgs.overlays = [
+              nix-cachyos-kernel.overlays.pinned
+            ];
+          }
           (
             { pkgs, ... }:
             {
@@ -84,6 +96,15 @@
         modules = [
           ./hosts/case/configuration.nix
           home-manager.nixosModules.home-manager
+          {
+            nix.settings = {
+              substituters = [ "https://attic.xuyh0120.win/lantian" ];
+              trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+            };
+            nixpkgs.overlays = [
+              nix-cachyos-kernel.overlays.pinned
+            ];
+          }
           (
             { pkgs, ... }:
             {
