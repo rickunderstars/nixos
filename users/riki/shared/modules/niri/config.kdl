@@ -348,6 +348,11 @@ window-rule {
 	match app-id="steam" title="^notificationtoasts_\\d+_desktop$"
 	default-floating-position x=10 y=10 relative-to="bottom-right"
 }
+// anki
+window-rule {
+	match app-id="anki"
+	opacity 0.9
+}
 // spotify and feishin
 window-rule {
 	match app-id="spotify"
