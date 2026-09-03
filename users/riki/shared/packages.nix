@@ -45,6 +45,8 @@
     pomo
     qpdf
     usbtree
+    imagemagick
+    rembg
 
     ####### desk env #######
     hyprpicker
