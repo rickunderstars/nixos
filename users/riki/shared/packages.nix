@@ -71,7 +71,7 @@
     cmake
     openjdk
     python3
-    texliveFull
+    stable.texliveFull
     rustc
     cargo
     rustfmt
