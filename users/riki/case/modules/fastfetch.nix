@@ -129,13 +129,13 @@
           type = "command";
           key = "   ├─ out-1  ";
           keyColor = "italic_#b4befe";
-          text = "niri msg --json outputs | jq -r 'to_entries[1] | .value as $v | \"\\($v.modes[$v.current_mode].width)x\\($v.modes[$v.current_mode].height) @ \\($v.modes[$v.current_mode].refresh_rate / 1000 | round)Hz (\\(.key))\"'";
+          text = "niri msg --json outputs | jq -r '[to_entries[]] | sort_by(-.value.logical.x) | .[0] as $e | $e.value as $v | \"\\($v.modes[$v.current_mode].width)x\\($v.modes[$v.current_mode].height) @ \\($v.modes[$v.current_mode].refresh_rate / 1000 | round)Hz (\\($e.key))\"'";
         }
         {
           type = "command";
           key = "   ╰─ out-2  ";
           keyColor = "italic_#b4befe";
-          text = "niri msg --json outputs | jq -r 'to_entries[0] | .value as $v | \"\\($v.modes[$v.current_mode].width)x\\($v.modes[$v.current_mode].height) @ \\($v.modes[$v.current_mode].refresh_rate / 1000 | round)Hz (\\(.key))\"'";
+          text = "niri msg --json outputs | jq -r '[to_entries[]] | sort_by(-.value.logical.x) | .[1] as $e | $e.value as $v | \"\\($v.modes[$v.current_mode].width)x\\($v.modes[$v.current_mode].height) @ \\($v.modes[$v.current_mode].refresh_rate / 1000 | round)Hz (\\($e.key))\"'";
         }
       ];
     };
