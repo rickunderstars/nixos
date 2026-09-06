@@ -92,6 +92,7 @@
     element
 
     ####### apps #######
+    protonmail-desktop
     (stable.bottles.override { removeWarningPopup = true; })
     video-trimmer
     gimp
