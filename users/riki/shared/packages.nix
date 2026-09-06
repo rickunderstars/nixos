@@ -131,6 +131,7 @@
     f3d
     wings
     ente-auth
+    bitwarden-desktop
     spotify
     aseprite
     discord

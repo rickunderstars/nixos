@@ -326,6 +326,19 @@ window-rule {
 	}
 	opacity 0.93
 }
+// bitwarden
+window-rule {
+	match app-id="bitwarden"
+	open-floating true
+	default-floating-position x=100 y=100 relative-to="bottom-left"
+	default-column-width {
+		proportion 0.4
+	}
+	default-window-height {
+		proportion 0.4
+	}
+	opacity 0.93
+}
 // imv
 window-rule {
 	match app-id="imv"
@@ -365,6 +378,14 @@ window-rule {
 // codium
 window-rule {
 	match app-id="codium"
+	default-column-width {
+		proportion 1.0
+	}
+	opacity 0.93
+}
+// protonmail
+window-rule {
+	match app-id="proton-mail"
 	default-column-width {
 		proportion 1.0
 	}
