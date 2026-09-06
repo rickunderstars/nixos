@@ -47,6 +47,7 @@
     usbtree
     imagemagick
     rembg
+    emoji-picker
 
     ####### desk env #######
     hyprpicker
