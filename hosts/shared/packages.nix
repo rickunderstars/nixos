@@ -23,5 +23,6 @@
     nerd-fonts.caskaydia-cove
     nerd-fonts.roboto-mono
     roboto
+    font-awesome
   ];
 }
