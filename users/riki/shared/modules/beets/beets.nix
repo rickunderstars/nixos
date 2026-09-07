@@ -19,7 +19,13 @@
         "lastgenre"
         "duplicates"
         "badfiles"
+        "permissions"
       ];
+
+      permissions = {
+        file = "644";
+        dir = "755";
+      };
 
       lyrics = {
         auto = true;
