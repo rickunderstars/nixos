@@ -178,7 +178,7 @@
           tooltip-format-connected = "{device_enumerate}";
           tooltip-format-enumerate-connected = " {device_alias}";
 
-          on-click = "fish -c 'pidof bluetuith || kitty --class=bluetooth.kitty -e bluetuith'";
+          on-click = "fish -c 'pidof bluetui || kitty --class=bluetooth.kitty -e bluetui'";
         };
 
         network = {

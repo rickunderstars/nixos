@@ -15,7 +15,7 @@
     bc
     bat-extras.batman
     playerctl
-    bluetuith
+    bluetui
     wifitui
     serie
     wiremix

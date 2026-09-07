@@ -28,8 +28,8 @@ binds {
 	Mod+Shift+W {
 		spawn "fish" "-c" "wifi-toggle"
 	}
-	// bluetooth (bluetuith)
+	// bluetooth (bluetui)
 	Mod+B {
-		spawn "fish" "-c" "pidof bluetuith && pkill bluetuith || kitty --class=bluetooth.kitty -e bluetuith"
+		spawn "fish" "-c" "pidof bluetui && pkill bluetui || kitty --class=bluetooth.kitty -e bluetui"
 	}
 }
