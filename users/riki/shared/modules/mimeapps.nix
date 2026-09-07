@@ -46,6 +46,9 @@
       "x-scheme-handler/https" = [ "zen-twilight.desktop" ];
       "x-scheme-handler/about" = [ "zen-twilight.desktop" ];
       "x-scheme-handler/unknown" = [ "zen-twilight.desktop" ];
+      "x-scheme-handler/mailto" = [ "proton-mail.desktop" ];
+      "text/calendar" = [ "proton-mail.desktop" ];
+      "x-scheme-handler/webcal" = [ "proton-mail.desktop" ];
       "text/x-arduino" = [ "arduino-arduinoide.desktop" ];
       "application/pdf" = [ "zen-new-window.desktop" ];
       "model/stl" = [ "f3d.desktop" ];
