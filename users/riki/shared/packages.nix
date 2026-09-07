@@ -16,7 +16,7 @@
     bat-extras.batman
     playerctl
     bluetuith
-    impala
+    wifitui
     serie
     wiremix
     pulseaudio

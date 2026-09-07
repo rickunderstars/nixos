@@ -2,29 +2,7 @@
 
 {
   networking = {
-    networkmanager.enable = false;
-    wireless.enable = false;
-    wireless.iwd = {
-      enable = true;
-      settings = {
-        Network = {
-          EnableIPv6 = true;
-          EnableNetworkConfiguration = false;
-        };
-        Settings = {
-          AutoConnect = true;
-        };
-      };
-    };
-
-    dhcpcd = {
-      enable = true;
-      wait = "background";
-      extraConfig = ''
-        nocarrier_roaming
-        timeout 10
-      '';
-    };
+    networkmanager.enable = true;
 
     firewall = {
       enable = true;

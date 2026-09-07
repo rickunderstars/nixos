@@ -198,7 +198,7 @@
           tooltip-format-disconnected = "disconnected";
           tooltip-format-disabled = "wifi off";
 
-          on-click = "fish -c 'pidof impala || kitty --class=wifi.kitty -e impala'";
+          on-click = "fish -c 'pidof wifitui || kitty --class=wifi.kitty -e wifitui'";
           on-click-right = "fish -c wifi-toggle";
         };
 

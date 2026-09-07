@@ -21,9 +21,9 @@ environment {
 }
 
 binds {
-	// wifi (impala)
+	// wifi (wifitui)
 	Mod+W {
-		spawn "fish" "-c" "pidof impala && pkill impala || kitty --class=wifi.kitty -e impala"
+		spawn "fish" "-c" "pidof wifitui && pkill wifitui || kitty --class=wifi.kitty -e wifitui"
 	}
 	Mod+Shift+W {
 		spawn "fish" "-c" "wifi-toggle"
