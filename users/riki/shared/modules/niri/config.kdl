@@ -452,17 +452,6 @@ binds {
 	Mod+E {
 		spawn "nautilus" "--new-window"
 	}
-	// wifi (impala)
-	Mod+W {
-		spawn "fish" "-c" "pidof impala && pkill impala || kitty --class=wifi.kitty -e impala"
-	}
-	Mod+Shift+W {
-		spawn "fish" "-c" "wifi-toggle"
-	}
-	// bluetooth (bluetuith)
-	Mod+B {
-		spawn "fish" "-c" "pidof bluetuith && pkill bluetuith || kitty --class=bluetooth.kitty -e bluetuith"
-	}
 	// top (btop)
 	Ctrl+Shift+Escape {
 		spawn "fish" "-c" "pidof btop && pkill btop || kitty --class=btop.kitty -e btop"

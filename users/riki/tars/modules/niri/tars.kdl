@@ -19,3 +19,17 @@ environment {
 	//QT_SCALE_FACTOR "2"
 	//QT_AUTO_SCREEN_SCALE_FACTOR "1"
 }
+
+binds {
+	// wifi (impala)
+	Mod+W {
+		spawn "fish" "-c" "pidof impala && pkill impala || kitty --class=wifi.kitty -e impala"
+	}
+	Mod+Shift+W {
+		spawn "fish" "-c" "wifi-toggle"
+	}
+	// bluetooth (bluetuith)
+	Mod+B {
+		spawn "fish" "-c" "pidof bluetuith && pkill bluetuith || kitty --class=bluetooth.kitty -e bluetuith"
+	}
+}
