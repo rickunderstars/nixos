@@ -32,4 +32,8 @@ binds {
 	Mod+B {
 		spawn "fish" "-c" "pidof bluetui && pkill bluetui || kitty --class=bluetooth.kitty -e bluetui"
 	}
+	// mirror display
+	Mod+D {
+		spawn "fish" "-c" "mirror"
+	}
 }

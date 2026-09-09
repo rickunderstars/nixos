@@ -436,10 +436,6 @@ binds {
 	Mod+Shift+Return {
 		spawn "kitty" "--class=float.kitty"
 	}
-	// terminal (ghostty)
-	Mod+G {
-		spawn "ghostty"
-	}
 	// app launcher (tofi)
 	Mod+Space {
 		spawn "fish" "-c" "pkill tofi || tofi-drun"
