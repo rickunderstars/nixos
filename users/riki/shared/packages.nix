@@ -97,6 +97,7 @@
     (stable.bottles.override { removeWarningPopup = true; })
     video-trimmer
     gimp
+    satty
     blender
     krita
     uxplay
