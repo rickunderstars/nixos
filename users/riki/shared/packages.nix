@@ -148,5 +148,6 @@
     quickemu
     pdfarranger
     pdfmixtool
+    logseq
   ];
 }
