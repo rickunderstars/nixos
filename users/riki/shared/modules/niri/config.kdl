@@ -271,13 +271,6 @@ window-rule {
 		proportion 1.0
 	}
 }
-// blender
-window-rule {
-	match app-id="blender"
-	default-column-width {
-		proportion 1.0
-	}
-}
 // zen dialogs
 window-rule {
 	match title="^(Library|Extension:.*)"
@@ -287,6 +280,13 @@ window-rule {
 	}
 	default-window-height {
 		proportion 0.7
+	}
+}
+// blender
+window-rule {
+	match app-id="blender"
+	default-column-width {
+		proportion 1.0
 	}
 }
 // ente-auth
@@ -365,6 +365,15 @@ window-rule {
 window-rule {
 	match app-id="anki"
 	opacity 0.9
+}
+// logseq
+window-rule {
+	match app-id="Logseq"
+	default-column-width {
+		proportion 1.0
+	}
+	open-fullscreen true
+	opacity 0.97
 }
 // spotify and feishin
 window-rule {
