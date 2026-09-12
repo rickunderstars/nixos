@@ -15,7 +15,6 @@
 
       plugins = [
         "fetchart"
-        # "lyrics"
         "lastgenre"
         "duplicates"
         "badfiles"
@@ -27,11 +26,8 @@
         dir = "755";
       };
 
-      lyrics = {
-        auto = true;
-        sources = [ "lrclib" ];
-        fallback = "";
-        force = false;
+      lastgenre = {
+        canonical = true;
       };
     };
   };
