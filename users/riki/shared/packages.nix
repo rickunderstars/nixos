@@ -94,6 +94,8 @@
 
     ####### apps #######
     protonmail-desktop
+    proton-vpn-cli
+    proton-vpn
     (stable.bottles.override { removeWarningPopup = true; })
     video-trimmer
     gimp
