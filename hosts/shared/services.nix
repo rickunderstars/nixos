@@ -17,6 +17,10 @@
         PermitRootLogin = "no";
       };
     };
+    mullvad-vpn = {
+      enable = true;
+      gui.enable = true;
+    };
     locate = {
       enable = true;
       interval = "22:00";
