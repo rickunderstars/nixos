@@ -409,21 +409,11 @@ window-rule {
 	}
 	open-fullscreen true
 }
-// unity
+// unity, godot, aseprite
 window-rule {
 	match app-id="unityhub"
-	default-column-width {
-		proportion 1.0
-	}
-}
-window-rule {
 	match app-id="Unity"
-	default-column-width {
-		proportion 1.0
-	}
-}
-// aseprite
-window-rule {
+	match app-id="Godot"
 	match app-id="Aseprite"
 	default-column-width {
 		proportion 1.0

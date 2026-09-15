@@ -36,4 +36,7 @@ binds {
 	Mod+D {
 		spawn "fish" "-c" "mirror"
 	}
+	Mod+U {
+		spawn "fish" "-c" "export GDK_SCALE=\"2\"; unityhub"
+	}
 }
