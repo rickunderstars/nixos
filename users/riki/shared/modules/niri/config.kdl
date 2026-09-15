@@ -288,6 +288,7 @@ window-rule {
 	default-column-width {
 		proportion 1.0
 	}
+	open-fullscreen true
 }
 // ente-auth
 window-rule {
@@ -407,6 +408,26 @@ window-rule {
 		proportion 1.0
 	}
 	open-fullscreen true
+}
+// unity
+window-rule {
+	match app-id="unityhub"
+	default-column-width {
+		proportion 1.0
+	}
+}
+window-rule {
+	match app-id="Unity"
+	default-column-width {
+		proportion 1.0
+	}
+}
+// aseprite
+window-rule {
+	match app-id="Aseprite"
+	default-column-width {
+		proportion 1.0
+	}
 }
 spawn-at-startup "nawww" "--init"
 spawn-at-startup "hyprlock"

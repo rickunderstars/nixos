@@ -142,6 +142,7 @@
     chameleos
     stable.stremio-linux-shell
     fuse
+    umu-launcher
     steam-run
     sgdboop
     boilr
