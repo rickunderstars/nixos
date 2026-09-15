@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     razer-cli
     nvitop
+    unityhub
   ];
 
   imports = [
