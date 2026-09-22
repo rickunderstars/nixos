@@ -37,6 +37,6 @@ binds {
 		spawn "fish" "-c" "mirror"
 	}
 	Mod+U {
-		spawn "fish" "-c" "export GDK_SCALE=\"2\";export GDK_DPI_SCALE=\"0.5\"; unityhub"
+		spawn "fish" "-c" "env GDK_SCALE=2 GDK_DPI_SCALE=0.5 GTK_THEME=Adwaita:dark unityhub"
 	}
 }
