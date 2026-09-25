@@ -81,6 +81,7 @@
     nodejs
     typst
     tinymist
+    plugdata
 
     ####### shell eye candy #######
     cbonsai

@@ -393,6 +393,15 @@ window-rule {
 	}
 	opacity 0.93
 }
+// plugdata
+window-rule {
+	match app-id="plugdata"
+	default-column-width {
+		proportion 1.0
+	}
+	open-maximized true
+	opacity 0.93
+}
 // protonmail
 window-rule {
 	match app-id="proton-mail"
