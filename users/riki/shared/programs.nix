@@ -1,5 +1,6 @@
 {
   config,
+  stable,
   ...
 }:
 
@@ -47,7 +48,10 @@
     ssh.enable = true;
     hyprlock.enable = true;
     imv.enable = true;
-    mangohud.enable = true;
+    mangohud = {
+      package = stable.mangohud;
+      enable = true;
+    };
     micro.enable = true;
     mpv.enable = true;
     onedrive.enable = true;
