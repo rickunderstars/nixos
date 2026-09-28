@@ -31,5 +31,6 @@
     ./udiskie.nix
     ./waybar/waybar.nix
     ./beets/beets.nix
+    ./godot/godot.nix
   ];
 }
