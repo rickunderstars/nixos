@@ -4,7 +4,7 @@
   programs.jujutsu = {
     settings = {
       user = {
-        email = "rickskimsclouds+git@gmail.com";
+        email = "rickskimsclouds+git@proton.me";
         name = "riki";
       };
       ui = {

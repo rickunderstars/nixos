@@ -4,7 +4,7 @@
   programs.git = {
     settings = {
       user.name = "riki";
-      user.email = "rickskimsclouds+git@gmail.com";
+      user.email = "rickskimsclouds+git@proton.me";
       url = {
         "git@github.com:" = {
           insteadOf = "https://github.com/";
