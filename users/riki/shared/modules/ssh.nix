@@ -17,6 +17,13 @@
         IdentitiesOnly = true;
       };
 
+      "codeberg.org" = {
+        HostName = "codeberg.org";
+        User = "git";
+        IdentityFile = "~/.ssh/id_ed25519";
+        IdentitiesOnly = true;
+      };
+
       "tars" = {
         HostName = "tars.local";
         User = "riki";
