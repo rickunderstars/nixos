@@ -11,6 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    musnix = {
+      url = "github:musnix/musnix";
+    };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -53,6 +57,7 @@
         modules = [
           ./hosts/tars/configuration.nix
           home-manager.nixosModules.home-manager
+          inputs.musnix.nixosModules.musnix
           {
             nix.settings = {
               substituters = [
@@ -102,6 +107,7 @@
         modules = [
           ./hosts/case/configuration.nix
           home-manager.nixosModules.home-manager
+          inputs.musnix.nixosModules.musnix
           {
             nix.settings = {
               substituters = [ "https://attic.xuyh0120.win/lantian" ];

@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 
@@ -12,6 +13,8 @@
     uinput.enable = true;
     xone.enable = true;
   };
+
+  musnix.enable = true;
 
   security = {
     rtkit.enable = true;
