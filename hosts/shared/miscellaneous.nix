@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 
@@ -46,4 +45,6 @@
     podman.enable = true;
     libvirtd.enable = true;
   };
+
+  qt.enable = true;
 }

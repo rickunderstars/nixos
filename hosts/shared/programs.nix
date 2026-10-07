@@ -27,6 +27,4 @@
       enableVirtualCamera = true;
     };
   };
-
-  qt.enable = true;
 }

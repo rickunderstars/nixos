@@ -83,6 +83,7 @@
     typst
     tinymist
     plugdata
+    (pkgs.callPackage ./modules/fmod.nix { })
 
     ####### shell eye candy #######
     cbonsai

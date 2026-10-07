@@ -86,6 +86,7 @@ window-rule {
 		blur true
 		xray true
 	}
+	open-maximized-to-edges false
 }
 blur {
 	passes 2
@@ -418,12 +419,13 @@ window-rule {
 	}
 	open-fullscreen true
 }
-// unity, godot, aseprite
+// unity, godot, aseprite, fmod
 window-rule {
 	match app-id="unityhub"
 	match app-id="Unity"
 	match app-id="Godot"
 	match app-id="Aseprite"
+	match app-id="fmodstudio"
 	default-column-width {
 		proportion 1.0
 	}
