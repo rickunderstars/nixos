@@ -14,7 +14,7 @@
       sponsorblock-mark = "all";
       prefer-free-formats = true;
 
-      output = ''"%(playlist_title,title)s/%(playlist_index|)s%(playlist_index& - |)s%(title)s.%(ext)s"'';
+      output = ''"%(playlist_title)s/%(playlist_index|)s%(playlist_index& - |)s%(title)s.%(ext)s"'';
 
       download-archive = "${config.xdg.configHome}/yt-dlp/archive.txt";
     };

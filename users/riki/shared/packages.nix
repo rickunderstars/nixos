@@ -48,6 +48,7 @@
     rembg
     emoji-picker
     gifski
+    mediainfo
 
     ####### desk env #######
     hyprpicker
