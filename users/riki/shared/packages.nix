@@ -34,7 +34,6 @@
     nix-search-cli
     caligula
     kalker
-    yt-dlp
     rename
     ffmpeg
     libnotify

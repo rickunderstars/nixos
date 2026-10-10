@@ -69,6 +69,7 @@
       settings.ui.auto_refresh_interval = 1;
     };
     beets.enable = true;
+    yt-dlp.enable = true;
   };
 
   gtk.enable = true;

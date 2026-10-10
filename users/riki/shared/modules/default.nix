@@ -32,5 +32,6 @@
     ./waybar/waybar.nix
     ./beets/beets.nix
     ./godot/godot.nix
+    ./yt-dlp.nix
   ];
 }
