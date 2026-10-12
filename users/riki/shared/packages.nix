@@ -114,7 +114,7 @@
     whatsapp-electron
     signal-desktop
     teams-for-linux
-    godot
+    godot-mono
     unityhub
     itch
     heroic
