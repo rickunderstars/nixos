@@ -115,6 +115,7 @@
     signal-desktop
     teams-for-linux
     godot-mono
+    godot
     unityhub
     itch
     heroic
