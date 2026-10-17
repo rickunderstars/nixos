@@ -42,6 +42,7 @@
   # Hardware-specific logic
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
+    package = pkgs.nvidia_cachyos-bore;
     open = true;
     modesetting.enable = true;
   };
