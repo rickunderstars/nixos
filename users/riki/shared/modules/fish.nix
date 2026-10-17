@@ -11,13 +11,13 @@
         src = pkgs.fishPlugins.bass.src;
       }
     ];
+
     interactiveShellInit = ''
       if status is-login
         if test "$XDG_VTNR" = "1"
           exec niri-session
         end
       end
-
       set -g fish_greeting
       if command -q nix-your-shell
         nix-your-shell fish | source

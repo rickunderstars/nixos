@@ -30,6 +30,8 @@
     };
   };
 
+  fonts.fontconfig.enable = true;
+
   imports = [
     inputs.zen-browser.homeModules.twilight
     ./assets/scripts/scripts.nix

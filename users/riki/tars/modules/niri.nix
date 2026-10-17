@@ -1,0 +1,72 @@
+{ ... }:
+
+{
+  wayland.windowManager.niri.settings = {
+    _children = [
+      {
+        output = {
+          _args = [ "eDP-1" ];
+          mode = "2880x1800@120.001";
+          position._props = {
+            x = 1920;
+            y = 0;
+          };
+          focus-at-startup = { };
+          hot-corners.off = { };
+        };
+      }
+    ];
+
+    switch-events = {
+      lid-close.spawn = [
+        "fish"
+        "-c"
+        "on-lid-close"
+      ];
+      lid-open.spawn = [
+        "fish"
+        "-c"
+        "on-lid-open"
+      ];
+    };
+
+    environment = {
+      #GDK_SCALE = "2";
+      #QT_SCALE_FACTOR = "2";
+      #QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    };
+
+    binds = {
+      # wifi (wifitui)
+      "Mod+W".spawn = [
+        "fish"
+        "-c"
+        "pidof wifitui && pkill wifitui || kitty --class=wifi.kitty -e wifitui"
+      ];
+      "Mod+Shift+W".spawn = [
+        "fish"
+        "-c"
+        "wifi-toggle"
+      ];
+
+      # bluetooth (bluetui)
+      "Mod+B".spawn = [
+        "fish"
+        "-c"
+        "pidof bluetui && pkill bluetui || kitty --class=bluetooth.kitty -e bluetui"
+      ];
+
+      # mirror display
+      "Mod+D".spawn = [
+        "fish"
+        "-c"
+        "mirror"
+      ];
+      "Mod+U".spawn = [
+        "fish"
+        "-c"
+        "env GDK_SCALE=2 GDK_DPI_SCALE=0.5 GTK_THEME=Adwaita:dark unityhub"
+      ];
+    };
+  };
+}

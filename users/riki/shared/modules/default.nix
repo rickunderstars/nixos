@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./niri/niri.nix
     ./anki.nix
     ./bat/bat.nix
     ./broot.nix

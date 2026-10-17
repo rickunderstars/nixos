@@ -11,7 +11,6 @@
     brightnessctl
     procps
     distrobox
-    xwayland-satellite
     exfatprogs
     dosfstools
     catppuccin

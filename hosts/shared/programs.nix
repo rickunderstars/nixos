@@ -6,10 +6,6 @@
     fish.enable = true;
     gamemode.enable = true;
     gamescope.enable = true;
-    niri = {
-      enable = true;
-      useNautilus = true;
-    };
     neovim = {
       enable = true;
       vimAlias = true;
