@@ -88,7 +88,7 @@
     nodejs
     typst
     tinymist
-    plugdata
+    stable.plugdata
     (pkgs.callPackage ./modules/fmod.nix { })
 
     ####### shell eye candy #######

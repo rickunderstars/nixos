@@ -52,9 +52,9 @@
         LyricsPriority = ".ttml,.yaml,.yml,.elrc,.srt,lyrics-plugin,embedded,.lrc,.txt";
       };
       plugins = with pkgs.navidromePlugins; [
-        audiomuseai
-        apple-music
-        listenbrainz-daily-playlist
+        #  audiomuseai
+        #  apple-music
+        #  listenbrainz-daily-playlist
       ];
     };
     fwupd.enable = true;
