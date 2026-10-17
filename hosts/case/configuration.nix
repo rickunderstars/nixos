@@ -1,6 +1,5 @@
 {
   pkgs,
-  stable,
   ...
 }:
 
@@ -64,7 +63,6 @@
   ];
 
   programs.gamescope = {
-    package = stable.gamescope;
     args = [
       "--prefer-output DP-2"
       "-w 1920 -h 1080"

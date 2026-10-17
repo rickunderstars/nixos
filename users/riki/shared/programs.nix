@@ -1,6 +1,5 @@
 {
   config,
-  stable,
   ...
 }:
 
@@ -49,7 +48,6 @@
     hyprlock.enable = true;
     imv.enable = true;
     mangohud = {
-      package = stable.mangohud;
       enable = true;
     };
     micro.enable = true;
