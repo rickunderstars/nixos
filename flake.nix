@@ -4,7 +4,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -33,7 +33,7 @@
     {
       nixpkgs,
       nixpkgs-unstable,
-      nix-cachyos-kernel,
+      chaotic,
       home-manager,
       gopxl-shell,
       ...
@@ -44,7 +44,6 @@
         inherit system;
         config.allowUnfree = true;
       };
-      pkgs = nixpkgs-unstable.legacyPackages.${system};
     in
     {
       # nixos tars config
@@ -58,23 +57,9 @@
           ./hosts/tars/configuration.nix
           home-manager.nixosModules.home-manager
           inputs.musnix.nixosModules.musnix
-          {
-            nix.settings = {
-              substituters = [
-                "https://attic.xuyh0120.win/lantian"
-                "https://cache.xinux.uz"
-              ];
-              trusted-public-keys = [
-                "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
-                "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
-              ];
-            };
-            nixpkgs.overlays = [
-              nix-cachyos-kernel.overlays.pinned
-            ];
-          }
+          chaotic.nixosModules.default
           (
-            { pkgs, ... }:
+            { ... }:
             {
               home-manager = {
                 useGlobalPkgs = true;
@@ -108,17 +93,9 @@
           ./hosts/case/configuration.nix
           home-manager.nixosModules.home-manager
           inputs.musnix.nixosModules.musnix
-          {
-            nix.settings = {
-              substituters = [ "https://attic.xuyh0120.win/lantian" ];
-              trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
-            };
-            nixpkgs.overlays = [
-              nix-cachyos-kernel.overlays.pinned
-            ];
-          }
+          chaotic.nixosModules.default
           (
-            { pkgs, ... }:
+            { ... }:
             {
               home-manager = {
                 useGlobalPkgs = true;

@@ -5,7 +5,7 @@
 
 {
 
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-bore;
 
   boot.loader = {
     systemd-boot.enable = false;
