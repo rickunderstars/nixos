@@ -7,6 +7,7 @@ if test "$external_connected" = "true"
     brightnessctl -sd platform::kbd_backlight set 0%
 else
     niri msg action power-off-monitors
+    systemctl --user start hypridle
     brightnessctl -sd platform::kbd_backlight set 0%
     wpctl set-mute @DEFAULT_AUDIO_SINK@ 1
     playerctl -a pause
