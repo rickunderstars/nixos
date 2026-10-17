@@ -20,8 +20,6 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.caskaydia-cove
-    nerd-fonts.roboto-mono
-    roboto
-    font-awesome
+    noto-fonts-color-emoji
   ];
 }

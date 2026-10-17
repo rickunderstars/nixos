@@ -30,7 +30,11 @@
     };
   };
 
-  fonts.fontconfig.enable = true;
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts.monospace = [ "CaskaydiaCove Nerd Font Mono" ];
+    defaultFonts.emoji = [ "Noto Color Emoji" ];
+  };
 
   imports = [
     inputs.zen-browser.homeModules.twilight

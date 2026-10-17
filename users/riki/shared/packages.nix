@@ -59,6 +59,12 @@
     turtle
     glib
     gsettings-desktop-schemas
+    nerd-fonts.caskaydia-cove
+    noto-fonts
+    noto-fonts-color-emoji
+    nerd-fonts.roboto-mono
+    roboto
+    font-awesome
 
     ####### coding #######
     vscodium

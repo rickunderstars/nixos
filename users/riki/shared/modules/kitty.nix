@@ -1,7 +1,5 @@
-{
-  pkgs,
-  ...
-}:
+{ ... }:
+
 {
   programs.kitty = {
     shellIntegration = {
