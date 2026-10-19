@@ -86,6 +86,7 @@
     arduino-ide
     arduino-language-server
     nodejs
+    dotnet-sdk
     typst
     tinymist
     stable.plugdata
