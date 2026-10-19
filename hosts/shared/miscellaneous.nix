@@ -20,7 +20,7 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
-    pam.services.hyprlock.text = "auth include login";
+    pam.services.hyprlock.enableGnomeKeyring = true;
   };
 
   virtualisation = {
