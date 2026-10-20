@@ -18,6 +18,7 @@ let
       '';
 
   game-of-life = mkGoBin "game-of-life" ./go/game-of-life.go;
+  langton-ant = mkGoBin "langton-ant" ./go/langton-ant.go;
   battery-info = mkGoBin "battery-info" ./go/battery-info.go;
   music-info = mkGoBin "music-info" ./go/music-info.go;
   mouse-battery = mkGoBin "mouse-battery" ./go/mouse-battery.go;
@@ -51,6 +52,7 @@ in
   home.packages = [
     ### go
     game-of-life
+    langton-ant
     battery-info
     music-info
     mouse-battery

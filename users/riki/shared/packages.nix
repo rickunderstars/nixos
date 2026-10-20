@@ -89,6 +89,7 @@
     dotnet-sdk
     typst
     tinymist
+    gopls
     stable.plugdata
     (pkgs.callPackage ./modules/fmod.nix { })
 

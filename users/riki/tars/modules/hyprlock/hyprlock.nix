@@ -116,6 +116,17 @@
           position = "-20, 0";
           shadow_passes = 2;
         }
+        {
+          text = "cmd[update:40] langton-ant";
+          text_align = "center";
+          halign = "left";
+          valign = "center";
+          color = "rgba(205, 214, 244, 0.8)";
+          font_size = 7;
+          font_family = "CaskaydiaCove Nerd Font Mono";
+          position = "20, 0";
+          shadow_passes = 2;
+        }
       ];
     };
   };
