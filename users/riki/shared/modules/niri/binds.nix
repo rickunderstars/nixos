@@ -159,14 +159,11 @@
     ];
 
     # idle inhibitor
-    "Mod+I" = {
-      _props.allow-when-locked = true;
-      spawn = [
-        "fish"
-        "-c"
-        "idle-toggle"
-      ];
-    };
+    "Mod+I".spawn = [
+      "fish"
+      "-c"
+      "idle-toggle"
+    ];
 
     # wiremix
     "Mod+V".spawn = [
