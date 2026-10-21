@@ -1,5 +1,6 @@
 {
   pkgs,
+  stable,
   ...
 }:
 
@@ -12,6 +13,10 @@
   networking.hostName = "tars";
 
   boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
+
+  hardware.graphics = {
+    package = stable.mesa;
+  };
 
   services = {
     xserver.videoDrivers = [ "amdgpu" ];
