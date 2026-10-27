@@ -22,6 +22,9 @@
       ignore-path-in-watch-later-config = true;
       cache = "yes";
       load-stats-overlay = false;
+      screenshot-directory = "~/Pictures/Screenshots/";
+      screenshot-format = "png";
+      screenshot-template = "%F.%P.mpv.shot.%02n";
     };
     profiles = {
       "extension.gif" = {
