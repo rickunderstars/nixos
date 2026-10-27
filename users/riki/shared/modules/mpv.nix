@@ -46,7 +46,7 @@
     };
     scripts = with pkgs; [
       # mpvScripts.uosc
-      mpvScripts.modernx
+      mpvScripts.modernz
       mpvScripts.thumbfast
       mpvScripts.mpris
       mpvScripts.sponsorblock
