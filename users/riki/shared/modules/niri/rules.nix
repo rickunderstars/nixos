@@ -95,7 +95,7 @@
     # nautilus
     {
       window-rule._children = [
-        { match._props.app-id = "org.gnome.Nautilus"; }
+        { match._props.app-id = "(?i)nautilus"; }
         { open-floating = true; }
         {
           default-floating-position._props = {
@@ -113,7 +113,7 @@
     # kitty
     {
       window-rule._children = [
-        { match._props.app-id = "kitty"; }
+        { match._props.app-id = "(?i)kitty"; }
         { default-column-width.proportion = 0.5; }
         { opacity = 0.9; }
       ];
@@ -122,7 +122,7 @@
     # float.kitty
     {
       window-rule._children = [
-        { match._props.app-id = "float.kitty"; }
+        { match._props.app-id = "(?i)float.kitty"; }
         { open-floating = true; }
         { default-column-width.proportion = 0.3; }
         { default-window-height.proportion = 0.5; }
@@ -133,7 +133,7 @@
     # wifi.kitty
     {
       window-rule._children = [
-        { match._props.app-id = "wifi.kitty"; }
+        { match._props.app-id = "(?i)wifi.kitty"; }
         { open-floating = true; }
         { default-column-width.proportion = 0.6; }
         { default-window-height.proportion = 0.6; }
@@ -144,7 +144,7 @@
     # bluetooth.kitty
     {
       window-rule._children = [
-        { match._props.app-id = "bluetooth.kitty"; }
+        { match._props.app-id = "(?i)bluetooth.kitty"; }
         { open-floating = true; }
         { default-column-width.proportion = 0.6; }
         { default-window-height.proportion = 0.6; }
@@ -155,7 +155,7 @@
     # btop.kitty
     {
       window-rule._children = [
-        { match._props.app-id = "btop.kitty"; }
+        { match._props.app-id = "(?i)btop.kitty"; }
         { open-floating = true; }
         { default-column-width.proportion = 0.75; }
         { default-window-height.proportion = 0.75; }
@@ -166,7 +166,7 @@
     # wiremix.kitty
     {
       window-rule._children = [
-        { match._props.app-id = "wiremix.kitty"; }
+        { match._props.app-id = "(?i)wiremix.kitty"; }
         { open-floating = true; }
         { default-column-width.proportion = 0.6; }
         { default-window-height.proportion = 0.6; }
@@ -177,7 +177,7 @@
     # clock.kitty
     {
       window-rule._children = [
-        { match._props.app-id = "clock.kitty"; }
+        { match._props.app-id = "(?i)clock.kitty"; }
         { open-floating = true; }
         { default-column-width.proportion = 0.5; }
         { default-window-height.proportion = 0.5; }
@@ -208,7 +208,7 @@
     # zen
     {
       window-rule._children = [
-        { match._props.app-id = "zen-twilight"; }
+        { match._props.app-id = "(?i)zen-twilight"; }
         { default-column-width.proportion = 1.0; }
       ];
     }
@@ -226,7 +226,7 @@
     # blender
     {
       window-rule._children = [
-        { match._props.app-id = "blender"; }
+        { match._props.app-id = "(?i)blender"; }
         { default-column-width.proportion = 1.0; }
         { open-fullscreen = true; }
       ];
@@ -235,7 +235,7 @@
     # ente-auth
     {
       window-rule._children = [
-        { match._props.app-id = "io.ente.auth"; }
+        { match._props.app-id = "(?i)io.ente.auth"; }
         { open-floating = true; }
         { default-column-width.proportion = 0.6; }
         { default-window-height.proportion = 0.6; }
@@ -247,10 +247,10 @@
     # messaging apps
     {
       window-rule._children = [
-        { match._props.app-id = "whatsapp-electron"; }
-        { match._props.app-id = "com.ayugram.desktop"; }
-        { match._props.app-id = "signal"; }
-        { match._props.app-id = "discord"; }
+        { match._props.app-id = "(?i)whatsapp-electron"; }
+        { match._props.app-id = "(?i)com.ayugram.desktop"; }
+        { match._props.app-id = "(?i)signal"; }
+        { match._props.app-id = "(?i)discord"; }
         { default-column-width.proportion = 0.66667; }
         { block-out-from = "screencast"; }
       ];
@@ -259,7 +259,7 @@
     # localsend
     {
       window-rule._children = [
-        { match._props.app-id = "localsend_app"; }
+        { match._props.app-id = "(?i)localsend_app"; }
         { open-floating = true; }
         {
           default-floating-position._props = {
@@ -277,7 +277,7 @@
     # bitwarden
     {
       window-rule._children = [
-        { match._props.app-id = "bitwarden"; }
+        { match._props.app-id = "(?i)bitwarden"; }
         { open-floating = true; }
         {
           default-floating-position._props = {
@@ -295,7 +295,7 @@
     # imv
     {
       window-rule._children = [
-        { match._props.app-id = "imv"; }
+        { match._props.app-id = "(?i)imv"; }
         { open-floating = true; }
         { default-column-width.proportion = 0.8; }
         { default-window-height.proportion = 0.8; }
@@ -305,7 +305,7 @@
     # steam
     {
       window-rule._children = [
-        { match._props.app-id = "steam"; }
+        { match._props.app-id = "(?i)steam"; }
         { default-column-width.proportion = 0.66667; }
       ];
     }
@@ -313,7 +313,7 @@
       window-rule._children = [
         {
           match._props = {
-            app-id = "steam";
+            app-id = "(?i)steam";
             title = "^notificationtoasts_\\d+_desktop$";
           };
         }
@@ -330,7 +330,7 @@
     # anki
     {
       window-rule._children = [
-        { match._props.app-id = "anki"; }
+        { match._props.app-id = "(?i)anki"; }
         { opacity = 0.9; }
       ];
     }
@@ -338,7 +338,7 @@
     # logseq
     {
       window-rule._children = [
-        { match._props.app-id = "Logseq"; }
+        { match._props.app-id = "(?i)logseq"; }
         { default-column-width.proportion = 1.0; }
         { open-fullscreen = true; }
         { opacity = 0.97; }
@@ -348,8 +348,8 @@
     # spotify and feishin
     {
       window-rule._children = [
-        { match._props.app-id = "spotify"; }
-        { match._props.app-id = "feishin"; }
+        { match._props.app-id = "(?i)spotify"; }
+        { match._props.app-id = "(?i)feishin"; }
         { default-column-width.proportion = 0.66667; }
         { opacity = 0.9; }
       ];
@@ -358,7 +358,7 @@
     # codium
     {
       window-rule._children = [
-        { match._props.app-id = "codium"; }
+        { match._props.app-id = "(?i)codium"; }
         { default-column-width.proportion = 1.0; }
         { opacity = 0.93; }
       ];
@@ -367,7 +367,7 @@
     # plugdata
     {
       window-rule._children = [
-        { match._props.app-id = "plugdata"; }
+        { match._props.app-id = "(?i)plugdata"; }
         { default-column-width.proportion = 1.0; }
         { open-maximized = true; }
         { opacity = 0.93; }
@@ -377,7 +377,7 @@
     # protonmail
     {
       window-rule._children = [
-        { match._props.app-id = "proton-mail"; }
+        { match._props.app-id = "(?i)proton-mail"; }
         { default-column-width.proportion = 1.0; }
         { opacity = 0.93; }
       ];
@@ -386,7 +386,7 @@
     # stremio
     {
       window-rule._children = [
-        { match._props.app-id = "com.stremio.Stremio"; }
+        { match._props.app-id = "(?i)stremio"; }
         { default-column-width.proportion = 1.0; }
         { open-fullscreen = true; }
       ];
@@ -395,24 +395,24 @@
     # unity, godot, aseprite, fmod
     {
       window-rule._children = [
-        { match._props.app-id = "unityhub"; }
-        { match._props.app-id = "Unity"; }
-        { match._props.app-id = "Godot"; }
-        { match._props.app-id = "Aseprite"; }
-        { match._props.app-id = "fmodstudio"; }
+        { match._props.app-id = "(?i)unityhub"; }
+        { match._props.app-id = "(?i)unity"; }
+        { match._props.app-id = "(?i)godot"; }
+        { match._props.app-id = "(?i)aseprite"; }
+        { match._props.app-id = "(?i)fmodstudio"; }
         { default-column-width.proportion = 1.0; }
       ];
     }
 
     {
       window-rule._children = [
-        { match._props.app-id = "rqt"; }
+        { match._props.app-id = "(?i)rqt"; }
         { open-floating = true; }
       ];
     }
     {
       window-rule._children = [
-        { match._props.app-id = "rviz2"; }
+        { match._props.app-id = "(?i)rviz2"; }
         { default-column-width.proportion = 1.0; }
       ];
     }
