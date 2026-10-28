@@ -11,6 +11,7 @@ else
     brightnessctl -sd platform::kbd_backlight set 0%
     wpctl set-mute @DEFAULT_AUDIO_SINK@ 1
     playerctl -a pause
+    bluetoothctl power off
     pidof hyprlock || hyprlock &
     sleep 4
     lid-is-closed && systemctl suspend
