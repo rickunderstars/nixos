@@ -92,10 +92,10 @@
       ];
     }
 
-    # nautilus
+    # thunar
     {
       window-rule._children = [
-        { match._props.app-id = "(?i)nautilus"; }
+        { match._props.app-id = "(?i)thunar"; }
         { open-floating = true; }
         {
           default-floating-position._props = {
@@ -106,7 +106,7 @@
         }
         { default-column-width.proportion = 0.6; }
         { default-window-height.proportion = 0.6; }
-        { opacity = 0.9; }
+        { opacity = 0.93; }
       ];
     }
 

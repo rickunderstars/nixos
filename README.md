@@ -18,7 +18,7 @@ The config is for both my laptop (`tars`) and my desktop (`case`). The systems a
 | Login manager     | \*              |
 | Terminal emulator | ghostty / kitty |
 | Shell             | fish            |
-| File manager      | nautilus        |
+| File manager      | thunar          |
 
 ---
 

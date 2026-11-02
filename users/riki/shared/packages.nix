@@ -53,9 +53,6 @@
     ####### desk env #######
     hyprpicker
     papirus-icon-theme
-    nautilus
-    nautilus-python
-    nautilus-open-any-terminal
     turtle
     glib
     gsettings-desktop-schemas

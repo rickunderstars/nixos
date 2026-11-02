@@ -59,6 +59,7 @@
     };
     fwupd.enable = true;
     printing.enable = true;
+    tumbler.enable = true;
   };
   systemd.services.navidrome.serviceConfig = {
     ProtectHome = lib.mkForce "read-only";

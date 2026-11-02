@@ -42,10 +42,9 @@
       "pidof hyprlock || hyprlock"
     ];
 
-    # file manager (nautilus)
+    # file manager (thunar)
     "Mod+E".spawn = [
-      "nautilus"
-      "--new-window"
+      "thunar"
     ];
 
     # top (btop)
