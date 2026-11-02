@@ -3,7 +3,7 @@
 {
   xdg.mimeApps = {
     defaultApplications = {
-      "inode/directory" = [ "thunar.desktop" ];
+      "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
       "image/jpeg" = [ "imv-dir.desktop" ];
       "image/png" = [ "imv-dir.desktop" ];
       "image/gif" = [ "imv-dir.desktop" ];

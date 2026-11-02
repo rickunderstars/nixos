@@ -1,19 +1,7 @@
-{
-  pkgs,
-  ...
-}:
+{ ... }:
 
 {
   programs = {
-    thunar = {
-      enable = true;
-      plugins = with pkgs; [
-        thunar-archive-plugin
-        thunar-media-tags-plugin
-        thunar-vcs-plugin
-        thunar-shares-plugin
-      ];
-    };
     xfconf.enable = true;
     dconf.enable = true;
     fish.enable = true;
