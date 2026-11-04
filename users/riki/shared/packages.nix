@@ -34,6 +34,7 @@
     nix-search-cli
     caligula
     kalker
+    numr
     rename
     ffmpeg
     libnotify
@@ -47,6 +48,7 @@
     imagemagick
     rembg
     emoji-picker
+    emote
     gifski
     mediainfo
 
