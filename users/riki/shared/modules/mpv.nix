@@ -30,25 +30,8 @@
       "extension.gif" = {
         loop-file = "inf";
       };
-      "audio-only" = {
-        profile-cond = ''get("vid") == false or get("current-tracks/video/image") == true'';
-        # force-window = "no";
-        fullscreen = "no";
-      };
-    };
-    scriptOpts = {
-      autoload = {
-        videos = true;
-        audio = false;
-        images = false;
-        same_type = true;
-      };
-      uosc = {
-        color = "foreground=b4befe,foreground_text=313244,background=000000,background_text=cdd6f4,curtain=181825,success=a6e3a1,error=f38ba8";
-      };
     };
     scripts = with pkgs; [
-      # mpvScripts.uosc
       mpvScripts.modernz
       mpvScripts.thumbfast
       mpvScripts.mpris
@@ -56,6 +39,20 @@
       mpvScripts.quality-menu
       mpvScripts.autoload
       mpvScripts.mpv-cheatsheet-ng
+      mpvScripts.visualizer
     ];
+    scriptOpts = {
+      autoload = {
+        videos = true;
+        audio = false;
+        images = false;
+        same_type = true;
+      };
+      visualizer = {
+        name = "showcqt";
+        quality = "veryhigh";
+        height = 12;
+      };
+    };
   };
 }

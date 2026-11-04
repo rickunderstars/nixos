@@ -69,6 +69,13 @@
           spawn-at-startup._args = [
             "fish"
             "-c"
+            "emote"
+          ];
+        }
+        {
+          spawn-at-startup._args = [
+            "fish"
+            "-c"
             "toggle-msg-notif"
           ];
         }
