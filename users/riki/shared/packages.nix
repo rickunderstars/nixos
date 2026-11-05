@@ -46,7 +46,7 @@
     qpdf
     usbtree
     imagemagick
-    rembg
+    # rembg # dependency broken
     emoji-picker
     emote
     gifski

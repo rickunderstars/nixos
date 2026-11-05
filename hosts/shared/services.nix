@@ -51,11 +51,12 @@
         EnableSharing = true;
         LyricsPriority = ".ttml,.yaml,.yml,.elrc,.srt,lyrics-plugin,embedded,.lrc,.txt";
       };
-      plugins = with pkgs.navidromePlugins; [
-        #  audiomuseai
-        #  apple-music
-        #  listenbrainz-daily-playlist
-      ];
+      # TODO: look how plugins work
+      # withPlugins
+      #  audiomuseai
+      #  apple-music
+      #  listenbrainz-daily-playlist
+
     };
     fwupd.enable = true;
     printing.enable = true;
