@@ -34,7 +34,7 @@
           fail_color = "rgb(243, 139, 168)";
           fail_text = ">:P";
           outline_thickness = 4;
-          placeholder_text = "ᓚᘏᗢ";
+          placeholder_text = "₍^. .^₎⟆";
           monitor = "DP-2";
         }
       ];
