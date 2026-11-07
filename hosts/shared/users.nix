@@ -27,6 +27,7 @@
       "gamemode"
       "adbusers"
       "kvm"
+      "jellyfin"
     ];
     shell = pkgs.fish;
   };

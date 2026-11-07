@@ -34,6 +34,8 @@
   systemd.tmpfiles.rules = [
     "z /home/riki/mnt/ssd 0755 riki users -"
     "z /home/riki/mnt/hdd 0755 riki users -"
+    "z /home/riki 0750 riki users -"
+    "z /home/riki/OneDrive 0750 riki users -"
   ];
 
   networking.hostName = "case";
@@ -61,6 +63,14 @@
     polychromatic
     linuxKernel.packages.linux_zen.xone
   ];
+
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+    group = "users";
+  };
+
+  users.users.jellyfin.extraGroups = [ "users" ];
 
   programs.gamescope = {
     args = [
