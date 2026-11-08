@@ -51,6 +51,7 @@
     emote
     gifski
     mediainfo
+    mkvtoolnix-cli
 
     ####### desk env #######
     hyprpicker
