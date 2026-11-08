@@ -34,7 +34,6 @@
   systemd.tmpfiles.rules = [
     "z /home/riki/mnt/ssd 0755 riki users -"
     "z /home/riki/mnt/hdd 0755 riki users -"
-    "z /home/riki 0750 riki users -"
     "z /home/riki/OneDrive 0750 riki users -"
   ];
 
@@ -70,7 +69,11 @@
     group = "users";
   };
 
-  users.users.jellyfin.extraGroups = [ "users" ];
+  users.users.jellyfin.extraGroups = [
+    "users"
+    "video"
+    "renderer"
+  ];
 
   programs.gamescope = {
     args = [

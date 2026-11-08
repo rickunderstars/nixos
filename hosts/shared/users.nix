@@ -30,6 +30,7 @@
       "jellyfin"
     ];
     shell = pkgs.fish;
+    homeMode = "750";
   };
 
   services.getty = {
