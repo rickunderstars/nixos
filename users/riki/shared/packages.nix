@@ -52,6 +52,7 @@
     gifski
     mediainfo
     mkvtoolnix-cli
+    graphviz
 
     ####### desk env #######
     hyprpicker
