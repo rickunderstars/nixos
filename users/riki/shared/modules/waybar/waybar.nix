@@ -2,6 +2,9 @@
 
 # rise = - ( BaseSizePt * ( (Percentage / 100) - 1 ) / 2 ) * 1024
 
+let
+  terminal = "kitty";
+in
 {
   programs.waybar = {
     systemd.enable = true;
@@ -94,7 +97,7 @@
           scroll-step = 2.5;
           reverse-scrolling = true;
           on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          on-click-right = "fish -c 'pidof wiremix || kitty --class=wiremix.kitty -e wiremix'";
+          on-click-right = "fish -c 'pidof wiremix || ${terminal} --class=wiremix.${terminal} -e wiremix'";
         };
 
         backlight = {
@@ -131,13 +134,13 @@
         memory = {
           interval = 10;
           format = "<span font_size='150%' rise='-2560'></span>{percentage}";
-          on-click = "fish -c 'pidof btop || kitty --class=btop.kitty -e btop'";
+          on-click = "fish -c 'pidof btop || ${terminal} --class=btop.${terminal} -e btop'";
         };
 
         cpu = {
           interval = 2;
           format = "<span font_size='150%' rise='-2560'> </span>{usage}";
-          on-click = "fish -c 'pidof btop || kitty --class=btop.kitty -e btop'";
+          on-click = "fish -c 'pidof btop || ${terminal} --class=btop.${terminal} -e btop'";
         };
 
         "custom/mouse-battery" = {
@@ -178,7 +181,7 @@
           tooltip-format-connected = "{device_enumerate}";
           tooltip-format-enumerate-connected = " {device_alias}";
 
-          on-click = "fish -c 'pidof bluetui || kitty --class=bluetooth.kitty -e bluetui'";
+          on-click = "fish -c 'pidof bluetui || ${terminal} --class=bluetooth.${terminal} -e bluetui'";
         };
 
         network = {
@@ -198,7 +201,7 @@
           tooltip-format-disconnected = "disconnected";
           tooltip-format-disabled = "wifi off";
 
-          on-click = "fish -c 'pidof wifitui || kitty --class=wifi.kitty -e wifitui'";
+          on-click = "fish -c 'pidof wifitui || ${terminal} --class=wifi.${terminal} -e wifitui'";
           on-click-right = "fish -c wifi-toggle";
         };
 
@@ -217,7 +220,7 @@
             };
           };
 
-          on-click = "fish -c 'pidof tty-clock && pkill tty-clock|| kitty --class=clock.kitty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'";
+          on-click = "fish -c 'pidof tty-clock && pkill tty-clock|| ${terminal} --class=clock.${terminal} -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\"'";
         };
       };
     };

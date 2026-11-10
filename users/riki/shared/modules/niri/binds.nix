@@ -1,5 +1,8 @@
 { ... }:
 
+let
+  terminal = "kitty";
+in
 {
   wayland.windowManager.niri.settings.binds = {
     # binds cheatsheet
@@ -21,11 +24,11 @@
       close-window = { };
     };
 
-    # terminal (kitty)
-    "Mod+Return".spawn = [ "kitty" ];
+    # terminal
+    "Mod+Return".spawn = [ terminal ];
     "Mod+Shift+Return".spawn = [
-      "kitty"
-      "--class=float.kitty"
+      terminal
+      "--class=float.${terminal}"
     ];
 
     # app launcher (tofi)
@@ -52,7 +55,7 @@
     "Ctrl+Shift+Escape".spawn = [
       "fish"
       "-c"
-      "pidof btop && pkill btop || kitty --class=btop.kitty -e btop"
+      "pidof btop && pkill btop || ${terminal} --class=btop.${terminal} -e btop"
     ];
 
     # wallpaper
@@ -155,7 +158,7 @@
     "Mod+H".spawn = [
       "fish"
       "-c"
-      "pidof tty-clock && pkill tty-clock || kitty --class=clock.kitty -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\""
+      "pidof tty-clock && pkill tty-clock || ${terminal} --class=clock.${terminal} -e tty-clock tty-clock -c -s -f \"%a %e-%b-%Y\""
     ];
 
     # idle inhibitor
@@ -169,7 +172,7 @@
     "Mod+V".spawn = [
       "fish"
       "-c"
-      "pidof wiremix && pkill wiremix || kitty --class=wiremix.kitty -e wiremix"
+      "pidof wiremix && pkill wiremix || ${terminal} --class=wiremix.${terminal} -e wiremix"
     ];
 
     # hyprpicker
@@ -399,12 +402,12 @@
     "Mod+Shift+R".spawn = [
       "fish"
       "-c"
-      "kitty -e fish -c 'cd ~/repos/violet && ros'"
+      "${terminal} -e fish -c 'cd ~/repos/violet && ros'"
     ];
     "Mod+Shift+M".spawn = [
       "fish"
       "-c"
-      "kitty -e fish -c moveit"
+      "${terminal} -e fish -c moveit"
     ];
   };
 }
