@@ -7,6 +7,7 @@
     ./layout.nix
     ./binds.nix
     ./rules.nix
+    ./animations.nix
   ];
 
   wayland.windowManager.niri = {
@@ -39,7 +40,6 @@
         hide-not-bound = { };
       };
       screenshot-path = "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png";
-      animations.slowdown = 0.8;
 
       # spawn at startup
       _children = [
