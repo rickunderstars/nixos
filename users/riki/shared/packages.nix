@@ -11,6 +11,8 @@
     ookla-speedtest
     zip
     unzip
+    unar
+    _7zz
     wl-clipboard
     bc
     bat-extras.batman
@@ -166,5 +168,6 @@
     pdfarranger
     pdfmixtool
     logseq
+    space-cadet-pinball
   ];
 }
