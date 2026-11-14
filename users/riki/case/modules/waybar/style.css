@@ -78,7 +78,7 @@ window#waybar.empty #window {
 #workspaces button {
 	border-radius: 99px;
 	margin: 3px;
-	padding: 0px 4px;
+	padding: 0px 0.4em;
 	color: white;
 	transition: all 0.2s ease-in-out;
 }

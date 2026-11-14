@@ -1,4 +1,7 @@
-{ ... }:
+{
+  stable,
+  ...
+}:
 
 # rise = - ( BaseSizePt * ( (Percentage / 100) - 1 ) / 2 ) * 1024
 
@@ -7,6 +10,7 @@ let
 in
 {
   programs.waybar = {
+    package = stable.waybar;
     systemd.enable = true;
     settings = {
       mainBar = {
