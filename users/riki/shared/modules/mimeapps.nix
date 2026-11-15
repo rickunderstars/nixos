@@ -6,6 +6,7 @@
       "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
       "image/jpeg" = [ "imv-dir.desktop" ];
       "image/png" = [ "imv-dir.desktop" ];
+      "image/apng" = [ "mpv.desktop" ];
       "image/gif" = [ "imv-dir.desktop" ];
       "image/bmp" = [ "imv-dir.desktop" ];
       "image/webp" = [ "imv-dir.desktop" ];

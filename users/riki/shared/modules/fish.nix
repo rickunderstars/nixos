@@ -152,7 +152,7 @@
 
       # misc
       cls = "clear";
-      ff = "clear; fastfetch --logo (random choice ~/.logos/*.{png,jpg,jpeg,webp})";
+      ff = "clear; fastfetch --logo (random choice ~/.logos/*.{png,jpg,jpeg,webp,gif,apng})";
       py = "python";
       auch = "audio-switch";
       here = "pwd | wl-copy; pwd";

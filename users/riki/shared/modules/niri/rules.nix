@@ -115,7 +115,6 @@
       window-rule._children = [
         { match._props.app-id = "(?i)kitty"; }
         { default-column-width.proportion = 0.5; }
-        { opacity = 0.9; }
       ];
     }
 
@@ -126,7 +125,6 @@
         { open-floating = true; }
         { default-column-width.proportion = 0.3; }
         { default-window-height.proportion = 0.5; }
-        { opacity = 0.9; }
       ];
     }
 
@@ -137,7 +135,6 @@
         { open-floating = true; }
         { default-column-width.proportion = 0.6; }
         { default-window-height.proportion = 0.6; }
-        { opacity = 0.9; }
       ];
     }
 
@@ -148,7 +145,6 @@
         { open-floating = true; }
         { default-column-width.proportion = 0.6; }
         { default-window-height.proportion = 0.6; }
-        { opacity = 0.9; }
       ];
     }
 
@@ -159,7 +155,6 @@
         { open-floating = true; }
         { default-column-width.proportion = 0.75; }
         { default-window-height.proportion = 0.75; }
-        { opacity = 0.9; }
       ];
     }
 
@@ -170,7 +165,6 @@
         { open-floating = true; }
         { default-column-width.proportion = 0.6; }
         { default-window-height.proportion = 0.6; }
-        { opacity = 0.9; }
       ];
     }
 
@@ -181,7 +175,6 @@
         { open-floating = true; }
         { default-column-width.proportion = 0.5; }
         { default-window-height.proportion = 0.5; }
-        { opacity = 0.9; }
       ];
     }
 

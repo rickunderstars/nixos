@@ -7,7 +7,9 @@
   programs.fastfetch = {
     settings = {
       logo = {
-        source = "${./logos/Marcille.png}";
+        type = "kitty";
+        animationFrame = 0;
+        source = "${./logos/starfield.gif}";
         padding = {
           left = 0;
           right = 3;

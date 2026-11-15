@@ -105,7 +105,7 @@
     tty-clock
     astroterm
     countryfetch
-    pokemon-colorscripts
+    pokeget-rs
     element
 
     ####### apps #######

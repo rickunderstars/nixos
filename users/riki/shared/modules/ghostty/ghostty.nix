@@ -10,7 +10,7 @@
       font-size = 11;
       theme = "Catppuccin Mocha";
       background-opacity = 0.75;
-      background-blur = true;
+      # background-blur = true; # compositor does it
       shell-integration-features = "no-cursor";
       cursor-style = "underline";
       mouse-hide-while-typing = true;
