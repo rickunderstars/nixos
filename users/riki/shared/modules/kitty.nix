@@ -9,7 +9,7 @@
     themeFile = "Catppuccin-Mocha";
     font = {
       name = "CaskaydiaCove Nerd Font Mono";
-      size = 11;
+      size = 10;
     };
     settings = {
       background_opacity = "0.75";
