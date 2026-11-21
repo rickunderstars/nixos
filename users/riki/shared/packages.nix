@@ -129,6 +129,7 @@
     teams-for-linux
     godot-mono
     godot
+    gdscript-formatter
     unityhub
     itch
     heroic
